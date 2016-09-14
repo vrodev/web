@@ -1,0 +1,71 @@
+// default.styl
+// VRO Web
+// Initially created by Leonard Pauli, sep 2016
+
+@import variables
+
+border-box-sh(multi = -1)
+  box-shadow inset 0px (0.25px*multi) 0px 0px black
+
+// ----------------------------------------------
+*
+  margin 0
+  padding 0
+  
+ul
+  list-style none
+  
+a
+  text-decoration none
+  color $link
+
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
+
+
+html
+  width 100%
+  height 100%
+
+body
+  width 100%
+  font-default()
+  background-color $main-bg
+  color $body
+  overflow-x hidden
+  min-height 100%
+  box-sizing border-box
+  padding-top $headerHeight
+  padding-bottom $footerHeight
+  position relative
+
+// ----------------------------------------------
+.header
+  width 100%
+  height $headerHeight
+  position fixed
+  top 0px
+  background-color $main-bg
+  font-light()
+  border-box-sh()
+  z-index 100
+  $titletop = 30px
+
+  //@media(max-width:880px)
+
+
+// ----------------------------------------------
+
+.main-content
+  main-container-width()
+
+// ----------------------------------------------
+.footer
+  width 100%
+  height $footerHeight
+  position absolute
+  bottom 0px
+  z-index 100
+
+// ----------------------------------------------
+   

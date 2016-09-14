@@ -1,0 +1,72 @@
+// variables.styl
+// VRO Web
+// Initially created by Leonard Pauli, sep 2016
+
+@import nib
+
+// ----------------------------------------------
+$red = #E85233
+$main-bg = rgba(white,0.9)
+$body = #01032E
+$black = black
+$test = rgba(0,255,0,0.5)
+$link = $body
+
+
+$headerHeight = 124px
+$footerHeight = 39px
+$navbar_height = 50px
+
+// ----------------------------------------------
+noarg()
+  opacity 0.5
+  
+square(side, side2 = side)
+  width side
+  height side2
+  
+appearance()
+  -webkit-appearance arguments
+  -moz-appearance arguments
+  appearance arguments
+
+bg-image(name,ext = "png")
+  background-image unquote("url(/images/"+name+"."+ext+")")
+  background-repeat no-repeat
+  background-size contain
+  background-position center center
+
+// ----------------------------------------------
+font-regular()
+  font-family 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif
+font-light()
+  font-regular()
+  font-weight 100
+font-fancy()
+  font-family Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif
+  
+font-default()
+  font-fancy()
+font-fancy-title()
+  font-fancy()
+  font-size 29px
+  letter-spacing 0.05px
+
+// ----------------------------------------------
+    
+main-container-width()
+  position relative
+  width 90%
+  margin 0 auto
+  max-width 1100px
+
+button-up(bgcol = #58DD2F)
+  background bgcol
+  border none
+  border-radius 8px
+  padding 10px
+  font-default()
+  color white
+  &:focus
+    outline none
+    box-shadow 0 0px 5px 0px rgba(red, 0.7)

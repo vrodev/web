@@ -1,0 +1,23 @@
+{
+  "name": "vroweb",
+  "version": "1.0.0",
+  "description": "VRG Web",
+  "main": "server.js",
+  "scripts": {
+    "build-css": "stylus -u nib source/stylesheets/* -o static/css",
+    "watch-css": "stylus -u nib source/stylesheets/* -o static/css -w",
+    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
+    "start": "node server"
+  },
+  "author": "VRG",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0",
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5"
+  }
+}
