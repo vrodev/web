@@ -12,10 +12,8 @@ $black = black
 $test = rgba(0,255,0,0.5)
 $link = $body
 
+$std_page_width = 500px
 
-$headerHeight = 124px
-$footerHeight = 39px
-$navbar_height = 50px
 
 // ----------------------------------------------
 noarg()
@@ -56,9 +54,9 @@ font-fancy-title()
     
 main-container-width()
   position relative
-  width 90%
+  width 100%
   margin 0 auto
-  max-width 1100px
+  max-width $std_page_width
 
 button-up(bgcol = #58DD2F)
   background bgcol
