@@ -37,20 +37,36 @@ bg-image(name,ext = "png")
   background-position center center
 
 // ----------------------------------------------
+font-face-create(name, fileName, weight=normal, style=normal, ext="ttf")
+  @font-face
+    font-family name
+    font-weight weight
+    font-style style
+    src unquote("url(/fonts/"+fileName+"."+ext+")")
+  
+
+font-face-create('BebasNeue', 'BebasNeue-Book', 200, normal, "otf")
+font-face-create('BebasNeue', 'BebasNeue-Regular', 600, normal, "otf")
+font-face-create('BebasNeue', 'BebasNeue-Bold', 800, normal, "otf")
+font-face-create('CenturyGothic', 'CenturyGothic')
+font-face-create('CenturyGothic', 'CenturyGothic-Bold', bold)
+font-face-create('CenturyGothic', 'CenturyGothic-Italic', normal, italic)
+
+// @font-face
+//   font-face-create('BebasNeue', 'bebas-neue', normal, "otf")
+   
+
 font-regular()
-  font-family 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif
+  font-family 'CenturyGothic', Calibri, sans-serif
 font-light()
   font-regular()
   font-weight 100
-font-fancy()
-  font-family Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif
+font-title()
+  font-family 'BebasNeue', Helvetica, sans-serif
+  font-weight 800
   
 font-default()
-  font-fancy()
-font-fancy-title()
-  font-fancy()
-  font-size 29px
-  letter-spacing 0.05px
+  font-regular()
 
 // ----------------------------------------------
     
