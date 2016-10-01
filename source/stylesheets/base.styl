@@ -3,13 +3,16 @@
 
 @import variables
 
-// ----------------------------------------------
-
-
-body
-	bg-image "lol"
-	
+// ----------------------------------------------	
 
 .main-content
-	bg-image "lol"
-	background-size cover
+	// -
+		
+[data-page="main"]
+	.main-content
+		background lighten(blue, 50%)
+		
+[data-page="faq"]
+	.main-content
+		background green
+	
