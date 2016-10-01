@@ -2,6 +2,11 @@ extend ../default
 block mainContent
 	// Main page; after logged in
 	// Returned to from success
-	h1 main
+	h1 Homepage/HUB
 	p Ditt offer är #{target}
-	a(href="/faq") FAQ
+	
+	div.faq
+		a(href="/faq") FAQ
+
+	div.log-out
+		a(href="login") Log out
