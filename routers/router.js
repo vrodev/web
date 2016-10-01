@@ -23,7 +23,7 @@ module.exports = (function() {
       title: 'Catcher',
       dataPage: 'main',
 
-      target: 'Jacob'
+      target: 'Emma'
     })
   });
 
