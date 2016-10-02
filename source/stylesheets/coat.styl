@@ -12,53 +12,30 @@
 [data-page="main"]
 	.main-content
 		background $red
-		padding 0px
 		height 110px
-		width 400px
-		-webkit-border-radius 10px 10px 10px 10px
-		-moz-border-radius 10px 10px 10px 10px
-		border-radius 10px 10px 10px 10px
+		border-radius 10px
 		
+	$bottomButtonSpacing = 3px
+	.faq, .log-out
+		text-align center
+		position fixed
+		bottom 0px
+		background $red
+		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
+		height 20px
+		padding 20px 0px
+		$top = 10px
+		border-top-left-radius $top
+		border-top-right-radius $top
 		
+		&:hover
+			background $darkred
+			height 25px
+			a
+				font-size 120%
 		
 	.faq
-		text-align center
-		position fixed
-		bottom 0px
-		background $red
-		width calc((78.8%) / 2)
-		height 20px	
-		padding 20px
-		-webkit-border-radius 10px 10px 10px 10px
-		-moz-border-radius 10px 10px 10px 10px
-		border-radius 10px 10px 10px 10px
-		
-	.faq:hover
-		background $darkred
-		height 25px
-		a
-			font-size 120%
-		
-
-	
-	.log-out
-		text-align center
-		position fixed
-		bottom 0px
-		width calc((78.9%) / 2)
-		background $red
-		height 20px
-		padding 20px
-		-webkit-border-radius 10px 10px 10px 10px
-		-moz-border-radius 10px 10px 10px 10px
-		border-radius 10px 10px 10px 10px
-		
-		
-	.log-out:hover
-		background $darkred
-		height 25px
-		a
-			font-size 120%
+		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2)
 			
 	.catch
 		text-align center
