@@ -7,72 +7,35 @@ module.exports = (function() {
   var router = express.Router();
   // ---------------------------
 
-  router.get('/', function(req, res) {
-    res.redirect('/main')
-  });
+  // Array of the routes
+  // {page:'name', path:'url-after-/',
+  // data:{title:'...'}, fn:function(req,res){}}
+  // fn: return false to prevent auto res.render()
+  var routes = [
+    {page:'', path:'', fn:function(req, res) {res.redirect('/main')}},
+    {page:'login'},
+    {page:'main', data:{target: 'Erik'}},
+    {page:'catch'},
+    {page:'catch-success'},
+    {page:'die'},
+    {page:'faq'}
+  ]
+  
+  // Loop through the routes array and
+  // register them with the express router
+  for (var i = 0; i<routes.length; i++) {
+    var route = routes[i]
+    if (!route.path) route.path = route.page
 
-  router.get('/login', function(req, res) {
-    res.render("catcher/login", {
-      title: 'Catcher',
-      dataPage: 'login'
-    })
-  });
-
-  router.get('/main', function(req, res) {
-    res.render("catcher/main", {
-      title: 'Catcher',
-      dataPage: 'main',
-
-      target: 'Emma'
-    })
-  });
-
-  router.get('/catch', function(req, res) {
-    res.render("catcher/catch", {
-      title: 'Catcher',
-      dataPage: 'catch'
-    })
-  });
-
-  router.get('/catch-success', function(req, res) {
-    res.render("catcher/catch-success", {
-      title: 'Catcher',
-      dataPage: 'catch-success'
-    })
-  });
-
-  router.get('/die', function(req, res) {
-    res.render("catcher/die", {
-      title: 'Catcher',
-      dataPage: 'die'
-    })
-  });
-
-  router.get('/faq', function(req, res) {
-    res.render("catcher/faq", {
-      title: 'Catcher',
-      dataPage: 'faq'
-    })
-  });
+    router.get('/'+route.path, (function(route) {return function(req, res) {
+      if (route.fn && route.fn(req, res) === false) return;
+      if (!route.data) route.data = {}
+      if (!route.data.title) route.data.title = 'Catcher'
+      route.data.dataPage = route.page
+      res.render('catcher/'+route.page, route.data)
+    }})(route) )
+  }
 
   // -----------
   return router;    
 })();
-
-
-
- //http://localhost:300/?onlyMainContent=true
-    //req.query.onlyMainContent
-
-  // router.get('/', function(req, res) {
-  //   //http://localhost:300/?onlyMainContent=true
-  //   //req.query.onlyMainContent
-
-  //   res.render("homepage", {
-  //     title: 'Catcher'
-  //   })
-  // });
-
-  // router.get('/login', function (req, res) {
-  //   res.render('partials/' + name);
-  // });
