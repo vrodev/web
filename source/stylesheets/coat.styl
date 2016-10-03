@@ -11,7 +11,7 @@
 	
 [data-page="main"]
 	.main-content
-		background $red
+		background $blue
 		height 110px
 		border-radius 10px
 		
@@ -20,7 +20,7 @@
 		text-align center
 		position fixed
 		bottom 0px
-		background $red
+		background $blue
 		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
 		height 20px
 		padding 20px 0px
@@ -43,12 +43,15 @@
 	.faq
 		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2)
 		
+		&:hover
+			background $darkgreen
+		
 			
 	.catch
 		text-align center
 		position relative
 		top 50px
-		background $red
+		background $blue
 		width calc((98.7%) / 2)
 		height 150px
 		bg-image happy
@@ -56,7 +59,7 @@
 		-webkit-transition 0.2s
 		transition 0.2s
 		&:hover
-			background $darkred
+			background $darkgreen
 			bg-image happy
 			background-size 160px 160px
 			cursor pointer
@@ -69,17 +72,16 @@
 		text-align center
 		position relative
 		top 50px
-		background $red
+		background $blue
 		width calc((98.8%) / 2)
 		height 150px	
 		bg-image dead
 		border-radius 10px
-		-webkit-transition 0.2s
-		transition 0.2s
+		transition all 0.2s
 		&:hover
 			background $darkred
 			bg-image dead
-			background-size: 160px 160px;
+			background-size 160px
 			cursor pointer
 			
 	p
@@ -88,7 +90,7 @@
 		top 10px
 		color black
 		font-size 130%
-		background $red
+		
 		
 		
 		
@@ -117,9 +119,10 @@ h2
 		text-align center
 		position fixed
 		bottom 0px
-		background $red
+		background $green
 		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
 		height 20px
+		margin-left -30px
 		padding 20px 0px
 		$top = 10px
 		border-top-left-radius $top
@@ -134,17 +137,26 @@ h2
 			background $darkred
 			height 25px
 			cursor pointer
+			box-shadow 0px -3px 0px white
 			a
 				font-size 120%
 		
 	.main
-		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2)
+		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2 - 30px)
+		&:hover
+			background $darkblue
+			
+		
 		
 	.mask
-		bg-image main-content-inverted-corner-mask svg
+		bg-image main-content-inverted-corner-mask 'svg?v=4'
 		position fixed
 		bottom 0px
 		left 50%
+		width $std_page_width
+		height 73px
+		background-size 100%
+		margin-left ($std_page_width / -2)
 	
 	
 

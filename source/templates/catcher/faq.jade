@@ -2,7 +2,6 @@ extend ../default
 block mainContent
 	// Catcher FAQ
 	h1 faq
-	a(href="/main") Back to Homepage
 	<br>
 	p.bold.
 		CATCHER IS HERE
@@ -52,11 +51,11 @@ block mainContent
 
 	div.mask
 
-	div.main
-		a(href="/main") Homepage
+	a(href="/main").main
+		spam Homepage
 
-	div.log-out
-		a(href="login") Log out
+	a(href="login").log-out
+		spam Log out
 
 
 
