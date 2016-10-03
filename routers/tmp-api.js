@@ -17,6 +17,16 @@ module.exports = (function() {
     })
   })
 
+  router.get('/sayDie', function(req, res) {
+    var name = req.query.name // Erik
+
+    res.json({
+      error: false,
+      message: "You're going down, "+name+"!",
+      randomVariable: "Tjenare!"
+    })
+  })
+
   // -----------
   return router;    
 })();

@@ -10,3 +10,10 @@ api.lol = function(name, callback) {
 		name: name
 	}, callback)
 }
+
+api.sayDie = function(name, callback) {
+	this.get('sayDie', {
+		name: name
+	}, callback)
+}
+
