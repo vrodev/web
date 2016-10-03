@@ -36,6 +36,7 @@
 		&:hover
 			background $darkred
 			height 25px
+			cursor pointer
 			a
 				font-size 120%
 		
@@ -57,7 +58,9 @@
 		&:hover
 			background $darkred
 			bg-image happy
-			background-size: 160px 160px;
+			background-size 160px 160px
+			cursor pointer
+			
 		
     	
 		
@@ -77,6 +80,7 @@
 			background $darkred
 			bg-image dead
 			background-size: 160px 160px;
+			cursor pointer
 			
 	p
 		text-align center
@@ -100,10 +104,38 @@ h2
 [data-page="faq"]
 	.main-content
 		border-radius 10px
-		padding 20px
+		padding 30px
 		
 	.bold
-		color white
+		color white	
+				
+	$bottomButtonSpacing = 3px
+	.main, .log-out
+		text-align center
+		position fixed
+		bottom 0px
+		background $red
+		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
+		height 20px
+		padding 20px 0px
+		$top = 10px
+		border-top-left-radius $top
+		border-top-right-radius $top
+		-webkit-transition 0.2s
+		transition 0.2s
+		a
+			-webkit-transition 0.2s
+			transition 0.2s
+		
+		&:hover
+			background $darkred
+			height 25px
+			cursor pointer
+			a
+				font-size 120%
+		
+	.main
+		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2)
 		
 	
 
