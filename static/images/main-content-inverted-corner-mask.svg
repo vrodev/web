@@ -1,0 +1,11 @@
+<svg width="312px" height="82px" viewBox="427 764 312 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M427.032805,764.999629 C427.01105,765.330157 427,765.66361 427,765.999643 L427,845.498356 L739,845.498356 L739,765.999643 C739,765.663699 738.988946,765.330321 738.967182,764.999855 C738.452511,772.817988 731.948635,779 724.004188,779 L441.995812,779 C434.049839,779 427.547321,772.81677 427.032805,764.999629 L427.032805,764.999629 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="312" height="80.4987269" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <use id="Combined-Shape" stroke="#979797" mask="url(#mask-2)" stroke-width="2" fill-opacity="0.5" fill="#088119" fill-rule="evenodd" xlink:href="#path-1"></use>
+</svg>

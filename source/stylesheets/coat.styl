@@ -105,52 +105,46 @@ h2
 	.main-content
 		border-radius 10px
 		padding 30px
-		overflow-y scroll
-		position absolute
-		height:75.8vh;
-		bottom $bottom
-		margin 0
-		margin-left ($std_page_width / 2) + 215
-		::-webkit-scrollbar { 
-    	display: none; 
-}
+
 		
 
 
-.bold
-	color white	
-			
-$bottomButtonSpacing = 3px
-.main, .log-out
-	text-align center
-	position fixed
-	bottom 0px
-	left 50% - 16.5px
-	background $red
-	width ($std_page_width / 2 - $bottomButtonSpacing / 2)
-	height 20px
-	padding 20px 0px
-	$top = 10px
-	border-top-left-radius $top
-	border-top-right-radius $top
-	-webkit-transition 0.2s
-	transition 0.2s
-	border-style solid
-	border-width 1px 3px 0px 3px
-	border-color white
-	a
+	.bold
+		color white	
+				
+	$bottomButtonSpacing = 3px
+	.main, .log-out
+		text-align center
+		position fixed
+		bottom 0px
+		background $red
+		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
+		height 20px
+		padding 20px 0px
+		$top = 10px
+		border-top-left-radius $top
+		border-top-right-radius $top
 		-webkit-transition 0.2s
 		transition 0.2s
-	
-	&:hover
-		background $darkred
-		height 25px
-		cursor pointer
 		a
-			font-size 120%
-	
-.main
-	margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2)
+			-webkit-transition 0.2s
+			transition 0.2s
+		
+		&:hover
+			background $darkred
+			height 25px
+			cursor pointer
+			a
+				font-size 120%
+		
+	.main
+		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2)
+		
+	.mask
+		bg-image main-content-inverted-corner-mask svg
+		position fixed
+		bottom 0px
+		left 50%
 	
 	
 
