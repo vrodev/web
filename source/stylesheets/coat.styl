@@ -105,7 +105,18 @@ h2
 	.main-content
 		border-radius 10px
 		padding 30px
+		overflow-y scroll
+		position absolute
+		height:75.8vh;
+		bottom $bottom
+		margin 0
+		margin-left ($std_page_width / 2) + 215
+		::-webkit-scrollbar { 
+    	display: none; 
+}
 		
+
+
 	.bold
 		color white	
 				
@@ -114,6 +125,7 @@ h2
 		text-align center
 		position fixed
 		bottom 0px
+		left 50% - 16.5px
 		background $red
 		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
 		height 20px
@@ -123,6 +135,9 @@ h2
 		border-top-right-radius $top
 		-webkit-transition 0.2s
 		transition 0.2s
+		border-style solid
+		border-width 1px 3px 0px 3px
+		border-color white
 		a
 			-webkit-transition 0.2s
 			transition 0.2s
