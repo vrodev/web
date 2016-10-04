@@ -1,13 +1,13 @@
 extend ../default
 block mainContent
 	// Login page
-	h1 login
+	h1 log in to catcher
 
 	<br>
 
-	input.text
+	input.text(placeholder="Type in your code here" name="textbox" value=logincode)
 
 	<br>
 
-	div.log Login
-		a(href="/main")
+	a(href="/main").log
+		spam Log In

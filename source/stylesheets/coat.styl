@@ -11,11 +11,14 @@
 	
 [data-page="main"]
 	.main-content
-		background #ededed
+		background $grey
 		border-radius 10px
 		height 345px
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
 		
-	$bottomButtonSpacing = 3px
+	$bottomButtonSpacing = 5px
 	.faq, .log-out
 		text-align center
 		position fixed
@@ -27,14 +30,18 @@
 		$top = 10px
 		border-top-left-radius $top
 		border-top-right-radius $top
-		-webkit-transition 0.2s
 		transition 0.2s
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
+		margin-left -10px
 		a
 			-webkit-transition 0.2s
 			transition 0.2s
 		
 		&:hover
 			background $blue
+			box-shadow: 0px 0px 20px -2px rgba(153,153,153,1);
 			height 25px
 			cursor pointer
 			color white
@@ -42,7 +49,7 @@
 				font-size 120%
 		
 	.faq
-		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2)
+		margin-left ($std_page_width / 2 - $bottomButtonSpacing / 2)
 		
 		&:hover
 			background $green
@@ -121,6 +128,9 @@ h2
 	.main-content
 		border-radius 10px
 		padding 30px
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
 
 		
 
@@ -128,7 +138,7 @@ h2
 	.bold
 		color $green
 				
-	$bottomButtonSpacing = 3px
+	$bottomButtonSpacing = 5px
 	.main, .log-out
 		text-align center
 		position fixed
@@ -142,8 +152,10 @@ h2
 		$top = 10px
 		border-top-left-radius $top
 		border-top-right-radius $top
-		-webkit-transition 0.2s
 		transition 0.2s
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
 		a
 			-webkit-transition 0.2s
 			transition 0.2s
@@ -162,7 +174,15 @@ h2
 		&:hover
 			background $red
 			
-		
+	.line
+		height 1px
+		width 384px
+		background $darkgrey
+		position fixed
+		bottom 64px
+		left 50%
+		margin-left ($std_page_width / -2 + 10)
+		text-align center
 		
 	.mask
 		bg-image main-content-inverted-corner-mask 'svg?v=4'
@@ -170,34 +190,53 @@ h2
 		bottom 0px
 		left 50%
 		width $std_page_width
-		height 73px
+		height 76px
 		background-size 100%
-		margin-left ($std_page_width / -2)
+		margin-left ($std_page_width / -2)	
 		
 [data-page="login"]
 	.main-content
 		border-radius 10px
 		padding 30px
-		background $blue
-		height 150px
+		background $grey
+		height 160px
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
 	h1
 		font-title()
 		text-decoration underline
-		color white
+		color $blue
 		text-align center
+	.text
+		margin-left ($std_page_width / 2 - 112)
+		
+		
+		
  		
  	.log
- 		text-align center
 		position relative
-		top 250px
+		top 10px
+		color white
 		background $blue
-		width calc((100%) / 2)
 		height 150px
-		border-radius 10px
+		width 80px
+		height 27px
+		border-radius 5px
 		transition 0.2s
+		text-align center
+		font-size 125%
+		margin-left ($std_page_width / 2 - 70)
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
+		padding 4px
+		
 		&:hover
 			background $darkblue
 			cursor pointer
+			box-shadow: 0px 0px 10px -2px rgba(153,153,153,1);
+			font-size 130%
 		
 	
 	
