@@ -11,19 +11,22 @@
 	
 [data-page="main"]
 	.main-content
-		background $red
-		height 110px
+		background #ededed
 		border-radius 10px
+		height 345px
 		
 	$bottomButtonSpacing = 3px
 	.faq, .log-out
 		text-align center
 		position fixed
 		bottom 0px
-		background $red
-		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
+		background $grey
+		width ($std_page_width / 2 - $bottomButtonSpacing / 2 - 4)
 		height 20px
 		padding 20px 0px
+		border-style solid
+		border-width 2px 2px 0px 2px
+		border-color $red
 		$top = 10px
 		border-top-left-radius $top
 		border-top-right-radius $top
@@ -35,8 +38,10 @@
 		
 		&:hover
 			background $blue
+			border-color $blue
 			height 25px
 			cursor pointer
+			color white
 			a
 				font-size 120%
 		
@@ -45,23 +50,28 @@
 		
 		&:hover
 			background $green
+			border-color $green
 		
 			
 	.catch
 		text-align center
 		position relative
 		top 50px
-		background $red
-		width calc((98.7%) / 2)
+		background $grey
+		width 150px
 		height 150px
 		bg-image happy
-		border-radius 10px
+		border-radius 100px
 		-webkit-transition 0.2s
 		transition 0.2s
+		border-style solid
+		border-color $grey
+		border-width 20px
+
+		
 		&:hover
-			background $green
-			bg-image happy
-			background-size 160px 160px
+			bg-image darkhappy
+			background-size 160px
 			cursor pointer
 			
 		
@@ -72,15 +82,17 @@
 		text-align center
 		position relative
 		top 50px
-		background $red
-		width calc((98.8%) / 2)
+		background $grey
+		width 150px
 		height 150px	
 		bg-image dead
-		border-radius 10px
+		border-radius 100px
 		transition all 0.2s
+		border-style solid
+		border-color $grey
+		border-width 20px
 		&:hover
-			background $blue
-			bg-image dead
+			bg-image darkdead
 			background-size 160px
 			cursor pointer
 			
@@ -112,16 +124,20 @@ h2
 
 
 	.bold
-		color white	
+		color $green
 				
 	$bottomButtonSpacing = 3px
 	.main, .log-out
 		text-align center
 		position fixed
 		bottom 0px
-		background $green
-		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
-		height 20px
+		background $grey
+		color $green
+		border-style solid
+		border-width 2px 2px 0px 2px
+		border-color $green
+		width ($std_page_width / 2 - $bottomButtonSpacing / 2 - 4)
+		height 18px
 		margin-left -30px
 		padding 20px 0px
 		$top = 10px
@@ -135,6 +151,8 @@ h2
 		
 		&:hover
 			background $blue
+			border-color $blue
+			color white
 			height 25px
 			cursor pointer
 			box-shadow 0px -3px 0px white
@@ -145,6 +163,7 @@ h2
 		margin-left ($std_page_width / 2 + $bottomButtonSpacing / 2 - 30px)
 		&:hover
 			background $red
+			border-color $red
 			
 		
 		
@@ -157,6 +176,32 @@ h2
 		height 73px
 		background-size 100%
 		margin-left ($std_page_width / -2)
+		
+[data-page="login"]
+	.main-content
+		border-radius 10px
+		padding 30px
+		background $blue
+		height 150px
+	h1
+		font-title()
+		text-decoration underline
+		color white
+		text-align center
+ 		
+ 	.log
+ 		text-align center
+		position relative
+		top 250px
+		background $blue
+		width calc((100%) / 2)
+		height 150px
+		border-radius 10px
+		transition 0.2s
+		&:hover
+			background $darkblue
+			cursor pointer
+		
 	
 	
 
