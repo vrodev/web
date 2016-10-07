@@ -3,15 +3,15 @@ var models = require('./helpers/db-connect').models
 
 
 
-// var user = new User({
-// 	name: "Anders Johansson",
-// 	loginCode: "asdfasf",
-// 	email: "email"
-// })
+var user = new models.User({
+	name: "Anders Johansson",
+	loginCode: "asdfasf",
+	email: "email"
+})
 
 // user.loginCode = user.generateNewLoginCode()
 
-// user.save()
+user.save()
 // 
 //user.save();
 
@@ -22,6 +22,6 @@ var models = require('./helpers/db-connect').models
 
 
 
-models.user.find({}, function() {
+models.User.find(function() {
 	console.log('found', arguments)
 });

@@ -40,7 +40,7 @@ var models = {}
 fs.readdirSync(modelsDir)
   .filter(file => ~file.search(/^[^\.].*\.js$/))
   .forEach(function(file) {
-  	var fileNameWOExt = file.substr(0,file.length - '.js'.length)
+  	var fileNameWOExt = file.replace(/^(\w)(.*)(.js)/i, (wholeMatch, prefix, suffix) => prefix.toUpperCase()+suffix)
   	models[fileNameWOExt] = require(join(modelsDir, file))});
 
 module.exports.models = models

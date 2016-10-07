@@ -3,6 +3,9 @@
 // 
 // Initially created by Leonard Pauli, okt 2016
 
-module.exports = {
-	User: require('./user')
-}
+
+// NOT IN USE
+
+// module.exports = {
+// 	User: require('./user')
+// }

@@ -8,7 +8,7 @@
 // Since this is the last non-error-handling
 // middleware used, we assume 404, as nothing else
 // responded.
-module.exports.errorPageHandler = function(req, res, next){
+module.exports.errorPageHandler = function(req, res, next) {
   res.status(404)
 
   // respond with html page

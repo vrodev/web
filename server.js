@@ -3,16 +3,22 @@
 // 
 // Initially created by Leonard Pauli, sep 2016
 
-
-var express = require('express')
+const express = require('express')
 var logger = require('morgan')
 var app = express()
+var models = require('./helpers/db-connect').models
 
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))
 app.set('views', __dirname + '/source/templates')
 app.locals.pretty = true;
 app.set('view engine', 'jade')
+
+// Models
+app.use(function(req, res, next) {
+  req.models = models
+  next()
+})
 
 // Router
 var router = require('./routers/router.js')
