@@ -27,9 +27,10 @@ module.exports = (function() {
   })
 
   router.get('/resetCircle', function(req, res) {
+    var name = req.query.name
     res.json({
       error: false,
-      message: "Körde återskapa cirkel-funktionen",
+      message: "Körde återskapa cirkel-funktionen med parametern "+name+"",
     })
   })
 
