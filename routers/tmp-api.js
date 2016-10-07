@@ -8,22 +8,21 @@ module.exports = (function() {
   // ---------------------------
 
   // /api/lol?name=Erik
-  router.get('/lol', function(req, res) {
+  router.get('/clickedKilled', function(req, res) {
     var name = req.query.name // Erik
 
     res.json({
       error: false,
-      message: "Hello there, "+name+"!"
+      message: "Loggade knapptryckning på knappen KILLED och skickade svar!",
     })
   })
 
-  router.get('/sayDie', function(req, res) {
+  router.get('/clickedDied', function(req, res) {
     var name = req.query.name // Erik
 
     res.json({
       error: false,
-      message: "You're going down, "+name+"!",
-      randomVariable: "Tjenare!"
+      message: "Loggade knapptryckning på knappen DIED och skickade svar!",
     })
   })
 
