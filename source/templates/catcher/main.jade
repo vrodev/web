@@ -5,7 +5,7 @@ block mainContent
 	<br>
 	h1 Homepage
 	<br>
-	p Your victim is #{target}
+	p#statustext Your victim is #{target}
 	
 	a(href="/faq").faq
 		spam FAQ
@@ -13,13 +13,13 @@ block mainContent
 	a(href="login").log-out
 		spam Log out
 
-	div.die
+	div.die#diebutton
 		a(href="die")
 
-	div.catch
+	div.catch#catchbutton
 		a(href="catch")
 
-	p.di I was caught
-	p.ca I caught #{target}
+	p.di#di I was caught
+	p.ca#ca I caught #{target}
 
 	
