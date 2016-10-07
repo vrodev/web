@@ -12,6 +12,8 @@ The web page for Viktor Rydberg Odenplans Elevkår, implemented using jade, styl
 - Edit: .styl / .jade files, not .html / .css
 - Export html simply: Right click in browser -> view source (it's set to pretty print)
 
+- (also make sure mongodb is installe)
+- Run: a/path/mongodb/bin/mongod --dbpath=data/db
 
 ## Git
 

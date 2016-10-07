@@ -20,16 +20,22 @@ module.exports = (function() {
   router.get('/clickedDied', function(req, res) {
     var name = req.query.name // Erik
 
-    res.json({
-      error: false,
-      message: "Loggade knapptryckning på knappen DIED och skickade svar!",
-    })
+
+    req.models.User.find(function(error, users) {
+      console.log('found', arguments)
+      res.json({
+        error: false,
+        message: "Loggade knapptryckning på knappen DIED och skickade svar!"+ users[0].name,
+      })
+    });
+    
   })
 
   router.get('/resetCircle', function(req, res) {
+    var name = req.query.name
     res.json({
       error: false,
-      message: "Körde återskapa cirkel-funktionen",
+      message: "Körde återskapa cirkel-funktionen med parametern "+name+"",
     })
   })
 
