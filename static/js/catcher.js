@@ -8,6 +8,7 @@ var catchWasClicked = function() {
 		console.log(res)
 		alert(res.message);
 		document.getElementById("statustext").innerHTML = "Du dödade ditt förra offer (Erik). Ditt nya offer är Emma!";
+		window.href = "http://google.se";
 	})
 }
 
@@ -21,6 +22,14 @@ var dieWasClicked = function() {
 		document.getElementById("diebutton").style.position = "absolute";
 		document.getElementById("ca").style.display = "none";
 		document.getElementById("di").style.display = "none";
+
+	})
+}
+
+var thisdoesntexistWasClicked = function() {
+	api.clickedDied(function(res) {
+		console.log(res);
+		alert(res.message);
 
 	})
 }

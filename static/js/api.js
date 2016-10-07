@@ -17,3 +17,9 @@ api.clickedDied = function(name, callback) {
 	}, callback)
 }
 
+api.resetCircle = function(name, callback) {
+	this.get('resetCircle', {
+		name: name
+	}, callback)
+}
+

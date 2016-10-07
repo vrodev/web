@@ -26,6 +26,13 @@ module.exports = (function() {
     })
   })
 
+  router.get('/resetCircle', function(req, res) {
+    res.json({
+      error: false,
+      message: "Körde återskapa cirkel-funktionen",
+    })
+  })
+
   // -----------
   return router;    
 })();
