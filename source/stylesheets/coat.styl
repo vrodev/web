@@ -11,9 +11,9 @@
 	
 [data-page="main"]
 	.main-content
-		background $grey
+		background white
 		border-radius 10px
-		height 345px
+		height 545px
 		border-style solid
 		border-width 1px
 		border-color $darkgrey
@@ -23,7 +23,7 @@
 		text-align center
 		position fixed
 		bottom 0px
-		background $grey
+		background white
 		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
 		height 20px
 		padding 20px 0px
@@ -58,22 +58,23 @@
 	.catch
 		text-align center
 		position relative
-		top 30px
-		background $grey
-		width 150px
-		height 150px
+		top -265px
+		background white
+		width 250px
+		height 250px
 		bg-image happy
+		margin-left ($std_page_width / 2)
 		border-radius 100px
 		-webkit-transition 0.2s
 		transition 0.2s
 		border-style solid
-		border-color $grey
+		border-color white
 		border-width 20px
 
 		
 		&:hover
 			bg-image darkhappy
-			background-size 160px
+			background-size 270px
 			cursor pointer
 			
 		
@@ -84,18 +85,19 @@
 		text-align center
 		position relative
 		top 30px
-		background $grey
-		width 150px
-		height 150px	
+		background white
+		width 250px
+		height 250px	
 		bg-image dead
 		border-radius 100px
 		transition all 0.2s
+		margin-right ($std_page_width / 2)
 		border-style solid
-		border-color $grey
+		border-color white
 		border-width 20px
 		&:hover
 			bg-image darkdead
-			background-size 160px
+			background-size 270px
 			cursor pointer
 			
 	p
@@ -143,7 +145,7 @@ h2
 		text-align center
 		position fixed
 		bottom 0px
-		background $grey
+		background white
 		color $green
 		width ($std_page_width / 2 - $bottomButtonSpacing / 2)
 		height 20px
@@ -194,6 +196,10 @@ h2
 		background-size 100%
 		margin-left ($std_page_width / -2)	
 		
+h1	
+	font-title()
+	text-decoration underline
+		
 [data-page="login"]
 	.main-content
 		border-radius 10px
@@ -208,6 +214,8 @@ h2
 		text-decoration underline
 		color $blue
 		text-align center
+		font-size 175%
+		
 	.text
 		margin-left ($std_page_width / 2 - 112)
 		
