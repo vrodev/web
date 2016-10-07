@@ -4,41 +4,19 @@
 
 
 var catchWasClicked = function() {
-	api.lol('Erik', function(res) {
+	api.clickedKilled('Erik', function(res) {
 		console.log(res)
 		alert(res.message);
+		document.getElementById("statustext").innerHTML = "Du dödade ditt förra offer (Erik). Ditt nya offer är Emma!";
 	})
 }
 
 var dieWasClicked = function() {
-	api.sayDie('Jacob', function(res) {
+	api.clickedDied('Jacob', function(res) {
 		console.log(res);
 		alert(res.message);
-		alert(res.randomVariable);
-		cycleBackground();
+		document.getElementById("statustext").innerHTML = "You are very dead.";
 	})
-}
-
-function cycleBackground() {
-	alert("Starting cycling of background...");
-	var myVar=1;
-	function actualCycle() {
-		document.getElementsByTagName("html")[0].setAttribute("style","-webkit-filter: hue-rotate("+myVar+"deg) !important;");
-		myVar++;
-		setTimeout(actualCycle,1);
-	}
-	setTimeout(actualCycle,100);
-}
-
-var setupButtonAction = function() {
-	var dataPage = document.body.getAttribute('data-page')
-	if (dataPage=='main') {
-
-		// Main page
-		var btn = document.body.querySelector('.catch')
-		btn.addEventListener('click', catchWasClicked, false)
-		
-	}
 }
 
 var setupButtonAction = function() {
@@ -48,6 +26,8 @@ var setupButtonAction = function() {
 		// Main page
 		var btn = document.body.querySelector('.die')
 		btn.addEventListener('click', dieWasClicked, false)
+		var btn = document.body.querySelector('.catch')
+		btn.addEventListener('click', catchWasClicked, false)
 		
 	}
 }

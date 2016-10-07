@@ -5,14 +5,14 @@
 
 var api = new API('/api')
 
-api.lol = function(name, callback) {
-	this.get('lol', {
+api.clickedKilled = function(name, callback) {
+	this.get('clickedKilled', {
 		name: name
 	}, callback)
 }
 
-api.sayDie = function(name, callback) {
-	this.get('sayDie', {
+api.clickedDied = function(name, callback) {
+	this.get('clickedDied', {
 		name: name
 	}, callback)
 }
