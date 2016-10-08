@@ -27,8 +27,12 @@ var models = require('./helpers/db-connect').models
 // 
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
+const awaitres = require('./helpers/helpers').awaitres;
 const Promise = require('bluebird')
 const assert = require('assert')
+
+
+
 
 // models.User.find().then(console.log)
 // async function lo() {
@@ -36,9 +40,16 @@ const assert = require('assert')
 // 	return res	
 // }
 
-// var lo = async (function() {
-// 	try {return await (models.User.findOne({name:'Lol'}))}
-// 	catch(e) {console.log('asdf')}
+// var lo = async ((fn, onError) => {
+// 	var res; await (fn.then(r=>res=r,onError)); return res;
 // })
-// lo().then(console.log)
-//console.log(res)
+// 
+
+
+var mo = async (function() {
+	//var res = await (lo(models.User.load("57f838d41dc00958496a4cbb"), console.log))
+	var res = awaitres (models.User.load("57f838d41dc00958496a4cbb"), console.log)
+	if (!res) return;
+	console.log('Res:', res)
+})
+mo()

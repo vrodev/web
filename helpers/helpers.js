@@ -15,6 +15,15 @@ module.exports.generateSimpleCode = function(count) {
 }
 
 
+const async = require('asyncawait/async');
+const await = require('asyncawait/await');
+// const Promise = require('bluebird')
+// const assert = require('assert')
+// Usage: var res; if (!(res = awaitres ( asyncFn, onErrorFn ))) return;
+module.exports.awaitres = function(fn, onError) { return await (async (() => {
+	var res; await (fn.then(r=>res=r,onError)); return res;})())}
+
+
 // ----------------------------------------------------------------------
 // DB
 const mongoose = require('mongoose')

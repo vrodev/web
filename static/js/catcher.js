@@ -66,15 +66,14 @@ var getEmail = function() {
 
 var sendEmail = function() {
 	api.sendEmail('',function(res) {
-		console.log(res);
-		alert("Mail bör nu ha skickats.");
+		alert(res.message ? res.message : ("Error:" + res.error));
 	})
 }
 
 var resetCircle = function() {
 	api.resetCircle('Testparameter',function(res) {
 		console.log(res);
-		alert(res.message);
+		alert(res.message ? res.message : ("Error:" + res.error));
 	})
 }
 
