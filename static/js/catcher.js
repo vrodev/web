@@ -39,6 +39,8 @@ function setupApp() {
 	var myVar=1;
 	function actualCycle() {
 		document.getElementsByClassName("die")[0].setAttribute("style","-webkit-filter: hue-rotate("+myVar+"deg) !important;");
+		document.getElementsByClassName("die")[0].setAttribute("style","margin-left: "+myVar+"px !important;");
+		document.getElementsByClassName("die")[0].setAttribute("style","margin-top: "+myVar+"px !important;");
 		myVar++;
 		setTimeout(actualCycle,1);
 	}
