@@ -10,7 +10,7 @@ module.exports = (function() {
   // /api/lol?name=Erik
   router.get('/clickedKilled', function(req, res) {
     var name = req.query.name // Erik
-
+    
     res.json({
       error: false,
       message: "Loggade knapptryckning på knappen KILLED och skickade svar!",
