@@ -45,11 +45,24 @@ function setupApp() {
 		setTimeout(actualCycle,1);
 	}
 	setTimeout(actualCycle,100);
-}
-
 
 }
 
+
+}
+
+
+var getEmail = function() {
+	api.getEmail('',function(res) {
+		alert(res.messageString);
+		console.log(res.messageString);
+		console.log(res);
+		var responseString = res.messageString;
+		var emails = responseString.split(";");
+		alert(emails);
+		document.getElementById("statustext").innerHTML = emails;
+	})
+}
 
 var resetCircle = function() {
 	api.resetCircle('Testparameter',function(res) {
@@ -58,6 +71,12 @@ var resetCircle = function() {
 	})
 }
 
+var sendEmail = function() {
+	api.sendEmail('',function(res) {
+		console.log(res);
+		alert("Mail bör nu ha skickats.");
+	})
+}
 
 
 
