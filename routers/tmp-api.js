@@ -22,10 +22,15 @@ module.exports = (function() {
 
 
     req.models.User.find(function(error, users) {
+      var messageString = "";
+        for(var i = 0; i < users.length; i++) {
+           messageString += ", " + users[i].name;
+        }
       console.log('found', arguments)
       res.json({
         error: false,
-        message: "Loggade knapptryckning på knappen DIED och skickade svar!"+ users[0].name,
+        message: "Loggade knapptryckning på knappen DIED och skickade svar!" +messageString,
+        messageString: messageString
       })
     });
     
