@@ -16,6 +16,23 @@ The web page for Viktor Rydberg Odenplans Elevkår, implemented using jade, styl
 - (make sure data/db folder is created)
 - Run: a/path/mongodb/bin/mongod --dbpath=data/db
 
+
+## Todo
+
+- Use Babel w new async/await syntax
+	http://stackabuse.com/node-js-async-await-in-es7/
+	https://babeljs.io/docs/setup/#installation
+	http://jsrocks.org/2016/01/configuring-babel-6-for-node-js/
+	https://github.com/yortus/asyncawait
+- Use let/const more than var
+	https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/let
+
+
+## Before prod
+
+- See indexes at http://mongoosejs.com/docs/guide.html
+
+
 ## Git
 
 Collaboration is made using git, tracks code changes.

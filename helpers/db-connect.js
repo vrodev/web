@@ -4,11 +4,32 @@
 // Initially created by Leonard Pauli, sep 2016
 
 
+const mongoose = require('mongoose')
+const Promise = require('bluebird')
+
+
+// Connect promise lib
+// ------------------------------------------------------------------------
+
+// According to
+// http://stackoverflow.com/a/24371533/1054573
+// there was some memory leak and speed issues
+// with the native implementation. Thereby using 
+// bluebird for now.
+
+// Use native promises
+// mongoose.Promise = global.Promise;
+// assert.equal(query.exec().constructor, global.Promise);
+
+// Use bluebird
+mongoose.Promise = Promise
+//assert.equal(query.exec().constructor, Promise);
+
+
 // Connect DB
 // ------------------------------------------------------------------------
 
-const mongoose = require('mongoose');
-
+// https://github.com/madhums/node-express-mongoose-demo
 function connect(dbURL) {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
   return mongoose.connect(dbURL, options).connection;

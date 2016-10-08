@@ -14,6 +14,9 @@
   "author": "VRG",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
+    "asyncawait": "^1.0.6",
+    "bluebird": "^3.4.6",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "jade": "^1.11.0",
@@ -21,7 +24,7 @@
     "mongoose": "^4.6.3",
     "morgan": "^1.7.0",
     "nib": "^1.1.2",
-    "stylus": "^0.54.5",
-    "sendgrid": "^4.5.0"
+    "sendgrid": "^4.5.0",
+    "stylus": "^0.54.5"
   }
 }
