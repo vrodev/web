@@ -21,3 +21,10 @@ api.resetCircle = function(name, callback) {
 	this.get('resetCircle', { name: name }, callback)
 }
 
+api.getEmail = function(name, callback) {
+	this.get('getEmail', { }, callback)
+}
+
+api.sendEmail = function(name, callback) {
+	this.get('sendEmail', { }, callback)
+}

@@ -16,13 +16,15 @@ module.exports = (function() {
       res.redirect('/main');return false;}},
     {page:'login'},
     {page:'', path:'logout', fn:function(req, res) {
-      req.setLogout();res.redirect('/main');return false;}},
+      req.setLogout();res.redirect('/login');return false;}},
     {page:'main', data:{target: 'Erik'}, fn:function(req, res, data) {
       data.name = !req.user ? 'not logged in' : req.user.name}},
     {page:'catch'},
     {page:'catch-success'},
     {page:'die'},
-    {page:'faq'}
+    {page:'faq'},
+    {page:'admin', data:{}, fn:function(req, res, data) {
+      data.name = !req.user ? 'noemail' : req.user.email}},
   ]
   
   // Loop through the routes array and

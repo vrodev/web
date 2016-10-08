@@ -26,28 +26,50 @@ function setupApp() {
 			console.log(res);
 			alert(res.message);
 
-			ui.statustext.el.innerHTML = res.messageString;
-			ui.catch.el.style.display = "none";
-			ui.die.el.style.margin = "200px 0px -140px -140px";
-			ui.die.el.style.position = "absolute";
+			ui.statustext.el.innerHTML = res.messageString
+			ui.catch.el.style.display = "none"
+			ui.die.el.style.margin = "200px 0px -140px -140px"
+			ui.die.el.style.position = "absolute"
 			cycleBackground();
 		})
 	}
 
-	function cycleBackground() {
+}
+
+
+
+// ----------------------------------------------------------------------
+
+function cycleBackground() {
 	alert("Starting cycling of background...");
-	var myVar=1;
-	function actualCycle() {
-		document.getElementsByClassName("die")[0].setAttribute("style","-webkit-filter: hue-rotate("+myVar+"deg) !important;");
-		myVar++;
-		setTimeout(actualCycle,1);
-	}
-	setTimeout(actualCycle,100);
+	setTimeout(function actualCycle(val) {
+		app.ui.die.el.style.webkitFilter = "hue-rotate("+val+"deg) !important"
+		app.ui.die.el.style.marginLeft = val+"px !important"
+		app.ui.die.el.style.marginTop = val+"px !important"
+		setTimeout(actualCycle, 1, val+1);
+	}, 100, 0);
 }
 
-
+var getEmail = function() {
+	api.getEmail('',function(res) {
+		alert(res.messageString);
+		console.log(res.messageString);
+		console.log(res);
+		
+		var responseString = res.messageString;
+		var emails = responseString.split(";");
+		
+		alert(emails);
+		app.ui.statustext.el.innerHTML = emails;
+	})
 }
 
+var sendEmail = function() {
+	api.sendEmail('',function(res) {
+		console.log(res);
+		alert("Mail bör nu ha skickats.");
+	})
+}
 
 var resetCircle = function() {
 	api.resetCircle('Testparameter',function(res) {
@@ -55,7 +77,6 @@ var resetCircle = function() {
 		alert(res.message);
 	})
 }
-
 
 
 
