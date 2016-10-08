@@ -70,7 +70,7 @@ router.get('/sendEmail', function(req, res) {
           var subject = 'Catcher 2016';
           // var meddelande;
           // meddelande = fs.readFileSync("./mail.html","utf8") //function(err, contents) { meddelande = contents; console.log(err); });
-          var content = new helper.Content('text/plain', "Hejsan, "+users[i].name+"\n Detta är ett testmeddelande från Catcher 2016, och din kod är"+users[i].loginCode+".");
+          var content = new helper.Content('text/plain', "Hejsan, "+users[i].name+"!\n Detta är ett testmeddelande från Catcher 2016, och din kod är"+users[i].loginCode+".\n Vänliga hälsningar,\n VRO Elevkår");
           var mail = new helper.Mail(from_email, subject, to_email, content);
 
           var sg = require('sendgrid')('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');
