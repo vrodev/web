@@ -3,14 +3,10 @@ block mainContent
 	// Login page
 	h1 log in to catcher
 
-	<br>
+	form(action="/" method="get")
+		input.text(placeholder="Type in your login code" name="xLoginCode" value=logincode)
+		input(type="submit" value="Log In").log
 
-	input.text(placeholder="Type in your login code" name="textbox" value=logincode)
-
-	<br>
-
-	a(href="/main").log
-		spam Log In
 
 	//- TO DO
 		- Centrera textruta 

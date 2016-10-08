@@ -8,6 +8,7 @@ var jwt = require('jwt-simple');
 
 // ----------------------------------------------------------------------
 // JWT - Authenticate
+// for jwt, see https://www.sitepoint.com/using-json-web-tokens-node-js/
 module.exports = function(req, res, next) {
   req.setLogout = function() {res.clearCookie('jwtToken')}
   function eraseAndContinue() {req.setLogout();next()}
