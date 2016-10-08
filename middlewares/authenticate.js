@@ -9,7 +9,8 @@ var jwt = require('jwt-simple');
 // ----------------------------------------------------------------------
 // JWT - Authenticate
 module.exports = function(req, res, next) {
-  function eraseAndContinue() {res.clearCookie('jwtToken');next()}
+  req.setLogout = function() {res.clearCookie('jwtToken')}
+  function eraseAndContinue() {req.setLogout();next()}
 
   function tryLogin() {
     var loginHeader = req.headers['x-login-code'] || req.query.xLoginCode
