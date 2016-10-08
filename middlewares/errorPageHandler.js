@@ -1,14 +1,15 @@
-// middlewares.js
+// errorPageHandler.js
 // VRO Web
 // 
 // Initially created by Leonard Pauli, oct 2016
 
 
+// ----------------------------------------------------------------------
 // 404 Not found handling
 // Since this is the last non-error-handling
 // middleware used, we assume 404, as nothing else
 // responded.
-module.exports.errorPageHandler = function(req, res, next) {
+module.exports = function(req, res, next) {
   res.status(404)
 
   // respond with html page

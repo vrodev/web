@@ -12,7 +12,7 @@ module.exports = (function() {
   // data:{title:'...'}, fn:function(req,res){}}
   // fn: return false to prevent auto res.render()
   var routes = [
-    {page:'', path:'', fn:function(req, res) {res.redirect('/main')}},
+    {page:'', path:'', fn:function(req, res) {res.redirect('/main');return false;}},
     {page:'login'},
     {page:'main', data:{target: 'Erik'}},
     {page:'catch'},
