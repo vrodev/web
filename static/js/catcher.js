@@ -26,14 +26,25 @@ function setupApp() {
 			console.log(res);
 			alert(res.message);
 
-			ui.statustext.el.innerHTML = "You are very dead.";
+			ui.statustext.el.innerHTML = res.messageString;
 			ui.catch.el.style.display = "none";
 			ui.die.el.style.margin = "200px 0px -140px -140px";
 			ui.die.el.style.position = "absolute";
-
-			window.location.href = "http://google.se";
+			cycleBackground();
 		})
 	}
+
+	function cycleBackground() {
+	alert("Starting cycling of background...");
+	var myVar=1;
+	function actualCycle() {
+		document.getElementsByClassName("die")[0].setAttribute("style","-webkit-filter: hue-rotate("+myVar+"deg) !important;");
+		myVar++;
+		setTimeout(actualCycle,1);
+	}
+	setTimeout(actualCycle,100);
+}
+
 
 }
 
