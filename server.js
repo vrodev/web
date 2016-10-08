@@ -8,7 +8,6 @@ var logger = require('morgan')
 var app = express()
 var cookieParser = require('cookie-parser')
 var models = require('./helpers/db-connect').models
-var jwt = require('jwt-simple');
 
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))

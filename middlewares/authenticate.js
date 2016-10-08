@@ -3,6 +3,8 @@
 // 
 // Initially created by Leonard Pauli, oct 2016
 
+var jwt = require('jwt-simple');
+
 
 // ----------------------------------------------------------------------
 // JWT - Authenticate
@@ -16,7 +18,7 @@ module.exports = function(req, res, next) {
       // user not found 
       if (err) { 
         return res.sendStatus(401);
-      // incorrect username
+      // incorrect loginCode
       } else if (!user) {
         return res.sendStatus(401);
       }
