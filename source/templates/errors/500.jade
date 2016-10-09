@@ -1,0 +1,9 @@
+extend ../default
+
+block mainContent
+	h1 Aw! An internal server error occured. (500)
+	| Try 
+	a(href="/") going home.
+	br
+	if isDev
+		pre= error

@@ -1,7 +1,9 @@
 // router.js
 // VRO Web
 
-var express = require('express')
+const express = require('express')
+const config = require('../config')
+
 
 module.exports = (function() {
   var router = express.Router();
@@ -23,6 +25,8 @@ module.exports = (function() {
     {page:'catch-success'},
     {page:'die'},
     {page:'faq'},
+    {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',data:{
+      loginCode:'LOGINCODE',name:'NAME',url:config.webURL}},
     {page:'admin', data:{}, fn:function(req, res, data) {
       data.name = !req.user ? 'noemail' : req.user.email}},
   ]

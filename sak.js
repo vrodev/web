@@ -30,7 +30,14 @@ const await = require('asyncawait/await');
 const awaitres = require('./helpers/helpers').awaitres;
 const Promise = require('bluebird')
 const assert = require('assert')
+const config = require('./config')
+const helpers = require('./helpers/helpers')
+const path = require('path')
+const jade = require('jade')
 
+
+helpers.sendEmail('Leonard <leon.paul-2016@vrg.se>', 'Catcher 2016', 'catcher-welcome',
+	{loginCode: 'LOOOOOOCOOOODE' }).then(console.log,console.log)
 
 
 
@@ -46,10 +53,10 @@ const assert = require('assert')
 // 
 
 
-var mo = async (function() {
-	//var res = await (lo(models.User.load("57f838d41dc00958496a4cbb"), console.log))
-	var res = awaitres (models.User.load("57f838d41dc00958496a4cbb"), console.log)
-	if (!res) return;
-	console.log('Res:', res)
-})
-mo()
+// var mo = async (function() {
+// 	//var res = await (lo(models.User.load("57f838d41dc00958496a4cbb"), console.log))
+// 	var res = awaitres (models.User.load("57f838d41dc00958496a4cbb"), console.log)
+// 	if (!res) return;
+// 	console.log('Res:', res)
+// })
+// mo()
