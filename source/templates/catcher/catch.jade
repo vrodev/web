@@ -7,14 +7,12 @@ block mainContent
 
 	p.info Enter in the code shown on #{target}'s screen
 
-	form(action="catch-success" method="get")
+	form(action="catch-success" method="post")
 		input(placeholder="Type in the code here" name="xLoginCode" value=logincode).text
 		input(type="submit" value="Submit").log
-		
-	<br>
 
-	div.main
-		a(href="/main").main Back to the Homepage
+	p.made 
+		value Made by the VRO-Web Team
 
 	//- TO DO
 		 Base.styl el. coat.styl:

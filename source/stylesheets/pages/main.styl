@@ -9,14 +9,11 @@
 		text-align center
 		width calc((100%-20px) / 2)
 		display inline-block
-	
-	.ca, .di
-		display inline-block
-
 			
 	.catch, .die
 		position relative
-		background green
+		top 50px
+		background white
 		width 50%
 		height (($std_page_width - $mainContentPadding*2) / 2)
 		@media all and (max-width: $std_page_width)
@@ -28,13 +25,14 @@
 		
 		&:hover
 			bg-image darkhappy
-			background-size 270px
+			background-size 105%
 			cursor pointer
 		
 	.die
 		bg-image dead
 		&:hover
 			bg-image darkdead
+			background-size 105%
 			
 	p
 		text-align center
@@ -46,6 +44,14 @@
 	.ca, .di
 		text-align center
 		position relative
-		top -300px
-		font-size 90%
-		padding 0px 70px
+		top 40px
+		font-size 120%
+		padding 0% 13.9%
+		display inline-block
+		
+	.statustext
+		font-size 150%
+		top 35px
+		
+	.main-content
+		height 500px

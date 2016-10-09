@@ -27,12 +27,13 @@
 		
 	.text
 		$inputwidth = 200
-		margin-left ($std_page_width / 2 - $inputwidth / 2)
 		width $inputwidth
+		display block
 		height 40px
 		text-align center
 		position relative
 		top 20px
+		margin 0 auto
 		
 		
 		
@@ -56,15 +57,18 @@
 		&:hover
 			background $darkred
 			cursor pointer
-	.main
-		position relative
-		top 40px
-		text-decoration underline
-		color black
-		
-		&:hover
-			color $darkred
 			
 	.info
 		position relative
 		top 10px
+		
+	.made
+		font-size 65%
+		position relative
+		left -200px
+		top 150px
+		color $darkergrey
+		
+		&:hover a p.new-label:after{
+    		content: 'ADD';
+		}

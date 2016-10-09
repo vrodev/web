@@ -20,12 +20,13 @@
 		
 	.text
 		$inputwidth = 200
-		margin-left ($std_page_width / 2 - $inputwidth / 2)
 		width $inputwidth
+		display block
 		height 40px
 		text-align center
 		position relative
 		top 70px
+		margin 0 auto
 		
 		
 		
@@ -33,6 +34,7 @@
 	.log
 		$logwidth = 60
 		position relative
+		display block
 		top 80px
 		color white
 		background $blue
@@ -42,11 +44,11 @@
 		transition 0.2s
 		text-align center
 		font-size 125%
-		margin-left ($std_page_width / 2 - $logwidth / 1.2)
 		border-style solid
 		border-width 1px
 		border-color $darkgrey
 		padding 4px
+		margin 0 auto
 		
 		&:hover
 			background $darkblue
