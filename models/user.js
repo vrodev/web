@@ -1,3 +1,4 @@
+"use strict";
 // user.js
 // VRO Web
 // 
@@ -6,6 +7,9 @@
 
 const mongoose = require('mongoose')
 const dbRef = require('../helpers/helpers').mongooseRef
+const async = require('asyncawait/async');
+const await = require('asyncawait/await');
+const clc = require('cli-color');
 
 // Create schema
 const Schema = mongoose.Schema({
@@ -78,8 +82,8 @@ Schema.pre('remove', function (next) {
 // or models.User.findOne({name:'Lol'}).then(
 // 		user=>console.log(user),
 // 		err=>console.log(err))
-Schema.statics.load = function (_id) {
-  return this.findOne({ _id: _id })
+Schema.statics.load = function (_id,populate) {
+  return this.findOne({ _id: _id }).populate(populate)
     //.populate('user', 'name')
     //.populate('comments.user')
     .exec();
@@ -97,6 +101,20 @@ Schema.statics.list = function(options) {
     .skip(limit * page)
     .exec();
 }
+
+Schema.statics.saveMany = async (function(objs) {
+  let i = 0
+  objs.map(obj => {
+    await (obj.save())
+    
+    i++
+    if (i>1) {
+      process.stdout.write(clc.move.up(1));
+      process.stdout.write(clc.erase.line);
+    }
+    console.log(clc.white('saving users ')+clc.bgBlackBright.black('('+[i,objs.length].join('/')+')'))
+  })
+})
 
 
 // ---------------------------------------

@@ -1,4 +1,10 @@
 "use strict";
+// importUsers.js
+// VRO Web
+// 
+// Initially created by Leonard Pauli, okt 2016
+
+
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 const generateSimpleCode = require('./helpers/helpers').generateSimpleCode;
@@ -53,24 +59,11 @@ const usersFromCSVObjs = module.exports.usersFromCSVObjs = function(objs) {
 	return users
 }
 
-const saveUsers = module.exports.saveUsers = async (function(objs) {
-	let i = 0
-	objs.map(obj => {
-		await (obj.save())
-		
-		i++
-		if (i>1) {
-			process.stdout.write(clc.move.up(1));
-			process.stdout.write(clc.erase.line);
-		}
-		console.log(clc.white('saving users ')+clc.bgBlackBright.black('('+[i,objs.length].join('/')+')'))
-	})
-})
 
 const importUsersFromCSV = module.exports.importUsersFromCSV = async (function(csv) {
 	const userObjs = parseCSV(contents)
 	const users = usersFromCSVObjs(userObjs)
-	await saveUsers(users)
+	await models.User.saveMany(users)
 })
 
 
