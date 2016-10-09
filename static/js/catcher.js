@@ -50,6 +50,10 @@ function cycleBackground() {
 	}, 100, 0);
 }
 
+function allowSending() {
+	document.getElementById("loginbutton").disabled = false;
+}
+
 var getEmail = function() {
 	api.getEmail('',function(res) {
 		alert(res.messageString);

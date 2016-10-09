@@ -7,8 +7,8 @@ block mainContent
 		.error-message= errorMessage
 
 	form(action="/" method="get")
-		input(type="text" placeholder="XXXXXX" name="xLoginCode")
-		input(type="submit" value="Log In")
+		input(type="text" placeholder="XXXXXX" onFocus="allowSending();" name="xLoginCode")
+		input(type="submit" disabled="true" maxlength="6" min-length="6" id="loginbutton" value="Log In")
 
 	.made
 		.default Made by the VRO-Web Team, part of Kommunikationsutskottet
