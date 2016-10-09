@@ -21,7 +21,7 @@ module.exports = (function() {
       req.setLogout();res.redirect('/login');return false;}},
     {page:'main', data:{target: 'Erik'}, fn:function(req, res, data) {
       data.name = !req.user ? 'not logged in' : req.user.name}},
-    {page:'catch'},
+    {page:'catch', data:{target: 'Erik'}},
     {page:'catch-success'},
     {page:'die'},
     {page:'faq'},
