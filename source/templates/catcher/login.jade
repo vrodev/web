@@ -3,6 +3,9 @@ block mainContent
 	// Login page
 	h1 log in to catcher
 
+	if errorMessage
+		.error-message= errorMessage
+
 	form(action="/" method="get")
 		input(placeholder="Type in your login code" name="xLoginCode" value=logincode).text
 		input(type="submit" value="Log In").log

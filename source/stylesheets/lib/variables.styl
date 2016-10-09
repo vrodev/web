@@ -41,8 +41,10 @@ appearance()
 	-moz-appearance arguments
 	appearance arguments
 
-bg-image(name,ext = "png")
+bg-image-url(name,ext = "png")
 	background-image unquote("url(/images/"+name+"."+ext+")")
+bg-image(name,ext = "png")
+	bg-image-url(name,ext)
 	background-repeat no-repeat
 	background-size contain
 	background-position center center

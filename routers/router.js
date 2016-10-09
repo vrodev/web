@@ -4,6 +4,9 @@
 const express = require('express')
 const config = require('../config')
 
+const async = require('asyncawait/async');
+const await = require('asyncawait/await');
+
 
 module.exports = (function() {
   var router = express.Router();
@@ -14,21 +17,23 @@ module.exports = (function() {
   // data:{title:'...'}, fn:function(req,res){}}
   // fn: return false to prevent auto res.render()
   var routes = [
-    {page:'', path:'', fn:function(req, res) {
-      res.redirect('/main');return false;}},
+    {page:'', path:'', fn:async (function(req, res) {
+      res.redirect('/main');return false;})},
     {page:'login'},
-    {page:'', path:'logout', fn:function(req, res) {
-      req.setLogout();res.redirect('/login');return false;}},
-    {page:'main', data:{target: 'Erik'}, fn:function(req, res, data) {
-      data.name = !req.user ? 'not logged in' : req.user.name}},
+    {page:'', path:'logout', fn:async (function(req, res) {
+      req.setLogout();res.redirect('/login');return false;})},
+    {page:'main', fn:async (function(req, res, data) {
+      await (req.user.populate('catcher.target'))
+      data.target = req.user.catcher.target
+    })},
     {page:'catch', data:{target: 'Erik'}},
     {page:'catch-success'},
     {page:'die'},
     {page:'faq'},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',data:{
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL}},
-    {page:'admin', data:{}, fn:function(req, res, data) {
-      data.name = !req.user ? 'noemail' : req.user.email}},
+    {page:'admin', data:{}, fn:async (function(req, res, data) {
+      data.name = !req.user ? 'noemail' : req.user.email})},
   ]
   
   // Loop through the routes array and
@@ -37,14 +42,14 @@ module.exports = (function() {
     var route = routes[i]
     if (!route.path) route.path = route.page
 
-    router.get('/'+route.path, (function(route) {return function(req, res) {
+    router.get('/'+route.path, (function(route) {return function(req, res) {async (function(){
       if (!route.data) route.data = {}
-      if (route.fn && route.fn(req, res, route.data) === false) return;
+      if (route.fn && await (route.fn(req, res, route.data)) === false) return;
       if (!route.data.title) route.data.title = 'Catcher'
       if (!route.data.user) route.data.user = req.user
       route.data.dataPage = route.page
       res.render('catcher/'+route.page, route.data)
-    }})(route) )
+    })()}})(route) )
   }
 
   // -----------

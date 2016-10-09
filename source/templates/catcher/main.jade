@@ -3,14 +3,25 @@ block mainContent
 	// Main page; after logged in
 	// Returned to from success
 
-	h1 Homepage #{name}
-
-	p.statustext Your victim is #{target}
-
-	a(href="#").die
-	a(href="/catch").catch
-	
-	p.di I was caught
-	p.ca I caught #{target}
-
-	
+	if user
+		h1 Homepage #{name}
+		
+		if target
+			p.statustext Your victim is #{user.catcher.target.name}
+		
+			a(href="#").die
+				.label I was caught
+			a(href="/catch").catch
+				.label I caught #{target.firstName}
+			
+		else
+			h1 RIP
+			p You're dead.
+	else
+		h1 Catcher
+		p.
+			Detta spel vrg so much fun
+		a(href="login") Logga in
+		p.
+			Utvecklat av VROWeb, en del av Kommunikationsutskottet;
+			Leonard, Erik, Jacob och Emma

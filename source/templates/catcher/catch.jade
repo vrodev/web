@@ -3,16 +3,15 @@ block mainContent
 	// Catch
 	h1 Submit your Catch
 
-	<br>
-
 	p.info Enter in the code shown on #{target}'s screen
 
 	form(action="catch-success" method="post")
 		input(placeholder="Type in the code here" name="xLoginCode" value=logincode).text
 		input(type="submit" value="Submit").log
 
-	p.made 
-		value Made by the VRO-Web Team
+	.made
+		.default Made by the VRO-Web Team
+		.hover asdkjfljkasdfkljhashdlkfj
 
 	//- TO DO
 		 Base.styl el. coat.styl:

@@ -64,11 +64,19 @@
 		
 	.made
 		font-size 65%
-		position relative
-		left -200px
-		top 150px
+		position absolute
+		bottom 0px
 		color $darkergrey
+		width 100%
 		
-		&:hover a p.new-label:after{
-    		content: 'ADD';
-		}
+		.hover, .default
+			position absolute
+			top 0px
+			transition opacity 0.3s
+		.hover
+			opacity 0
+		&:hover
+			.hover
+				opacity 1
+			.default
+				opacity 0
