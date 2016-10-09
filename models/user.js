@@ -23,7 +23,7 @@ const Schema = mongoose.Schema({
 
 	catcher: {
 		target: dbRef('User'),
-		killCode: String,
+		catchCode: String,
     admin: Boolean,
 
     paymentOption: String,

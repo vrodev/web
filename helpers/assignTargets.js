@@ -8,7 +8,7 @@
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 
-var models = require('./db-connect').models
+const models = require('./db-connect').models
 const clc = require('cli-color');
 
 
