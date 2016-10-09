@@ -1,53 +1,5 @@
-style.
-	@font-face {
-		font-family: 'BebasNeue';
-		font-weight: 800;
-		font-style: normal;
-		src: url(#{url}/fonts/BebasNeue-Bold.otf);
-	}
-	@font-face {
-		font-family: 'CenturyGothic';
-		font-weight: normal;
-		font-style: normal;
-		src: url(#{url}/fonts/CenturyGothic.ttf);
-	}
-	@font-face {
-		font-family: 'CenturyGothic';
-		font-weight: bold;
-		font-style: normal;
-		src: url(#{url}/fonts/CenturyGothic-Bold.ttf);
-	}
-	@font-face {
-		font-family: 'CenturyGothic';
-		font-weight: normal;
-		font-style: italic;
-		src: url(#{url}/fonts/CenturyGothic-Italic.ttf);
-	}
-	* {margin: 0;padding: 0;}
-	ul {list-style: none;}
-	body {font-family: 'CenturyGothic', Calibri, sans-serif;}
-	body {margin:15px;font-size:15px;}
-	li {margin-left: 20px;position:relative;}
-	li:before {
-		content: "☆";
-		margin-left:-21px;
-		margin-top:-1px;
-		position:absolute;
-	}
-	p {margin: 16px 0;}
-	h1,h2,h3,h4 {
-		font-family: 'BebasNeue', Helvetica, sans-serif;
-		font-weight: 800;
-		font-size: 1.4em;
-	}
-	h3 {font-size: 1.7em; margin-top:50px;text-align:center;}
-	h4 {margin-top:25px;margin-bottom:0px;margin-left:-6px;}
-	.container {max-width:500px;width:100%;margin:0 auto;}
-	@media all and (min-height:600px) and (min-width:700px) {
-		.container {margin-top:100px;}
-	}
-
-.container
+extends default
+block mainContent
 	p.
 		Välkommen till spelet, #{name}. Nu är det dags att hålla sig nära klasskamraterna för du kan när som helst, var som helst bli tagen.
 	p.
