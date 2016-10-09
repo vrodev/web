@@ -7,7 +7,9 @@ block mainContent
 		h1 Homepage #{name}
 		
 		if target
-			p.statustext Your victim is #{user.catcher.target.name}
+			p.statustext Welcome, #{user.firstName}
+			- var classNameText = (c=>c?'in class '+c:'')(user.catcher.target.className)
+			p.statustext Your victim is #{user.catcher.target.name} #{classNameText}
 		
 			a(href="#").die
 				.label I was caught

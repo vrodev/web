@@ -16,7 +16,9 @@ module.exports = function(req, res, next) {
   function tryLogin() {
     var loginHeader = req.headers['x-login-code'] || req.query.xLoginCode
     if (!loginHeader) return eraseAndContinue()
-    req.models.User.findOne({ loginCode: loginHeader }).populate('catcher').exec(function(err, user) {
+
+    // SEE END OF THIS FUNCTION, findOne called again
+    req.models.User.findOne({ loginCode: loginHeader }).populate('catcher.target').exec(function(err, user) {
       // user not found 
       if (err) { 
         return res.sendStatus(401);
@@ -54,7 +56,7 @@ module.exports = function(req, res, next) {
     return eraseAndContinue()
   
   // Find user
-  req.models.User.findOne({ _id: decoded.iss }, function(err, user) {
+  req.models.User.findOne({ _id: decoded.iss }).populate('catcher.target').exec(function(err, user) {
     if (err) return eraseAndContinue()
     req.user = user
     next()

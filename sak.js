@@ -36,9 +36,13 @@ const path = require('path')
 const jade = require('jade')
 
 
-helpers.sendEmail('Leonard <leon.paul-2016@vrg.se>', 'Catcher 2016', 'catcher-welcome',
-	{loginCode: 'LOOOOOOCOOOODE' }).then(console.log,console.log)
+// helpers.sendEmail('Leonard <leon.paul-2016@vrg.se>', 'Catcher 2016', 'catcher-welcome',
+// 	{loginCode: 'LOOOOOOCOOOODE' }).then(console.log,console.log)
 
+
+
+//models.User.findOne({ _id: '57f9db02d7c899e74c912ca5' }).populate('catcher.target').exec().then(console.log, console.log)
+models.User.findOne({ loginCode:'EK49WR' }).populate('catcher.target').exec().then(user=>console.log(user.className), console.log)
 
 
 // models.User.find().then(console.log)

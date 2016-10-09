@@ -7,12 +7,15 @@ block mainContent
 		.error-message= errorMessage
 
 	form(action="/" method="get")
-		input(placeholder="Type in your login code" name="xLoginCode" value=logincode).text
-		input(type="submit" value="Log In").log
+		input(type="text" placeholder="XXXXXX" name="xLoginCode")
+		input(type="submit" value="Log In")
 
 	.made
-		.default Made by the VRO-Web Team
-		.hover Webdesign by Erik Enger Karlson and Emma Nergell<br>Back-end by Jacob Tilly and Leonard Pauli
+		.default Made by the VRO-Web Team, part of Kommunikationsutskottet
+		.hover
+			| Webdesign by Erik Enger Karlson and Emma Nergell
+			br
+			| Backend by Jacob Tilly and Leonard Pauli
 
 
 	//- TO DO

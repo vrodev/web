@@ -23,7 +23,6 @@ module.exports = (function() {
     {page:'', path:'logout', fn:async (function(req, res) {
       req.setLogout();res.redirect('/login');return false;})},
     {page:'main', fn:async (function(req, res, data) {
-      await (req.user.populate('catcher.target'))
       data.target = req.user.catcher.target
     })},
     {page:'catch', data:{target: 'Erik'}},
