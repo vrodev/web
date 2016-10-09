@@ -13,6 +13,7 @@
 	.catch, .die
 		position relative
 		top 50px
+		background white
 		width 50%
 		height (($std_page_width - $mainContentPadding*2) / 2)
 		@media all and (max-width: $std_page_width)
@@ -20,23 +21,18 @@
 		bg-image happy
 		border-radius 50%
 		transition 0.2s
-		.label
-			text-align center
-			position relative
-			top 40px
-			font-size 120%
-			padding 0% 13.9%
-			display inline-block
 
+		
 		&:hover
-			bg-image-url darkhappy
+			bg-image darkhappy
 			background-size 105%
 			cursor pointer
 		
 	.die
-		bg-image-url dead
+		bg-image dead
 		&:hover
-			bg-image-url darkdead
+			bg-image darkdead
+			background-size 105%
 			
 	p
 		text-align center
@@ -44,6 +40,14 @@
 		top 10px
 		color black
 		font-size 130%
+		
+	.ca, .di
+		text-align center
+		position relative
+		top 0px
+		font-size 120%
+		padding 0% 13.9%
+		display inline-block
 		
 	.statustext
 		font-size 150%
