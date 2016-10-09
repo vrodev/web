@@ -21,10 +21,10 @@ module.exports = function(req, res, next) {
     req.models.User.findOne({ loginCode: loginHeader }).populate('catcher.target').exec(function(err, user) {
       // user not found 
       if (err) { 
-        return res.sendStatus(401);
+        return res.status(401).redirect('/login?error=error');
       // incorrect loginCode
       } else if (!user) {
-        return res.sendStatus(401);
+        return res.status(401).redirect('/login?error=incorrect');
       }
     
       // if (!user.validPassword(password)) {

@@ -63,7 +63,7 @@ const usersFromCSVObjs = module.exports.usersFromCSVObjs = function(objs) {
 
 
 const importUsersFromCSV = module.exports.importUsersFromCSV = async (function(csv) {
-	const userObjs = parseCSV(contents)
+	const userObjs = parseCSV(csv)
 	const users = usersFromCSVObjs(userObjs)
 	await (models.User.saveMany(users))
 })
