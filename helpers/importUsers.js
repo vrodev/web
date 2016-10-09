@@ -41,6 +41,8 @@ const usersFromCSVObjs = module.exports.usersFromCSVObjs = function(objs) {
 		user.name = obj.firstname+' '+obj.lastname
 		user.email = obj.email
 		user.loginCode = generateSimpleCode(6)
+		user.line = obj.line
+		user.graduationYear = obj.graduationYear
 
 		if (!user.catcher) user.catcher = {}
     user.catcher.paymentOption = obj.paymentOption 
@@ -63,7 +65,7 @@ const usersFromCSVObjs = module.exports.usersFromCSVObjs = function(objs) {
 const importUsersFromCSV = module.exports.importUsersFromCSV = async (function(csv) {
 	const userObjs = parseCSV(contents)
 	const users = usersFromCSVObjs(userObjs)
-	await models.User.saveMany(users)
+	await (models.User.saveMany(users))
 })
 
 

@@ -16,15 +16,15 @@ module.exports = (function() {
   // ---------------------------
 
 
-  // router.get('/user/:id', (req, res) => {
-  //   async (() => {
-  //     let user = await (req.models.User.load(req.params.id, 'catcher.target'))
-  //     if (req.query.html) {
-  //       return res.send(user.name+'\'s target is <a href="'+user.catcher.target._id+'?html=true">'+user.catcher.target.name+'</a>')
-  //     }
-  //     res.json(user)
-  //   })()
-  // })
+  router.get('/user/:id', (req, res) => {
+    async (() => {
+      let user = await (req.models.User.load(req.params.id, 'catcher.target'))
+      if (req.query.html) {
+        return res.send(user.name+'\'s target is <a href="'+user.catcher.target._id+'?html=true">'+user.catcher.target.name+'</a>')
+      }
+      res.json(user)
+    })()
+  })
 
 
   // ---------------------------

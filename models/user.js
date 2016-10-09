@@ -44,6 +44,16 @@ Schema.virtual('lastName').get(function () {
   return this.name.split(' ').pop()
 })
 
+Schema.virtual('className').get(function () {
+  if (!this.line) return null;
+  const lineComponents = this.line.split(' ')
+  const className =
+    (s=>s.substr(0,1).toUpperCase() + 
+    s.substr(1).toLowerCase())(lineComponents[0]) + 
+    this.graduationYear +
+    (c=>c.length>1?c[1].toLowerCase():'')(lineComponents)
+  return className
+})
 
 // ---------------------------------------
 // Hooks

@@ -7,7 +7,9 @@ block mainContent
 		h1 Homepage #{name}
 		
 		if target
-			p.statustext Your victim is #{user.catcher.target.name}
+			p.statustext Welcome, #{user.firstName}
+			- var classNameText = (c=>c?'in class '+c:'')(user.catcher.target.className)
+			p.statustext Your victim is #{user.catcher.target.name} #{classNameText}
 		
 			a(href="#").die
 				.label I was caught
@@ -22,3 +24,4 @@ block mainContent
 		p.
 			Du är inte inloggad. Logga in för att se ditt offer.
 		a(href="login") Logga in
+
