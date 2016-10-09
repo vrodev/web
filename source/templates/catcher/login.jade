@@ -1,14 +1,14 @@
 extend ../default
 block mainContent
 	// Login page
-	h1 log in to catcher
+	h1 Log in to catcher
 
 	if errorMessage
 		.error-message= errorMessage
 
-	form(action="/" method="get")
-		input(type="text" placeholder="XXXXXX" name="xLoginCode")
-		input(type="submit" value="Log In")
+	form(action="/" method="get" onsubmit="return document.getElementById('loginBtn').value.length>2")
+		input(type="text" placeholder="XXXXXX" onfocus="document.getElementById('loginBtn').disabled = false;" name="xLoginCode")
+		input(type="submit" disabled="true" value="Log In")#loginBtn
 
 	.made
 		.default Made by the VRO-Web Team, part of Kommunikationsutskottet

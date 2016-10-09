@@ -1,13 +1,16 @@
 extend ../default
 block mainContent
 	// Catch
-	h1 Submit your Catch
+	h1 Submit your Catch!
 
 	p.info Enter in the code shown on #{target.firstName}'s screen
 
-	form(action="catch-success" method="post")
-		input(placeholder="XXXXXX" name="catchCode").text
-		input(type="submit" value="Submit").log
+	if errorMessage
+		.error-message= errorMessage
+
+	form(action="catch-success" method="get")
+		input(type="text" placeholder="XXXXXX" name="catchCode")
+		input(type="submit" value="Submit")
 
 	.made
 		.default Made by the VRO-Web Team

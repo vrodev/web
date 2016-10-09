@@ -9,7 +9,7 @@ function setupApp() {
 	var ui = app.ui
 
 	// Catch button clicked
-	app.ui.catch.click = function() {
+	/*app.ui.catch.click = function() {
 		api.clickedKilled('Erik', function(res) {
 			console.log(res)
 			alert(res.message);
@@ -32,7 +32,7 @@ function setupApp() {
 			ui.die.el.style.position = "absolute"
 			cycleBackground();
 		})
-	}
+	}*/
 
 }
 
