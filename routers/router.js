@@ -23,7 +23,7 @@ module.exports = (function() {
     {page:'', path:'logout', fn:async (function(req, res) {
       req.setLogout();res.redirect('/login');return false;})},
     {page:'main', fn:async (function(req, res, data) {
-      data.target = req.user.catcher.target
+      if (req.user && req.user.catcher) data.target = req.user.catcher.target
     })},
     {page:'catch', data:{target: 'Erik'}},
     {page:'catch-success'},
