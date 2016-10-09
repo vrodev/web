@@ -2,45 +2,44 @@
 // VRO Web
 // Initially created by Leonard Pauli, sep 2016
 
-@import variables
+@import "lib/variables"
+
+
+// ----------------------------------------------
+font-face-create('BebasNeue', 'BebasNeue-Book', 200, normal, "otf")
+font-face-create('BebasNeue', 'BebasNeue-Regular', 600, normal, "otf")
+font-face-create('BebasNeue', 'BebasNeue-Bold', 800, normal, "otf")
+font-face-create('CenturyGothic', 'CenturyGothic')
+font-face-create('CenturyGothic', 'CenturyGothic-Bold', bold)
+font-face-create('CenturyGothic', 'CenturyGothic-Italic', normal, italic)
+
 
 // ----------------------------------------------
 *
-  margin 0
-  padding 0
-  
+	margin 0
+	padding 0
+	
 ul
-  list-style none
-  
+	list-style none
+	
 a
-  text-decoration none
-  color $link
+	text-decoration none
+	color $link
 
 // ------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------
 
 
 html
-  width 100%
-  height 100%
+	width 100%
+	height 100%
 
 body
-  width 100%
-  font-default()
-  background-color $main-bg
-  color $body
-  overflow-x hidden
-  min-height 100%
-  position relative
-
-
-// ----------------------------------------------
-
-.main-content
-  background-color red
-  main-container-width()
-  padding $mainContentPadding
-  box-sizing border-box
-  @media all and (min-width: $std_page_width)
-    top 100px
-   
+	width 100%
+	font-default()
+	background-color $main-bg
+	color $body
+	overflow-x hidden
+	min-height 100%
+	position relative
+	 

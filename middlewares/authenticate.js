@@ -16,7 +16,7 @@ module.exports = function(req, res, next) {
   function tryLogin() {
     var loginHeader = req.headers['x-login-code'] || req.query.xLoginCode
     if (!loginHeader) return eraseAndContinue()
-    req.models.User.findOne({ loginCode: loginHeader }).populate('catcher').exec(function(err, user) {
+    req.models.User.findOne({ loginCode: loginHeader })/*.populate('catcher')*/.exec(function(err, user) {
       // user not found 
       if (err) { 
         return res.sendStatus(401);

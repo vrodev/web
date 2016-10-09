@@ -41,6 +41,7 @@ module.exports = (function() {
       if (!route.data) route.data = {}
       if (route.fn && route.fn(req, res, route.data) === false) return;
       if (!route.data.title) route.data.title = 'Catcher'
+      if (!route.data.user) route.data.user = req.user
       route.data.dataPage = route.page
       res.render('catcher/'+route.page, route.data)
     }})(route) )

@@ -31,6 +31,10 @@ html
 	- dataPage = dataPage || 'none'
 	body(data-page='#{dataPage}').loading
 
+		//- Header
+		.header
+			include header
+
 		//- Main content
 		.main-content
 			block mainContent

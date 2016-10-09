@@ -2,25 +2,14 @@ extend ../default
 block mainContent
 	// Main page; after logged in
 	// Returned to from success
-	<br>
+
 	h1 Homepage #{name}
-	<br>
+
 	p.statustext Your victim is #{target}
 
-	div.bar 
-		a(href="/faq").fragor 
-			spam FAQ
-		a(href="/main").home 
-			spam Homepage
-		a(href="/logout").bye 
-			spam Log out
-
-
 	a(href="#").die
-
 	a(href="/catch").catch
-
-
+	
 	p.di I was caught
 	p.ca I caught #{target}
 

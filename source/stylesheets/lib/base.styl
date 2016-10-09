@@ -1,0 +1,38 @@
+// index.styl
+// VRO Web
+
+@import variables
+
+// ----------------------------------------------	
+
+body 
+	background-color $grey
+
+.bold
+	font-weight bold
+
+h1
+	font-title()
+	text-decoration underline
+	text-align center
+	font-size 300%
+
+h2
+	font-regular()
+
+
+.main-content
+	background-color red
+	main-container-width()
+	padding-top $mainContentPadding
+	padding-bottom $mainContentPadding
+	top $header_height
+	@media all and (min-width: $std_page_width)
+		margin-top 100px
+		margin-bottom 100px
+
+	background white
+	border-radius 10px
+	border-style solid
+	border-width 1px
+	border-color $darkgrey

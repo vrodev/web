@@ -1,0 +1,96 @@
+// variables.styl
+// VRO Web
+// Initially created by Leonard Pauli, sep 2016
+
+@import nib
+
+// ----------------------------------------------
+$red = #E85233
+$blue = #7084d3
+$green = #28ad24
+$grey = #f1f1f1
+$darkergrey = #6f6f6f
+$darkred = lightness($red, 30%)
+$darkblue = darken($blue,12%)
+$darkgreen = darken($green,12%)
+$darkgrey = darken($grey,12%)
+
+$main-bg = rgba(white,0.9)
+$body = #01032E
+$black = black
+$test = rgba(0,255,0,0.5)
+$link = $body
+
+
+$std_page_width = 600px
+$mainContentPadding = 30px
+
+$header_height = 40px
+
+
+// ----------------------------------------------
+noarg()
+	opacity 0.5
+	
+square(side, side2 = side)
+	width side
+	height side2
+	
+appearance()
+	-webkit-appearance arguments
+	-moz-appearance arguments
+	appearance arguments
+
+bg-image(name,ext = "png")
+	background-image unquote("url(/images/"+name+"."+ext+")")
+	background-repeat no-repeat
+	background-size contain
+	background-position center center
+
+// ----------------------------------------------
+font-face-create(name, fileName, weight=normal, style=normal, ext="ttf")
+	@font-face
+		font-family name
+		font-weight weight
+		font-style style
+		src unquote("url(/fonts/"+fileName+"."+ext+")")
+	 
+
+font-regular()
+	font-family 'CenturyGothic', Calibri, sans-serif
+font-light()
+	font-regular()
+	font-weight 100
+font-title()
+	font-family 'BebasNeue', Helvetica, sans-serif
+	font-weight 800
+	
+font-default()
+	font-regular()
+
+// ----------------------------------------------
+		
+main-container-width()
+	position relative
+	width 100%
+	margin 0 auto
+	max-width $std_page_width
+	padding-left $mainContentPadding
+	padding-right $mainContentPadding
+	box-sizing border-box
+	
+main-container-height()
+	position relative
+	height 100%
+	margin 0 auto
+
+button-up(bgcol = #58DD2F)
+	background bgcol
+	border none
+	border-radius 8px
+	padding 10px
+	font-default()
+	color white
+	&:focus
+		outline none
+		box-shadow 0 0px 5px 0px rgba(red, 0.7)

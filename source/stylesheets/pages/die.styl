@@ -1,0 +1,53 @@
+[data-page="die"]
+	.info
+		text-align center
+	.code
+		text-align center
+
+	.main-content
+		border-radius 10px
+		padding 30px
+		background white
+		height 350px
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
+		
+	h1
+		font-title()
+		text-decoration underline
+		color $red
+		text-align center
+		font-size 250%
+		
+	.main
+		$logwidth = 300
+		position relative
+		top 40px
+		color white
+		background $red
+		border-radius 5px
+		transition 0.2s
+		text-align center
+		font-size 125%
+		margin-left ($std_page_width / 2 - 140)
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
+		padding 7px
+		
+		&:hover
+			background $darkred
+			cursor pointer
+		a
+			color white
+		
+	.info
+		position relative
+		top 10px
+		
+	.code
+		text-decoration underline
+		position relative
+		top 20px
+		font-size 150%

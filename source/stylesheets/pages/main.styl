@@ -1,0 +1,51 @@
+[data-page="main"]
+	h1
+		color $red
+
+	// .main-content
+	// 	height 545px
+
+	.catch, .die
+		text-align center
+		width calc((100%-20px) / 2)
+		display inline-block
+	
+	.ca, .di
+		display inline-block
+
+			
+	.catch, .die
+		position relative
+		background green
+		width 50%
+		height (($std_page_width - $mainContentPadding*2) / 2)
+		@media all and (max-width: $std_page_width)
+			height "calc(50vw - %s)" % $mainContentPadding
+		bg-image happy
+		border-radius 50%
+		transition 0.2s
+
+		
+		&:hover
+			bg-image darkhappy
+			background-size 270px
+			cursor pointer
+		
+	.die
+		bg-image dead
+		&:hover
+			bg-image darkdead
+			
+	p
+		text-align center
+		position relative
+		top 10px
+		color black
+		font-size 130%
+		
+	.ca, .di
+		text-align center
+		position relative
+		top -300px
+		font-size 90%
+		padding 0px 70px
