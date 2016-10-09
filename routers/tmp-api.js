@@ -32,10 +32,7 @@ module.exports = (function() {
     var name = req.query.name // Erik
 
     req.models.User.find(function(error, users) {
-      var messageString = "";
-        for(var i = 0; i < users.length; i++) {
-           messageString += ", " + users[i].name;
-        }
+      var messageString = users.map(user=>user.name).join(', ')
       console.log('found', arguments)
       res.json({
         error: false,

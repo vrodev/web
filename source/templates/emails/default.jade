@@ -12,5 +12,10 @@ html
 		include style
 
 	body
+		//- Preheader is short preview text of email, 75 char limit
+		//- See http://blog.sendblaster.com/2014/02/05/how-to-create-a-perfect-email-preheader/
+		if preheader
+			span.preheader= preheader
+
 		.main-content
 			block mainContent

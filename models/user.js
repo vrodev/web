@@ -13,9 +13,18 @@ const Schema = mongoose.Schema({
 	email: String,
 	loginCode: String,
 
+  line: String,
+  graduationYear: Number,
+
+
 	catcher: {
 		target: dbRef('User'),
-		killCode: String
+		killCode: String,
+    admin: Boolean,
+
+    paymentOption: String,
+    paid: Boolean,
+    paidAt: Date
 	}
 }, {timestamps: true}) // createdAt/updatedAt
 
