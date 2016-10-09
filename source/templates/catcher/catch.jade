@@ -5,15 +5,16 @@ block mainContent
 
 	<br>
 
-	p.
-		Enter code shown on the victim's screen.
+	p.info Enter in the code shown on #{target}'s screen
 
-	input.text(placeholder="Type in your code here" name="textbox" value=logincode)
+	form(action="catch-success" method="get")
+		input(placeholder="Type in the code here" name="xLoginCode" value=logincode).text
+		input(type="submit" value="Submit").log
 		
 	<br>
 
 	div.main
-		a(href="/main").main Back to HOMEPAGE
+		a(href="/main").main Back to the Homepage
 
 	//- TO DO
 		 Base.styl el. coat.styl:

@@ -8,8 +8,7 @@
 
 .bold
 	font-weight bold
-
-
+	
 [data-page="main"]
 	.main-content
 		background white
@@ -79,7 +78,7 @@
 			cursor pointer
 			
 		
-			
+		
 		
 		
 	.die
@@ -111,7 +110,7 @@
 	.ca, .di
 		text-align center
 		position relative
-		top 300px
+		top -300px
 		font-size 90%
 		padding 0px 70px
 		
@@ -126,6 +125,70 @@ h1
 	
 h2
 	font-regular()
+	
+.bar
+	$paddingwidth = 100%
+	background white
+	text-align center
+	position fixed
+	color $darkergrey
+	top 0px
+	height 40px
+	padding 0px $paddingwidth
+	width $std_page_width
+	border-style solid
+	border-width 0px 0px 1px 0px
+	border-color $darkgrey
+	margin-left ($paddingwidth / -1)
+	
+	.fragor, .home, .bye
+		font-size 90%
+		position relative
+		top -1px
+	
+	.bye
+		color $darkergrey
+		top 3px
+		width 180px
+		
+		
+		&:hover
+			border-style solid
+			border-width 0px 0px 3px 0px
+			border-color $blue
+			cursor pointer
+			
+	.home
+		margin-left 0px
+		top 3px
+		color black
+		padding 0px 20px
+		border-style solid
+		border-width 0px 0px 3px 0px
+		border-color $red
+		
+		
+		
+		&:hover
+			border-style solid
+			border-width 0px 0px 3px 0px
+			border-color $red
+			cursor pointer
+			
+	.fragor
+		top 3px
+		color $darkergrey
+		width 180px
+		
+		
+		&:hover
+			border-style solid
+			border-width 0px 0px 3px 0px
+			border-color $green
+			cursor pointer
+			
+
+		
 	
 [data-page="faq"]
 	.main-content
@@ -200,6 +263,63 @@ h2
 h1	
 	font-title()
 	text-decoration underline
+	
+.bar
+	$paddingwidth = 100%
+	background white
+	text-align center
+	position fixed
+	color $darkergrey
+	top 0px
+	height 40px
+	padding 0px $paddingwidth
+	width $std_page_width
+	border-style solid
+	border-width 0px 0px 1px 0px
+	border-color $darkgrey
+	margin-left ($paddingwidth / -1)
+	
+	.fragor2, .home2, .bye2
+		font-size 90%
+		position relative
+		top -1px
+	
+	.bye2
+		color $darkergrey
+		top 3px
+		width 180px
+		
+		
+		&:hover
+			border-style solid
+			border-width 0px 0px 3px 0px
+			border-color $blue
+			cursor pointer
+			
+	.home2
+		margin-left 0px
+		top 3px
+		color black
+		padding 0px 20px
+		
+		&:hover
+			border-style solid
+			border-width 0px 0px 3px 0px
+			border-color $red
+			cursor pointer
+			
+			
+	.fragor2
+		top 3px
+		color $darkergrey
+		width 180px
+		border-style solid
+		border-width 0px 0px 3px 0px
+		border-color $green
+		
+		
+		&:hover
+			cursor pointer
 		
 [data-page="login"]
 	.main-content
@@ -217,28 +337,31 @@ h1
 		text-align center
 		font-size 250%
 		
-	input.text
-				margin-left 500px
-				width 1000px
-				height 200px
-				text-align center
+	.text
+		$inputwidth = 200
+		margin-left ($std_page_width / 2 - $inputwidth / 2)
+		width $inputwidth
+		height 40px
+		text-align center
+		position relative
+		top 70px
 		
 		
 		
 		
 	.log
+		$logwidth = 60
 		position relative
-		top 10px
+		top 80px
 		color white
 		background $blue
-		height 150px
-		width 80px
-		height 27px
+		width $logwidth
+		height 35px
 		border-radius 5px
 		transition 0.2s
 		text-align center
 		font-size 125%
-		margin-left ($std_page_width / 2 - 70)
+		margin-left ($std_page_width / 2 - $logwidth / 1.2)
 		border-style solid
 		border-width 1px
 		border-color $darkgrey
@@ -247,33 +370,167 @@ h1
 		&:hover
 			background $darkblue
 			cursor pointer
-			box-shadow: 0px 0px 10px -2px rgba(153,153,153,1);
-			font-size 130%
 			
 [data-page="catch"]
+		
 	.main-content
-		background white
 		border-radius 10px
-		height 545px
+		padding 30px
+		background white
+		height 350px
 		border-style solid
 		border-width 1px
 		border-color $darkgrey
+	h1
+		font-title()
+		text-decoration underline
+		color $red
+		text-align center
+		font-size 250%
+		
+	.text
+		$inputwidth = 200
+		margin-left ($std_page_width / 2 - $inputwidth / 2)
+		width $inputwidth
+		height 40px
+		text-align center
+		position relative
+		top 20px
+		
+		
+		
+		
+	.log
+		$logwidth = 75
+		position relative
+		top 50px
+		color white
+		background $red
+		width $logwidth
+		height 35px
+		border-radius 5px
+		transition 0.2s
+		text-align center
+		font-size 125%
+		margin-left ($std_page_width / 2 - $logwidth / 1.4)
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
+		padding 4px
+		
+		&:hover
+			background $darkred
+			cursor pointer
+	.main
+		position relative
+		top 40px
+		text-decoration underline
+		color black
+		
+		&:hover
+			color $darkred
+			
+	.info
+		position relative
+		top 10px
 		
 		
 [data-page="catch-success"]
 	.main-content
-		background white
 		border-radius 10px
-		height 545px
+		padding 30px
+		background white
+		height 350px
 		border-style solid
 		border-width 1px
 		border-color $darkgrey
 		
-[data-page="die"]
-	.main-content
-		background white
-		border-radius 10px
-		height 545px
+	h1
+		font-title()
+		text-decoration underline
+		color $red
+		text-align center
+		font-size 250%
+		
+	.main
+		$logwidth = 300
+		position relative
+		top 50px
+		color white
+		background $red
+		border-radius 5px
+		transition 0.2s
+		text-align center
+		font-size 125%
+		margin-left ($std_page_width / 2 - 140)
 		border-style solid
 		border-width 1px
 		border-color $darkgrey
+		padding 7px
+		
+		&:hover
+			background $darkred
+			cursor pointer
+		a
+			color white
+		
+	p
+		position relative
+		top 10px
+
+		
+[data-page="die"]
+	.main-content
+		border-radius 10px
+		padding 30px
+		background white
+		height 350px
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
+		
+	h1
+		font-title()
+		text-decoration underline
+		color $red
+		text-align center
+		font-size 250%
+		
+	.main
+		$logwidth = 300
+		position relative
+		top 40px
+		color white
+		background $red
+		border-radius 5px
+		transition 0.2s
+		text-align center
+		font-size 125%
+		margin-left ($std_page_width / 2 - 140)
+		border-style solid
+		border-width 1px
+		border-color $darkgrey
+		padding 7px
+		
+		&:hover
+			background $darkred
+			cursor pointer
+		a
+			color white
+		
+	.info
+		position relative
+		top 10px
+		
+	.code
+		text-decoration underline
+		position relative
+		top 20px
+		font-size 150%
+		
+	
+	
+
+	
+	
+
