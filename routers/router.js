@@ -19,7 +19,19 @@ module.exports = (function() {
   var routes = [
     {page:'', path:'', fn:async (function(req, res) {
       res.redirect('/main');return false;})},
-    {page:'login'},
+    {page:'login', fn:async (function(req, res, data) {
+      if (req.query.error=="incorrect") {
+        const messages =
+        ["Verkar som att koden inte riktigt stämde... Testa igen?",
+        "The code you've entered seems to be invalid. Please try again.",
+        "Koden du har angivit är felaktig. Försök igen.",
+        "Din kod är ogiltig. Testa en gång till.",
+        "Hmm, våra system hittar inte den koden! Skrev du fel?",
+        "Fel kod, testa igen!"]
+        data.errorMessage = messages[Math.floor(Math.random()*messages.length)]
+      } else if (req.query.error)
+        data.errorMessage = "Något gick snett: "+req.query.error
+    })},
     {page:'', path:'logout', fn:async (function(req, res) {
       req.setLogout();res.redirect('/login');return false;})},
     {page:'main', fn:async (function(req, res, data) {
