@@ -8,12 +8,12 @@ block mainContent
 		
 		if target
 			p.statustext Welcome, #{user.firstName}
-			- var classNameText = (c=>c?'in class '+c:'')(user.catcher.target.className)
-			p.statustext Your victim is #{user.catcher.target.name} #{classNameText}
+			- var classNameText = (c=>c?'in class '+c:'')(target.className)
+			p.statustext Your victim is #{target.name} #{classNameText}
 		
-			a(href="#").die
+			a(href="die").die
 				.label I was caught
-			a(href="/catch").catch
+			a(href="catch").catch
 				.label I caught #{target.firstName}
 			
 		else

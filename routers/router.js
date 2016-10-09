@@ -39,7 +39,9 @@ module.exports = (function() {
     })},
     {page:'catch', data:{target: 'Erik'}},
     {page:'catch-success'},
-    {page:'die'},
+    {page:'die', fn:async (function(req, res, data) {
+      data.catchCode = await (require('../helpers/catchLogic').initializeCatchCode(req.user))
+    })},
     {page:'faq'},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',data:{
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL}},

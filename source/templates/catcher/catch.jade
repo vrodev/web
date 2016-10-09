@@ -3,10 +3,10 @@ block mainContent
 	// Catch
 	h1 Submit your Catch
 
-	p.info Enter in the code shown on #{target}'s screen
+	p.info Enter in the code shown on #{target.firstName}'s screen
 
 	form(action="catch-success" method="post")
-		input(placeholder="Type in the code here" name="xLoginCode" value=logincode).text
+		input(placeholder="XXXXXX" name="catchCode").text
 		input(type="submit" value="Submit").log
 
 	.made
