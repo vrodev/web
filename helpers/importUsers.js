@@ -7,9 +7,9 @@
 
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
-const generateSimpleCode = require('./helpers/helpers').generateSimpleCode;
+const generateSimpleCode = require('./helpers').generateSimpleCode;
 
-var models = require('./helpers/db-connect').models
+var models = require('./db-connect').models
 const clc = require('cli-color');
 
 

@@ -15,8 +15,31 @@ module.exports = (function() {
   var router = express.Router();
   // ---------------------------
 
+  router.get('/users', (req, res) => {
+    if (req.query.secret!='kanelbulle') return res.send('wuut');
+    async (() => {
+      let users = await (req.models.User.find({}).exec())
+      // if (req.query.html) {
+      //   return res.send(user.name+'\'s target is <a href="'+user.catcher.target._id+'?html=true">'+user.catcher.target.name+'</a>')
+      // }
+      res.json(users)
+    })()
+  })
+
+  router.get('/catches', (req, res) => {
+    if (req.query.secret!='kanelbulle') return res.send('wuut');
+    async (() => {
+      let catches = await (req.models.Catch.find({}).exec())
+      // if (req.query.html) {
+      //   return res.send(user.name+'\'s target is <a href="'+user.catcher.target._id+'?html=true">'+user.catcher.target.name+'</a>')
+      // }
+      res.json(catches)
+    })()
+  })
+
 
   router.get('/user/:id', (req, res) => {
+    if (req.query.secret!='kanelbulle') return res.send('wuut');
     async (() => {
       let user = await (req.models.User.load(req.params.id, 'catcher.target'))
       if (req.query.html) {
@@ -84,18 +107,22 @@ module.exports = (function() {
 
   // ---------------------------
   router.get('/sendEmail', function(req, res) {
-    "use strict"; (async (function (){
+    "use strict";
+    if (req.query.secret!='kanelbulle') return res.send('wuut');
+    let filter = {}
+    if (req.query.email) filter = {email:req.query.email}
+    ;(async (function (){
     let sendError = (err, message) => {console.log(err);res.json({
       error: true, message: message}) }
 
-    let users = awaitres (req.models.User.find(),sendError)
+    let users = awaitres (req.models.User.find(filter),sendError)
     if (!users) return;
     
     let count = users.length, i=0
     try {
       users.map(user => {
         var emailRes = await (sendEmail(user.email, 'Catcher 2016', 'catcher-welcome', {
-          loginCode: user.loginCode }))
+          loginCode: user.loginCode, name:user.firstName }))
         i++;
         console.log('Email response ('+i+'/'+count+'): ',
           emailRes.statusCode, emailRes.body, emailRes.headers)
