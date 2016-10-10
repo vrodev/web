@@ -3,9 +3,9 @@
 		var s = function(page) {
 		return page +' '+ (dataPage===page ? 'selected' : '')}
 
-	a(href="/faq")(class=s('faq')) FAQ
-	a(href="/main")(class=s('main')) Homepage
+	a(href="/faq" class=s('faq')) FAQ
+	a(href="/main" class=s('main')) Homepage
 	if user
-		a(href="/logout")(class=s('logout')) Log out
+		a(href="/logout" class=s('logout')) Log out
 	else
-		a(href="/login")(class=s('login')) Login
+		a(href="/login" class=s('login')) Login

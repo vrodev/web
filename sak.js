@@ -1,3 +1,4 @@
+"use strict";
 var models = require('./helpers/db-connect').models
 //var models = require('./models/models')
 
@@ -34,7 +35,7 @@ const config = require('./config')
 const helpers = require('./helpers/helpers')
 const path = require('path')
 const jade = require('jade')
-
+const clc = require('cli-color');
 
 // helpers.sendEmail('Leonard <leon.paul-2016@vrg.se>', 'Catcher 2016', 'catcher-welcome',
 // 	{loginCode: 'LOOOOOOCOOOODE' }).then(console.log,console.log)
@@ -42,7 +43,44 @@ const jade = require('jade')
 
 
 //models.User.findOne({ _id: '57f9db02d7c899e74c912ca5' }).populate('catcher.target').exec().then(console.log, console.log)
-models.User.findOne({ loginCode:'EK49WR' }).populate('catcher.target').exec().then(user=>console.log(user.className), console.log)
+models.User.findOne({ loginCode:'WVBK6P' }).populate('catcher.target').exec().then(user=>{
+	const target = user.catcher.target
+
+	target.populate('catcher.target', (_,target)=>{ async (()=>{
+		const nextTarget = target.catcher.target
+		console.log(clc.bgBlue('(User caught)'), user.name, '-> (', target.name, ') ->', nextTarget.name)
+
+		let thecatch = new models.Catch()
+		thecatch.target = target._id
+		thecatch.user = user
+		await (thecatch.save())
+	
+		user.catcher.target = nextTarget._id
+		target.catcher.target = null
+		target.catcher.catchCode = null
+		await (user.save())
+		await (target.save())
+	
+		return nextTarget
+	})().then() })
+}, console.log)
+
+
+
+/*let target = await (user.catcher.populate('target'))
+
+	let thecatch = new Catch()
+	thecatch.target = target._id
+	thecatch.user = user
+	await (thecatch.save())
+
+	user.catcher.target = target.catcher.target._id
+	target.catcher.target = null
+	target.catcher.catchCode = ""
+	await (user.save())
+	await (target.save())
+
+	return user.catcher.target*/
 
 
 // models.User.find().then(console.log)

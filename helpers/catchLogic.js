@@ -39,3 +39,26 @@ module.exports.tryCatch = async (function(user, catchCode) {
 
 	return user.catcher.target
 })
+
+module.exports.performCatch = function(user, callback) {
+	const target = user.catcher.target
+
+	target.populate('catcher.target', (_,target)=>{ async (()=>{
+		const nextTarget = target.catcher.target
+		console.log(clc.bgBlue('(User caught)'), user.name, '-> (', target.name, ') ->', nextTarget.name)
+
+		let thecatch = new models.Catch()
+		thecatch.target = target._id
+		thecatch.user = user
+		await (thecatch.save())
+	
+		user.catcher.target = nextTarget._id
+		target.catcher.target = null
+		target.catcher.catchCode = null
+		await (user.save())
+		await (target.save())
+	
+		callback(nextTarget)
+		return nextTarget
+	})().then() })
+}
