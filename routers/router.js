@@ -79,10 +79,9 @@ module.exports = (function() {
       data.catchCode = await (require('../helpers/catchLogic').initializeCatchCode(req.user))
     })},
     {page:'faq'},
-    {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',data:{
-      loginCode:'LOGINCODE',name:'NAME',url:config.webURL}},
-    {page:'admin', data:{}, fn:async (function(req, res, data) {
-      data.name = !req.user ? 'noemail' : req.user.email})},
+    {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
+      loginCode:'LOGINCODE',name:'NAME',url:config.webURL})},
+    {page:'admin'},
   ]
   
   // Loop through the routes array and
@@ -92,10 +91,10 @@ module.exports = (function() {
     if (!route.path) route.path = route.page
 
     router.get('/'+route.path, (function(route) {return function(req, res) {async (function(){
-      if (!route.data) route.data = {}
+      route.data = route.dataGen ? route.dataGen(req) : {}
       if (route.fn && await (route.fn(req, res, route.data)) === false) return;
       if (!route.data.title) route.data.title = 'Catcher'
-      route.data.user = req.user
+      if (!route.data.user) route.data.user = req.user
       route.data.dataPage = route.page
       res.render('catcher/'+route.page, route.data)
     })()}})(route) )

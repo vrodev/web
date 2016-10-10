@@ -29,17 +29,20 @@ html
 		script(src="/js/catcher.js")
 
 	- dataPage = dataPage || 'none'
-	body(data-page='#{dataPage}').loading
+	- var loggedInClass = user ? 'logged-in' : 'logged-out'
+	body(data-page='#{dataPage}')(class='#{loggedInClass}').loading
 
 		//- Header
 		.header
 			include header
 
 		//- Main content
+
 		.main-content
 			block mainContent
 			//- if mainContent
 			//- 	| !{mainContent}
+			include footer-made
 
 
 		script.

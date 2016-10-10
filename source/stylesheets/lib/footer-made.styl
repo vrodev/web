@@ -1,0 +1,22 @@
+.main-content .footer-made
+	font-size 65%
+	position absolute
+	bottom 0px
+	color $darkergrey
+	width 100%
+	line-height 13px
+	
+	.hover, .default
+		position absolute
+		top 5px
+		transition opacity 0.3s
+		//transition font-size 0.3s
+	.hover
+		opacity 0
+		//font-size 0%
+	&:hover
+		.hover
+			opacity 1
+			//font-size 100%
+		.default
+			opacity 0

@@ -1,6 +1,6 @@
 extend ../default
 block mainContent
-	// Catch
+
 	h1 Submit your Catch!
 
 	p.info Enter the code shown on #{target.firstName}'s screen
@@ -10,13 +10,12 @@ block mainContent
 
 	form(action="catch-success" method="get")
 		input(type="text" placeholder="XXXXXX" name="catchCode")
-		input(type="submit" value="Submit")
+		input(type="submit" disabled="true" value="Submit")
 
-	.made
-		.default Made by the VRO-Web Team
-		.hover Webdesign by Erik Enger Karlson and Emma Nergell<br>Back-end by Jacob Tilly and Leonard Pauli
-
-	//- TO DO
-		 Base.styl el. coat.styl:
-		- Centrera all text samt textruta/genererad kod
-		- Samma grafisk profil som "login" fast i $red
+	script.
+		var loginText = document.querySelector('.main-content input[name="catchCode"]')
+		var loginBtn  = document.querySelector('.main-content input[type="submit"]')
+		loginText.addEventListener('keyup', function(e) {
+			var value = loginText.value = loginText.value.toUpperCase()
+			loginBtn.disabled = value.length != 6
+		}, false)

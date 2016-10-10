@@ -1,22 +1,19 @@
 extend ../default
 block mainContent
-	// Login page
+
 	h1 Log in to catcher
 
 	if errorMessage
 		.error-message= errorMessage
 
-	form(action="/" method="get" onsubmit="return document.getElementById('loginBtn').value.length>2")
-		input(type="text" placeholder="XXXXXX" maxlength="6" onfocus="document.getElementById('loginBtn').disabled = false;" name="xLoginCode")
-		input(type="submit" disabled="true" value="Log In")#loginBtn
+	form(action="/" method="get")
+		input(type="text" placeholder="XXXXXX" name="xLoginCode")
+		input(type="submit" disabled="true" value="Log In")
 
-	.made
-		.default Made by the VRO-Web Team, part of Kommunikationsutskottet
-		.hover
-			| Webdesign by Erik Enger Karlson and Emma Nergell
-			br
-			| Backend by Jacob Tilly and Leonard Pauli
-
-
-	//- TO DO
-		- Centrera textruta 
+	script.
+		var loginText = document.querySelector('.main-content input[name="xLoginCode"]')
+		var loginBtn  = document.querySelector('.main-content input[type="submit"]')
+		loginText.addEventListener('keyup', function(e) {
+			var value = loginText.value = loginText.value.toUpperCase()
+			loginBtn.disabled = value.length != 6
+		}, false)

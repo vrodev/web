@@ -1,6 +1,13 @@
-[data-page="main"]
+[data-page="main"].logged-in
 	.main-content
 		height 500px
+		
+[data-page="main"].logged-out
+	.main-content
+		height 300px
+		max-width 450px
+
+[data-page="main"]
 	h1
 		color $red
 
@@ -55,30 +62,8 @@
 		button-style $red
 		display block
 		width 100px
-		top 130px
+		top 30px
 		margin 0 auto
 		
 		&:hover
 			background $darkred
-			
-	.made
-		font-size 65%
-		position absolute
-		bottom 0px
-		color $darkergrey
-		width 100%
-		
-		.hover, .default
-			position absolute
-			top 5px
-			transition opacity 0.3s
-			//transition font-size 0.3s
-		.hover
-			opacity 0
-			//font-size 0%
-		&:hover
-			.hover
-				opacity 1
-				//font-size 100%
-			.default
-				opacity 0

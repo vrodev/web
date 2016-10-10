@@ -2,7 +2,7 @@
 // VRO Web
 // Initially created by Leonard Pauli, sep 2016
 
-var elementsToBeDefined = 'statustext,catch,die'
+var elementsToBeDefined = 'catch,die'
 
 
 function setupApp() {
@@ -37,7 +37,6 @@ function setupApp() {
 }
 
 
-
 // ----------------------------------------------------------------------
 
 function cycleBackground() {
@@ -49,34 +48,6 @@ function cycleBackground() {
 		setTimeout(actualCycle, 1, val+1);
 	}, 100, 0);
 }
-
-var getEmail = function() {
-	api.getEmail('',function(res) {
-		alert(res.messageString);
-		console.log(res.messageString);
-		console.log(res);
-		
-		var responseString = res.messageString;
-		var emails = responseString.split(";");
-		
-		alert(emails);
-		app.ui.statustext.el.innerHTML = emails;
-	})
-}
-
-var sendEmail = function() {
-	api.sendEmail('',function(res) {
-		alert(res.message ? res.message : ("Error:" + res.error));
-	})
-}
-
-var resetCircle = function() {
-	api.resetCircle('Testparameter',function(res) {
-		console.log(res);
-		alert(res.message ? res.message : ("Error:" + res.error));
-	})
-}
-
 
 
 // ----------------------------------------------------------------------
