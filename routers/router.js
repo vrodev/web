@@ -52,11 +52,12 @@ module.exports = (function() {
     })},
     {page:'catch-success', fn:async (function(req, res, data) {
       let catchCode = req.query.catchCode
+      let targetCatchCode = req.user.catcher.target.catcher.catchCode
 
       if (!catchCode) {
         res.redirect('/catch');
         return false;
-      } else if (catchCode.toUpperCase()!==req.user.catcher.target.catcher.catchCode.toUpperCase()) {
+      } else if (!targetCatchCode || catchCode.toUpperCase()!==targetCatchCode.toUpperCase()) {
         res.redirect('/catch?error=incorrect')
         return false;
       }
@@ -94,7 +95,7 @@ module.exports = (function() {
       if (!route.data) route.data = {}
       if (route.fn && await (route.fn(req, res, route.data)) === false) return;
       if (!route.data.title) route.data.title = 'Catcher'
-      if (!route.data.user) route.data.user = req.user
+      route.data.user = req.user
       route.data.dataPage = route.page
       res.render('catcher/'+route.page, route.data)
     })()}})(route) )
