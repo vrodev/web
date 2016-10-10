@@ -7,7 +7,7 @@ block mainContent
 		.error-message= errorMessage
 
 	form(action="/" method="get" onsubmit="return document.getElementById('loginBtn').value.length>2")
-		input(type="text" placeholder="XXXXXX" onfocus="document.getElementById('loginBtn').disabled = false;" name="xLoginCode")
+		input(type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="XXXXXX" maxlength="6" onfocus="document.getElementById('loginBtn').disabled = false;" name="xLoginCode")
 		input(type="submit" disabled="true" value="Log In")#loginBtn
 
 	.made
