@@ -30,7 +30,7 @@ html
 
 	- dataPage = dataPage || 'none'
 	- var loggedInClass = user ? 'logged-in' : 'logged-out'
-	body(data-page='#{dataPage}')(class='#{loggedInClass}').loading
+	body(data-page='#{dataPage}' class='#{loggedInClass}').loading
 
 		//- Header
 		.header
@@ -39,10 +39,10 @@ html
 		//- Main content
 
 		.main-content
+			include footer-made
 			block mainContent
 			//- if mainContent
 			//- 	| !{mainContent}
-			include footer-made
 
 
 		script.

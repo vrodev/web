@@ -34,6 +34,15 @@ body, html {
   position: absolute;
   pointer-events: none;
 }
+#catchCount {
+  position:absolute;
+  bottom: 20px;
+  left: 27px;
+  font-family: HelveticaNeue;
+  font-weight: 600;
+  color: #555;
+  font-size: 17px;
+}
 
 .link {
   stroke-width: 1.5px;
@@ -57,6 +66,7 @@ text {
 </head>
 <body>
 <div class="over-grad"></div>
+<div id="catchCount"></div>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
@@ -70,7 +80,7 @@ var width = innerWidth,
 
 var force = d3.layout.force()
     .size([width, height])
-    .charge(-25)
+    .charge(-25*width/450)
     .linkDistance(3)
     .on("tick", tick);
 
@@ -157,6 +167,7 @@ function loadData(graph, catches) {
 }
 d3.json("api/catcher/circle-stats", function(error, data) {
   if (error) throw error;
+  document.getElementById('catchCount').innerText = "Catches: "+data.catches.length
   loadData(data.users, data.catches)
 })
 
@@ -176,7 +187,7 @@ function dblclick(d) {
 }
 
 function dragstart(d) {
-  //d3.select(this).classed("fixed", d.fixed = true);
+  d3.select(this).classed("fixed", d.fixed = true);
 }
 
 </script>

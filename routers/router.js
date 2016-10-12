@@ -20,7 +20,6 @@ function randomWrongCodeMessage() {
   return messages[Math.floor(Math.random()*messages.length)]
 }
 
-
 module.exports = (function() {
   var router = express.Router();
   // ---------------------------
@@ -42,6 +41,18 @@ module.exports = (function() {
       req.setLogout();data.errorMessage="Du är nu utloggad";})},
     {page:'main', fn:async (function(req, res, data) {
       if (req.user && req.user.catcher) data.target = req.user.catcher.target
+      if (req.user) {
+        data.availableBonuses = []
+        let catches = await (req.models.Catch.find({user:req.user._id}).sort({'createdAt': 1}).select('createdAt points').exec())
+        if (catches && catches.length) {
+          data.catches = catches
+          let points = catches.reduce((prev,val)=>prev+val.points, 0)
+          data.points = Math.round(points*config.catcher.pointsDisplayMultiplier*10)/10
+        }
+        data.availableBonuses = config.catcher.bonuses
+          .filter(o=>o.enabled(catches))
+          .map(o=>o.startDate=o.startDateFn(catches))
+      }
     })},
     {page:'catch', fn:async (function(req, res, data) {
       if (req.query.error=="incorrect") {

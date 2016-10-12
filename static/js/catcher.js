@@ -2,7 +2,7 @@
 // VRO Web
 // Initially created by Leonard Pauli, sep 2016
 
-var elementsToBeDefined = 'catch,die'
+var elementsToBeDefined = '' // just enter comma-separated class list, eg, my-class,my-class2,myclass3
 
 
 function setupApp() {
@@ -56,6 +56,7 @@ var AppUI = function(app, elements) {
 	var me = this
 	this.app = app
 
+	if (elementsToBeDefined.length)
 	elementsToBeDefined.split(',').map(function(elementClass) {
 		var elm = {
 			el: document.getElementsByClassName(elementClass)[0],

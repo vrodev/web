@@ -13,7 +13,8 @@ const defaults = {
   viewTemplates: path.join(rootDir, 'source/templates'),
   fromEmail: 'odenplanselevkar@vrg.se',//'Odenplans Elevkår <odenplanselevkar@vrg.se>',
   isDev: false,
-  expressPort: 3000
+  expressPort: 3000,
+  catcher: require('./catcher')
 }
 
 
