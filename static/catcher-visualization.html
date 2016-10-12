@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- catcher-visualization -->
+<!-- VRO Web -->
+
+<!-- Visualization created by Leonard Pauli, oct 2016, using example code by @mbostock -->
+<!-- GNU General Public License, version 3: https://opensource.org/licenses/GPL-3.0 -->
+<!-- http://bl.ocks.org/mbostock/3750558 -->
+
+<style>
+
+* {
+  margin:0px;
+  padding: 0px;
+  -webkit-appearance:none;
+}
+body, html {
+  overflow: hidden;
+  position: absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom: 0px;
+}
+.over-grad {
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+
+.link {
+  stroke-width: 1.5px;
+}
+
+.node {
+  cursor: move;
+  fill: #ddd;
+  stroke: none;
+}
+
+text {
+  font-size: 9px;
+  font-family: HelveticaNeue;
+  font-weight: 600;
+  fill: #909090;
+  stroke: none;
+}
+
+</style>
+</head>
+<body>
+<div class="over-grad"></div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+document.ontouchstart = function(e){ 
+    e.preventDefault(); 
+}
+
+var width = innerWidth,
+    height = innerHeight;
+
+var force = d3.layout.force()
+    .size([width, height])
+    .charge(-25)
+    .linkDistance(3)
+    .on("tick", tick);
+
+var drag = force.drag()
+    .on(window.ontouchstart ? "touchstart" : "dragstart", dragstart);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var link = svg.selectAll(".link"),
+    node = svg.selectAll(".node");
+
+// load data
+function loadData(graph, catches) {
+
+  // var links = [];
+  // graph.links.forEach(function(e) {
+  //   var sourceNode = graph.nodes.filter(function(n) {
+  //     return n.title === e.source;
+  //   })[0],
+  //   targetNode = graph.nodes.filter(function(n) {
+  //     return n.title === e.target;
+  //   })[0];
+  
+  //   links.push({
+  //       source: sourceNode,
+  //       target: targetNode
+  //   });
+  // });
+  // graph.links = links
+  var links = [];
+  graph.forEach(function(n, i) {
+    let target = graph.findIndex(o=>n.catcher.target==o._id)
+    if (target==-1) return;
+    links.push({
+        source: i,
+        target: target
+    });
+  });
+  catches.forEach(function(n) {
+    let source = graph.findIndex(o=>n.user==o._id)
+    if (source==-1) return;
+    let target = graph.findIndex(o=>n.target==o._id)
+    if (target==-1) return;
+    links.push({
+        source: source,
+        target: target,
+        catch: true
+    });
+  });
+
+
+  force
+      .nodes(graph)
+      .links(links)
+      .start();
+
+  link = link.data(links)
+    .enter().append("line")
+      .attr("class", "link")
+      .attr("stroke", d=>d.catch?"#f00":"#ccc")
+      .attr("distance", d=>d.catch?100:10)
+      
+
+  circle = node.data(graph)
+    .enter().append("g")
+      .attr("class", "node")
+
+   circled = circle.append("circle")
+      .attr("r", 3)
+      .attr("fill", d=>d.catcher.target?"#ddd":"#faa")
+
+  node = circle
+    .on("dblclick", dblclick)
+    .call(drag);
+
+  title = circle.append("text")
+    .text(function(d) { return d.line || "lol"; })
+    .attr("x", 7)
+    .attr("y", 4)
+    //.attr("contentEditable", "true")
+    //.text("fsdf")
+}
+d3.json("api/catcher/circle-stats", function(error, data) {
+  if (error) throw error;
+  loadData(data.users, data.catches)
+})
+
+function tick() {
+  link.attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+  node.attr("transform", function(d, i) { return "translate("+d.x+","+d.y+")"; });
+      // .attr("cx", function(d) { return d.x; })
+      // .attr("cy", function(d) { return d.y; });
+}
+
+function dblclick(d) {
+  d3.select(this).classed("fixed", d.fixed = false);
+}
+
+function dragstart(d) {
+  //d3.select(this).classed("fixed", d.fixed = true);
+}
+
+</script>
+
+</body>
+</html>

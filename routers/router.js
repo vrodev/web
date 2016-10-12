@@ -39,7 +39,7 @@ module.exports = (function() {
         data.errorMessage = "Något gick snett: "+req.query.error
     })},
     {page:'login', path:'logout', fn:async (function(req, res, data) {
-      req.setLogout();data.errorMessage="Du är nu utloggad, kan man låtsas";})},
+      req.setLogout();data.errorMessage="Du är nu utloggad";})},
     {page:'main', fn:async (function(req, res, data) {
       if (req.user && req.user.catcher) data.target = req.user.catcher.target
     })},

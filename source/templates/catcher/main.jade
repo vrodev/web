@@ -2,9 +2,8 @@ extend ../default
 block mainContent
 
 	if user
-		h1 Homepage
-		
 		if target
+			h1 Homepage
 			p.statustext Welcome, #{user.firstName}
 			- var classNameText = (c=>c?'in class '+c:'')(target.className)
 			p.statustext Your victim is #{target.name} #{classNameText}
@@ -16,7 +15,10 @@ block mainContent
 			
 		else
 			h1 RIP
-			p.statustext You have been eliminated... for now.
+			iframe(src="catcher-visualization.html")
+			p.statustext You have been eliminated... for now. But what's better than being able to watch the living from above..?
+			style.
+				.main-content {height:600px !important;}
 
 	else
 		h1 Catcher
