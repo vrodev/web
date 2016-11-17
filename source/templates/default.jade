@@ -30,7 +30,7 @@ html
 
 	- dataPage = dataPage || 'none'
 	- var loggedInClass = user ? 'logged-in' : 'logged-out'
-	body(data-page='#{dataPage}' class='#{loggedInClass}').loading
+	body(data-page='#{dataPage}' onload="calculate()" class='#{loggedInClass}').loading
 
 		//- Header
 		.header

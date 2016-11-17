@@ -4,11 +4,11 @@
   "description": "VRG Web",
   "main": "server.js",
   "scripts": {
-    "build-css": "stylus -u nib source/stylesheets/ -o static/css",
-    "watch-css": "stylus -u nib source/stylesheets/ -o static/css -w",
-    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build-css": "stylus -u nib source\\stylesheets\\ -o static\\css",
+    "watch-css": "stylus -u nib source\\stylesheets\\ -o static\\css -w",
+    "clean": "rd /s /q static\\css && mkdir static\\css",
     "build": "npm run clean && npm run build-css",
-    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
+    "watch": "npm run clean && start npm run watch-css && nodemon server -e js,jade",
     "start": "node server"
   },
   "author": "VRG",
@@ -29,3 +29,4 @@
     "stylus": "^0.54.5"
   }
 }
+
