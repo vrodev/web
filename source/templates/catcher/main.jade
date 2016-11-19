@@ -14,10 +14,8 @@ block mainContent
 				.label I caught #{target.firstName}
 
 			div.warning
-			h1.waringheadline Warning!
-			p.warningtext
-			br
-			p.warningtext2
+				h1.waringheadline Warning!
+				p.warningtext
 			
 		else
 			h1 RIP
@@ -32,17 +30,16 @@ block mainContent
 			#[br]Redo att se ditt offer?
 			#[br]Tiden är kommen.
 		a(href="login").login-btn Logga in
-		div.warning
-			h1.waringheadline Warning!
-			p.warningtext
 
 	script.
 		function calculate(){
+			var todate = 25
+
 			var d = new Date();
 			var h = d.getHours();
 			var m = d.getMinutes();60
 			var n = d.getDate();
-			var daysleft = 18 - n
+			var daysleft = todate - n
 			var hoursleft = 24 -h
 			var minutesleft = 60 - m
 			document.querySelector(".warningtext").innerText = ("You will be eliminated unless you catch Arexander within " + daysleft + " days, " + hoursleft + " hours and " + minutesleft + " minutes")
