@@ -23,6 +23,7 @@ const Schema = mongoose.Schema({
 
 	catcher: {
 		target: dbRef('User'),
+    isNoobed: Boolean,
 		catchCode: String,
     admin: Boolean,
 
