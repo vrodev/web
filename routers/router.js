@@ -44,7 +44,9 @@ module.exports = (function() {
       if (req.user) {
         data.availableBonuses = []
         let catches = await (req.models.Catch.find({user:req.user._id}).sort({'createdAt': 1}).select('createdAt points').exec())
+        data.catchCount = 0
         if (catches && catches.length) {
+          data.catchCount = catches.length
           data.catches = catches
           let points = catches.reduce((prev,val)=>prev+val.points, 0)
           data.points = Math.round(points*config.catcher.pointsDisplayMultiplier*10)/10

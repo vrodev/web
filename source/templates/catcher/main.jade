@@ -2,9 +2,10 @@ extend ../default
 block mainContent
 
 	if user
+		- var catchCountExc = Array(catchCount||0).fill('!').join('')
 		if target
 			h1 Homepage
-			p.statustext Welcome, #{user.firstName}
+			p.statustext Welcome, #{user.firstName}#{catchCountExc}
 			- var classNameText = (c=>c?'in class '+c:'')(target.className)
 			p.statustext Your victim is #{target.name} #{classNameText}
 		
@@ -12,11 +13,34 @@ block mainContent
 				.label I was caught
 			a(href="catch").catch
 				.label I caught #{target.firstName}
+
+			if !catchCount
+				div.warning
+					h1.waringheadline Warning!
+					p.warningtext
+				script.
+					var warningtextEl = document.querySelector(".warningtext")
+					var warningEl = document.querySelector(".warning")
+	
+					function calculateWarningtextEl(){
+						var todate = 25
+		
+						var d = new Date();
+						var daysleft = todate - d.getDate()
+						var hoursleft = 24 - d.getHours()
+						var minutesleft = 60 - d.getMinutes()
+						warningtextEl.innerText = "You will be eliminated unless you catch within " + daysleft + " days, " + hoursleft + " hours and " + minutesleft + " minutes"}
+	
+					setTimeout(function() {
+						calculateWarningtextEl()
+						warningEl.classList.add('show')
+						setInterval(calculateWarningtextEl, 1000);
+					}, 400)
 			
 		else
 			h1 RIP
 			iframe(src="catcher-visualization.html")
-			p.statustext You have been eliminated... for now. But what's better than being able to watch the living from above..?
+			p.statustext You have been eliminated... for now. But what's better than being able to watch the living from above..?#{catchCountExc}
 			style.
 				.main-content {height:600px !important;}
 
@@ -26,3 +50,4 @@ block mainContent
 			#[br]Redo att se ditt offer?
 			#[br]Tiden är kommen.
 		a(href="login").login-btn Logga in
+
