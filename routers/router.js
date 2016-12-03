@@ -92,6 +92,7 @@ module.exports = (function() {
       data.catchCode = await (require('../helpers/catchLogic').initializeCatchCode(req.user))
     })},
     {page:'faq'},
+    {page:'lolxdxd'},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL})},
     {page:'admin'},

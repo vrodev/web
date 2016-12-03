@@ -1,0 +1,17 @@
+extend ../default2
+block mainContent
+
+	.header
+	.slide(data-index=0)
+		.slideobject.img1
+			h1.bildtext.text1 hej
+
+		.slideobject.img2
+			h1.bildtext.text2 2
+
+		.slideobject.img3
+			h1.bildtext.text3 3
+
+	script.
+		var i = 0
+		document.onkeypress = function(e) {i++;if(i>2)i=0;document.querySelector('.slide').setAttribute('data-index', i);}
