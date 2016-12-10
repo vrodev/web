@@ -10,16 +10,15 @@ body
 
 .main-content
 	max-width 1024px
-	top 0px
+	top $headerheight
 	margin-top 0px
 	border-radius 0px
-	min-height 500px
 	overflow hidden
 	padding 0px
 
 .header
 	width 100%
-	height 40px
+	height $headerheight
 	position fixed
 	z-index 100
 	background #fff
@@ -32,22 +31,7 @@ body
 	height 350px
 	background red
 	position relative
-	top 40px
 	overflow hidden
-
-.img1
-	left 0%
-	background blue
-	bg-image insta "jpg"
-	
-.img2
-	left 100%
-	background green
-	bg-image W_2013_199 "png"
-	
-.img3
-	left 200%
-	bg-image WP_Meta_IV-3840x2160_00249 "png" 
 	
 .slideobject
 	height 100%
@@ -55,6 +39,8 @@ body
 	position absolute
 	transition margin-left .5s
 	background-size cover
+	background-repeat no-repeat
+	background-position center center
 	
 $quote = '"'
 for num in 0 1 2

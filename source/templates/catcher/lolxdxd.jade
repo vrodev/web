@@ -3,15 +3,35 @@ block mainContent
 
 	.header
 	.slide(data-index=0)
-		.slideobject.img1
-			h1.bildtext.text1 hej
 
-		.slideobject.img2
-			h1.bildtext.text2 2
-
-		.slideobject.img3
-			h1.bildtext.text3 3
+		ul
+			- var slides = [{text:'hej',bild:'/images/insta.jpg'}, {text:'2',bild:"/images/W_2013_199.png"}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png"}]
+			each slide, index in slides
 
 	script.
-		var i = 0
-		document.onkeypress = function(e) {i++;if(i>2)i=0;document.querySelector('.slide').setAttribute('data-index', i);}
+
+		var arrayLength = slides.length
+		var temp
+
+		for (i = 0; i < arrayLength; i++) {
+			temp = document.createElement('div')
+			temp.className ="slideobject"
+			temp.style.backgroundImage = #{slide[i].bild}
+
+			text = document.createElement('h1')
+			text.className ="bildtext"
+			temp.appendChild(text)
+			text.innerHTML = #{slide[i].text}
+
+			document.getElementsByTagName('body')[0].appendChild(temp)
+		}
+		
+		var n = 0
+		var ticket = setInterval(function() {
+				n++
+				if(n > 2){
+					n = 0
+				}
+				document.querySelector('.slide').dataset.index = n
+		}, 5000)
+
