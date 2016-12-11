@@ -2,8 +2,8 @@ extend ../default2
 block mainContent
 
 	.slide(data-index=0)
-		.arrowr.arrow(onclick=ticket)
-		.arrowl.arrow
+		.arrowr.arrow(onclick="forward()")
+		.arrowl.arrow(onclick="backward()")
 		.slidemarker
 
 	- var slides = [{text:'hej',bild:'/images/insta.jpg'}, {text:'2',bild:"/images/W_2013_199.png"}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png"}]
@@ -55,15 +55,54 @@ block mainContent
 				}
 				document.querySelector('.slide').dataset.index = n
 
-				var active = ".plupp" + n
-				var k = n-1
-
-				if (k<0){
-					k = arrayLength - 1
-					}
-
-				var inactive = ".plupp" + k
-				document.querySelector(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
-				document.querySelector(active).style.backgroundColor = "white"
+				pluppar()
 
 		}, 5000)
+
+		function pluppar(){
+			var active = ".plupp" + n
+			var k = n-1
+
+			if (k<0){
+				k = arrayLength - 1
+				}
+
+			var inactive = ".plupp" + k
+			document.querySelector(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
+			document.querySelector(active).style.backgroundColor = "white"
+		}
+
+		function plupparbak(){
+			var active = ".plupp" + n
+			document.querySelector(active).style.backgroundColor = "white"
+
+			var k = n + 1
+
+			if (k > arrayLength - 1){
+				k = 0
+			}
+
+			var inactive = ".plupp" + k
+			document.querySelector(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
+			
+		}
+
+		function forward(){
+			n++
+			if(n > (arrayLength - 1)){
+				n = 0
+			}
+			document.querySelector('.slide').dataset.index = n
+			clearTimeout(ticket)
+			pluppar()
+		}
+
+		function backward(){
+			n = n -1
+			if(n < 0){
+				n = arrayLength - 1
+			}
+			document.querySelector('.slide').dataset.index = n
+			clearTimeout(ticket)
+			plupparbak()
+		}

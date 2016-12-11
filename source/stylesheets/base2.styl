@@ -92,24 +92,21 @@ for num in 0 1 2
 	
 .arrow
 	box-sizing border-box
-	width 40px
-	height 100px
+	width 75px
+	height 187.5px
 	bg-image arrow
-	top calc(50% - 37.5px)
+	top calc(50% - 93.75px)
 	z-index 20
 	position absolute
-	padding 5px
+	padding 25px
 	background-origin content-box
 	transition all 0.17s
+	border-radius 0 100% 100% 0
 	
 	&:hover
 		cursor pointer
-		bg-image hovarrow
-		background-color white
-		border-style solid
-		border-width 2px 2px 2px 0px
-		border-color #949494
-	
+		background-color rgba(0, 0, 0, 0.5)
+		
 .arrowr
 	right 0px
 	transform: scaleX(-1)
