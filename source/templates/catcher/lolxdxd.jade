@@ -1,37 +1,69 @@
 extend ../default2
 block mainContent
 
-	.header
 	.slide(data-index=0)
+		.arrowr.arrow(onclick=ticket)
+		.arrowl.arrow
+		.slidemarker
 
-		ul
-			- var slides = [{text:'hej',bild:'/images/insta.jpg'}, {text:'2',bild:"/images/W_2013_199.png"}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png"}]
-			each slide, index in slides
+	- var slides = [{text:'hej',bild:'/images/insta.jpg'}, {text:'2',bild:"/images/W_2013_199.png"}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png"}]
+	- var boxes = [{bild:'/images/shape.png'}, {bild:"/images/1902215.png"}, {bild:"/images/geometrix.png"}, {bild:"/images/toripoly.png"}]
 
 	script.
+		var slides = JSON.parse('!{JSON.stringify(slides)}')
+		var boxes = JSON.parse('!{JSON.stringify(boxes)}')
 
 		var arrayLength = slides.length
+		var boxLength = boxes.length
 		var temp
+		var pluppdia = 8
 
 		for (i = 0; i < arrayLength; i++) {
 			temp = document.createElement('div')
 			temp.className ="slideobject"
-			temp.style.backgroundImage = #{slide[i].bild}
+			temp.style.backgroundImage = "url(" + slides[i].bild + ")"
+			temp.style.left = i * 100 + "%"
 
 			text = document.createElement('h1')
-			text.className ="bildtext"
+			text.className = "bildtext"
 			temp.appendChild(text)
-			text.innerHTML = #{slide[i].text}
+			text.innerHTML = slides[i].text
 
-			document.getElementsByTagName('body')[0].appendChild(temp)
+			plupp = document.createElement('div')
+			plupp.className = "plupp"
+			plupp.className += " plupp" + i
+			document.querySelector(".slidemarker").appendChild(plupp)
+			document.querySelector(".slidemarker").style.width = (6 + 4 + pluppdia) * (i+1) + "px"
+
+
+			document.body.querySelector(".slide").appendChild(temp)
+		}
+
+		for (q = 0; q < boxLength; q++){
+			box = document.createElement('div')
+			box.className ="box"
+			box.style.backgroundImage = "url(" + boxes[q].bild + ")"
+
+			document.body.querySelector(".main-content").appendChild(box)
 		}
 		
 		var n = 0
-		var ticket = setInterval(function() {
+		var ticket = setInterval(function next() {
 				n++
-				if(n > 2){
+				if(n > (arrayLength - 1)){
 					n = 0
 				}
 				document.querySelector('.slide').dataset.index = n
-		}, 5000)
 
+				var active = ".plupp" + n
+				var k = n-1
+
+				if (k<0){
+					k = arrayLength - 1
+					}
+
+				var inactive = ".plupp" + k
+				document.querySelector(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
+				document.querySelector(active).style.backgroundColor = "white"
+
+		}, 5000)
