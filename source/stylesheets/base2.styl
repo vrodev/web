@@ -112,13 +112,19 @@ for num in 0 1 2
 	transform: scaleX(-1)
 	
 .box
-	width 340px
-	height 250px
-	margin 5px 0px 0px 5px
+	width 33%
+	height 0px
+	padding-top 22%
+	margin 0.25% 0px 0px 0.25%
 	display inline-block
 	background-size cover
 	background-position center
 	vertical-align top
+	
+	@media (max-width:500px){
+		width 49.75%
+		padding-top (49.75*2/3)%
+	}
 	
 .logga
 	bg-image logga
