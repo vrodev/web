@@ -19,7 +19,7 @@ body
 	border none
 	padding-bottom 5px
 
-.header
+body > .header
 	width 100%
 	height $headerheight
 	position fixed
@@ -79,11 +79,11 @@ for num in 0 1 2
 	
 .slidemarker
 	position absolute
-	top calc(100% - 22px)
-	width 50px
+	bottom 5px
+	width 100%
 	height 25px
 	z-index 20
-	left 50%	
+	text-align center
 	
 .plupp
 	height $pluppdia
@@ -97,6 +97,7 @@ for num in 0 1 2
 	border 1px
 	border-style solid
 	border-color white
+	display inline-block
 
 .plupp0
 	background-color white
@@ -107,7 +108,7 @@ for num in 0 1 2
 	height 187.5px
 	bg-image arrow
 	top calc(50% - 93.75px)
-	z-index 20
+	z-index 50
 	position absolute
 	padding 25px
 	background-origin content-box
@@ -133,9 +134,13 @@ for num in 0 1 2
 	vertical-align top
 	background-size 100%
 	transition all 0.15s
+	background-size cover
+	position relative
+	box-sizing border-box
 	
 	&:hover
 		background-size 105%
+		cursor pointer
 	
 	@media (max-width:500px){
 		width 49.75%
@@ -184,8 +189,7 @@ for num in 0 1 2
 	
 	
 .logtxt
-	font-family 'BebasNeue', Helvetica, sans-serif
-	font-weight 800
+	font-title()
 	font-size 150%
 	color white
 	vertical-align middle
@@ -195,5 +199,29 @@ for num in 0 1 2
 		line-height 45px
 	}
 	
-.menu
-	background-color black
+
+.box.menu
+	background-color #f7e8d2
+		
+	.container
+		square 100%
+		absolute top 0px left 0px
+		font-default()
+		.header
+			top 0px
+			font-title()
+			text-align center
+			font-size 2em
+			bg-image matsedelbild
+			background-size cover
+			color white
+			
+		.mat
+			text-align center
+			margin-top 20%
+			
+			@media (max-width:500px){
+				margin-top 10%
+			}
+
+	

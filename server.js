@@ -13,7 +13,7 @@ const config = require('./config')
 app.use(logger('dev'))
 app.use(express.static(config.staticDir))
 app.set('views', config.viewTemplates)
-app.locals.pretty = config.isDev;
+app.locals.pretty = false//config.isDev;
 app.set('view engine', 'jade')
 
 app.use(cookieParser())
