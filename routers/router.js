@@ -93,6 +93,8 @@ module.exports = (function() {
     })},
     {page:'faq'},
     {page:'lolxdxd'},
+    {page:'mat'},
+    {page:'karen'},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL})},
     {page:'admin'},
