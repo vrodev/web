@@ -27,6 +27,7 @@ html
 		script(src="/js/api.js")
 		script(src="/js/general.js")
 		script(src="/js/catcher.js")
+		script(src="/js/sd.js")
 
 	- dataPage = dataPage || 'none'
 	- var loggedInClass = user ? 'logged-in' : 'logged-out'
@@ -39,9 +40,9 @@ html
 				a.logga(href="/lolxdxd")
 				a.vrotxt(href="/lolxdxd") VRO ELEVKÅR
 				.links
-					a.link Metsedel
-					a.link Kåren
-					a.link Om
+					a.link(href="/mat") Matsedel
+					a.link(href="/karen") Kåren
+					a.link(href="/mat") Om
 				.log
 					h2.logtxt Logga in
 		//- Main content

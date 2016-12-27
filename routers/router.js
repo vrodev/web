@@ -95,6 +95,10 @@ module.exports = (function() {
     {page:'lolxdxd'},
     {page:'mat'},
     {page:'karen'},
+    {page:'utskott'},
+    {path:'utskott/:utskottnamn',page:'ettutskott', dataGen: req=>{
+      return {utskott:req.params.utskottnamn}
+    }},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL})},
     {page:'admin'},
