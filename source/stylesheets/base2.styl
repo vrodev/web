@@ -19,7 +19,7 @@ body
 	border none
 	padding-bottom 5px
 
-body > .header
+body > .topheader
 	width 100%
 	height $headerheight
 	position fixed
@@ -29,12 +29,41 @@ body > .header
 	left 0px
 	box-shadow 0px 0px 5px alpha(#000, 20%)
 	
+	@media (max-width:500px){
+		box-shadow none
+	}
+	
 .center-header
 	top 0px
 	width 100%
 	max-width 1040px
 	height 100%
 	margin auto
+
+.header
+	background-size cover !important
+	
+	@media (max-width:500px){
+		background-image none !important
+	}
+	
+.headertext
+	text-decoration none
+	color white
+	text-align center
+	width 100%
+	font-size 500%
+	opacity 0.95
+	cursor default
+	
+	padding-top 50px
+	padding-bottom 50px
+	
+	@media (max-width:500px){
+		padding-top 10px
+		padding-bottom 10px
+		color black
+	}
 	
 .slide
 	width 100%
@@ -158,6 +187,10 @@ for num in 0 1 2
 	display inline-block
 	z-index 20
 	
+	@media (max-width:500px){
+		left calc(50% - 20px)
+	}
+	
 .vrotxt
 	position relative
 	left 0px
@@ -186,9 +219,11 @@ for num in 0 1 2
 	display inline-block
 	
 	@media (max-width:500px){
-		width 70px
-		height 90%
-		top 2.5px
+		width 80px
+		height 70%
+		top 15%
+		
+		text-align left
 	}
 	
 	
@@ -200,7 +235,8 @@ for num in 0 1 2
 	line-height 37px 
 	
 	@media (max-width:500px){
-		line-height 45px
+		line-height 37px
+		margin-left 5px
 	}
 	
 
@@ -240,7 +276,7 @@ for num in 0 1 2
 	display inline-block
 	
 	&:first-child
-		margin-left none
+		margin-left 0px
 	
 .links
 	margin 0 auto
@@ -250,26 +286,31 @@ for num in 0 1 2
 	margin-left: -50%;
 	width: 100%;
 	text-align: center;
+	
+	@media (max-width:500px){
+		display none
+	}
 			
 //mat
 			
 .mathead
 	bg-image matsedelbild
 	
-.header
-	background-size cover
-	height 250px
+.headertextmat
+	@media (max-width:500px){
+		color #eba44d
+	}
 	
-.headertext
-	text-decoration none
-	color white
-	text-align center
-	width 100%
-	font-size 500%
-	opacity 0.95
-	padding-top 80px
-	cursor default
-		
+.line
+	display none
+	width 93%
+	height 1px
+	background-color grey
+	margin 0% 3.5% 0% 3.5%
+	
+	@media (max-width:500px){
+		display block
+	}		
 		
 .kleins
 	bg-image kleins
@@ -283,20 +324,25 @@ for num in 0 1 2
 	
 	&:hover
 		opacity 0.7
+		
+	@media (max-width:500px){
+		display none
+	}
+
 			
 .day
 	width 100%
-	height 110px
+	padding 15px 0px 15px 0px
 	
 	.veckodag
 		text-align center
 		color grey
 		font-size 200%
-		margin-top 18px
-		margin-bottom 5px
+		
 	.meny
 		text-align center
 		color grey
+		margin 5px 2px 0px 2px
 .kott
 	width 18px
 	height 18px
@@ -310,21 +356,27 @@ for num in 0 1 2
 	padding-top 80%
 	border-radius 50%
 	margin 0 auto
-
+	
+	@media (max-width:500px){
+		width 95%
+		padding-top 95%
+	}
+	
 .karruta
 	width calc(100% / 3)
 	display inline-block
-	padding-top 50px
-	padding-bottom 50px
-	min-width calc(580px / 3)
 	border-radius 5%
 	
 	&:hover
 		background-color #f2f2f2
+		
+	@media (max-width:500px){
+		width 50%
+	}
 	
 .karbild
 	text-align center
-	margin 20px
+	margin 5px
 	font-size 150%
 	
 .karheader
@@ -337,6 +389,12 @@ for num in 0 1 2
 .mainkar
 	width 90%
 	margin 5%
+	text-align center
+	
+	@media (max-width:500px){
+		width 100%
+		margin 1%
+	}
 	
 //Utskott
 
@@ -344,15 +402,32 @@ for num in 0 1 2
 	bg-image utskott
 	background-size cover
 	
+.utskottheadtext
+	@media (max-width:500px){
+		color black
+	}
+	
 .utskottfield
 	text-align center
+	margin-top 15px
+	margin-bottom 15px
+	
+	@media (max-width:500px){
+		margin-top 2px
+		margin-bottom 2px
+	}
 	
 .utskottruta
-	width 200px
+	width 220px
 	border-radius 5px
-	margin 10px
+	margin 15px
 	display inline-block
 	cursor pointer
+	
+	@media (max-width:500px){
+		margin calc(4% / 6)
+		width 48%
+	}
 	
 	.utskotttop
 		background-color #ff3030
@@ -379,4 +454,8 @@ for num in 0 1 2
 		text-align center
 		font-size 150%
 		color white
+		
+		@media (max-width:400px){
+		font-size 120%
+	}
 	
