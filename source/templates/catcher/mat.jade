@@ -4,7 +4,7 @@ block mainContent
 	.header.mathead
 		h1.headertext.headertextmat matsedel
 		//.kleins(onclick="window.location.href=http://www.kleinskitchen.se/")
-	.line
+	.matdagar
 	//- //p.hej
 	//- .dag
 	//- 	p.veckodag Tisdag
@@ -69,7 +69,7 @@ block mainContent
 			var array = arr[i]
 			temp = document.createElement('div')
 			temp.className ="day"
-			document.querySelector(".main-content").appendChild(temp)
+			document.querySelector(".matdagar").appendChild(temp)
 
 			text = document.createElement('p')
 			text.className = "veckodag"
@@ -111,11 +111,11 @@ block mainContent
 			var x = new Date()
 			var today = Math.abs(x)
 
-			if(array.dateMS == 'today'){
-				temp.style.backgroundColor = "rgb(249, 244, 235)"
-				text.style.color = "black"
-				textreg.style.color = "black"
-				textveg.style.color = "black"
+			if(array.dateMS == today){
+				temp.className ="day today"
+				text.className ="veckodag today"
+				textreg.className ="meny huvudratt today"
+				textveg.className ="meny vegratt today"
 				any = "yes"
 			}
 			console.log(any)
