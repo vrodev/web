@@ -27,7 +27,6 @@ html
 		script(src="/js/api.js")
 		script(src="/js/general.js")
 		script(src="/js/catcher.js")
-		script(src="/js/sd.js")
 
 	- dataPage = dataPage || 'none'
 	- var loggedInClass = user ? 'logged-in' : 'logged-out'
@@ -37,14 +36,18 @@ html
 		.topheader
 			//- include header
 			.center-header
+				.menubutton(onclick="hidemenu()")
 				a.logga(href="/lolxdxd")
 				a.vrotxt(href="/lolxdxd") VRO ELEVKÅR
 				.links
-					a.link(href="/mat") Matsedel
-					a.link(href="/karen") Kåren
-					a.link(href="/mat") Om
+					//- a.link(href="/mat") Matsedel
+					//- a.link(href="/karen") Kåren
+					//- a.link(href="/mat") Om
 				.log
 					h2.logtxt Logga in
+
+		.phonemenu(data-index=1)
+			.phonelinks
 		//- Main content
 
 		.main-content
@@ -53,6 +56,7 @@ html
 			//- if mainContent
 			//- 	| !{mainContent}
 
+		- var links = [[{name:'Matsedel', link:'mat'}],[{name:'Kåren'}, {name:'utskott', link:'utskott'}, {name:'Styrelsen', link:'styrelsen'}, {name:'Kommittéer', link:'kommitte'}],[{name:'Om', link:'om'}]]
 
 		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -62,3 +66,67 @@ html
 		
 			ga('create', 'UA-85432260-1', 'auto');
 			ga('send', 'pageview');
+
+			$(window).scroll(function() {    
+				var scroll = $(window).scrollTop();
+
+				if (scroll >= 10) {
+					$(".topheader").addClass("darkheader");
+				} else {
+					$(".topheader").removeClass("darkheader");
+				}
+			});
+
+			var links = JSON.parse('!{JSON.stringify(links)}')
+
+			for (i = 0; i < links.length; i++) {
+
+				var temp
+
+				if (links[i][0]["link"] != undefined){
+					temp = document.createElement('a')
+					temp.innerText = links[i][0].name
+
+					temp2 = document.createElement('a')
+					temp2.innerText = links[i][0].name
+				} else {
+					temp = document.createElement('div')
+					temp.innerText = links[i][0].name
+
+					temp2 = document.createElement('div')
+					temp2.innerText = links[i][0].name
+
+					for (e = 1; e < links[i].length; e++) {
+						sub = document.createElement('a')
+						sub.className = "sublink"
+						sub.innerText = links[i][e].name
+						sub.href = links[i][e].link
+						temp.appendChild(sub)
+
+						sub2 = document.createElement('a')
+						sub2.className = "p-sublink"
+						sub2.innerText = links[i][e].name
+						sub2.href = links[i][e].link
+						temp2.appendChild(sub2)
+					}
+				}
+
+				temp.className = "link"
+				temp.href = links[i][0].link
+
+				temp2.className = "p-link"
+				temp2.href = links[i][0].link
+
+				document.querySelector(".links").appendChild(temp)
+				document.querySelector(".phonelinks").appendChild(temp2)
+			}
+
+			var n = 0
+
+			function hidemenu(){
+				n++
+				if(n > 1){
+					n = 0
+				}
+				document.querySelector('.phonemenu').dataset.index = n
+			}

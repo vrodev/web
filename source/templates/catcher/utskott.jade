@@ -2,6 +2,7 @@ extend ../default2
 block mainContent
 
 	.header.utskottheader
+		.shineheader
 		h1.headertext.utskottheadtext Utskott
 
 	.utskottfield
@@ -28,7 +29,7 @@ block mainContent
 		}
 
 		for (i = 0; i < utskott.length; i++) {
-			utskott[i].color = blendColors(utskott[i].color,'#ffffff',0.10)
+			//utskott[i].color = blendColors(utskott[i].color,'#ffffff',0.10)
 
 			temp = document.createElement('div')
 			temp.className ="utskottruta"
@@ -40,6 +41,10 @@ block mainContent
 			upper.className ="utskotttop"
 			upper.style.backgroundColor = utskott[i].color
 			temp.appendChild(upper)
+
+			shine = document.createElement('div')
+			shine.className ="shine"
+			temp.appendChild(shine)
 
 			bild = document.createElement('div')
 			bild.className ="utskottbild"
