@@ -97,7 +97,7 @@ block mainContent
 				if(kommitte[i].ord !== ''){
 					text = document.createElement('h2')
 					text.className ="utskottrubrik ordfarande"
-					text.innerText = "Ordförande är " + kommitte[i].ord
+					text.innerText = kommitte[i].ord + ' är ordförande'
 					document.querySelector('.center').appendChild(text)
 
 					document.querySelector('.ordfarande').style.color = blendColors(kommitte[i].color, "#000000", 0.3)					
