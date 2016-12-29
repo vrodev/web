@@ -21,7 +21,6 @@ body
 	padding 0px
 	box-shadow 0px 0px 40px -16px rgba(0,0,0,0.8)
 	border none
-	padding-bottom 5px
 	
 	@media (max-width:500px){
 		box-shadow none
@@ -168,7 +167,7 @@ for num in 0 1 2
 	height 187.5px
 	bg-image arrow
 	top calc(50% - 93.75px)
-	z-index 50
+	z-index 40
 	position absolute
 	padding 25px
 	background-origin content-box
@@ -259,13 +258,14 @@ for num in 0 1 2
 		width 20px
 		margin 15px
 		display inline-block
+		transition all 0.2s  ease-in-out
 	}
 	
 .box
-	width 33%
+	width 24%
 	height 0px
-	padding-top 22%
-	margin 0.25% 0px 0px 0.25%
+	padding-top 25%
+	margin calc(4%/5) 0px 0px calc(4%/5)
 	display inline-block
 	background-size cover
 	background-position center
@@ -275,23 +275,30 @@ for num in 0 1 2
 	background-size cover
 	position relative
 	box-sizing border-box
+	border-radius 3%
 	
 	&:hover
-		background-size 101%
+		background-size 105%
 		box-shadow 0px 0px 5px rgba(0, 0, 0, 0.7)
 		cursor pointer
+		
+	@media (max-width:800px){
+		width calc(96.8% / 3)
+		padding-top calc(96.8% / 3)
+	}
 	
 	@media (max-width:500px){
-		width 49.75%
-		padding-top (49.75*2/3)%
+		width 48.8%
+		padding-top 48.8%
 	}
 
 .box.menu
 	bg-image foodbox
 	background-position center
+	background-size cover
 	
 	&:hover
-		background-size 101%
+		background-size 105%
 		
 .container
 	square 100%
@@ -580,33 +587,187 @@ div.link
 
 //phonemenu
 
-.phonemenu
-	width 80%
-	height calc(100% - 50px)
-	top $headerheight
-	background-color #464646
-	position fixed
-	z-index 100
+.phonelinks
 	transition all .2s ease-in-out
+	top $headerheight
+	position absolute
+	text-align center
+	z-index 90
+	background-color #eaeaea
+	width 100%
+	height $headerheight
 	
-	.phonelinks
-		
-		.p-link
-			color white
-			font-size 150%
-			border-style solid
-			border-color black
-			border-width 0px 0px 2px 0px
-			padding 15px 0px 15px 5px
-			width calc(100% - 5px)
-			
-/*div.p-link*/
-	
-.p-sublink
-	color white
-	display block
-	margin-left 10%
-
 for num in 0 1
-	.phonemenu[data-index={$quote}{num}{$quote}]
-		left (-80% * num)
+	.phonelinks[data-index={$quote}{num}{$quote}]
+		top (50px * num)
+	
+.p-link
+	background-color #eaeaea
+	padding 0px
+	margin 0px
+	width calc(100% / 3)
+	
+.mainhide
+	width 100%
+	top $headerheight
+	height calc(100% - 50px)
+	position fixed
+	background-color black
+	opacity .5
+	z-index 50
+	display none
+	
+//ett utskott
+.utskottbildbottom
+	width 200px
+	height 200px
+	display inline-block
+	
+.utskottrubrik
+	text-align center
+	
+.loggacenter
+	text-align center
+	
+.utskotttextfalt
+	display inline-block
+	margin-bottom 50px
+	width 100%
+	
+	@media (max-width:500px){
+		margin-bottom 30px
+	}
+
+	.utskottrubrik
+		font-size 150%
+		margin-bottom 20px
+		margin-top 50px
+		
+		@media (max-width:500px){
+		margin 10px
+		margin-top 30px
+		}
+		
+	.arbeterubrik
+		@media (max-width:500px){
+		margin 10px
+		}
+		
+		
+	.utskottinfo
+		text-align left
+		max-width 500px
+		display inline-block
+		
+		@media (max-width:500px){
+			margin 10px
+		}
+		
+.extrashine
+	background: linear-gradient(rgba(255,255,255,0.2), rgba(255,0,0,0)) !important
+	
+.center
+	text-align center
+		
+//credit
+
+.creddiv
+	/*border-style solid
+	border-width 1px 0px 0px 0px
+	border-color #909090*/
+	margin-top 5px
+	background-color #f8f8f8
+	
+	.shine
+		width 100%
+		height 19px
+		background: linear-gradient(rgba(0,0,0,.03), rgba(255,0,0,0))
+		position absolute
+		top calc(100% - 19px)
+		left 0px
+	
+	.credits
+		font-size 80%
+		text-align center
+		color #6b6b6b
+		color black
+		font-family Arial
+		padding 2px 0px 2px 0px
+		
+//kommitte
+.kommitteruta
+	height calc(28/48*220px)
+	
+	@media (max-width:520px){
+		height 0px
+		padding-top 28%
+	}
+	
+	&:hover
+		.kommittetext
+			font-size 132%
+			
+	
+	.kommittetext
+		top calc(50% - 20px)
+		position absolute
+		text-align center
+		width 100%
+		height 40px
+		color white
+		line-height 40px
+		font-size 130%
+		transition all 0.2s ease-in-out
+		
+		@media (max-width:350px){
+			font-size 110%
+		}
+		
+	.kommittehover
+		width 100%
+		height 100%
+		position absolute
+		top 0px
+		left 0px
+		z-index 20
+		transition all 0.2s ease-in-out
+		
+		&:hover
+			background-color rgba(255, 255, 255, 0.07)
+			
+//kommittesida
+.kommittefalt
+	margin 0px
+	text-align center
+.kommittelink
+	margin-bottom 20px
+	position relative
+	
+	&:hover
+		cursor pointer
+	
+	.shine
+		background linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0))
+		
+		&:hover
+			cursor pointer
+
+	.kommittelinktext
+		width auto
+		text-align left
+		display inline-block
+		padding 5px
+		border-radius 5px
+		color white
+		
+		&:hover
+			cursor pointer
+		
+.utskottrubrik.ordfarande
+	color black
+	margin-top 30px
+	margin-bottom 40px
+	font-size 100%
+	font-weight normal
+	
+	

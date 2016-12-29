@@ -95,6 +95,10 @@ module.exports = (function() {
     {page:'lolxdxd'},
     {page:'mat'},
     {page:'karen'},
+    {page:'kommitte'},
+    {path:'kommitte/:kommittenamn',page:'enkommitte', dataGen: req=>{
+      return {kommitte:req.params.kommittenamn}
+    }},
     {page:'utskott'},
     {path:'utskott/:utskottnamn',page:'ettutskott', dataGen: req=>{
       return {utskott:req.params.utskottnamn}

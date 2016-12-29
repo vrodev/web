@@ -45,9 +45,11 @@ html
 					//- a.link(href="/mat") Om
 				.log
 					h2.logtxt Logga in
+		.phonelinks(data-index=0)
+		.mainhide(onclick="hidemenu()")
 
-		.phonemenu(data-index=1)
-			.phonelinks
+		//- .phonemenu(data-index=1)
+		//- 	.phonelinks
 		//- Main content
 
 		.main-content
@@ -55,6 +57,9 @@ html
 			block mainContent
 			//- if mainContent
 			//- 	| !{mainContent}
+			.creddiv
+				p.credits Made by the VRO-Web Team, part of Kommunikationsutskottet - Webdesign primarily by Erik Enger Karlson, Backend primarily by Leonard Pauli and Jacob Tilly
+				//.shine
 
 		- var links = [[{name:'Matsedel', link:'mat'}],[{name:'Kåren'}, {name:'utskott', link:'utskott'}, {name:'Styrelsen', link:'styrelsen'}, {name:'Kommittéer', link:'kommitte'}],[{name:'Om', link:'om'}]]
 
@@ -100,13 +105,13 @@ html
 						sub = document.createElement('a')
 						sub.className = "sublink"
 						sub.innerText = links[i][e].name
-						sub.href = links[i][e].link
+						sub.href = "/" + links[i][e].link
 						temp.appendChild(sub)
 
 						sub2 = document.createElement('a')
-						sub2.className = "p-sublink"
+						sub2.className = "sublink p-sublink"
 						sub2.innerText = links[i][e].name
-						sub2.href = links[i][e].link
+						sub2.href = "/" + links[i][e].link
 						temp2.appendChild(sub2)
 					}
 				}
@@ -114,7 +119,7 @@ html
 				temp.className = "link"
 				temp.href = links[i][0].link
 
-				temp2.className = "p-link"
+				temp2.className = "link p-link"
 				temp2.href = links[i][0].link
 
 				document.querySelector(".links").appendChild(temp)
@@ -124,9 +129,20 @@ html
 			var n = 0
 
 			function hidemenu(){
+
 				n++
 				if(n > 1){
 					n = 0
 				}
-				document.querySelector('.phonemenu').dataset.index = n
+
+				document.querySelector('.phonelinks').dataset.index = n
+
+				if(n==1){
+					document.querySelector('.mainhide').style.display = "block"
+					document.querySelector('.menubutton').style.transform = "rotate(-180deg)"
+				}else{
+					document.querySelector('.mainhide').style.display = "none"
+					document.querySelector('.menubutton').style.transform = "rotate(0deg)"
+				}
+				
 			}
