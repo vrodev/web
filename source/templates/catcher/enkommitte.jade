@@ -28,7 +28,7 @@ block mainContent
 			desc:'Vi i Amnestykommittén arbetar för att stärka situationen för de mänskliga rättigheterna runt om i världen genom att bland annat genomföra aktioner för att uppmärksamma och samla in namnunderskrifter. Vi jobbar både på och utanför skolan. Då vi är kopplade till internationella Amnesty finns möjligheter till utbildningar med mera att delta på. Alla är varmt välkomna!',
 			link:'https://www.facebook.com/groups/amnestyvrgopl/?ref=browser'},
 
-			{name:'Bajenfans VRG',color:'#007A43',
+			{name:'Bajenfans',color:'#007A43',
 			ord:'Hugo Rosell & Sebastian Lian',
 			desc:'En kommitté med syfte att skapa en gemenskap med alla Hammarbyare på VRG. Målet är att någon gång i framtiden kunna gå på Hammarby-match tillsammans. :)',
 			link:''},
@@ -92,6 +92,12 @@ block mainContent
 				if (window.matchMedia("(max-width: 500px)").matches) {
 					document.querySelector('.utskottheadtext').style.color = kommitte[i].color
 					document.querySelector(".utskottheader").style.backgroundColor = "transparent"
+
+					var x = blendColors(kommitte[i].color, "#ffffff", 0.9)
+					document.querySelector('.loggacenter').style.backgroundColor = x
+					document.querySelector('.main-content').style.backgroundColor = x
+					//document.querySelector('.creddiv').style.backgroundColor = "rgba(0, 0, 0, 0.05)"
+
 				}
 
 				if(kommitte[i].ord !== ''){
@@ -100,7 +106,7 @@ block mainContent
 					text.innerText = kommitte[i].ord + ' är ordförande'
 					document.querySelector('.center').appendChild(text)
 
-					document.querySelector('.ordfarande').style.color = blendColors(kommitte[i].color, "#000000", 0.3)					
+					document.querySelector('.ordfarande').style.color = blendColors(kommitte[i].color, "#000000", 0.3) + "!impotant"					
 				}
 
 				if(kommitte[i].link !== ''){
@@ -133,6 +139,14 @@ block mainContent
 			
 		}
 
-		if(val.localeCompare("kommunikation") ===  0 || val.localeCompare("tradition") === 0){
-			document.querySelector('.utskottheadtext').innerText = val + "s utskottet"
+		if(val.localeCompare("östasiatisk kultur") ==  0){
+			document.querySelector('.utskottheadtext').innerText = "östasiatiska kulturkommittén"
+		}
+
+		if(val.localeCompare("aktiesparare") ==  0){
+			document.querySelector('.utskottheadtext').innerText = "aktiesparar kommittén"
+		}
+
+		if(val.localeCompare("harry potter") ==  0){
+			document.querySelector('.utskottheadtext').innerText = "harry potter kommittén (9¾)"
 		}

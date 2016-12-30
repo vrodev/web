@@ -61,10 +61,24 @@ block mainContent
 				document.querySelector(".arbete").innerHTML = utskott[i].arbete
 				document.querySelector(".hjalp").innerHTML = utskott[i].hjalp
 
+				bild = document.createElement('div')
+				bild.className ="utskottbildbottom"
+
 				if (window.matchMedia("(max-width: 500px)").matches) {
 					document.querySelector('.utskottheadtext').style.color = utskott[i].color
 					document.querySelector(".utskottheader").style.backgroundColor = "transparent"
+
+					var x = blendColors(utskott[i].color, "#ffffff", 0.8)
+					document.querySelector('.loggacenter').style.backgroundColor = x
+					document.querySelector('.main-content').style.backgroundColor = x
+					bild.style.backgroundImage = "url('/images/" + utskott[i].name + ".png')"
+
+				}else{
+					bild.style.backgroundColor = utskott[i].color
+					bild.style.webkitMaskBoxImage = "url('/images/" + utskott[i].name + ".png')"
 				}
+
+				document.querySelector('.loggacenter').appendChild(bild)
 
 				if(utskott[i].arbete == ''){
 					document.querySelector('.arbeterubrik').style.display = "none"
@@ -77,13 +91,6 @@ block mainContent
 				}else{
 					document.querySelector('.hjalprubrik').style.color = blendColors(utskott[i].color, "#000000", 0.3)
 				}
-
-				bild = document.createElement('div')
-				bild.className ="utskottbildbottom"
-				bild.style.backgroundColor = utskott[i].color
-				bild.style.webkitMaskBoxImage = "url('/images/" + utskott[i].name + ".png')"
-				document.querySelector('.loggacenter').appendChild(bild)
-
 
 			}
 			
