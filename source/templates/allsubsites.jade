@@ -1,0 +1,44 @@
+script.
+	var info = '#{dataPage}'
+	if(info="ettutskott"){
+		info="utskott"
+		var val = "#{utskott}"
+	}else if(info="enkommitte"){
+		info="kommitte"
+		var val = "#{kommitte}"
+	}
+
+	function do(color){
+		link = document.createElement('div')
+		link.className ="kommittelink"
+		link.style.backgroundColor = color
+		link.style.minHeight = "20px"
+		document.querySelector('.center').appendChild(link)
+
+		document.querySelector(".header").style.backgroundColor = color
+		_('.phonelinks').style.backgroundColor = blendColors(info[i].color, "#000000", 0.2)
+		if(info[i].color !== "#00000"){
+			_(".phonelinks").className += " whitelinks"
+		}
+
+		if (window.matchMedia("(max-width: 500px)").matches) {
+			document.querySelector(".menubutton").style.filter = "invert(100%)"
+			document.querySelector(".logga").style.filter = "invert(100%)"
+
+			document.querySelector(".center-header").style.backgroundColor = color
+			document.querySelector(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
+		}
+	}
+
+	if(info == 'kommitte'||'utskott'){
+
+		for (i=0; i<info.length; i++){
+			if (info[i].name.toLowerCase() == val){
+				do(info[i].color)
+			}
+		}
+	}else if(info == "lolxdxd"){
+	
+	}else{
+		do(thecolor)
+	}

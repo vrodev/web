@@ -25,8 +25,8 @@ body
 	
 	@media (max-width:500px){
 		box-shadow none
-		height calc(100% - 50px)
-		background-color whitesmoke
+		min-height calc(100% - 50px)
+		background-color white
 	}
 	
 
@@ -67,10 +67,6 @@ body > .topheader
 	background-size cover !important
 	position relative
 	
-	@media (max-width:500px){
-		background-image none !important
-	}
-	
 .headertext
 	text-decoration none
 	color white
@@ -85,7 +81,6 @@ body > .topheader
 	@media (max-width:500px){
 		padding-top 10px
 		padding-bottom 10px
-		color black
 		line-height: 100%
 		font-size 17vw
 	}
@@ -346,7 +341,6 @@ for num in 0 1 2
 	line-height $headerheight
 	display inline-block !important
 	vertical-align top
-	background-color white
 	padding 0px 10px 0px 10px
 	transition: all 0.1s ease-out
 	
@@ -395,13 +389,7 @@ div.link
 		box-shadow 5px alpha(#000, 30%)
 	
 			
-//mat			
-.mathead
-	background-color #d69545
-	
-	@media (max-width:500px){
-		background-color white
-	}
+//mat
 	
 .headertextmat
 	@media (max-width:500px){
@@ -517,27 +505,17 @@ div.link
 .utskottheader
 	background-color #222222
 	
-	@media (max-width:500px){
-		background-color white !important
-	}
-	
 	.shineheader
 		background: linear-gradient(rgba(255,255,255,0.1), rgba(255,0,0,0))
+		
+		@media (max-width:500px){
+			display none
+		}
 	
 .utskottheadtext
-	@media (max-width:500px){
-		color black
-	}
 	
 .utskottfield
 	text-align center
-	margin-top 15px
-	margin-bottom 15px
-	
-	@media (max-width:500px){
-		margin-top 2px
-		margin-bottom 2px
-	}
 	
 .utskottruta
 	width 220px
@@ -579,7 +557,7 @@ div.link
 		color white
 		
 		@media (max-width:400px){
-		font-size 120%
+			font-size 120%
 		}
 	
 .shine
@@ -594,23 +572,49 @@ div.link
 
 .phonelinks
 	transition all .2s ease-in-out
-	top $headerheight
+	top 0px
 	position absolute
 	text-align center
 	z-index 90
 	background-color #eaeaea
 	width 100%
 	height $headerheight
-	
-for num in 0 1
-	.phonelinks[data-index={$quote}{num}{$quote}]
-		top (50px * num)
+	&.visible
+		top $headerheight
 	
 .p-link
-	background-color #eaeaea
 	padding 0px
 	margin 0px
 	width calc(100% / 3)
+	
+div.p-link
+	&:hover
+		background-color #696969
+	
+.p-sublink
+	@media (max-width:370px){
+		padding 0px
+		text-align center
+		font-size 90%
+	}
+	
+	background-color #696969
+	
+.whitelinks
+	.p-link
+		color white
+		
+		&:hover
+			color black
+			background-color white
+			
+			.p-sublink
+				color black
+				background-color white	
+				
+				&:hover
+					background-color grey
+					
 	
 .mainhide
 	width 100%
@@ -618,9 +622,10 @@ for num in 0 1
 	height calc(100% - 50px)
 	position fixed
 	background-color black
-	opacity .5
+	opacity 0
 	z-index 50
 	display none
+	transition opacity .2s ease-in-out
 	
 //ett utskott
 .utskottbildbottom
@@ -628,6 +633,7 @@ for num in 0 1
 	height 200px
 	display inline-block
 	background-size contain
+	margin-bottom 20px
 	
 .utskottrubrik
 	text-align center
@@ -640,10 +646,7 @@ for num in 0 1
 	
 .loggacenter
 	text-align center
-	
-	@media (max-width:500px){
-		background-color whitesmoke
-	}
+	background-color white
 	
 .utskotttextfalt
 	display inline-block
@@ -662,7 +665,7 @@ for num in 0 1
 		@media (max-width:500px){
 		margin 10px
 		margin-top 30px
-		color #2b2b2b !important
+		color #2b2b2b
 		}
 		
 	.arbeterubrik
@@ -694,11 +697,14 @@ for num in 0 1
 	border-color #909090*/
 	margin-top 5px
 	background-color #f8f8f8
+	transition bottom 0.2s ease-in-out
+	width 100%
 	
 	@media (max-width:500px){
-		background-color #fbfbfb
 		position absolute
-		bottom 0px
+		background-color transparent
+		bottom -50px
+		z-index 50
 	}
 	
 	.shine
@@ -712,10 +718,12 @@ for num in 0 1
 	.credits
 		font-size 80%
 		text-align center
-		color #6b6b6b
-		color black
 		font-family Arial
 		padding 2px 0px 2px 0px
+		
+		@media (max-width:500px){
+			color rgba(255, 255, 255, 0.75)
+		}
 		
 //kommitte
 .kommitteruta
@@ -768,9 +776,10 @@ for num in 0 1
 	position relative
 	
 	@media (max-width:500px){
-		bottom 50px
+		bottom 0px
 		position absolute
 		width 100%
+		margin 0px
 	}
 	
 	&:hover
@@ -781,6 +790,10 @@ for num in 0 1
 		
 		&:hover
 			cursor pointer
+			
+		@media (max-width:500px){
+			display none
+		}
 
 	.kommittelinktext
 		width auto
@@ -792,6 +805,14 @@ for num in 0 1
 		
 		&:hover
 			cursor pointer
+			
+		@media (max-width:500px){
+			width 100%
+			text-align center
+			padding-left 0px
+			padding-right 0px
+			border-radius 0px
+		}
 		
 .utskottrubrik.ordfarande
 	color black
@@ -804,10 +825,6 @@ for num in 0 1
 		margin 0px
 		margin-top 10px
 		margin-bottom 10px
-
-		bottom 120px
-		position absolute
-		width 100%
 	}
 	
 	

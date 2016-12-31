@@ -76,7 +76,6 @@ block mainContent
 
 		var num
 		var val = "#{kommitte}".replace(/_/g," ")
-		console.log(val)
 
 		for (i=0; i<kommitte.length; i++){
 
@@ -96,8 +95,6 @@ block mainContent
 					var x = blendColors(kommitte[i].color, "#ffffff", 0.9)
 					document.querySelector('.loggacenter').style.backgroundColor = x
 					document.querySelector('.main-content').style.backgroundColor = x
-					//document.querySelector('.creddiv').style.backgroundColor = "rgba(0, 0, 0, 0.05)"
-
 				}
 
 				if(kommitte[i].ord !== ''){
@@ -106,33 +103,38 @@ block mainContent
 					text.innerText = kommitte[i].ord + ' är ordförande'
 					document.querySelector('.center').appendChild(text)
 
-					document.querySelector('.ordfarande').style.color = blendColors(kommitte[i].color, "#000000", 0.3) + "!impotant"					
+					text.style.color = kommitte[i].color + "!impotant"
 				}
 
+				link = document.createElement('div')
+				link.className ="kommittelink"
+				link.style.backgroundColor = kommitte[i].color
+				link.style.minHeight = "20px"
+				document.querySelector('.center').appendChild(link)
+
 				if(kommitte[i].link !== ''){
-					link = document.createElement('div')
-					link.className ="kommittelink"
+					
 					link.setAttribute("onclick", "window.location.href = '" + kommitte[i].link + "'")
-					document.querySelector('.center').appendChild(link)
 
 					linktx = document.createElement('h2')
 					linktx.className = "kommittelinktext"
-					linktx.style.backgroundColor = kommitte[i].color
 					link.appendChild(linktx)
 
 					if(kommitte[i].link.indexOf("facebook") !== -1){
-						linktx.innerText = "Vår Facebook"
+						linktx.innerText = "Kommitténs Facebook"
 					}else if(kommitte[i].link.indexOf("instagram") !== -1){
-						linktx.innerText = "Vår Instagram"
+						linktx.innerText = "Kommitténs Instagram"
 					}else{
-						linktx.innerText = "Vårt sociala nätverk"
+						linktx.innerText = "Kommitténs sociala nätverk"
 					}
 
 					shine = document.createElement('div')
 					shine.className = "shine"
 					link.appendChild(shine)
 
-					document.querySelector('.ordfarande').style.color = blendColors(kommitte[i].color, "#000000", 0.3)
+					document.querySelector('.ordfarande').style.color = kommitte[i].color
+				}else{
+					link.style.position = "absolute"
 				}
 
 			}
@@ -145,8 +147,13 @@ block mainContent
 
 		if(val.localeCompare("aktiesparare") ==  0){
 			document.querySelector('.utskottheadtext').innerText = "aktiesparar kommittén"
+			document.querySelector('.utskottinfo').style.marginBottom = '40px'
 		}
 
 		if(val.localeCompare("harry potter") ==  0){
 			document.querySelector('.utskottheadtext').innerText = "harry potter kommittén (9¾)"
+		}
+
+		if(val.localeCompare("debate society") ==  0){
+			document.querySelector('.utskottheadtext').innerText = "debate society"
 		}

@@ -15,6 +15,8 @@ block mainContent
 		<br>
 
 	script.
+		var thecolor = "#222"
+
 		var utskott = [
 			{name:'Tradition',color:'#C42C00',
 			arbete:'• Fira traditioner och sprida traditionsglädje i skolan, samt öka gemenskapen mellan eleverna<br>• Fira internationella traditioner och därmed även mer gemenskap och förståelse för andra kulturer Ha kul!',
@@ -45,51 +47,62 @@ block mainContent
 			hjalp:''}
 		]
 
-		function blendColors(c0, c1, p) {
-			var f=parseInt(c0.slice(1),16),t=parseInt(c1.slice(1),16),R1=f>>16,G1=f>>8&0x00FF,B1=f&0x0000FF,R2=t>>16,G2=t>>8&0x00FF,B2=t&0x0000FF;
-			return "#"+(0x1000000+(Math.round((R2-R1)*p)+R1)*0x10000+(Math.round((G2-G1)*p)+G1)*0x100+(Math.round((B2-B1)*p)+B1)).toString(16).slice(1);
-		}		
-
 		var num
 		var val = "#{utskott}"
+		console.log("#{dataPage}")
 
 		for (i=0; i<utskott.length; i++){
 
 			if (utskott[i].name.toLowerCase() == val){
 
-				document.querySelector(".utskottheader").style.backgroundColor = utskott[i].color
-				document.querySelector(".arbete").innerHTML = utskott[i].arbete
-				document.querySelector(".hjalp").innerHTML = utskott[i].hjalp
+				_(".utskottheader").style.backgroundColor = utskott[i].color
+
+				_('.phonelinks').style.backgroundColor = blendColors(utskott[i].color, "#000000", 0.2)
+				if(utskott[i].color !== "#00000"){
+					_(".phonelinks").className += " whitelinks"
+				}
+
+				_(".arbete").innerHTML = utskott[i].arbete
+				if(utskott[i].hjalp !== ""){
+					_(".hjalp").innerHTML = utskott[i].hjalp
+				}else{
+					_(".hjalp").style.margin = "0px"
+				}
+				
 
 				bild = document.createElement('div')
 				bild.className ="utskottbildbottom"
 
 				if (window.matchMedia("(max-width: 500px)").matches) {
-					document.querySelector('.utskottheadtext').style.color = utskott[i].color
-					document.querySelector(".utskottheader").style.backgroundColor = "transparent"
 
-					var x = blendColors(utskott[i].color, "#ffffff", 0.8)
-					document.querySelector('.loggacenter').style.backgroundColor = x
-					document.querySelector('.main-content').style.backgroundColor = x
-					bild.style.backgroundImage = "url('/images/" + utskott[i].name + ".png')"
+					_(".center-header").style.backgroundColor = utskott[i].color
+					_(".log").style.backgroundColor = blendColors(utskott[i].color, "#000000", 0.3)
 
-				}else{
-					bild.style.backgroundColor = utskott[i].color
-					bild.style.webkitMaskBoxImage = "url('/images/" + utskott[i].name + ".png')"
+					link = document.createElement('div')
+					link.className ="kommittelink"
+					link.style.backgroundColor = utskott[i].color
+					link.style.minHeight = "20px"
+					_('.center').appendChild(link)
+
+					_(".menubutton").style.filter = "invert(100%)"
+					_(".logga").style.filter = "invert(100%)"
 				}
 
-				document.querySelector('.loggacenter').appendChild(bild)
+				bild.style.backgroundColor = utskott[i].color
+				bild.style.webkitMaskBoxImage = "url('/images/" + utskott[i].name + ".png')"
+
+				_('.loggacenter').appendChild(bild)
 
 				if(utskott[i].arbete == ''){
-					document.querySelector('.arbeterubrik').style.display = "none"
+					_('.arbeterubrik').style.display = "none"
 				}else{
-					document.querySelector('.arbeterubrik').style.color = blendColors(utskott[i].color, "#000000", 0.3)
+					_('.arbeterubrik').style.color = blendColors(utskott[i].color, "#000000", 0.3)
 				}
 
 				if(utskott[i].hjalp == ''){
-					document.querySelector('.hjalprubrik').style.display = "none"
+					_('.hjalprubrik').style.display = "none"
 				}else{
-					document.querySelector('.hjalprubrik').style.color = blendColors(utskott[i].color, "#000000", 0.3)
+					_('.hjalprubrik').style.color = blendColors(utskott[i].color, "#000000", 0.3)
 				}
 
 			}
@@ -97,5 +110,5 @@ block mainContent
 		}
 
 		if("#{utskott}".localeCompare("kommunikation") ===  0 || "#{utskott}".localeCompare("tradition") === 0){
-			document.querySelector('.utskottheadtext').innerText = "#{utskott}s utskottet"
+			_('.utskottheadtext').innerText = "#{utskott}s utskottet"
 		}

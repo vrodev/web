@@ -96,8 +96,8 @@ module.exports = (function() {
     {page:'mat'},
     {page:'karen'},
     {page:'kommitte'},
-    {path:'kommitte/:kommittenamn',page:'enkommitte', dataGen: req=>{
-      return {kommitte:req.params.kommittenamn}
+    {path:'kommitte/:info',page:'enkommitte', dataGen: req=>{
+      return {kommitte:req.params.info}
     }},
     {page:'utskott'},
     {path:'utskott/:utskottnamn',page:'ettutskott', dataGen: req=>{
@@ -117,7 +117,7 @@ module.exports = (function() {
     router.get('/'+route.path, (function(route) {return function(req, res) {async (function(){
       route.data = route.dataGen ? route.dataGen(req) : {}
       if (route.fn && await (route.fn(req, res, route.data)) === false) return;
-      if (!route.data.title) route.data.title = 'Catcher'
+      if (!route.data.title) route.data.title = 'VRO Elevkår'
       if (!route.data.user) route.data.user = req.user
       route.data.dataPage = route.page
       res.render('catcher/'+route.page, route.data)
