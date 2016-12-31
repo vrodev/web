@@ -1,44 +1,47 @@
 script.
-	var info = '#{dataPage}'
-	if(info="ettutskott"){
-		info="utskott"
-		var val = "#{utskott}"
-	}else if(info="enkommitte"){
-		info="kommitte"
-		var val = "#{kommitte}"
-	}
 
-	function do(color){
-		link = document.createElement('div')
-		link.className ="kommittelink"
-		link.style.backgroundColor = color
-		link.style.minHeight = "20px"
-		document.querySelector('.center').appendChild(link)
+	var dataPage = '#{dataPage}'
+	var subpage = dataPage == 'ettutskott'? "#{utskott}":
+		dataPage == 'enkommitte'? "#{kommitte}":
+		undefined
+	if(subpage)subpage = subpage.toLowerCase()
 
-		document.querySelector(".header").style.backgroundColor = color
-		_('.phonelinks').style.backgroundColor = blendColors(info[i].color, "#000000", 0.2)
-		if(info[i].color !== "#00000"){
+	function todo(color){
+
+		_(".header").style.backgroundColor = color
+		_('.phonelinks').style.backgroundColor = blendColors(color, "#000000", 0.2)
+		if(color !== "#ffffff"){
 			_(".phonelinks").className += " whitelinks"
+			_('.headertext').style.color = 'white'
 		}
 
-		if (window.matchMedia("(max-width: 500px)").matches) {
-			document.querySelector(".menubutton").style.filter = "invert(100%)"
-			document.querySelector(".logga").style.filter = "invert(100%)"
+		if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
+			_(".menubutton").style.filter = "invert(100%)"
+			_(".logga").style.filter = "invert(100%)"
 
-			document.querySelector(".center-header").style.backgroundColor = color
-			document.querySelector(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
+			_(".center-header").style.backgroundColor = color
+
+			if(dataPage !== 'styrelsen'){
+				_(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
+			}
+
+			link = document.createElement('div')
+			link.className ="kommittelink"
+			link.style.backgroundColor = color
+			link.style.minHeight = "20px"
+
+			var el = _('center') || _('.main-content')
+			el.appendChild(link)
+		}else{
+			_('.headertext').style.color = 'black'
 		}
 	}
 
-	if(info == 'kommitte'||'utskott'){
-
-		for (i=0; i<info.length; i++){
-			if (info[i].name.toLowerCase() == val){
-				do(info[i].color)
-			}
-		}
-	}else if(info == "lolxdxd"){
-	
-	}else{
-		do(thecolor)
+	var pageinfo = pageinfos[dataPage]
+	var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
+		return subpageinfo.name.replace(/_/g," ").toLowerCase() == subpage
+	})
+	if(pageinfo){
+		todo(!subpage?pageinfo.color:
+			(subpageinfo?subpageinfo.color:'#ff0000'))
 	}

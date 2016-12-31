@@ -15,98 +15,56 @@ block mainContent
 		<br>
 
 	script.
-		var thecolor = "#222"
+		var utskott = subpageinfo
+		
+		_(".utskottheader").style.backgroundColor = utskott.color
 
-		var utskott = [
-			{name:'Tradition',color:'#C42C00',
-			arbete:'• Fira traditioner och sprida traditionsglädje i skolan, samt öka gemenskapen mellan eleverna<br>• Fira internationella traditioner och därmed även mer gemenskap och förståelse för andra kulturer Ha kul!',
-			hjalp:'• Kom med förslag till oss (!) om det är någon traditioner du vill fira/anser att vi bör fira, från vilken kultur/religion/land spelar ingen roll<br>• Alltid öppna för feedback och förslag på hur vi ska fira traditionerna också'},
+		_('.phonelinks').style.backgroundColor = blendColors(utskott.color, "#000000", 0.2)
+		if(utskott.color !== "#00000"){
+			_(".phonelinks").className += " whitelinks"
+		}
 
-			{name:'Sociala',color:'#ED588D',
-			arbete:'• Roliga temadagar och event som till exempel SUIT-UP Day, Insparken och VRG-Kampen. <br>• Klasspokalen, en tävling mellan klasserna på skolan. Under läsårets gång får man möjlighet att samla in poäng till tävlingen som pågår ända tills slutet av läsåret. <br>• Att din tid här på skolan ska bli så rolig som möjligt!',
-			hjalp:'• Att förgylla din skoltid med massa roliga aktiviteter som gör att vi alla kan bli närmare vänner på skolan<br>• Att få din idé igenom. Om du har ett önskemål, exempelvis att du skulle vilja ha temadagen: Pyjamasparty eller något annat. HÖR AV DIG! Vi älskar nya idéer'},
+		_(".arbete").innerHTML = utskott.arbete
+		if(utskott.hjalp !== ""){
+			_(".hjalp").innerHTML = utskott.hjalp
+		}else{
+			_(".hjalp").style.margin = "0px"
+		}
+		
 
-			{name:'Kommunikation',color:'#0A7BFF',
-			arbete:'• Vi ser till att information om allt det som elevkåren gör och arrangerar når ut till medlemmarna<br>• Detta genom att hålla igång alla olika media plattformer samtidigt som vi utvecklar de kanaler vi har!',
-			hjalp:''},
+		bild = document.createElement('div')
+		bild.className ="utskottbildbottom"
 
-			{name:'Finansiella',color:'#AB47CB',
-			arbete:'',
-			hjalp:''},
+		if (window.matchMedia("(max-width: 500px)").matches) {
 
-			{name:'Miljö',color:'#78A942',
-			arbete:'• Vi ökar miljömedvetenheten hos alla på skolan genom att sprida information om miljön<br>• Genom alla möjliga medel försöker vi minska skolans, elevernas och personalens miljöpåverkan.',
-			hjalp:'• Om du reagerar på något inom skolan där du tycker miljötänket är för dåligt<br>• Om du vill lyfta fram något till skolan gällande miljö'},
+			_(".center-header").style.backgroundColor = utskott.color
+			_(".log").style.backgroundColor = blendColors(utskott.color, "#000000", 0.3)
 
-			{name:'Påverkan',color:'#DD9400',
-			arbete:"• Debatter, både bland elever och politiska partier<br>• Förmedla dina åsikter till de som ska höra dem<br>• Hjälpa dig påverka din skolgång så mycket som möjligt!",
-			hjalp:'• Har du frågor kring elevrätt, känner du dig orättvist behandlad av en lärare, hör av dig till oss!<br>• Har du något du vill ändra i skolan, säg till!'},
+			link = document.createElement('div')
+			link.className ="kommittelink"
+			link.style.backgroundColor = utskott.color
+			link.style.minHeight = "20px"
+			_('.center').appendChild(link)
 
-			{name:'Student',color:'#707070',
-			arbete:'',
-			hjalp:''}
-		]
+			_(".menubutton").style.filter = "invert(100%)"
+			_(".logga").style.filter = "invert(100%)"
+		}
 
-		var num
-		var val = "#{utskott}"
-		console.log("#{dataPage}")
+		bild.style.backgroundColor = utskott.color
+		bild.style.webkitMaskBoxImage = "url('/images/" + utskott.name + ".png')"
 
-		for (i=0; i<utskott.length; i++){
+		_('.loggacenter').appendChild(bild)
 
-			if (utskott[i].name.toLowerCase() == val){
+		if(utskott.arbete == ''){
+			_('.arbeterubrik').style.display = "none"
+		}else{
+			_('.arbeterubrik').style.color = blendColors(utskott.color, "#000000", 0.3)
+		}
 
-				_(".utskottheader").style.backgroundColor = utskott[i].color
-
-				_('.phonelinks').style.backgroundColor = blendColors(utskott[i].color, "#000000", 0.2)
-				if(utskott[i].color !== "#00000"){
-					_(".phonelinks").className += " whitelinks"
-				}
-
-				_(".arbete").innerHTML = utskott[i].arbete
-				if(utskott[i].hjalp !== ""){
-					_(".hjalp").innerHTML = utskott[i].hjalp
-				}else{
-					_(".hjalp").style.margin = "0px"
-				}
-				
-
-				bild = document.createElement('div')
-				bild.className ="utskottbildbottom"
-
-				if (window.matchMedia("(max-width: 500px)").matches) {
-
-					_(".center-header").style.backgroundColor = utskott[i].color
-					_(".log").style.backgroundColor = blendColors(utskott[i].color, "#000000", 0.3)
-
-					link = document.createElement('div')
-					link.className ="kommittelink"
-					link.style.backgroundColor = utskott[i].color
-					link.style.minHeight = "20px"
-					_('.center').appendChild(link)
-
-					_(".menubutton").style.filter = "invert(100%)"
-					_(".logga").style.filter = "invert(100%)"
-				}
-
-				bild.style.backgroundColor = utskott[i].color
-				bild.style.webkitMaskBoxImage = "url('/images/" + utskott[i].name + ".png')"
-
-				_('.loggacenter').appendChild(bild)
-
-				if(utskott[i].arbete == ''){
-					_('.arbeterubrik').style.display = "none"
-				}else{
-					_('.arbeterubrik').style.color = blendColors(utskott[i].color, "#000000", 0.3)
-				}
-
-				if(utskott[i].hjalp == ''){
-					_('.hjalprubrik').style.display = "none"
-				}else{
-					_('.hjalprubrik').style.color = blendColors(utskott[i].color, "#000000", 0.3)
-				}
-
-			}
-			
+		if(utskott.hjalp == ''){
+			_('.hjalprubrik').style.display = "none"
+		}else{
+			_('.hjalprubrik').style.color = blendColors(utskott.color, "#000000", 0.3)
 		}
 
 		if("#{utskott}".localeCompare("kommunikation") ===  0 || "#{utskott}".localeCompare("tradition") === 0){

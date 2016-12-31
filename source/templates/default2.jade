@@ -24,6 +24,14 @@ html
 		script(src="/js/helpers/api.js")
 
 		//- 
+		script.
+
+			var dataPage = '#{dataPage}'
+			var subpage = dataPage == 'ettutskott'? "#{utskott}":
+				dataPage == 'enkommitte'? "#{kommitte}":
+				undefined
+			if(subpage)subpage = subpage.toLowerCase()
+
 		script(src="/js/api.js")
 		script(src="/js/general.js")
 		script(src="/js/catcher.js")
@@ -107,7 +115,7 @@ html
 				//.shine
 
 		- var links = [[{name:'Matsedel', link:'mat'}],[{name:'Kåren'}, {name:'utskott', link:'utskott'}, {name:'Styrelsen', link:'styrelsen'}, {name:'Kommittéer', link:'kommitte'}],[{name:'Om', link:'om'}]]
-		include allsubsites
+
 		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -116,12 +124,7 @@ html
 		
 			ga('create', 'UA-85432260-1', 'auto');
 			ga('send', 'pageview');
-
-			document.body.onscroll = function() {
-				var scroll = document.body.scrollTop
-				_('.topheader').classList.toggle('darkheader', scroll>=10)
-			}
-
+			
 			var menuVisible = false
 			function hidemenu(){
 				menuVisible = !menuVisible
@@ -145,4 +148,8 @@ html
 
 			if (window.matchMedia("(max-width: 500px)").matches) {
 				document.querySelector('.credits').innerHTML = document.querySelector('.credits').innerHTML.replace(/ - /g,"<br>").replace(/n, /g,"n<br>")
+			}
+			if(pageinfo){
+				changeFromColor(!subpage?pageinfo.color:
+					(subpageinfo?subpageinfo.color:'#ff0000'))
 			}
