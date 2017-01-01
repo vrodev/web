@@ -38,7 +38,7 @@ window.addEventListener('load', function() {
 	addEventListeners()
 }, false)
 
-var _=function(selector){return document.body.querySelector(selector)}
+var _ =function(selector){return document.body.querySelector(selector)}
 
 function blendColors(c0, c1, p) {
 	var f=parseInt(c0.slice(1),16),t=parseInt(c1.slice(1),16),R1=f>>16,G1=f>>8&0x00FF,B1=f&0x0000FF,R2=t>>16,G2=t>>8&0x00FF,B2=t&0x0000FF;
@@ -135,8 +135,8 @@ var pageinfos = {
 		color:'#222222',
 		personer:[
 			{name:'Ordförande',person:'Nora Uvemo',color:'#5176e4'},
-			{name:'Vice Ordförande',person:'Richard Wahlström',color:'#21b0d2'},
-			{name:'Skattmästare',person:'Julia Frislund',color:'#ff9e56'},
+			{name:'Vice Ordförande',person:'Richard Wahlström',color:'#47b2cc'},
+			{name:'Skattmästare',person:'Julia Frislund',color:'#e4902c'},
 			{name:'Administratör',person:'Sandra Pernkrans',color:'#e45151'},
 			{name:'Utskottsansvarig',person:'Corinne Jerand',color:'#6abf40'}
 		]
@@ -159,6 +159,8 @@ function changeFromColor(color){
 	if(color !== "#ffffff"){
 		_(".phonelinks").className += " whitelinks"
 		_('.headertext').style.color = 'white'
+	}else{
+		_('.headertext').style.color = 'black'
 	}
 
 	if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
@@ -178,12 +180,12 @@ function changeFromColor(color){
 
 		var el = _('center') || _('.main-content')
 		el.appendChild(link)
-	}else{
-		_('.headertext').style.color = 'black'
 	}
 }
 
 var pageinfo = pageinfos[dataPage]
 var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
-	return subpageinfo.name.replace(/_/g," ").toLowerCase() == subpage
+	return subpageinfo.name.replace(/ /g,"_").toLowerCase() == subpage
 })
+
+console.log(subpageinfo)

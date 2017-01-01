@@ -15,18 +15,29 @@ block mainContent
 		var kommitte = subpageinfo
 
 		var num
+		if(kommitte.name == 'aktiesparare'){
+			kommitte.name = "aktiesparar"
+		}
 
-
-		_('.headertext').innerText = kommitte.name + ' kommittén'
+		_('.headertext').innerHTML = kommitte.name
 
 		_(".utskottheader").style.backgroundColor = kommitte.color
 		_(".utskottinfo").innerHTML = kommitte.desc
 
 		_('.utskottrubrik').style.color = blendColors(kommitte.color, "#000000", 0.3)
 
-		if (window.matchMedia("(max-width: 500px)").matches) {
+		if (window.matchMedia("(max-width: 500px)").matches && _('.headertext').innerHTML !== 'Debate Society') {
 			_('.utskottheadtext').style.color = kommitte.color
 			_(".utskottheader").style.backgroundColor = "transparent"
+			_('.headertext').innerHTML = kommitte.name + '<br>kommittén'
+		}else if(_('.headertext').innerHTML !== 'Debate Society'){
+			_('.headertext').innerHTML = kommitte.name + ' kommittén'
+		}
+
+		if(kommitte.name == 'Östasiatisk kultur'){
+			_('.headertext').innerHTML = "östasiatiska kultur kommittén"
+		}else if(kommitte.name == 'Harry Potter'){
+			_('.headertext').innerHTML = "harry potter kommittén (9¾)"
 		}
 
 		if(kommitte.ord !== ''){
@@ -35,13 +46,13 @@ block mainContent
 			text.innerText = kommitte.ord + ' är ordförande'
 			_('.center').appendChild(text)
 
-			text.style.color = kommitte.color + "!impotant"
+			text.style.color = kommitte.color
 		}
 
 		link = document.createElement('div')
 		link.className ="kommittelink"
-		link.style.backgroundColor = kommitte.color
 		link.style.minHeight = "20px"
+		link.style.zIndex = '20'
 		_('.center').appendChild(link)
 
 		if(kommitte.link !== ''){
@@ -50,6 +61,7 @@ block mainContent
 
 			linktx = document.createElement('h2')
 			linktx.className = "kommittelinktext"
+			linktx.style.backgroundColor = kommitte.color
 			link.appendChild(linktx)
 
 			if(kommitte.link.indexOf("facebook") !== -1){
@@ -70,20 +82,3 @@ block mainContent
 		}
 
 
-
-		if(kommitte.name.localeCompare("östasiatisk kultur") ==  0){
-			_('.utskottheadtext').innerText = "östasiatiska kulturkommittén"
-		}
-
-		if(kommitte.name.localeCompare("aktiesparare") ==  0){
-			_('.utskottheadtext').innerText = "aktiesparar kommittén"
-			_('.utskottinfo').style.marginBottom = '40px'
-		}
-
-		if(kommitte.name.localeCompare("harry potter") ==  0){
-			_('.utskottheadtext').innerText = "harry potter kommittén (9¾)"
-		}
-
-		if(kommitte.name.localeCompare("debate society") ==  0){
-			_('.utskottheadtext').innerText = "debate society"
-		}

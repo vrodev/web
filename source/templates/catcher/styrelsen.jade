@@ -3,22 +3,28 @@ block mainContent
 
 	.header.utskottheader
 		h1.headertext.utskottheadtext Styrelsen
+	.centeracenter
+		.styrelsencenter
 
 	script.
 		var personer = pageinfos.styrelsen.personer
 
 		for (i = 0; i < personer.length; i++) {
+			ruta = document.createElement('div')
+			ruta.className ="utskottruta styrelsenruta"
+			ruta.style.backgroundColor = personer[i].color
+			_('.styrelsencenter').appendChild(ruta)
+
 			header = document.createElement('h2')
 			header.className ="utskottrubrik styrelsenrubrik"
 			header.innerText = personer[i].name
-			_('.main-content').appendChild(header)
-
-			header.style.color = blendColors(personer[i].color, '#000000', 0.3)
+			ruta.appendChild(header)
 
 			text = document.createElement('div')
 			text.className ="utskottinfo styrelseninfo"
 			text.innerText = personer[i].person
-			_('.main-content').appendChild(text)
+			text.style.backgroundColor = blendColors(personer[i].color, '#000000', 0.1)
+			ruta.appendChild(text)
 		}
 		_('.log').style.backgroundColor = blendColors(pageinfos.styrelsen.color,'#ffffff', 0.1)
 		
