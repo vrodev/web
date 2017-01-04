@@ -21,8 +21,8 @@ block mainContent
 			temp = document.createElement('div')
 			temp.className ="utskottruta"
 			temp.style.backgroundColor = blendColors(utskott[i].color,'#000000',0.15)
-			temp.setAttribute("onclick", "window.location.href = '/utskott/" + utskott[i].name.toLowerCase() + "'")
 			document.querySelector(".utskottfield").appendChild(temp)
+			temp.setAttribute("onclick", "window.location.href = '/utskott/" + utskott[i].name.toLowerCase() + "'")
 
 			upper = document.createElement('div')
 			upper.className ="utskotttop"

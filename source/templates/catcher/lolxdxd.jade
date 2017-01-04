@@ -5,7 +5,6 @@ block mainContent
 		.arrowr.arrow(onclick="forward()")
 		.arrowl.arrow(onclick="backward()")
 		.slidemarker
-
 	.box.menu
 		a(href="/mat")
 			.container
@@ -14,7 +13,7 @@ block mainContent
 
 	- var slides = [{text:'hej',bild:'/images/insta.jpg',link:'http://youtube.com'}, {text:'2',bild:"/images/W_2013_199.png", link:'http://twitter.com'}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png", link:'http://facebook.com'}]
 
-	- var boxes = [{bild:'/images/instagram/bulle.jpg', link:'http://facebook.com'}, {bild:"/images/instagram/hobbit.png", link:'http://facebook.com'}, {bild:"/images/instagram/julklapp.jpg", link:'http://facebook.com'}, {bild:"/images/instagram/suitup.png", link:'http://facebook.com'}, {bild:"/images/instagram/tävling.png", link:'http://facebook.com'}, {bild:"/images/instagram/vrofonden.png", link:'http://facebook.com'}]
+	- var boxes = [{bild:'/images/instagram/bulle.jpg', link:'http://facebook.com', text:'Det är kanelbullens dag snart!'}, {bild:"/images/instagram/hobbit.png", link:'http://facebook.com', text:'På onsdag sak ni klä ut er igen'}, {bild:"/images/instagram/julklapp.jpg", link:'http://facebook.com', text:'Det är jul snart och då vill folk ha klappar'}, {bild:"/images/instagram/suitup.png", link:'http://facebook.com', text:'Fina kläder är bra'}, {bild:"/images/instagram/tävling.png", link:'http://facebook.com', text:'Det är tävling snart'}, {bild:"/images/instagram/vrofonden.png", link:'http://facebook.com', text:'Om du har lite pengar kan du nu komma till oss!'}]
 
 	script.
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
@@ -51,12 +50,46 @@ block mainContent
 		}
 
 		for (q = 0; q < boxLength; q++){
+
+			//- box = document.createElement('div')
+			//- box.className ="box"
+			//- box.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
+			//- document.body.querySelector(".main-content").appendChild(box)
+
+			//- image = document.createElement('div')
+			//- image.className ="boximage"
+			//- image.style.backgroundImage = "url(" + boxes[q].bild + ")"
+			//- image.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
+			//- box.appendChild(image)
+
+			//- text = document.createElement('p')
+			//- text.className ="boxtext"
+			//- text.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
+			//- text.innerHTML = boxes[q].text
+			//- box.appendChild(text)
+
 			box = document.createElement('div')
-			box.className ="box"
-			box.style.backgroundImage = "url(" + boxes[q].bild + ")"
+			box.className ="utskottruta box"
+			document.querySelector(".main-content").appendChild(box)
 			box.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
 
-			document.body.querySelector(".main-content").appendChild(box)
+			upper = document.createElement('div')
+			upper.className ="utskotttop boxtop"
+			box.appendChild(upper)
+
+			bild = document.createElement('div')
+			bild.className ="utskottbild boxbild"
+			bild.style.backgroundImage = "url(" + boxes[q].bild + ")"
+			upper.appendChild(bild)
+
+			text = document.createElement('div')
+			text.className = "boxtext"
+			text.innerText = boxes[q].text
+			box.appendChild(text)
+
+			if(i % 4 === 0){
+				box.style.marginRight = '0px'
+			}
 		}
 		
 		var n = 0
@@ -118,3 +151,6 @@ block mainContent
 			clearTimeout(ticket)
 			plupparbak()
 		}
+
+		_('.main-content').style.background = 'none'
+		_('.main-content').style.boxShadow = 'none'
