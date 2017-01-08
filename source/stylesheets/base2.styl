@@ -91,6 +91,10 @@ body > .topheader
 	top 0px
 	left 0px
 	
+	@media (max-width:500px){
+		display none
+	}
+	
 .slide
 	width 99%
 	height 350px
@@ -706,6 +710,10 @@ div.p-link
 .kommittefalt
 	margin 0px
 	text-align center
+	
+.kommitteinfo
+	text-align center !important
+	
 .kommittelink
 	margin-bottom 20px
 	margin-top 20px
@@ -833,7 +841,7 @@ div.p-link
 	margin 0% !important
 	
 .boxtext
-	font-family inherit !important
+	font-family CenturyGothic !important
 	color black !important
 	font-weight bold !important
 	font-size 120%
@@ -886,3 +894,78 @@ div.p-link
 	position absolute
 	bottom 0px
 	color white
+	
+//addplane
+.menu.addbox
+	background-image none
+	
+.addplane
+	position absolute
+	z-index 50
+	top 0px
+	display none
+	width 100%
+	height 100%
+	background-color rgba(0,0,0,.5)
+	
+	.planebox
+		position absolute
+		width 95%
+		max-width 400px
+		background-color white
+		top 200px
+		left 50%
+		transform translate(-50%,-50%)
+		border-radius 5px
+		
+		.imageinput
+			width .1px
+			height .1px
+			overflow hidden
+			margin-top 40px
+			
+		.label
+			font-size 150%
+			margin-top 30px
+			background-color black
+			color white
+			padding 6px
+			margin 5px
+			margin-left calc(50% - 46px)
+			margin-top 20px
+			box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
+			border-radius 2px
+			cursor pointer
+			transition all .2s
+			
+			&:hover
+				box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
+				
+		.labelBild
+			display block
+			padding 0px
+			width 30%
+			padding-top 30%
+			background-size cover
+			margin 0 auto
+			
+
+		.planeinput
+			padding 5px
+			border-radius 5px
+			background-color rgba(0, 0, 0, 0.1)
+			border none
+			display block
+			width 90%
+			max-width 400px
+			margin 5%
+			font-size 120%
+			box-sizing border-box
+			text-align center
+			
+			&:focus
+				outline none
+				
+		.planeDateText
+			display inline-block
+			

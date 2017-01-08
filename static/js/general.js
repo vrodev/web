@@ -1,6 +1,7 @@
 // general.js
 // VRO Web
 // Initially created by Leonard Pauli, sep 2016
+var _ =function(selector){return document.body.querySelector(selector)}
 
 
 // Dynamic pageload
@@ -29,6 +30,24 @@ var addEventListeners = function() {
 		_('.topheader').classList.toggle('darkheader', scroll>=10)
 	})
 
+	var bildInput = _('#bild')
+	if (bildInput) {
+		bildInput.addEventListener('change', function(e) {
+			if (!e.target || !e.target.files) return;
+			var fileReference = e.target.files[0]
+			if (!fileReference) return;
+
+			var fr = new FileReader();
+			fr.onload = function () {
+				var fileDataURL = fr.result
+
+				_('label[for=bild]').style.backgroundImage = "url('" + fileDataURL + "')"
+				_('label[for=bild]').innerText = ''
+				_('label[for=bild]').className += ' labelBild'
+			}
+			fr.readAsDataURL(fileReference);
+		})
+	}
 }
 
 // Called when DOM (the html document)
@@ -38,7 +57,6 @@ window.addEventListener('load', function() {
 	addEventListeners()
 }, false)
 
-var _ =function(selector){return document.body.querySelector(selector)}
 
 function blendColors(c0, c1, p) {
 	var f=parseInt(c0.slice(1),16),t=parseInt(c1.slice(1),16),R1=f>>16,G1=f>>8&0x00FF,B1=f&0x0000FF,R2=t>>16,G2=t>>8&0x00FF,B2=t&0x0000FF;

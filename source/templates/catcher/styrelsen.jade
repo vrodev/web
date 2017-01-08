@@ -25,6 +25,10 @@ block mainContent
 			text.innerText = personer[i].person
 			text.style.backgroundColor = blendColors(personer[i].color, '#000000', 0.1)
 			ruta.appendChild(text)
+
+			shine = document.createElement('div')
+			shine.className ="shine"
+			ruta.appendChild(shine)
 		}
 		_('.log').style.backgroundColor = blendColors(pageinfos.styrelsen.color,'#ffffff', 0.1)
 		

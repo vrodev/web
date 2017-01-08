@@ -97,6 +97,7 @@ module.exports = (function() {
     {page:'karen'},
     {page:'styrelsen'},
     {page:'kommitte'},
+    {page:'added'},
     {path:'kommitte/:info',page:'enkommitte', dataGen: req=>{
       return {kommitte:req.params.info}
     }},
