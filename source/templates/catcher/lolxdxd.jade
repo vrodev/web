@@ -28,11 +28,6 @@ block mainContent
 			_('.addplane').style.display = 'block'
 		}
 
-		box = document.createElement('div')
-		box.className ="utskottruta box menu addbox"
-		document.querySelector(".main-content").appendChild(box)
-		box.setAttribute("onclick", "addplane()")
-
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
 		var boxes = JSON.parse('!{JSON.stringify(boxes)}')
 
@@ -171,3 +166,12 @@ block mainContent
 
 		_('.main-content').style.background = 'none'
 		_('.main-content').style.boxShadow = 'none'
+
+		box = document.createElement('div')
+		box.className ="utskottruta box menu addbox"
+		document.querySelector(".main-content").appendChild(box)
+		box.setAttribute("onclick", "addplane()")
+
+		add = document.createElement('div')
+		add.className ="addplusdiv"
+		box.appendChild(add)
