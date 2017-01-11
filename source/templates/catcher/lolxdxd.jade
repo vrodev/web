@@ -10,14 +10,20 @@ block mainContent
 			.container
 				p.mat.reg Köttfärsås med ekologisk spaghetti och KRAV-ketchup
 				p.mat.veg Grönsaksfärsås med ekologisk spaghetti och KRAV-ketchup
-	.addplane
+	.addplane(onclick='addplane()')
 		.planebox
+			.xButton(onclick='addplane()')
 			input.imageinput(id='bild' placeholder='Text' type='file')
 			label.label(for='bild') Välj bild
 			input.planeinput.textinput(placeholder='Text')
 			input.planeinput.linkinput(placeholder='Link')
-			p.planeDateText Utgångsdatum
-			input(type="date").planeDate
+			.enddate
+				p.planeDateText Utgångsdatum
+				input(type="date").planeDate.planeinput
+			.addChoose
+				.choice.chooseBox add Box
+				.choice.chooseSlide add Slide
+			.bottomPadding
 
 	- var slides = [{text:'hej',bild:'/images/insta.jpg',link:'http://youtube.com'}, {text:'2',bild:"/images/W_2013_199.png", link:'http://twitter.com'}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png", link:'http://facebook.com'}]
 
@@ -25,7 +31,8 @@ block mainContent
 
 	script.
 		function addplane(){
-			_('.addplane').style.display = 'block'
+			var yourUl = _('.addplane')
+			yourUl.style.display = yourUl.style.display === 'none' ? 'none' : 'block'
 		}
 
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
