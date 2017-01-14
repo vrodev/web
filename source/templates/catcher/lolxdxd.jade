@@ -10,7 +10,8 @@ block mainContent
 			.container
 				p.mat.reg Köttfärsås med ekologisk spaghetti och KRAV-ketchup
 				p.mat.veg Grönsaksfärsås med ekologisk spaghetti och KRAV-ketchup
-	.addplane(onclick='addplane()')
+	.addplane
+		.addplane.planeBackground(onclick='addplane()')
 		.planebox
 			.xButton(onclick='addplane()')
 			input.imageinput(id='bild' placeholder='Text' type='file')
@@ -31,8 +32,8 @@ block mainContent
 
 	script.
 		function addplane(){
-			var yourUl = _('.addplane')
-			yourUl.style.display = yourUl.style.display === 'none' ? 'none' : 'block'
+			var plane = _('.addplane')
+			plane.style.display = plane.style.display === 'block' ? 'none' : 'block'
 		}
 
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
@@ -177,8 +178,8 @@ block mainContent
 		box = document.createElement('div')
 		box.className ="utskottruta box menu addbox"
 		document.querySelector(".main-content").appendChild(box)
-		box.setAttribute("onclick", "addplane()")
 
 		add = document.createElement('div')
 		add.className ="addplusdiv"
+		add.setAttribute("onclick", "addplane()")
 		box.appendChild(add)
