@@ -173,6 +173,12 @@ var pageinfos = {
 function changeFromColor(color){
 
 	_(".header").style.backgroundColor = color
+	_(".extendHeader").style.backgroundColor = color
+	if(color == '#ffffff'){
+		document.querySelectorAll('.shineheader')[0].style.background = 'none'
+		document.querySelectorAll('.shineheader')[1].style.background = 'none'
+	}
+
 	_('.phonelinks').style.backgroundColor = blendColors(color, "#000000", 0.2)
 	if(color !== "#ffffff"){
 		_(".phonelinks").className += " whitelinks"

@@ -30,31 +30,31 @@ $pluppdia = 8px
 
 // ----------------------------------------------
 noarg()
-  opacity 0.5
-  
+	opacity 0.5
+	
 square(side, side2 = side)
-  width side
-  height side2
-  
+	width side
+	height side2
+	
 appearance()
-  -webkit-appearance arguments
-  -moz-appearance arguments
-  appearance arguments
+	-webkit-appearance arguments
+	-moz-appearance arguments
+	appearance arguments
 
 bg-image(name,ext = "png")
-  background-image unquote("url(/images/"+name+"."+ext+")")
-  background-repeat no-repeat
-  background-size contain
-  background-position center center
+	background-image unquote("url(/images/"+name+"."+ext+")")
+	background-repeat no-repeat
+	background-size contain
+	background-position center center
 
 // ----------------------------------------------
 font-face-create(name, fileName, weight=normal, style=normal, ext="ttf")
-  @font-face
-    font-family name
-    font-weight weight
-    font-style style
-    src unquote("url(/fonts/"+fileName+"."+ext+")")
-  
+	@font-face
+		font-family name
+		font-weight weight
+		font-style style
+		src unquote("url(/fonts/"+fileName+"."+ext+")")
+	
 
 font-face-create('BebasNeue', 'BebasNeue-Book', 200, normal, "otf")
 font-face-create('BebasNeue', 'BebasNeue-Regular', 600, normal, "otf")
@@ -65,40 +65,40 @@ font-face-create('CenturyGothic', 'CenturyGothic-Italic', normal, italic)
 
 // @font-face
 //   font-face-create('BebasNeue', 'bebas-neue', normal, "otf")
-   
+	
 
 font-regular()
-  font-family 'CenturyGothic', Calibri, sans-serif
+	font-family 'CenturyGothic', Calibri, sans-serif
 font-light()
-  font-regular()
-  font-weight 100
+	font-regular()
+	font-weight 100
 font-title()
-  font-family 'BebasNeue', Helvetica, sans-serif
-  font-weight 800
-  
+	font-family 'BebasNeue', Helvetica, sans-serif
+	font-weight 800
+	
 font-default()
-  font-regular()
+	font-regular()
 
 // ----------------------------------------------
-    
+		
 main-container-width()
-  position relative
-  width 100%
-  margin 0 auto
-  max-width $std_page_width
-  
+	position relative
+	width 100%
+	margin 0 auto
+	max-width $std_page_width
+	
 main-container-height()
-  position relative
-  height 100%
-  margin 0 auto
+	position relative
+	height 100%
+	margin 0 auto
 
 button-up(bgcol = #58DD2F)
-  background bgcol
-  border none
-  border-radius 8px
-  padding 10px
-  font-default()
-  color white
-  &:focus
-    outline none
-    box-shadow 0 0px 5px 0px rgba(red, 0.7)
+	background bgcol
+	border none
+	border-radius 8px
+	padding 10px
+	font-default()
+	color white
+	&:focus
+		outline none
+		box-shadow 0 0px 5px 0px rgba(red, 0.7)

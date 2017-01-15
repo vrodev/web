@@ -10,30 +10,18 @@ block mainContent
 			.container
 				p.mat.reg Köttfärsås med ekologisk spaghetti och KRAV-ketchup
 				p.mat.veg Grönsaksfärsås med ekologisk spaghetti och KRAV-ketchup
-	.addplane
-		.addplane.planeBackground(onclick='addplane()')
-		.planebox
-			.xButton(onclick='addplane()')
-			input.imageinput(id='bild' placeholder='Text' type='file')
-			label.label(for='bild') Välj bild
-			input.planeinput.textinput(placeholder='Text')
-			input.planeinput.linkinput(placeholder='Link')
-			.enddate
-				p.planeDateText Utgångsdatum
-				input(type="date").planeDate.planeinput
-			.addChoose
-				.choice.chooseBox add Box
-				.choice.chooseSlide add Slide
-			.bottomPadding
 
 	- var slides = [{text:'hej',bild:'/images/insta.jpg',link:'http://youtube.com'}, {text:'2',bild:"/images/W_2013_199.png", link:'http://twitter.com'}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png", link:'http://facebook.com'}]
 
 	- var boxes = [{bild:'/images/instagram/bulle.jpg', link:'http://facebook.com', text:'Det är kanelbullens dag snart!'}, {bild:"/images/instagram/hobbit.png", link:'http://facebook.com', text:'På onsdag sak ni klä ut er igen'}, {bild:"/images/instagram/julklapp.jpg", link:'http://facebook.com', text:'Det är jul snart och då vill folk ha klappar'}, {bild:"/images/instagram/suitup.png", link:'http://facebook.com', text:'Fina kläder är bra'}, {bild:"/images/instagram/tävling.png", link:'http://facebook.com', text:'Det är tävling snart'}, {bild:"/images/instagram/vrofonden.png", link:'http://facebook.com', text:'Om du har lite pengar kan du nu komma till oss!'}]
 
 	script.
+		document.getElementsByTagName("BODY")[0].style.backgroundColor = '#e6e6e6'
 		function addplane(){
 			var plane = _('.addplane')
+			var dark = _('.darkBackground')
 			plane.style.display = plane.style.display === 'block' ? 'none' : 'block'
+			dark.style.display = dark.style.display === 'block' ? 'none' : 'block'
 		}
 
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
