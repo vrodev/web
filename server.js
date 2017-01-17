@@ -21,6 +21,21 @@ app.use(cookieParser())
 // Models
 app.use(function(req, res, next) {
   req.models = models
+
+  res.abortIf = (err, msg)=> {
+  	if (!err) return false
+  	console.dir({msg,err})
+		res.status(500).send({
+			status:500,
+			error:msg})
+		return true}
+
+	res.apiOK = (data)=> {
+		res.json({
+				status:200,
+				body:data})
+	}
+
   next()
 })
 
