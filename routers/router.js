@@ -93,6 +93,7 @@ module.exports = (function() {
     })},
     {page:'faq'},
     {page:'lolxdxd'},
+    {page:'loginvro'},
     {page:'mat'},
     {page:'karen'},
     {page:'styrelsen'},

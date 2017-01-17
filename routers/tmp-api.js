@@ -15,6 +15,23 @@ module.exports = (function() {
   var router = express.Router();
   // ---------------------------
 
+  router.get('/food', (req, res) => {
+    var food = require('./food')
+    var callback = function(rawFoodData, shouldNotSave){
+      var foodData = food.parseFoodData(rawFoodData)
+      if(!shouldNotSave){
+        food.lastSaved = new Date()
+        food.saved = rawFoodData
+      }
+      res.json(foodData)
+    }
+    if(food.lastSaved !== undefined && new Date() - food.lastSaved < 1000*60*60*24){
+      callback(food.saved, true)
+      return
+    }
+    food.fetchRawFoodData(callback)
+  })
+  
   router.get('/users', (req, res) => {
     if (req.query.secret!='kanelbulle') return res.send('wuut');
     async (() => {

@@ -19,6 +19,10 @@ body
 	width 100%
 	top $headerheight
 	
+	@media (max-width:500px){
+		display none
+	}
+	
 .darkBackground
 	width 100%
 	height 100%
@@ -42,7 +46,7 @@ body
 	
 	@media (max-width:500px){
 		box-shadow none
-		min-height calc(100% - 50px)
+		min-height calc(100vh - 50px)
 	}
 	
 
@@ -104,7 +108,7 @@ body > .topheader
 .shineheader
 	width 100%
 	height 100%
-	background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0))
+	background: linear-gradient(rgba(white,0.2), rgba(0,0,0,0))
 	position absolute
 	top 0px
 	left 0px
@@ -394,7 +398,7 @@ div.link
 	display inline-block
 	
 .today
-	background-color #f3eadb
+	background-color #FBF5ED
 	color black !important
 	
 //kåren
@@ -952,128 +956,161 @@ div.p-link
 	width 100%
 	height 100%
 	
-	.planebox
-		position absolute
-		width 95%
-		max-width 400px
-		background-color white
-		top 200px
-		left 50%
-		transform translate(-50%,-50%)
-		border-radius 5px
+.planebox
+	position absolute
+	width 95%
+	max-width 400px
+	background-color white
+	top 200px
+	left 50%
+	transform translate(-50%,-50%)
+	border-radius 5px
+	
+	@media (max-width:500px){
+		position fixed
+		top 300px
+	}
 		
-		@media (max-width:500px){
-			position fixed
-		}
+.xButton
+	width 20px
+	height 20px
+	border-radius 50%
+	position absolute
+	right 10px
+	top 10px
+	background-color white
+	border-style solid
+	border-width 1px
+	border-color rgba(0,0,0,.25)
+	transition all .2s
+	
+	&:hover
+		background-color #ff5c5c
 		
-		.xButton
-			width 20px
-			height 20px
-			border-radius 50%
-			position absolute
-			right 10px
-			top 10px
-			background-color white
-			border-style solid
-			border-width 1px
-			border-color rgba(0,0,0,.25)
-			transition all .2s
+.imageinput
+	width .1px
+	height .1px
+	overflow hidden
+	margin-top 40px
 			
-			&:hover
-				background-color #ff5c5c
-		
-		.imageinput
-			width .1px
-			height .1px
-			overflow hidden
-			margin-top 40px
-			
-		.label
-			font-size 150%
-			margin-top 30px
-			background-color black
-			color white
-			padding 6px
-			margin 5px
-			margin-left calc(50% - 46px)
-			margin-top 20px
-			box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
-			border-radius 2px
-			cursor pointer
-			transition all .2s
-			
-			&:hover
-				box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
+.label
+	font-size 150%
+	margin-top 30px
+	background-color black
+	color white
+	padding 6px
+	margin 5px
+	margin-left calc(50% - 46px)
+	margin-top 20px
+	box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
+	border-radius 2px
+	cursor pointer
+	transition all .2s
+	
+	&:hover
+		box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
 				
-		.labelBild
-			display block
-			padding 0px
-			width 30%
-			padding-top 30%
-			background-size cover
-			margin 0 auto
-			background-position center
+.labelBild
+	display block
+	padding 0px
+	width 30%
+	padding-top 30%
+	background-size cover
+	margin 0 auto
+	background-position center
 			
 
-		.planeinput
-			padding 5px
-			border-radius 5px
-			background-color rgba(0, 0, 0, 0.1)
-			border none
-			display block
-			width 90%
-			max-width 400px
-			margin 5%
-			font-size 120%
-			box-sizing border-box
-			text-align center
-			
-			&:focus
-				outline none
+.planeinput
+	padding 5px
+	border-radius 5px
+	background-color rgba(0, 0, 0, 0.1)
+	border none
+	display block
+	width 90%
+	max-width 400px
+	margin 5%
+	font-size 120%
+	box-sizing border-box
+	text-align center
+	
+	@media (max-width:500px){
+		height 50px
+	}
+	
+	&:focus
+		outline none
 				
-		.enddate
-			text-align center
-			margin 20px
-			margin-bottom 5px
+.enddate
+	text-align center
+	margin 20px
+	margin-bottom 5px
 				
-			.planeDateText
-				display inline-block
-				font-family Arial
-				color #929292
+.planeDateText
+	display inline-block
+	font-family Arial
+	color #929292
 				
-			.planeDate
-				margin-top 3px
-				display inline-block
-				width 249px
-				margin-right 0px
-				margin-left 6px
-				font-size 120%
+.planeDate
+	margin-top 3px
+	display inline-block
+	width 249px
+	margin-right 0px
+	margin-left 6px
+	font-size 120%
 				
-		.addChoose 
-			bottom 0px
-			width 100%
-			height 50px
-			font-size 130%
-			
-			.choice
-				width 47%
-				display inline-block
-				text-align center
-				height 98%
-				background-color rgba(0, 0, 0, 0.15)
-				color black
-				border-radius 5px
-				margin 0% 0% 2% 2%
-				line-height 50px
-				cursor pointer
-				transition all 0.2s
-				
-				&:hover
-					box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
-					background-color black
-					color white
+.addChoose 
+	bottom 0px
+	width 100%
+	height 50px
+	font-size 130%
+	
+.choice
+	width 47%
+	display inline-block
+	text-align center
+	height 98%
+	color black
+	background-color rgba(0, 0, 0, 0.15)
+	border-radius 5px
+	margin 0% 0% 2% 2%
+	line-height 50px
+	cursor pointer
+	transition all 0.2s
+	
+	&:hover
+		box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
+		background-color black
+		color white
 					
-		.bottomPadding
-			width 100%
-			padding-top 2%
-			
+.bottomPadding
+	width 100%
+	padding-top 2%
+	
+//login
+.loginDiv
+	text-align center
+	margin-bottom 50px
+	
+.logoBig
+	bg-image logga
+	width 200px
+	height 200px
+
+.loginInput
+	width 230px
+	margin 5px
+	height 40px
+	display inline-block
+	
+	@media (max-width:500px){
+		width 90%
+	}
+	
+.loginChoice
+	width 260px
+	margin 20px
+	border-width 2px
+	border-style solid
+	border-color black
+	background-color transparent
+	

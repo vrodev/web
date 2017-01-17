@@ -28,3 +28,7 @@ api.getEmail = function(name, callback) {
 api.sendEmail = function(name, callback) {
 	this.get('sendEmail', { }, callback)
 }
+
+api.food = function(callback){
+	this.get('food', {}, callback)
+}

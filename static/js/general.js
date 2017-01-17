@@ -167,6 +167,9 @@ var pageinfos = {
 	},
 	utskott:{
 		color:'#ffffff'
+	},
+	loginvro:{
+		color:'#ffffff'
 	}
 }
 
