@@ -32,9 +32,9 @@ app.use(require('./middlewares/authenticate'))
 var router = require('./routers/router.js')
 app.use(router)
 
-// Temporary api router
-var tmpAPI = require('./routers/tmp-api.js')
-app.use('/api', tmpAPI)
+// API router
+var apiRouter = require('./api/routers/main.js')
+app.use('/api', apiRouter)
 
 // errorPageHandler
 require('./middlewares/errorPageHandler')(app);

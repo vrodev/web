@@ -1,3 +1,4 @@
+"use strict";
 // catch.js
 // VRO Web
 // 
@@ -14,7 +15,6 @@ const Schema = mongoose.Schema({
 }, {timestamps: true})
 
 
-// ---------------------------------------
 // Add object methods
 
 Schema.methods.firstName = function() {
@@ -22,7 +22,6 @@ Schema.methods.firstName = function() {
 }
 
 
-// ---------------------------------------
 // Add static methods
 
 Schema.statics.load = function (_id) {
@@ -46,7 +45,5 @@ Schema.statics.list = function(options) {
 }
 
 
-// ---------------------------------------
 // Register schema
-
 module.exports = mongoose.model('Catch', Schema);

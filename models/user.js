@@ -20,6 +20,23 @@ const Schema = mongoose.Schema({
   line: String,
   graduationYear: Number,
 
+  // cardno: {type: String, unique: true},
+  // name: String,
+  // surname: String,
+  // email: String,
+  // tel: String,
+  // pass: String,
+  // userlevel: String,
+  // town: String,
+  // zip: String,
+  // street: String,
+  // class: String,
+  // immortal: String,
+  // exyear: String,
+  // activated: Boolean,
+  // pin: Number,
+  // headadmin: Boolean
+
 
 	catcher: {
 		target: dbRef('User'),
@@ -34,7 +51,6 @@ const Schema = mongoose.Schema({
 }, {timestamps: true}) // createdAt/updatedAt
 
 
-// ---------------------------------------
 // Hooks
 
 Schema.virtual('firstName').get(function () {
@@ -56,7 +72,7 @@ Schema.virtual('className').get(function () {
   return className
 })
 
-// ---------------------------------------
+
 // Hooks
 
 Schema.pre('remove', function (next) {
@@ -76,7 +92,6 @@ Schema.pre('remove', function (next) {
 });
 
 
-// ---------------------------------------
 // Add schema methods (before registering)
 
 // Schema.methods.firstName = function() {
@@ -84,7 +99,6 @@ Schema.pre('remove', function (next) {
 // }
 
 
-// ---------------------------------------
 // Add static methods
 
 // eg. const await = require('asyncawait/await')
@@ -128,7 +142,5 @@ Schema.statics.saveMany = async (function(objs) {
 })
 
 
-// ---------------------------------------
 // Register schema
-
 module.exports = mongoose.model('User', Schema);

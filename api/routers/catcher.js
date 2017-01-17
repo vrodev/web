@@ -1,56 +1,17 @@
 "use strict";
-// tmp-api.js
+// api/catcher.js
 // VRO Web
-
-var express = require('express')
 
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
-const awaitres = require('../helpers/helpers').awaitres;
-const sendEmail = require('../helpers/helpers').sendEmail;
+const awaitres = require('../../helpers/helpers').awaitres;
+
+var express = require('express')
+const sendEmail = require('../../helpers/helpers').sendEmail;
 
 
-// ------------------------------------------------------------------------
-module.exports = (function() {
-  var router = express.Router();
-  // ---------------------------
-
-  router.get('/food', (req, res) => {
-    var food = require('./food')
-    var callback = function(rawFoodData, shouldNotSave){
-      var foodData = food.parseFoodData(rawFoodData)
-      if(!shouldNotSave){
-        food.lastSaved = new Date()
-        food.saved = rawFoodData
-      }
-      res.json(foodData)
-    }
-    if(food.lastSaved !== undefined && new Date() - food.lastSaved < 1000*60*60*24){
-      callback(food.saved, true)
-      return
-    }
-    food.fetchRawFoodData(callback)
-  })
-  
-  router.get('/users', (req, res) => {
-    if (req.query.secret!='kanelbulle') return res.send('wuut');
-    async (() => {
-      let users = await (req.models.User.find({}).exec())
-      // if (req.query.html) {
-      //   return res.send(user.name+'\'s target is <a href="'+user.catcher.target._id+'?html=true">'+user.catcher.target.name+'</a>')
-      // }
-      res.json(users)
-    })()
-  })
-
-  router.get('/catcher/circle-stats', (req, res) => {
-    async (() => {
-      let users = await (req.models.User.find({catcher: {$exists:true}}).select('_id line catcher.target catcher.isNoobed').exec())
-      let catches = await (req.models.Catch.find({}).select('user target').exec())
-    
-      res.json({users:users, catches:catches})
-    })()
-  })
+// /api
+const routeMain = router=> {
 
   router.get('/catches', (req, res) => {
     if (req.query.secret!='kanelbulle') return res.send('wuut');
@@ -63,20 +24,6 @@ module.exports = (function() {
     })()
   })
 
-
-  router.get('/user/:id', (req, res) => {
-    if (req.query.secret!='kanelbulle') return res.send('wuut');
-    async (() => {
-      let user = await (req.models.User.load(req.params.id, 'catcher.target'))
-      if (req.query.html) {
-        return res.send(user.name+'\'s target is <a href="'+user.catcher.target._id+'?html=true">'+user.catcher.target.name+'</a>')
-      }
-      res.json(user)
-    })()
-  })
-
-
-  // ---------------------------
   // /api/lol?name=Erik
   router.get('/clickedKilled', function(req, res) {
     var name = req.query.name // Erik
@@ -87,8 +34,6 @@ module.exports = (function() {
     })
   })
 
-
-  // ---------------------------
   router.get('/clickedDied', function(req, res) {
     var name = req.query.name // Erik
 
@@ -104,8 +49,6 @@ module.exports = (function() {
     
   })
 
-
-  // ---------------------------
   router.get('/resetCircle', function(req, res) {
     var name = req.query.name
     res.json({
@@ -114,8 +57,6 @@ module.exports = (function() {
     })
   })
 
-
-  // ---------------------------
   router.get('/getEmail', function(req, res) {
     req.models.User.find(function(error, users) {
       var emailString = "";
@@ -130,8 +71,6 @@ module.exports = (function() {
     });
   })
 
-
-  // ---------------------------
   router.get('/sendEmail', function(req, res) {
     "use strict";
     if (req.query.secret!='kanelbulle') return res.send('wuut');
@@ -163,7 +102,29 @@ module.exports = (function() {
     }
   }))()})
 
+}
 
-  // -----------
-  return router;    
-})();
+
+// /api/catcher
+const route = router=> {
+
+  router.get('/circle-stats', (req, res) => {
+    async (() => {
+      let users = await (req.models.User.find({catcher: {$exists:true}}).select('_id line catcher.target catcher.isNoobed').exec())
+      let catches = await (req.models.Catch.find({}).select('user target').exec())
+    
+      res.json({users:users, catches:catches})
+    })()
+  })
+
+}
+
+
+// Register
+module.exports = mainRouter=> {
+  routeMain(mainRouter)
+
+  var router = express.Router();
+  route(router)
+  mainRouter.use('/catcher', router)
+}
