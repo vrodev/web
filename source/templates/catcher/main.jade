@@ -35,13 +35,16 @@ block mainContent
 					setTimeout(function() {
 						calculateWarningtextEl()
 						warningEl.classList.add('show')
-						setInterval(calculateWarningtextEl);
+						setInterval(calculateWarningtextEl, 1000);
 					}, 200)
 			
 		else
 			h1 RIP
 			iframe(src="catcher-visualization.html")
-			p.statustext You have been eliminated... for now. But what's better than being able to watch the living from above..?#{catchCountExc}
+			if isNoobed
+				p.statustext You have been taken out... for now. But what's better than being able to watch the living from above..?#{catchCountExc}
+			else
+				p.statustext You have been eliminated... for now. But what's better than being able to watch the living from above..?#{catchCountExc}
 			style.
 				.main-content {height:600px !important;}
 
