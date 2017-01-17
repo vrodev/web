@@ -45,7 +45,7 @@ module.exports = (function() {
 
   router.get('/catcher/circle-stats', (req, res) => {
     async (() => {
-      let users = await (req.models.User.find({catcher: {$exists:true}}).select('_id line catcher.target').exec())
+      let users = await (req.models.User.find({catcher: {$exists:true}}).select('_id line catcher.target catcher.isNoobed').exec())
       let catches = await (req.models.Catch.find({}).select('user target').exec())
     
       res.json({users:users, catches:catches})

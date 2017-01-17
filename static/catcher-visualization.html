@@ -114,6 +114,7 @@ function loadData(graph, catches) {
   // graph.links = links
   var links = [];
   graph.forEach(function(n, i) {
+    if (!n.catcher) return;
     let target = graph.findIndex(o=>n.catcher.target==o._id)
     if (target==-1) return;
     links.push({
@@ -152,7 +153,7 @@ function loadData(graph, catches) {
 
    circled = circle.append("circle")
       .attr("r", 3)
-      .attr("fill", d=>d.catcher.target?"#ddd":"#faa")
+      .attr("fill", d=> !d.catcher ? "#faa" : (d.catcher.target?"#ddd": (d.catcher.isNoobed?"#fe7":"#faa") ))
 
   node = circle
     .on("dblclick", dblclick)

@@ -54,6 +54,8 @@ module.exports = (function() {
         data.availableBonuses = config.catcher.bonuses
           .filter(o=>o.enabled(catches))
           .map(o=>o.startDate=o.startDateFn(catches))
+
+        data.isNoobed = req.user.catcher.isNoobed
       }
     })},
     {page:'catch', fn:async (function(req, res, data) {
