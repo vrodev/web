@@ -36,7 +36,7 @@ function parseFoodData(rawFoodData){
 	x.replace(/DATE:(\d{4})(\d{2})(\d{2})/g, function(wholeMatch, year, month, day, index, wholeString) {
 
 		var date = new Date(year, month, day)
-		var weekdaysNames = "Torsdag,Fredag,Lördag,Söndag,Mådag,Tisdag,Onsdag".split(",")
+		var weekdaysNames = "Torsdag,Fredag,Lördag,Söndag,Måndag,Tisdag,Onsdag".split(",")
 		var dayOfWeek = date.getDay()
 		var dayName = weekdaysNames[dayOfWeek]
 
