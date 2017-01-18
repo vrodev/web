@@ -8,8 +8,8 @@ block mainContent
 	.box.menu
 		a(href="/mat")
 			.container
-				p.mat.reg Köttfärsås med ekologisk spaghetti och KRAV-ketchup
-				p.mat.veg Grönsaksfärsås med ekologisk spaghetti och KRAV-ketchup
+				p.mat.reg 
+				p.mat.veg 
 
 	- var slides = [{text:'hej',bild:'/images/insta.jpg',link:'http://youtube.com'}, {text:'2',bild:"/images/W_2013_199.png", link:'http://twitter.com'}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png", link:'http://facebook.com'}]
 
@@ -23,6 +23,18 @@ block mainContent
 			plane.style.display = plane.style.display === 'block' ? 'none' : 'block'
 			dark.style.display = dark.style.display === 'block' ? 'none' : 'block'
 		}
+
+		api.food(function(arr){
+
+			for (i = 0; i < arr.length; i++) {
+
+				var today = new Date().getDate()
+				if(arr[i].dateMS == today){
+					_('.reg').innerText = arr[i].mainFood
+					_('.veg').innerText = arr[i].vegFood
+				}
+			}
+		})
 
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
 		var boxes = JSON.parse('!{JSON.stringify(boxes)}')
