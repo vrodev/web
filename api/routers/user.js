@@ -35,7 +35,7 @@ const route = router=> {
 
 		user.save(function(err, user) {
 			if (res.abortIf(err, 'Couldn\'t save the user')) return;
-			res.apiOK(savedUser)
+			res.apiOK(user)
 		});
 	})
 

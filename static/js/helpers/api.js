@@ -93,6 +93,7 @@ var API = function(domain) {
 
 	// Send a restfull post request
 	this.post = function(endpoint, parameters, data, callback, headers) {
+		var me = this
 		var url = this.domain + endpoint
 
 		// Content-Type
