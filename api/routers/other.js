@@ -20,7 +20,7 @@ const routeMain = router=> {
         food.lastSaved = new Date()
         food.saved = rawFoodData
       }
-      res.json(foodData)
+      res.apiOK(foodData)
     }
 
     // Use cached data if available
