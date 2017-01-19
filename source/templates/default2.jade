@@ -119,11 +119,13 @@ html
 				input.planeinput.linkinput(placeholder='Link')
 				.enddate
 					p.planeDateText Utgångsdatum
-					input(type="date" onkeydown="updatePrewiew()").planeDate.planeinput
+					input(type="date").planeDate.planeinput
 				.addChoose
-					.choice.chooseBox(onclick='cleanPlane();addBox()') add Box
-					.choice.chooseSlide(onclick='cleanPlane();addSlide()') add Slide
+					.choice.chooseBox(onclick='defineType(box)') Box
+					.choice.chooseSlide(onclick='defineType(slide)') Slide
+				.choice.publish(onclick='cleanPlane();addObject()') Publish
 				.bottomPadding
+			.preview
 
 		.main-content
 			//- include footer-made

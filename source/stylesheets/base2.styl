@@ -127,6 +127,8 @@ body > .topheader
 	
 	@media (max-width:500px){
 		height 175px
+		margin 0
+		width 100%
 	}
 	
 .slideobject
@@ -160,6 +162,10 @@ for num in 0 1 2
 	margin-top (-0.5 * $height)
 	width 100%
 	cursor default
+	
+	@media (max-width:500px){
+		font-size 15vw
+	}
 	
 .slidemarker
 	position absolute
@@ -1081,9 +1087,16 @@ div.p-link
 		background-color black
 		color white
 					
+.publish
+	margin-left 26.5%
+	margin-top 20px
+	
 .bottomPadding
 	width 100%
 	padding-top 2%
+	
+.preview
+	width 100%
 	
 //login
 .loginDiv

@@ -66,6 +66,10 @@ function parseFoodData(rawFoodData){
 		var vegFood = foodString.substr(vegEnd)
 		vegFood = vegFood.replace(/\\n ?/g, "")
 
+		if(mainFood == vegFood){
+			mainFood = 'Vegitarisk dag'
+		}
+
 		arr[arr.length] = {
 			"mainFood":mainFood,
 			"vegFood":vegFood,
