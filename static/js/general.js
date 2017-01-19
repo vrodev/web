@@ -150,7 +150,7 @@ var pageinfos = {
 		hjalp:''}
 	],
 	styrelsen: {
-		color:'#222222',
+		color:'#ffffff',
 		personer:[
 			{name:'Ordförande',person:'Nora Uvemo',color:'#5176e4'},
 			{name:'Vice Ordförande',person:'Richard Wahlström',color:'#47b2cc'},

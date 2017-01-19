@@ -113,13 +113,13 @@ html
 		.addplane(onclick='addplane()')
 			.planebox(onclick='addplane()')
 				.xButton(onclick='addplane()')
-				input.imageinput(id='bild' placeholder='Text' type='file')
+				input.imageinput(id='bild' type='file')
 				label.label(for='bild') Välj bild
-				input.planeinput.textinput(placeholder='Text')
+				input.planeinput.textinput(placeholder='Text' onkeydown="updatePrewiew()")
 				input.planeinput.linkinput(placeholder='Link')
 				.enddate
 					p.planeDateText Utgångsdatum
-					input(type="date").planeDate.planeinput
+					input(type="date" onkeydown="updatePrewiew()").planeDate.planeinput
 				.addChoose
 					.choice.chooseBox(onclick='cleanPlane();addBox()') add Box
 					.choice.chooseSlide(onclick='cleanPlane();addSlide()') add Slide
@@ -164,6 +164,10 @@ html
 					document.querySelector('.menubutton').style.transform = "rotate(0deg)"
 					document.querySelector('.creddiv').style.bottom = "-50px"
 				}
+			}
+
+			function updatePrewiew(){
+				
 			}
 
 			if (window.matchMedia("(max-width: 500px)").matches) {
