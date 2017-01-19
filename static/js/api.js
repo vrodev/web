@@ -37,6 +37,10 @@ api.createUser = function(name, callback){
 	this.post('user', {name:name}, {}, callback)
 }
 
+api.createUser = function(name, callback){
+	this.post('user', {name:name}, {}, callback)
+}
+
 /*api.createUser('erik', function(res){
 	console.log(res)
 })*/

@@ -17,16 +17,18 @@ const routeMain = router=> {
 
 // /api/post
 const route = router=> {
-
+	router.get('/', function(req, res){
+		res.apiOK('hejhej')
+	})
 
 }
 
 
 // Register
 module.exports = mainRouter=> {
-	routeMain(mainRouter)
+  routeMain(mainRouter)
 
   var router = express.Router();
   route(router)
-	mainRouter.use('/post', router)
+  mainRouter.use('/post', router)
 }

@@ -398,7 +398,7 @@ div.link
 	display inline-block
 	
 .today
-	background-color #FBF5ED
+	background-color #fff0da
 	color black !important
 	
 //kåren
@@ -864,6 +864,11 @@ div.p-link
 	overflow hidden
 	margin 8px
 	
+	@media (max-width:500px){
+		font-size 4vw
+		height 10vw
+	}
+	
 	&:hover
 		text-decoration underline
 
@@ -876,7 +881,7 @@ div.p-link
 	position relative
 	
 	@media (max-width:500px){
-		padding-top calc(48% + 66px)
+		padding-top calc(48% + 14vw)
 	}
 		
 .container
@@ -949,7 +954,7 @@ div.p-link
 		
 	
 .addplane
-	position absolute
+	position fixed
 	z-index 40
 	top 200px
 	display none
@@ -957,17 +962,16 @@ div.p-link
 	height 100%
 	
 .planebox
-	position absolute
+	position fixed
 	width 95%
 	max-width 400px
 	background-color white
-	top 200px
+	top 400px
 	left 50%
 	transform translate(-50%,-50%)
 	border-radius 5px
 	
 	@media (max-width:500px){
-		position fixed
 		top 300px
 	}
 		
@@ -1034,7 +1038,7 @@ div.p-link
 	text-align center
 	
 	@media (max-width:500px){
-		height 50px
+		height 50px !important
 	}
 	
 	&:focus

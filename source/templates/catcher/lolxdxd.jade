@@ -24,7 +24,15 @@ block mainContent
 			dark.style.display = dark.style.display === 'block' ? 'none' : 'block'
 		}
 
+		function cleanPlane(){
+			_('.imageinput').src = _('.textinput').value = _('.linkinput').value = _('.enddate').value = ''
+		}
+		function addBox(){
+
+		}
+
 		api.food(function(arr){
+		arr = arr.body
 
 			for (i = 0; i < arr.length; i++) {
 

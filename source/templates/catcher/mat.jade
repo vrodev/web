@@ -16,6 +16,7 @@ block mainContent
 		_('.main-content').style.maxWidth = 'none'
 		api.food(function(arr){
 			var any = false
+			arr = arr.body
 
 			for (i = 0; i < arr.length; i++) {
 				var array = arr[i]

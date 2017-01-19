@@ -121,8 +121,8 @@ html
 					p.planeDateText Utgångsdatum
 					input(type="date").planeDate.planeinput
 				.addChoose
-					.choice.chooseBox add Box
-					.choice.chooseSlide add Slide
+					.choice.chooseBox(onclick='cleanPlane();addBox()') add Box
+					.choice.chooseSlide(onclick='cleanPlane();addSlide()') add Slide
 				.bottomPadding
 
 		.main-content
