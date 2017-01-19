@@ -65,10 +65,17 @@ function parseFoodData(rawFoodData){
 		var mainFood = foodString.substr(0, vegStart)
 		var vegFood = foodString.substr(vegEnd)
 		vegFood = vegFood.replace(/\\n ?/g, "")
+		if(dayName == "Onsdag"){
+			mainFood = ''
+			vegFood = vegFood + ' (vegetariska dagen)'
+		}				
 
 		if(mainFood == vegFood){
-			mainFood = 'Vegitarisk dag'
+			mainFood = 'Vegetarisk dag'
 		}
+
+		console.log(mainFood)
+		console.log(vegFood)		
 
 		arr[arr.length] = {
 			"mainFood":mainFood,
@@ -77,6 +84,7 @@ function parseFoodData(rawFoodData){
 			"dateNumber": dayOfWeek,
 			"dateMS": day/*Math.abs(date),*/
 		}
+
 	})
 	console.log(arr)
 	return arr
