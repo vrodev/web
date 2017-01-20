@@ -20,6 +20,8 @@ const Schema = mongoose.Schema({
   line: String,
   graduationYear: Number,
 
+  groups: [dbRef('Group')],
+
   // cardno: {type: String, unique: true},
   // name: String,
   // surname: String,

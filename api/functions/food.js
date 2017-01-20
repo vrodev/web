@@ -74,8 +74,8 @@ function parseFoodData(rawFoodData){
 			mainFood = 'Vegetarisk dag'
 		}
 
-		console.log(mainFood)
-		console.log(vegFood)		
+		// console.log(mainFood)
+		// console.log(vegFood)		
 
 		arr[arr.length] = {
 			"mainFood":mainFood,
@@ -86,7 +86,7 @@ function parseFoodData(rawFoodData){
 		}
 
 	})
-	console.log(arr)
+	// console.log(arr)
 	return arr
 }
 

@@ -119,7 +119,8 @@ var API = function(domain) {
 		}
 
 		// Send request
-		req.send(data)
+		req.send(JSON.stringify(data))
+
 	}
 
 }

@@ -7,6 +7,7 @@ const express = require('express')
 const logger = require('morgan')
 const app = express()
 const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
 const models = require('./helpers/db-connect').models
 const config = require('./config')
 
@@ -17,6 +18,7 @@ app.locals.pretty = false//config.isDev;
 app.set('view engine', 'jade')
 
 app.use(cookieParser())
+app.use(bodyParser.json())
 
 // Models
 app.use(function(req, res, next) {

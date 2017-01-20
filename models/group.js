@@ -9,6 +9,7 @@ const dbRef = require('../helpers/helpers').mongooseRef
 const Schema = new mongoose.Schema({
 	name: String,
 	leader: dbRef('User'),
+	administrators: [dbRef('User')],
 
 	members: [dbRef('User')],
 	about: String
