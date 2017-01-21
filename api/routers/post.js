@@ -24,6 +24,15 @@ const route = router=> {
 		});
 	})
 
+	router.get('/:id', function(req, res) {
+		const id = req.params.id
+
+		req.models.Post.findOne({_id:id}).exec(function(err, result) {
+			if(res.abortIf(err, 'Couldn\'t fetch post')) return;
+			res.apiOK(result)
+		});
+	})	
+
 	router.post('/', function(req,res) {
 		const group = req.body.group
 		// if (req.user.groups.indexOf('Group') == -1) {
@@ -42,6 +51,14 @@ const route = router=> {
 			if (res.abortIf(err, 'Couldn\'t save the post')) return;
 			res.apiOK(post)
 		});		 
+	})
+
+	router.delete('/:id', function(req, res) {
+		const id = req.params.id
+		req.models.Post.findOneAndRemove({_id:id}, function(err) {
+			if (res.abortIf(err, 'Could not delete post')) return;
+			res.apiOK()
+		})
 	})
 
 }

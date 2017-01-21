@@ -31,6 +31,12 @@ var APIModel = function(name, opt) {
 			if (err) return callback(err)
 			options.save.bind(self)(data, callback, all)
 		}, {}, !self.id? 'POST': 'PATCH')}
+	Model.prototype.delete = function(callback) {
+		var self = this
+		api.delete(Model._name+'/'+id, {}, function(err, data, all) {
+			if (err) return callback(err)
+			callback()
+		})}
 
 	Model.list = function(callback) {
 		api.get(Model._name, {}, function(err, data, all) {

@@ -12,7 +12,13 @@ const Schema = new mongoose.Schema({
 	administrators: [dbRef('User')],
 
 	members: [dbRef('User')],
-	about: String
+	about: String,
+
+	type: {
+		type: String,
+		enum : ['UTSKOTT','KOMMITTE','GROUP'],
+		default : 'GROUP'
+	}
 
 	// status: String,
 	// email: String,

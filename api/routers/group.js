@@ -9,7 +9,15 @@ var express = require('express')
 
 
 // /api
-const routeMain = router=> {}
+const routeMain = router=> {
+	router.delete('/:id', function(req, res) {
+		const id = req.params.id
+		req.models.Group.findOneAndRemove({_id:id}, function(err) {
+			if (res.abortIf(err, 'Could not delete post')) return;
+			res.apiOK()
+		})
+	})	
+}
 
 
 // /api/group
