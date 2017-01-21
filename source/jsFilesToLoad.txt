@@ -1,0 +1,16 @@
+# jsFilesToLoad.js
+# VRO Web
+#
+# Created by Leonard Pauli, jan 2016
+#
+#	Usage: The following line:
+# 	directory/sub-directory: file-a, file-b
+# becomes the following:
+# 	<script src="/js/directory/sub-directory/file-a.js"></script>
+# 	<script src="/js/directory/sub-directory/file-b.js"></script>
+# Empty lines and lines starting with a hash (#) are excluded
+
+helpers: api
+helpers: helpers, api
+api: main, group, user
+: general, catcher

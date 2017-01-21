@@ -8,6 +8,9 @@ const config = require('../config')
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 
+var fs = require('fs')
+var path = require('path')
+
 
 function randomWrongCodeMessage() {
   const messages =
@@ -19,6 +22,17 @@ function randomWrongCodeMessage() {
         "Fel kod, testa igen!"]
   return messages[Math.floor(Math.random()*messages.length)]
 }
+
+const jsFilesToLoad = (()=>{
+  const txt = fs.readFileSync(path.resolve(__dirname + '/../source/jsFilesToLoad.txt'),'utf8')
+  const lines = txt.split('\n')
+  return lines.filter(line=>line.length&&line.substr(0,1)!="#").map(line=>{
+    const components = line.split(': ')
+    const prefix = (path=>path.length?path+'/':'')(components[0])
+    return components[1].split(', ').map(path=>prefix+path)
+  }).reduce((all,paths)=>all.concat(paths))
+})();
+
 
 module.exports = (function() {
   var router = express.Router();
@@ -124,6 +138,8 @@ module.exports = (function() {
       if (route.fn && await (route.fn(req, res, route.data)) === false) return;
       if (!route.data.title) route.data.title = 'VRO Elevkår'
       if (!route.data.user) route.data.user = req.user
+      if (!route.data.jsFilesToLoad) route.data.jsFilesToLoad = jsFilesToLoad
+      if (!route.data.config) route.data.config = config
       route.data.dataPage = route.page
       res.render('catcher/'+route.page, route.data)
     })()}})(route) )
