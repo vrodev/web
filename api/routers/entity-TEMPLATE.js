@@ -9,10 +9,7 @@ var express = require('express')
 
 
 // /api
-const routeMain = router=> {
-
-
-}
+const routeMain = router=> {}
 
 
 // /api/entity

@@ -10,20 +10,18 @@ const generateSimpleCode = require('../../helpers/helpers').generateSimpleCode;
 
 
 // /api
-const routeMain = router=> {
+const routeMain = router=> {}
 
-	router.get('/users', (req, res) => {
+
+// /api/user
+const route = router=> {
+
+	router.get('/', (req, res) => {
 		req.models.User.find({}, (err, items)=> {
 			if (res.abortIf(err, 'Couldn\'t get users')) return;
 			res.apiOK(items)
 		})
 	})
-
-}
-
-
-// /api/user
-const route = router=> {
 
 	router.post('/', (req, res)=> {
 		const user = new req.models.User()
@@ -31,7 +29,7 @@ const route = router=> {
 		user.email = req.query.email
 		user.loginCode = generateSimpleCode(5)
 		user.line = req.query.line
-  		user.graduationYear = req.query.graduationYear
+  	user.graduationYear = req.query.graduationYear
 
 		user.save(function(err, user) {
 			if (res.abortIf(err, 'Couldn\'t save the user')) return;

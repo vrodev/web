@@ -9,9 +9,13 @@ var express = require('express')
 
 
 // /api
-const routeMain = router=> {
+const routeMain = router=> {}
 
-	router.get('/posts', function(req, res) {
+
+// /api/post
+const route = router=> {
+
+	router.get('/', function(req, res) {
 		let limit = req.query.limit ? parseInt(limit) : 1000
 
 		req.models.Post.find().limit(limit).exec(function(err, result) {
@@ -19,12 +23,6 @@ const routeMain = router=> {
 			res.apiOK(result)
 		});
 	})
-
-}
-
-
-// /api/post
-const route = router=> {
 
 	router.post('/', function(req,res) {
 		const group = req.body.group
