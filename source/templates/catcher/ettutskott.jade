@@ -3,7 +3,7 @@ block mainContent
 
 	.header.utskottheader
 		.shineheader.extrashine
-		h1.headertext.utskottheadtext #{utskott} utskottet
+		h1.headertext.utskottheadtext #{utskott}
 	.loggacenter
 		.utskotttextfalt
 			h2.arbeterubrik.utskottrubrik Vad vi arbetar med
@@ -74,8 +74,8 @@ block mainContent
 
 		if("#{utskott}".localeCompare("kommunikation") ===  0 || "#{utskott}".localeCompare("tradition") === 0){
 			if (window.matchMedia("(max-width: 500px)").matches) {
-				_('.utskottheadtext').innerText = "#{utskott}s utskottet"
+				_('.utskottheadtext').innerText = "#{utskott}"
 			}else{
-				_('.utskottheadtext').innerText = "#{utskott}s-utskottet"
+				_('.utskottheadtext').innerText = "#{utskott}"
 			}
 		}
