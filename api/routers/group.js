@@ -1,6 +1,7 @@
 "use strict";
 // api/group.js
 // VRO Web
+// LETS MAKE API GREAT AGAIN
 
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
