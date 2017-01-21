@@ -377,12 +377,14 @@ div.link
 .day
 	width 100%
 	padding 15px 0px 15px 0px
+	text-align center
 	
 	@media (max-width:500px){
 		padding 5px 0px 5px 0px
 	}
 	
 	.veckodag
+		display inline-block
 		text-align center
 		color grey
 		font-size 200%
@@ -390,7 +392,7 @@ div.link
 		@media (max-width:500px){
 			font-size 150%
 		}
-		
+				
 	.meny
 		text-align center
 		color grey
@@ -399,13 +401,18 @@ div.link
 	.huvudratt
 		margin 2px 2px 0px 2px
 		
-.nextWeek
 	padding 30px 0px 30px 0px
-	.veckodag
+	.nextWeek
 		font-size 140%
 		color #5b5b5b
 		background-color whitesmoke
+		width 100%
 
+.veckodag.dateMonth
+	margin-left 5px
+	font-size: 131%;
+    opacity: .8
+	
 .kott
 	width 18px
 	height 18px
@@ -867,6 +874,7 @@ div.p-link
 	width 100% !important
 	padding-top 100% !important
 	margin 0% !important
+	background-size cover 
 	
 .boxtext
 	font-family CenturyGothic !important
@@ -1135,5 +1143,21 @@ div.p-link
 	
 //om
 .omcenter
-	margin-top 30px
+	@media (min-width:500px){
+		margin-top 30px
+	}
+
+	.utskottinfo
+		@media (max-width:500px){
+			margin 15px
+		}
+		
+//postPlane
+
+.postPlane
+	display block
+.postBox
+.postImage
+.postInfo
+.post
 	
