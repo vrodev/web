@@ -108,17 +108,22 @@ html
 				.xButton(onclick='addplane()')
 				input.imageinput(id='bild' type='file')
 				label.label(for='bild') Välj bild
-				input.planeinput.textinput(placeholder='Text' onkeydown="updatePrewiew()")
-				input.planeinput.linkinput(placeholder='Link')
-				.enddate
-					p.planeDateText Utgångsdatum
-					input(type="date").planeDate.planeinput
+				input.planeinput.titleinput(placeholder='Title')
+				input.planeinput.bodyinput(placeholder='Body')
 				.addChoose
-					.choice.chooseBox(onclick='defineType(box)') Box
-					.choice.chooseSlide(onclick='defineType(slide)') Slide
-				.choice.publish(onclick='cleanPlane();addObject()') Publish
+					.choice.chooseSlide Är nu inte slide
+					.choice.chooseNotify Begär Notis
+				.choice.publish Publisera
 				.bottomPadding
 			.preview
+
+		.addplane.postPlane(onclick='postPlane()')
+			.planebox.postBox(onclick='postPlane()')
+				.xButton(onclick='postPlane()')
+				.postImage
+				.postInfo
+					.postHeader
+					.postText
 
 		.main-content
 			//- include footer-made
@@ -162,14 +167,43 @@ html
 				}
 			}
 
-			function updatePrewiew(){
-				
-			}
-
 			if (window.matchMedia("(max-width: 500px)").matches) {
 				_('.credits').innerHTML = _('.credits').innerHTML.replace(/ - /g,"<br>").replace(/n, /g,"n<br>")
 			}
 			if(pageinfo){
 				changeFromColor(!subpage?pageinfo.color:
 					(subpageinfo?subpageinfo.color:'#222222'))
+			}
+
+			var isSlide = false
+			addTapEvent(_('.chooseSlide'),defineType)
+			function defineType(){
+				isSlide = !isSlide
+				_('.chooseSlide').innerText = isSlide? 'Är nu slide': 'Är nu inte slide'
+			}
+
+			var isNotafication = false
+			addTapEvent(_('.chooseNotify'),isNotafication)
+			function defineNotify(){
+				isNotafication = !isNotafication
+				if(isNotafication){
+					_('.chooseSlide').innerText = 'Notis begärd'
+				}else{
+					_('.chooseSlide').innerText = 'Begärd notis'
+				}
+			}
+
+			addTapEvent(_('.publish'), function(){
+				addObject()
+
+				cleanPlane()
+				isSlide = false
+				_('.chooseSlide').innerText = 'Är nu inte slide'
+			})
+			function addObject(){
+				var post = new Post()
+				post.title = _('.titleinput').value
+				post.body = _('.bodyinput').value
+				post.isSlide = isSlide
+				post.save(console.log)
 			}
