@@ -58,8 +58,7 @@ html
 			var links = JSON.parse('!{JSON.stringify(links)}')
 
 			for (i = 0; i < links.length; i++) {
-
-				var temp
+				var temp;
 
 				if (links[i][0]["link"] != undefined){
 					temp = document.createElement('a')
@@ -95,8 +94,8 @@ html
 				temp2.className = "link p-link"
 				temp2.href = "/" + links[i][0].link
 
-				document.querySelector(".links").appendChild(temp)
-				document.querySelector(".phonelinks").appendChild(temp2)
+				_(".links").appendChild(temp)
+				_(".phonelinks").appendChild(temp2)
 			}
 
 		.extendHeader
@@ -147,20 +146,19 @@ html
 			function hidemenu(){
 				menuVisible = !menuVisible
 
-				document.querySelector('.phonelinks').classList.toggle('visible', menuVisible)
+				_('.phonelinks').classList.toggle('visible', menuVisible)
+				var mainhideStyle = _('.mainhide').style
 
-				var mainhideStyle = document.querySelector('.mainhide').style
-
-				if(menuVisible){
+				if (menuVisible) {
 					mainhideStyle.display = "block"
 					setTimeout(function(){mainhideStyle.opacity = ".9"},10)
-					document.querySelector('.menubutton').style.transform = "rotate(-180deg)"
-					document.querySelector('.creddiv').style.bottom = "0px"
-				}else{
+					_('.menubutton').style.transform = "rotate(-180deg)"
+					_('.creddiv').style.bottom = "0px"
+				} else {
 					mainhideStyle.opacity = "0"
 					setTimeout(function(){mainhideStyle.display = "none"},200)
-					document.querySelector('.menubutton').style.transform = "rotate(0deg)"
-					document.querySelector('.creddiv').style.bottom = "-50px"
+					_('.menubutton').style.transform = "rotate(0deg)"
+					_('.creddiv').style.bottom = "-50px"
 				}
 			}
 
@@ -169,7 +167,7 @@ html
 			}
 
 			if (window.matchMedia("(max-width: 500px)").matches) {
-				document.querySelector('.credits').innerHTML = document.querySelector('.credits').innerHTML.replace(/ - /g,"<br>").replace(/n, /g,"n<br>")
+				_('.credits').innerHTML = _('.credits').innerHTML.replace(/ - /g,"<br>").replace(/n, /g,"n<br>")
 			}
 			if(pageinfo){
 				changeFromColor(!subpage?pageinfo.color:

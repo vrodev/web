@@ -85,10 +85,10 @@ block mainContent
 			plupp = document.createElement('div')
 			plupp.className = "plupp"
 			plupp.className += " plupp" + i
-			document.querySelector(".slidemarker").appendChild(plupp)
+			_(".slidemarker").appendChild(plupp)
 
 
-			document.body.querySelector(".slide").appendChild(temp)
+			_(".slide").appendChild(temp)
 		}
 
 		for (q = 0; q < boxLength; q++){
@@ -96,7 +96,7 @@ block mainContent
 			//- box = document.createElement('div')
 			//- box.className ="box"
 			//- box.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
-			//- document.body.querySelector(".main-content").appendChild(box)
+			//- _(".main-content").appendChild(box)
 
 			//- image = document.createElement('div')
 			//- image.className ="boximage"
@@ -112,7 +112,7 @@ block mainContent
 
 			box = document.createElement('div')
 			box.className ="utskottruta box"
-			document.querySelector(".main-content").appendChild(box)
+			_(".main-content").appendChild(box)
 			box.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
 
 			upper = document.createElement('div')
@@ -140,7 +140,7 @@ block mainContent
 				if(n > (arrayLength - 1)){
 					n = 0
 				}
-				document.querySelector('.slide').dataset.index = n
+				_('.slide').dataset.index = n
 
 				pluppar()
 
@@ -155,13 +155,13 @@ block mainContent
 				}
 
 			var inactive = ".plupp" + k
-			document.querySelector(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
-			document.querySelector(active).style.backgroundColor = "white"
+			_(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
+			_(active).style.backgroundColor = "white"
 		}
 
 		function plupparbak(){
 			var active = ".plupp" + n
-			document.querySelector(active).style.backgroundColor = "white"
+			_(active).style.backgroundColor = "white"
 
 			var k = n + 1
 
@@ -170,7 +170,7 @@ block mainContent
 			}
 
 			var inactive = ".plupp" + k
-			document.querySelector(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
+			_(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
 			
 		}
 
@@ -179,7 +179,7 @@ block mainContent
 			if(n > (arrayLength - 1)){
 				n = 0
 			}
-			document.querySelector('.slide').dataset.index = n
+			_('.slide').dataset.index = n
 			clearTimeout(ticket)
 			pluppar()
 		}
@@ -189,7 +189,7 @@ block mainContent
 			if(n < 0){
 				n = arrayLength - 1
 			}
-			document.querySelector('.slide').dataset.index = n
+			_('.slide').dataset.index = n
 			clearTimeout(ticket)
 			plupparbak()
 		}
@@ -199,7 +199,7 @@ block mainContent
 
 		box = document.createElement('div')
 		box.className ="utskottruta box menu addbox"
-		document.querySelector(".main-content").appendChild(box)
+		_(".main-content").appendChild(box)
 
 		add = document.createElement('div')
 		add.className ="addplusdiv"
