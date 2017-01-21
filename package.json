@@ -27,6 +27,7 @@
     "mongoose": "^4.6.3",
     "morgan": "^1.7.0",
     "nib": "^1.1.2",
+    "node_apns": "0.0.5",
     "sendgrid": "^4.5.0",
     "stylus": "^0.54.5"
   }

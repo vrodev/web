@@ -7,8 +7,8 @@
 var APIModel = function(name, opt) {
 	var options = {
 		init: function() {},
-		save: function(data, callback, all) {
-			callback(data, all)
+		save: function(err, data, callback, all) {
+			callback(err, data, all)
 		}
 	}
 	if (opt) Object.assign(options, opt)
@@ -28,8 +28,8 @@ var APIModel = function(name, opt) {
 		var self = this
 		api.post(Model._name+(self.id?'/'+self.id:''), {}, self.toJSON(),
 			function(err, data, all) {
-			if (err) return callback(err)
-			options.save.bind(self)(data, callback, all)
+			if (err) return options.save.bind(self)(err, data, callback, all)
+			options.save.bind(self)(null, data, callback, all)
 		}, {}, !self.id? 'POST': 'PATCH')}
 	Model.prototype.delete = function(callback) {
 		var self = this

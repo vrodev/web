@@ -7,9 +7,21 @@ const await = require('asyncawait/await');
 
 var express = require('express')
 
+const path = require('path')
+
+var photoFolder = path.resolve(__dirname+'/../../data/photos')
+
+var fileupload = require('fileupload').createFileUpload(photoFolder).middleware
 
 // /api
-const routeMain = router=> {}
+const routeMain = router=> {
+	router.post('/upload', fileupload, function(req, res) {
+		const filepath = req.body.path
+		const filename = req.body.basename
+		const href = '/data/photos/' + filepath + filename
+		res.apiOK(href)
+	})
+}
 
 
 // /api/post
@@ -32,6 +44,7 @@ const route = router=> {
 			res.apiOK(result)
 		});
 	})	
+
 
 	router.post('/', function(req,res) {
 		const group = req.body.group
