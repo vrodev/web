@@ -17,11 +17,12 @@ const routeMain = router=> {}
 const route = router=> {
 
 	router.get('/', (req, res) => {
-		req.models.User.find({}, (err, items)=> {
-			if (res.abortIf(err, 'Couldn\'t get users')) return;
+		req.models.User.find({}).select('email').then(items=> {
 			res.apiOK(items)
-		})
+		}, err=> res.abortIf(err, 'Couldn\'t get users'))
 	})
+
+
 
 	router.post('/', (req, res)=> {
 		const user = new req.models.User()
@@ -29,7 +30,7 @@ const route = router=> {
 		user.email = req.query.email
 		user.loginCode = generateSimpleCode(5)
 		user.line = req.query.line
-  	user.graduationYear = req.query.graduationYear
+  		user.graduationYear = req.query.graduationYear
 
 		user.save(function(err, user) {
 			if (res.abortIf(err, 'Couldn\'t save the user')) return;
@@ -38,10 +39,18 @@ const route = router=> {
 	})
 
 	router.get('/:id', (req, res) => {
-		req.models.User.load(req.params.id, 'catcher.target').then((item)=> {
+		req.models.User.load(req.params.id, 'catcher.target').select('email').then((item)=> {
 			res.apiOK(item)
 		}, err=> res.abortIf(err, 'Couldn\'t find the user'))
 	})
+
+	router.delete('/:id', function(req, res) {
+		const id = req.params.id
+		req.models.User.findOneAndRemove({_id:id}, function(err) {
+			if (res.abortIf(err, 'Could not delete post')) return;
+			res.apiOK()
+		})
+	})	
 
 }
 
