@@ -2,7 +2,8 @@
 // VRO Web
 // Initially created by Leonard Pauli, jan 2017
 
-var User = APIModel('user', {save:function(data, callback, all) {
+var User = APIModel('user', {save:function(err, data, callback, all) {
+	if (err) return callback(err)
 	if (this.isCurrent) api.saveCurrentUserLocally()
 	callback()
 }})
