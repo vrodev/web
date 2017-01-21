@@ -1,7 +1,8 @@
-// api.js
-// helpers
+// helpers/api.js
 // VRO Web
-// Initially created by Leonard Pauli, sep 2016
+// 
+// Created by Leonard Pauli, sep 2016
+// Updated jan 2017
 
 // Usage:
 // var api = new API('/api')
@@ -20,6 +21,7 @@
 // }
 var API = function(domain) {
 	this.domain = (domain || '')+'/'
+	this.payloadKey = 'data'
 
 	// jsonToQueryString
 	// {key:"the value",k2:9} -> key=the%20value&k2=9
@@ -32,8 +34,7 @@ var API = function(domain) {
 			if (queryString.length) queryString += '&'
 			queryString += encodeURIComponent(key)+'='+encodeURIComponent(value)
 		})
-		return queryString;
-	}
+		return queryString }
 
 	// Prepare a restfull request
 	this.restRequest = function(method, url, parameters, headers) {
@@ -44,13 +45,12 @@ var API = function(domain) {
 		httpRequest.open(method, url, true)
 
 		// Set headers
-		headers = headers | {}
-		for (var key in headers) if (headers.hasOwnProperty(key))
+		headers = headers || {}
+		Object.keys(headers).forEach(key=> {
 			httpRequest.setRequestHeader(key, headers[key]);
-
-		return httpRequest;
-	}
-
+		})
+		
+		return httpRequest }
 
 	// 
 	this.parsedResponse = function(res) {
@@ -62,48 +62,23 @@ var API = function(domain) {
 			} catch (e) {}
 		}
 
-		return response
-	}
-
-	// Send a restfull get request
-	this.get = function(endpoint, parameters, callback, headers) {
-		var me = this
-		var url = this.domain + endpoint
-
-		// Prepare request
-		var req = this.restRequest('GET', url, parameters, headers)
-		req.onreadystatechange = function(e) {
-			// Wait for it to finish
-			if (req.readyState !== XMLHttpRequest.DONE) return;
-
-			// Make sure res is JSON
-			var res = me.parsedResponse(req)
-			if (typeof res !== "object") res = {value:res}
-			res.status = req.status
-			if (!req.error && res.status !== 200) req.error = "Status: "+res.status
-      
-      // Call back
-      callback(res)
-		}
-
-		// Send request
-		req.send()
-	}
-
+		return response }
 
 	// Send a restfull post request
-	this.post = function(endpoint, parameters, data, callback, headers) {
+	this.post = function(endpoint, parameters, data, callback, headers, method) {
 		var me = this
 		var url = this.domain + endpoint
+		var isJSON = typeof data == "object"
 
 		// Content-Type
-		headers = headers | {}
+		headers = headers || {}
 		var ctKey = 'Content-Type'
-		if (!headers[ctKey] && typeof data == "object")
+		if (!headers[ctKey] && isJSON)
 			headers[ctKey] = 'application/json'
+			// 'application/x-www-form-urlencoded'
 
 		// Prepare request
-		var req = this.restRequest('POST', url, parameters, headers)
+		var req = this.restRequest(method || 'POST', url, parameters, headers)
 		req.onreadystatechange = function(res) {
 			// Wait for it to finish
 			if (req.readyState !== XMLHttpRequest.DONE) return;
@@ -112,19 +87,21 @@ var API = function(domain) {
 			var res = me.parsedResponse(req)
 			if (typeof res !== "object") res = {value:res}
 			res.status = req.status
-			if (!req.error && res.status !== 200) req.error = "Status: "+res.status
-      
-      // Call back
-      callback(res)
+			if (!req.error && res.status !== 200) res.error = "Status: "+res.status
+			
+			// Call back
+			callback(res.error, res[me.payloadKey], res)
 		}
 
 		// Send request
-		req.send(JSON.stringify(data))
+		var body = isJSON? JSON.stringify(data):
+			(method=='GET' || method=='DELETE')? null: data
+		req.send(body) }
 
-	}
+	// Send a restfull get request
+	this.get = function(endpoint, parameters, callback, headers, method) {
+		this.post(endpoint, parameters, {}, callback, headers, method || 'GET')}
+	this.patch = function() {this.post.apply(this, arguments.concat('PATCH'))}
+	this.delete = function() {this.get.apply(this, arguments.concat('DELETE'))}
 
 }
-
-
-// httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-// httpRequest.send(null);

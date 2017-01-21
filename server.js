@@ -16,9 +16,14 @@ app.use(express.static(config.staticDir))
 app.set('views', config.viewTemplates)
 app.locals.pretty = false//config.isDev;
 app.set('view engine', 'jade')
+app.set('x-powered-by', false)
 
 app.use(cookieParser())
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json())
+//app.use(bodyParser.text({type: '*/*'}));
 
 // Models
 app.use(function(req, res, next) {
@@ -27,15 +32,11 @@ app.use(function(req, res, next) {
   res.abortIf = (err, msg)=> {
   	if (!err) return false
   	console.dir({msg,err})
-		res.status(500).send({
-			status:500,
-			error:msg})
+		res.status(500).send({error:msg})
 		return true}
 
 	res.apiOK = (data)=> {
-		res.json({
-				status:200,
-				body:data})
+		res.json({data:data})
 	}
 
   next()
