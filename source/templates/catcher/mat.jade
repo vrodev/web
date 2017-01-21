@@ -34,12 +34,13 @@ block mainContent
 					_(".matdagar").appendChild(temp)
 
 					text = document.createElement('p')
-					text.className = "veckodag"
+					text.className = "veckodag nextWeek"
 					temp.appendChild(text)
 					text.innerHTML = week.nr==currentWeekNr+1? "Nästa vecka": "Vecka "+week.nr
-				}
+				}1
 
 				week.days.forEach(function(day) {
+					day.date = new Date(day.date)
 					var isCurrentDay = currentDayOfWeek==day.nr
 
 					temp = document.createElement('div')
@@ -50,6 +51,11 @@ block mainContent
 					text.className = "veckodag"
 					temp.appendChild(text)
 					text.innerHTML = day.name
+
+					textDate = document.createElement('p')
+					textDate.className = "veckodag dateMonth"
+					temp.appendChild(textDate)
+					textDate.innerHTML = day.date.getDate()
 
 					textreg = document.createElement('p')
 					textreg.className = "meny huvudratt"

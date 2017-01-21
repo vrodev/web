@@ -186,6 +186,9 @@ function changeFromColor(color){
 	}
 
 	_('.phonelinks').style.backgroundColor = blendColors(color, "#000000", 0.2)
+	if(color == '#000000'){
+		_('.phonelinks').style.backgroundColor = blendColors(color, "#ffffff", 0.2)
+	}
 	if(color !== "#ffffff"){
 		_(".phonelinks").className += " whitelinks"
 		_('.headertext').style.color = 'white'
@@ -198,10 +201,8 @@ function changeFromColor(color){
 		_(".logga").style.filter = "invert(100%)"
 
 		_(".center-header").style.backgroundColor = color
-
-		if(dataPage !== 'styrelsen'){
-			_(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
-		}
+		
+		_(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
 
 		link = document.createElement('div')
 		link.className ="kommittelink"
