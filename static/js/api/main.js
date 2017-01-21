@@ -19,3 +19,8 @@ api.saveCurrentUserLocally = function() {
 // Other
 api.food = function(callback){
 	this.get('food', {}, callback) }
+
+
+api.fileUpload = function(file, callback){
+	
+}

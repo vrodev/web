@@ -8,16 +8,4 @@
 var Post = APIModel('post')
 
 Post.prototype.toJSON = function() {
-	return {id:this.id, title:this.title, body:this.body, author:this.author, group:this.group, url:this.url, imgUrl:this.imgUrl, isSlide:this.isSlide}}
-
-
-				var x = new Post()						
-																											x.title = "Jacobs inlägg"
-													x.body = "Jacob skriver ett inlägg! :D"
-		x.save(function(err) {
-																																				if (err) {
-																																					console.error(err);
-																																					return;
-																																				}
-													alert("det funka");
-});
+return {id:this.id, title:this.title, body:this.body, author:this.author, group:this.group, url:this.url, imgUrl:this.imgUrl, isSlide:this.isSlide}}
