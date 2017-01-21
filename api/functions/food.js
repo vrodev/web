@@ -1,3 +1,4 @@
+"use strict";
 // api/functions/food.js
 // VRO Web
 // 

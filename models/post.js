@@ -11,6 +11,8 @@ const Schema = new mongoose.Schema({
 	body: String,
 	author: dbRef('User'),
 	group: dbRef('Group'),
+	url: String,
+	imgUrl: String,
 
 	isSlide: Boolean
 }, {timestamps: true});

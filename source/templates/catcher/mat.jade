@@ -24,13 +24,27 @@ block mainContent
 			var currentWeekNr = (new Date()).getWeek()
 			var currentDayOfWeek = (new Date()).getDay()
 			weeks.forEach(function(week) {
+				if (week.nr<currentWeekNr) return;
+				if (week.nr>currentWeekNr+1) return;
 				var isCurrentWeek = currentWeekNr==week.nr
+
+				if (!isCurrentWeek) {
+					temp = document.createElement('div')
+					temp.className ="day"
+					_(".matdagar").appendChild(temp)
+
+					text = document.createElement('p')
+					text.className = "veckodag"
+					temp.appendChild(text)
+					text.innerHTML = week.nr==currentWeekNr+1? "Nästa vecka": "Vecka "+week.nr
+				}
+
 				week.days.forEach(function(day) {
 					var isCurrentDay = currentDayOfWeek==day.nr
 
 					temp = document.createElement('div')
 					temp.className ="day"
-					document.querySelector(".matdagar").appendChild(temp)
+					_(".matdagar").appendChild(temp)
 
 					text = document.createElement('p')
 					text.className = "veckodag"

@@ -36,6 +36,8 @@ const route = router=> {
 		post.author = req.user
 		post.group = group
 		post.isSlide = req.body.isSlide
+		post.imgUrl = req.body.imgUrl
+		post.url = req.body.url
 		post.save(function(err, post) {
 			if (res.abortIf(err, 'Couldn\'t save the post')) return;
 			res.apiOK(post)
