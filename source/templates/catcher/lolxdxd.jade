@@ -31,17 +31,31 @@ block mainContent
 
 		}
 
-		api.food(function(arr){
-		arr = arr.body
+		function foodLoadingError(err) {
+			// TODO: Show in UI
+			console.error({api:'food', err:err})}
 
-			for (i = 0; i < arr.length; i++) {
+		api.food(function(err, weeks) {
+			if (err) return foodLoadingError(err)
+		
+			var currentWeekNr = (new Date()).getWeek()
+			var weekIndex = weeks.findIndex(function(week) {return week.nr==currentWeekNr})
+			if (weekIndex<0) return foodLoadingError('Current week wasn\'t found')
 
-				var today = new Date().getDate()
-				if(arr[i].dateMS == today){
-					_('.reg').innerText = arr[i].mainFood
-					_('.veg').innerText = arr[i].vegFood
-				}
-			}
+			// Select day, monday next week if weekend
+			var currentDayOfWeek = (new Date()).getDay()
+			var isWeekend = currentDayOfWeek==0 || currentDayOfWeek==6
+			if (isWeekend) {
+				currentDayOfWeek = 1
+				weekIndex++
+				if (weekIndex>=weeks.length) return foodLoadingError('Next week wasn\'t found') }
+			var week = weeks[weekIndex]
+
+			var day = week.days.find(function(day) {return day.nr==currentDayOfWeek})
+			if (!day) return foodLoadingError('Current day wasn\'t found') 
+
+			_('.reg').innerText = day.courses.main
+			_('.veg').innerText = day.courses.veg
 		})
 
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
