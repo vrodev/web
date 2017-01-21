@@ -25,7 +25,7 @@ function randomWrongCodeMessage() {
 
 const jsFilesToLoad = (()=>{
   const txt = fs.readFileSync(path.resolve(__dirname + '/../source/jsFilesToLoad.txt'),'utf8')
-  const lines = txt.split('\n')
+  const lines = txt.split(config.usingCRLF? '\r\n': '\n')
   return lines.filter(line=>line.length&&line.substr(0,1)!="#").map(line=>{
     const components = line.split(': ')
     const prefix = (path=>path.length?path+'/':'')(components[0])
@@ -111,6 +111,7 @@ module.exports = (function() {
     {page:'lolxdxd'},
     {page:'loginvro'},
     {page:'mat'},
+    {page:'om'},
     {page:'karen'},
     {page:'styrelsen'},
     {page:'kommitte'},
