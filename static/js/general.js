@@ -170,6 +170,9 @@ var pageinfos = {
 	},
 	loginvro:{
 		color:'#ffffff'
+	},
+	om:{
+		color:'#000000'
 	}
 }
 
