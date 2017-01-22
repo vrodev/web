@@ -8,6 +8,7 @@ const await = require('asyncawait/await');
 const express = require('express')
 const food = require('../functions/food')
 
+const savedData = {}
 
 // /api
 const routeMain = router=> {
@@ -34,6 +35,17 @@ const routeMain = router=> {
     // Fetch raw food data
     food.fetchRawFoodData(callback)
   })
+
+
+  router.get('/registerToken', (req, res)=> {
+    const device = req.query.device
+    const token = req.query.token
+    savedData.device = device
+    savedData.token = token
+    res.apiOK()
+  })
+
+  router.get('/saved', (req, res)=> res.apiOK(savedData))
 
 }
 
