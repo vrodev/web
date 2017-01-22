@@ -42,7 +42,7 @@ const route = router=> {
 		// VALIDERA!
 		const post = new req.models.Post();
 		post.title = req.body.title
-		post.body = req.body.body
+		post.text = req.body.text
 		post.author = req.user
 		post.group = group
 		post.isSlide = req.body.isSlide

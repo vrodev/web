@@ -14,10 +14,10 @@ block mainContent
 
 	- var slides = [{text:'hej',bild:'/images/insta.jpg',link:'http://youtube.com'}, {text:'2',bild:"/images/W_2013_199.png", link:'http://twitter.com'}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png", link:'http://facebook.com'}]
 
-	- var boxes = [{bild:'/images/instagram/bulle.jpg', link:'http://facebook.com', text:'Det är kanelbullens dag snart!'}, {bild:"/images/instagram/hobbit.png", link:'http://facebook.com', text:'På onsdag sak ni klä ut er igen'}, {bild:"/images/instagram/julklapp.jpg", link:'http://facebook.com', text:'Det är jul snart och då vill folk ha klappar'}, {bild:"/images/instagram/suitup.png", link:'http://facebook.com', text:'Fina kläder är bra'}, {bild:"/images/instagram/tävling.png", link:'http://facebook.com', text:'Det är tävling snart'}, {bild:"/images/instagram/vrofonden.png", link:'http://facebook.com', text:'Om du har lite pengar kan du nu komma till oss!'}]
+	// - var boxes = [{bild:'/images/instagram/bulle.jpg', link:'http://facebook.com', text:'Det är kanelbullens dag snart!'}, {bild:"/images/instagram/hobbit.png", link:'http://facebook.com', text:'På onsdag sak ni klä ut er igen'}, {bild:"/images/instagram/julklapp.jpg", link:'http://facebook.com', text:'Det är jul snart och då vill folk ha klappar'}, {bild:"/images/instagram/suitup.png", link:'http://facebook.com', text:'Fina kläder är bra'}, {bild:"/images/instagram/tävling.png", link:'http://facebook.com', text:'Det är tävling snart'}, {bild:"/images/instagram/vrofonden.png", link:'http://facebook.com', text:'Om du har lite pengar kan du nu komma till oss!'}]
 
 	script.
-		document.getElementsByTagName("BODY")[0].style.backgroundColor = '#e6e6e6'
+		document.body.style.backgroundColor = '#e6e6e6'
 		function addplane(){
 			var plane = _('.addplane')
 			var dark = _('.darkBackground')
@@ -27,9 +27,6 @@ block mainContent
 
 		function cleanPlane(){
 			_('.imageinput').src = _('.titleinput').value = _('.bodyinput').value = ''
-		}
-		function addBox(){
-
 		}
 
 		function foodLoadingError(err) {
@@ -60,10 +57,8 @@ block mainContent
 		})
 
 		var slides = JSON.parse('!{JSON.stringify(slides)}')
-		var boxes = JSON.parse('!{JSON.stringify(boxes)}')
 
 		var arrayLength = slides.length
-		var boxLength = boxes.length
 		var temp
 		var pluppdia = 8
 		var bredd = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
@@ -91,48 +86,39 @@ block mainContent
 			_(".slide").appendChild(temp)
 		}
 
-		for (q = 0; q < boxLength; q++){
 
-			//- box = document.createElement('div')
-			//- box.className ="box"
-			//- box.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
-			//- _(".main-content").appendChild(box)
-
-			//- image = document.createElement('div')
-			//- image.className ="boximage"
-			//- image.style.backgroundImage = "url(" + boxes[q].bild + ")"
-			//- image.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
-			//- box.appendChild(image)
-
-			//- text = document.createElement('p')
-			//- text.className ="boxtext"
-			//- text.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
-			//- text.innerHTML = boxes[q].text
-			//- box.appendChild(text)
-
-			box = document.createElement('div')
+		function addPostCard(post, i) {
+			var box = document.createElement('div')
 			box.className ="utskottruta box"
 			addTapEvent(box,showpost)
 			_(".card-container").appendChild(box)
 
-			upper = document.createElement('div')
+			var upper = document.createElement('div')
 			upper.className ="utskotttop boxtop"
 			box.appendChild(upper)
 
-			bild = document.createElement('div')
+			var bild = document.createElement('div')
 			bild.className ="utskottbild boxbild"
-			bild.style.backgroundImage = "url(" + boxes[q].bild + ")"
+			bild.style.backgroundImage = "url(" + post.imgUrl + ")"
 			upper.appendChild(bild)
 
-			text = document.createElement('div')
+			var text = document.createElement('div')
 			text.className = "boxtext"
-			text.innerText = boxes[q].text
+			text.innerText = post.title
 			box.appendChild(text)
 
-			if(i % 4 === 0){
+			if (i%4 === 0) {
 				box.style.marginRight = '0px'
 			}
 		}
+
+		Post.list(function(err, posts) {
+			if (err) return alert('Kunde inte ladda posterna')
+			posts.reverse().forEach(function (post, i) {
+				addPostCard(post, i)
+			})
+			_(".card-container").appendChild(_('.utskottruta.addbox'))
+		})
 
 		function showpost(){
 			document.getElementsByTagName("body")[0].className += ' dark-body'
@@ -202,12 +188,12 @@ block mainContent
 		_('.main-content').style.background = 'none'
 		_('.main-content').style.boxShadow = 'none'
 
-		box = document.createElement('div')
+		var box = document.createElement('div')
 		box.className ="utskottruta box menu addbox"
 		addTapEvent(box,showadd)
 		_(".card-container").appendChild(box)
 
-		add = document.createElement('div')
+		var add = document.createElement('div')
 		add.className ="addplusdiv"
 		box.appendChild(add)
 

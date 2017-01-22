@@ -106,14 +106,14 @@ html
 		.addplane
 			.planebox
 				.close
-				input.imageinput(id='bild' type='file')
+				input.imageinput(id='bild' type='file' accept="image/*")
 				label.label(for='bild') Välj bild
 				input.planeinput.titleinput(placeholder='Title')
 				input.planeinput.bodyinput(placeholder='Body')
 				.addChoose
 					.choice.chooseSlide Är nu inte slide
-					.choice.chooseNotify Begär Notis
-				.choice.publish Publisera
+					.choice.chooseNotify(style="display:none") Begär Notis
+				.choice.publish Publicera
 				.bottomPadding
 			.preview
 
@@ -199,17 +199,60 @@ html
 
 			addTapEvent(_('.publish'), function(){
 				addObject()
-
-				cleanPlane()
-				isSlide = false
-				_('.chooseSlide').innerText = 'Är nu inte slide'
 			})
+
+			var savedFile = {}
 			function addObject(){
-				var post = new Post()
-				post.title = _('.titleinput').value
-				post.body = _('.bodyinput').value
-				post.isSlide = isSlide
-				post.save(console.log)
+				var sendBtn = _('.choice.publish')
+				var input = _('input.imageinput#bild')
+				var file = input.files[0]
+				if (!file) return alert('No file was added')
+
+				var aborted = function(msg) {
+					alert(msg)
+					sendBtn.innerText = 'Publicera'
+					console.error(err)
+				}
+
+				var uploadPost = function(imgUrl) {
+					var post = new Post()
+					post.title = _('.titleinput').value
+					post.text = _('.bodyinput').value
+					post.isSlide = isSlide
+					post.imgUrl = imgUrl
+					post.save(function(err) {
+						if (err) return aborted(err)
+						//alert('Publicerad!')
+
+						closePanel()
+						cleanPlane()
+						isSlide = false
+						sendBtn.innerText = 'Publicera'
+						_('.chooseSlide').innerText = 'Är nu inte slide'
+						window.location.reload()
+					})
+				}
+
+				var callback = function(err, info, all) {
+					if (err) return aborted(err)
+					if (info.warnings) {
+						info.warnings.forEach(console.warn)
+						alert('Problem kan ha uppstått; observera:\n'+info.warnings.join('\n'))}
+					if (!info.files.length) return aborted('No files uploaded')
+
+					var upploadedFileURL = info.files[0]
+					savedFile = info.files[0]
+
+					uploadPost(savedFile.url)
+				}
+				var progress = function(procent) {
+					//console.log('Upload is '+Math.round(procent*100)+' complete')
+					sendBtn.innerText = 'Publicerar ('+Math.round(procent*97)+')'
+				}
+
+				if (file.name == savedFile.name) {
+					uploadPost(savedFile.url)
+				} else api.fileUpload(file, callback, {progress:progress})
 			}
 
 			var close = document.querySelectorAll('.close')
@@ -220,7 +263,7 @@ html
 
 			function closePanel(){
 				var plane = document.querySelectorAll('.addplane')
-				document.getElementsByTagName("body")[0].classList.remove("dark-body")
+				document.body.classList.remove("dark-body")
 				for (q = 0; q < plane.length; q++){
 					plane[q].classList.remove("show-plane")
 				}

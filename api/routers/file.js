@@ -39,7 +39,7 @@ const route = router=> {
 		if (res.abortIf(!req.busboy, 'No file was received')) return;
 		const obj = {files:[]}
 		const warnings = []
-		console.dir({a:1})
+
 		req.busboy.on('file', function(fieldname, file, filename) {
 			if (fieldname != 'file') return warnings.push('Not accepting file at field "'+fieldname+'"');
 			const fileObj = {}
@@ -54,7 +54,7 @@ const route = router=> {
 			const endFileName = generateRandomString(24)
 			file.pipe(fs.createWriteStream(photoFolder+'/'+endFileName))
 
-			fileObj.originalName = filename
+			fileObj.name = filename
 			fileObj.url = '/api/upload/photo/'+endFileName
 			obj.files.push(fileObj)
 		});
@@ -64,7 +64,6 @@ const route = router=> {
 		// });
 
 		req.busboy.on('finish', function() {
-			console.dir({end:1,obj})
 			if (warnings.length) obj.warnings = warnings
 			if (res.abortIf(!obj.files.length, 'No files uploaded', {warnings})) return;
 			res.apiOK(obj)

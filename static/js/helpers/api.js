@@ -56,7 +56,7 @@ var API = function(domain) {
 	this.parsedResponse = function(res) {
 		var response = res.responseText
 		var contentType = res.getResponseHeader('Content-Type')
-		if (contentType.indexOf('application/json')===0) {
+		if (contentType && contentType.indexOf('application/json')===0) {
 			try {
 				response = JSON.parse(response)
 			} catch (e) {}
