@@ -37,15 +37,31 @@ const routeMain = router=> {
   })
 
 
-  router.get('/registerToken', (req, res)=> {
+  router.get('/registerInstallation', (req, res)=> {
+    var installation = new req.models.Installation();
     const device = req.query.device
     const token = req.query.token
-    savedData.device = device
-    savedData.token = token
-    res.apiOK()
+    installation.platform = device
+    installation.token = token
+    if (req.user) {    
+      installation.user = req.user
+    }
+    installation.save(function(err, obj) {
+      if(res.abortIf(err, 'Could not save token and device and such things wo')) {
+        return;
+      }
+      res.apiOK(obj);
+    })
   })
 
-  router.get('/saved', (req, res)=> res.apiOK(savedData))
+  router.get('/saved', function(req, res) {
+    req.models.Installation.find(function(err, found) {
+      if (res.abortIf(err, 'Could not get shit')) {
+        return;
+      }
+      res.apiOK(found);
+    });
+  })
 
 }
 
