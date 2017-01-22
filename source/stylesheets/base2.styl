@@ -1003,7 +1003,7 @@ div.p-link
 	transform translate(-50%,-50%)
 	border-radius 5px
 		
-.xButton
+.close
 	width 20px
 	height 20px
 	border-radius 50%
@@ -1169,30 +1169,44 @@ div.p-link
 .postPlane
 	display block
 	
-.postBox
+.post-view
 	width 80%
 	max-width 800px
 	overflow hidden
 	
-.postImage
-	width 50%
-	padding-top 50%
-	bg-image shape
-	background-size cover
-
-.postInfo
-	display inline-block
-	position absolute
-	width 50%
-	padding 18px
-	top 0px
-	right  0px
-	height 100%
-	overflow-y scroll
-	box-sizing border-box
+	.image
+		width 50%
+		padding-top 50%
+		bg-image shape
+		background-size cover
 	
-.postHeader
-	font-family BebasNeue
-	font-size 5vw
-	width calc(100% - 18px)
-	margin-bottom 10px
+	.info
+		display inline-block
+		position absolute
+		width 50%
+		padding 18px
+		top 0px
+		right  0px
+		height 100%
+		box-sizing border-box
+		
+		.gradient-border
+			position fixed
+			background: linear-gradient(rgba(white,1), rgba(0,0,0,0))
+			width 50%
+			height 10px
+			top 0
+			right 0
+		.gradient-bottom
+			bottom 0px
+			background: linear-gradient(rgba(0,0,0,0), rgba(white,1))
+		.container
+			overflow-y scroll
+			.header
+				ont-family BebasNeue
+				font-size 5vw
+				width calc(100% - 18px)
+				margin-bottom 10px
+			.text
+				text-size 2vw
+	

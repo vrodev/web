@@ -105,7 +105,7 @@ html
 
 		.addplane(onclick='addplane()')
 			.planebox(onclick='addplane()')
-				.xButton(onclick='addplane()')
+				.close(onclick='addplane()')
 				input.imageinput(id='bild' type='file')
 				label.label(for='bild') Välj bild
 				input.planeinput.titleinput(placeholder='Title')
@@ -117,13 +117,16 @@ html
 				.bottomPadding
 			.preview
 
-		.addplane.postPlane(onclick='postPlane()')
-			.planebox.postBox(onclick='postPlane()')
-				.xButton(onclick='postPlane()')
-				.postImage
-				.postInfo
-					h2.postHeader hej ock så där gd fgf df gds fg sdf
-					p.postText fsdf  df sd   fsdfdsf sdf d fsd fsd sd f fs dsd gsd dfsf sd fsd f fasdf asdf asdf asdf asdf asdf adsf sd fasd sdf asf asdf asdf sadf saf asdf saf sdaf sdf as fasd fasdf asdf asdf asfsdf sadf asdf asdf asdf asdf asdf saf asdf asdf asf dsf sadfasd asf sdf gsdfg dfg dfgdfggd gs  gdfg sdfgdgfdg df gdfg fgdsfg sd d fg sdf gsdfg dg sf dsg dsfg dsgdfg gfddsfg sdg fdgsdg sdg dsfg sdf gds df dfs df g d fs g gsdfg dfg ds gd 
+		.addplane.postPlane
+			.planebox.post-view
+				.close
+				.image
+				.info
+					.gradient-border
+					.gradient-border.gradient-bottom
+					.container
+						h2.header hej ock så där gd fgf df gds fg sdf
+						p.text  df sd   fsdfdsf sdf d fsd fsd sd f fs dsd gsd dfsf sd fsd f fasdf asdf asdf asdf asdf asdf adsf sd fasd sdf asf asdf asdf sadf saf asdf saf sdaf sdf as fasd fasdf asdf asdf asfsdf sadf asdf asdf asdf asdf asdf saf asdf asdf asf dsf sadfasd asf sdf gsdfg dfg dfgdfggd gs  gdfg sdfgdgfdg df gdfg fgdsfg sd d fg sdf gsdfg dg sf dsg dsfg dsgdfg gfddsfg sdg fdgsdg sdg dsfg sdf gds df dfs df g d fs g gsdfg dfg ds gd 
 
 		.main-content
 			//- include footer-made
