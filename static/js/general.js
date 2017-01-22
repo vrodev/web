@@ -194,6 +194,7 @@ function changeFromColor(color){
 		_('.headertext').style.color = 'white'
 	}else{
 		_('.headertext').style.color = 'black'
+		_('.headertext').style.backgroundColor = color
 	}
 
 	if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
