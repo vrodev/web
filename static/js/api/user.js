@@ -9,10 +9,10 @@ var User = APIModel('user', {save:function(err, data, callback, all) {
 }})
 
 User.prototype.toJSON = function() {
-	return {id:this.id, name:this.name, email:this.email}}
+	return {id:this._id, name:this.name, email:this.email}}
 
 User.login = function(email, pass, callback) {
-	api.post(this._name+'/login', {}, {email:email, pass:pass}, function(err, data, all) {
+	api.post(this._name+'/login', {jsonData:{email:email, pass:pass}}, function(err, data, all) {
 		if (err) return callback(err)
 
 		var user = User(data)
@@ -23,7 +23,7 @@ User.login = function(email, pass, callback) {
 		callback(null, user)
 	})}
 User.logout = function(callback) {
-	api.post(this._name+'/logout', {}, {}, function(err, data, all) {
+	api.post(this._name+'/logout', function(err, data, all) {
 		if (err) return callback(err)
 		api.currentUser = null
 		api.saveCurrentUserLocally()

@@ -5,24 +5,12 @@
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 
-var express = require('express')
-
+const express = require('express')
 const path = require('path')
-
-var photoFolder = path.resolve(__dirname+'/../../data/photos')
-
-var fileupload = require('fileupload').createFileUpload(photoFolder).middleware
+const fs = require('fs')
 
 // /api
-const routeMain = router=> {
-	router.post('/upload', fileupload, function(req, res) {
-		const filepath = req.body.path
-		const filename = req.body.basename
-		const href = '/data/photos/' + filepath + filename
-		res.apiOK(href)
-	})
-}
-
+const routeMain = router=> {}
 
 // /api/post
 const route = router=> {
@@ -79,9 +67,9 @@ const route = router=> {
 
 // Register
 module.exports = mainRouter=> {
-  routeMain(mainRouter)
+	routeMain(mainRouter)
 
-  var router = express.Router();
-  route(router)
-  mainRouter.use('/post', router)
+	var router = express.Router();
+	route(router)
+	mainRouter.use('/post', router)
 }

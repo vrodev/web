@@ -16,7 +16,7 @@ var APIModel = function(name, opt) {
 	var Model = function(jsonOrId) {
 		if (typeof jsonOrId == "object")
 			Object.assign(this, jsonOrId)
-		else this.id = jsonOrId
+		else this._id = jsonOrId
 		options.init.bind(this)()
 		return this}
 
@@ -24,28 +24,29 @@ var APIModel = function(name, opt) {
 
 	Model.prototype.toJSON = function() {
 		return this}
+
 	Model.prototype.save = function(callback) {
 		var self = this
-		api.post(Model._name+(self.id?'/'+self.id:''), {}, self.toJSON(),
+		api.post(Model._name+(self._id?'/'+self._id:''), {jsonData:self.toJSON(),method:(!self._id? 'POST': 'PATCH')},
 			function(err, data, all) {
 			if (err) return options.save.bind(self)(err, data, callback, all)
 			options.save.bind(self)(null, data, callback, all)
-		}, {}, !self.id? 'POST': 'PATCH')}
+		})}
 	Model.prototype.delete = function(callback) {
 		var self = this
-		api.delete(Model._name+'/'+id, {}, function(err, data, all) {
+		api.delete(Model._name+'/'+self._id, function(err, data, all) {
 			if (err) return callback(err)
 			callback()
 		})}
 
 	Model.list = function(callback) {
-		api.get(Model._name, {}, function(err, data, all) {
+		api.get(Model._name, function(err, data, all) {
 			if (err) return callback(err)
 			var items = data.map(function(d) {return new Model(d)})
 			callback(null, items)
 		})}
 	Model.load = function(id, callback) {
-		api.get(Model._name+'/'+id, {}, function(err, data, all) {
+		api.get(Model._name+'/'+id, function(err, data, all) {
 			if (err) return callback(err)
 			var item = new Model(data)
 			callback(null, item)

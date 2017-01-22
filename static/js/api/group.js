@@ -11,8 +11,8 @@ var Group = APIModel('group', {init:function() {
 			return User(userRaw) })
 
 		self.members.patch = function(usersToAdd, usersToRemove, callback) {
-			api.patch(this._name+'/'+self.id+'/members', {}, {
-				add: usersToAdd, remove: usersToRemove},
+			api.patch(this._name+'/'+self.id+'/members',{jsonData:{
+				add: usersToAdd, remove: usersToRemove}},
 				function(err, data, all) {
 					if (err) return callback(err)
 					self._setMembers(data)
@@ -34,5 +34,5 @@ var Group = APIModel('group', {init:function() {
 
 Group.prototype.toJSON = function() {
 	return {
-		id:this.id, name:this.name,
-		members:this.members.map(function(u) {return u.id}) }}
+		_id:this._id, name:this.name,
+		members:this.members.map(function(u) {return u._id}) }}

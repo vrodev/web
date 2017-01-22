@@ -29,10 +29,12 @@ app.use(bodyParser.json())
 app.use(function(req, res, next) {
   req.models = models
 
-  res.abortIf = (err, msg)=> {
+  res.abortIf = (err, msg, data)=> {
   	if (!err) return false
   	console.dir({msg,err})
-		res.status(500).send({error:msg})
+    const obj = {error:msg}
+    if (data) Object.assign(obj, data)
+		res.status(500).send(obj)
 		return true}
 
 	res.apiOK = (data)=> {

@@ -64,44 +64,65 @@ var API = function(domain) {
 
 		return response }
 
+
 	// Send a restfull post request
-	this.post = function(endpoint, parameters, data, callback, headers, method) {
+	// opt = {parameters, [jsonData | formData | data], headers, method, endpoint, callback, domain, url, payloadKey, progress}
+	this.post = function(endpoint, opt, callback, defaultMethod) {
 		var me = this
-		var url = this.domain + endpoint
-		var isJSON = typeof data == "object"
+		if (typeof opt == "function") callback = opt
+		if (typeof endpoint == "object") opt = endpoint
+		opt.endpoint = endpoint || opt.endpoint
+		opt.callback = callback || opt.callback
+		opt.domain = opt.domain || this.domain
+		opt.url = opt.url || opt.domain + opt.endpoint
+		opt.payloadKey = opt.payloadKey || me.payloadKey
 
 		// Content-Type
-		headers = headers || {}
-		var ctKey = 'Content-Type'
-		if (!headers[ctKey] && isJSON)
-			headers[ctKey] = 'application/json'
+		opt.headers = opt.headers || {}
+		if (!opt.headers['Content-Type']) {
+			if (opt.jsonData) opt.headers['Content-Type'] = 'application/json'
 			// 'application/x-www-form-urlencoded'
+		}
+
+		defaultMethod = defaultMethod || 'POST'
+		opt.method = opt.method || defaultMethod
+		opt.parameters = opt.parameters || {}
 
 		// Prepare request
-		var req = this.restRequest(method || 'POST', url, parameters, headers)
-		req.onreadystatechange = function(res) {
+		var req = this.restRequest(opt.method, opt.url, opt.parameters, opt.headers)
+		if (opt.callback) req.onreadystatechange = function(res) {
 			// Wait for it to finish
 			if (req.readyState !== XMLHttpRequest.DONE) return;
 
 			// Make sure res is JSON
 			var res = me.parsedResponse(req)
-			if (typeof res !== "object") res = {value:res}
+			if (typeof res !== "object") {
+				res = {textValue:req.responseText}
+				res[opt.payloadKey] = req.response }
 			res.status = req.status
 			if (!req.error && res.status !== 200) res.error = "Status: "+res.status
 			
 			// Call back
-			callback(res.error, res[me.payloadKey], res)
+			opt.callback(res.error, res[opt.payloadKey], res)
 		}
 
+		// Progress event
+		if (opt.progress) req.addEventListener('progress', function(e) {
+      if (!e.lengthComputable) return;
+      var percent = e.loaded / e.total
+      opt.progress(percent)
+    }, false)
+
 		// Send request
-		var body = isJSON? JSON.stringify(data):
-			(method=='GET' || method=='DELETE')? null: data
+		var body = opt.data? opt.data:
+			opt.jsonData? JSON.stringify(opt.jsonData):
+			opt.formData? opt.formData: null
 		req.send(body) }
 
 	// Send a restfull get request
-	this.get = function(endpoint, parameters, callback, headers, method) {
-		this.post(endpoint, parameters, {}, callback, headers, method || 'GET')}
-	this.patch = function() {this.post.apply(this, arguments.concat('PATCH'))}
-	this.delete = function() {this.get.apply(this, arguments.concat('DELETE'))}
+	this.get = function(endpoint, opt, callback) {
+		this.post(endpoint, opt, callback, 'GET')}
+	this.patch = function() {this.post.apply(this, 'PATCH')}
+	this.delete = function() {this.post.apply(this, 'DELETE')}
 
 }
