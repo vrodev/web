@@ -78,7 +78,6 @@ block mainContent
 
 			text = document.createElement('h1')
 			text.className = "bildtext"
-			text.setAttribute("onclick", "window.location.href = '" + slide.link + "'")
 			temp.appendChild(text)
 			text.innerHTML = slide.text
 
@@ -112,8 +111,8 @@ block mainContent
 
 			box = document.createElement('div')
 			box.className ="utskottruta box"
+			addTapEvent(box,showpost)
 			_(".main-content").appendChild(box)
-			box.setAttribute("onclick", "window.location.href = '" + boxes[q].link + "'")
 
 			upper = document.createElement('div')
 			upper.className ="utskotttop boxtop"
@@ -132,6 +131,11 @@ block mainContent
 			if(i % 4 === 0){
 				box.style.marginRight = '0px'
 			}
+		}
+
+		function showpost(){
+			document.getElementsByTagName("body")[0].className += ' dark-body'
+			_('.postPlane').className += ' show-plane'
 		}
 		
 		var n = 0
