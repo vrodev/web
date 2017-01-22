@@ -5,11 +5,12 @@ block mainContent
 		.arrowr.arrow(onclick="forward()")
 		.arrowl.arrow(onclick="backward()")
 		.slidemarker
-	.box.menu
-		a(href="/mat")
-			.container
-				p.mat.reg 
-				p.mat.veg 
+	.card-container
+		.box.menu
+			a(href="/mat")
+				.container
+					p.mat.reg 
+					p.mat.veg 
 
 	- var slides = [{text:'hej',bild:'/images/insta.jpg',link:'http://youtube.com'}, {text:'2',bild:"/images/W_2013_199.png", link:'http://twitter.com'}, {text:'Pepparkakor',bild:"/images/WP_Meta_IV-3840x2160_00249.png", link:'http://facebook.com'}]
 
@@ -112,7 +113,7 @@ block mainContent
 			box = document.createElement('div')
 			box.className ="utskottruta box"
 			addTapEvent(box,showpost)
-			_(".main-content").appendChild(box)
+			_(".card-container").appendChild(box)
 
 			upper = document.createElement('div')
 			upper.className ="utskotttop boxtop"
@@ -204,7 +205,7 @@ block mainContent
 		box = document.createElement('div')
 		box.className ="utskottruta box menu addbox"
 		addTapEvent(box,showadd)
-		_(".main-content").appendChild(box)
+		_(".card-container").appendChild(box)
 
 		add = document.createElement('div')
 		add.className ="addplusdiv"
