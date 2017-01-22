@@ -203,9 +203,14 @@ block mainContent
 
 		box = document.createElement('div')
 		box.className ="utskottruta box menu addbox"
+		addTapEvent(box,showadd)
 		_(".main-content").appendChild(box)
 
 		add = document.createElement('div')
 		add.className ="addplusdiv"
-		add.setAttribute("onclick", "addplane()")
 		box.appendChild(add)
+
+		function showadd(){
+			document.getElementsByTagName("body")[0].className += ' dark-body'
+			_('.addplane').className += ' show-plane'
+		}

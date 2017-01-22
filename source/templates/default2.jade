@@ -103,9 +103,9 @@ html
 
 		.darkBackground
 
-		.addplane(onclick='addplane()')
-			.planebox(onclick='addplane()')
-				.close(onclick='addplane()')
+		.addplane
+			.planebox
+				.close
 				input.imageinput(id='bild' type='file')
 				label.label(for='bild') Välj bild
 				input.planeinput.titleinput(placeholder='Title')
@@ -210,4 +210,18 @@ html
 				post.body = _('.bodyinput').value
 				post.isSlide = isSlide
 				post.save(console.log)
+			}
+
+			var close = document.querySelectorAll('.close')
+			for (q = 0; q < close.length; q++){
+				addTapEvent(close[q], closePanel)
+			}
+			addTapEvent(_('.darkBackground'), closePanel)
+
+			function closePanel(){
+				var plane = document.querySelectorAll('.addplane')
+				document.getElementsByTagName("body")[0].classList.remove("dark-body")
+				for (q = 0; q < plane.length; q++){
+					plane[q].classList.remove("show-plane")
+				}
 			}
