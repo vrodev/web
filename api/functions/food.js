@@ -34,17 +34,19 @@ function fetchRawFoodData(callback){
   	port: 80,
   	path: '/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE'}
 
-	var req = http.request(options, function(res) {
+  var requestCallback = function(res) {
 		res.setEncoding("utf8")
 		res.on("data", function (chunk) {
 			content += chunk
 		});
 
 		res.on("end", function () {
-			callback(content)
+			callback(null, content)
 		});
-	});
+	}
 
+	var req = http.request(options, requestCallback);
+	req.on('error', err=> callback(err))
 	req.end()
 }
 

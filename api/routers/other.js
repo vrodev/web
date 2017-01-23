@@ -33,7 +33,10 @@ const routeMain = router=> {
     }
 
     // Fetch raw food data
-    food.fetchRawFoodData(callback)
+    food.fetchRawFoodData((err, data)=> {
+      if (res.abortIf(err, 'Couldn\'t load food data')) return;
+      callback(data)
+    })
   })
 
 
