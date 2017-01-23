@@ -56,40 +56,64 @@ block mainContent
 			_('.veg').innerText = day.courses.veg
 		})
 
-		var slides = JSON.parse('!{JSON.stringify(slides)}')
+		//- var slides = JSON.parse('!{JSON.stringify(slides)}')
 
-		var arrayLength = slides.length
-		var temp
-		var pluppdia = 8
-		var bredd = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
+		//- var arrayLength = slides.length
+		//- var temp
+		//- var pluppdia = 8
+		//- var bredd = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
 
-		for (i = 0; i < arrayLength; i++) {
-			var slide = slides[i]
-			temp = document.createElement('div')
-			temp.className ="slideobject"
-			temp.style.backgroundImage = "url(" + slide.bild + ")"
-			temp.style.left = i * 100 + "%"
-			temp.setAttribute("onclick", "window.location.href = '" + slide.link + "'")
-
-
-			text = document.createElement('h1')
-			text.className = "bildtext"
-			temp.appendChild(text)
-			text.innerHTML = slide.text
-
-			plupp = document.createElement('div')
-			plupp.className = "plupp"
-			plupp.className += " plupp" + i
-			_(".slidemarker").appendChild(plupp)
+		//- for (i = 0; i < arrayLength; i++) {
+		//- 	var slide = slides[i]
+		//- 	temp = document.createElement('div')
+		//- 	temp.className ="slideobject"
+		//- 	temp.style.backgroundImage = "url(" + slide.bild + ")"
+		//- 	temp.style.left = i * 100 + "%"
+		//- 	temp.setAttribute("onclick", "window.location.href = '" + slide.link + "'")
 
 
-			_(".slide").appendChild(temp)
+		//- 	text = document.createElement('h1')
+		//- 	text.className = "bildtext"
+		//- 	temp.appendChild(text)
+		//- 	text.innerHTML = slide.text
+
+		//- 	plupp = document.createElement('div')
+		//- 	plupp.className = "plupp"
+		//- 	plupp.className += " plupp" + i
+		//- 	_(".slidemarker").appendChild(plupp)
+
+
+		//- 	_(".slide").appendChild(temp)
+		//- }
+
+		function addSlide(post, i) {
+			if(post.isSlide){
+				var slide = post
+
+				temp = document.createElement('div')
+				temp.className ="slideobject"
+				temp.style.backgroundImage = "url(" + slide.imgUrl + ")"
+				temp.style.left = i * 100 + "%"
+				temp.setAttribute("onclick", "window.location.href = '" + slide.link + "'")
+
+				text = document.createElement('h1')
+				text.className = "bildtext"
+				temp.appendChild(text)
+				text.innerHTML = slide.text
+
+				plupp = document.createElement('div')
+				plupp.className = "plupp"
+				plupp.className += " plupp" + i
+				_(".slidemarker").appendChild(plupp)
+				slideLength ++
+			}
 		}
 
 
 		function addPostCard(post, i) {
 			var box = document.createElement('div')
 			box.className ="utskottruta box"
+			box.id = i
 			addTapEvent(box,showpost)
 			_(".card-container").appendChild(box)
 
@@ -112,10 +136,12 @@ block mainContent
 			}
 		}
 
+		var slideLength = 0
 		Post.list(function(err, posts) {
 			if (err) return alert('Kunde inte ladda posterna')
 			posts.reverse().forEach(function (post, i) {
 				addPostCard(post, i)
+				addSlide(post, i)
 			})
 			_(".card-container").appendChild(_('.utskottruta.addbox'))
 		})
@@ -128,7 +154,7 @@ block mainContent
 		var n = 0
 		var ticket = setInterval(function next() {
 				n++
-				if(n > (arrayLength - 1)){
+				if(n > (slideLength - 1)){
 					n = 0
 				}
 				_('.slide').dataset.index = n
@@ -142,7 +168,7 @@ block mainContent
 			var k = n-1
 
 			if (k<0){
-				k = arrayLength - 1
+				k = slideLength - 1
 				}
 
 			var inactive = ".plupp" + k
@@ -156,7 +182,7 @@ block mainContent
 
 			var k = n + 1
 
-			if (k > arrayLength - 1){
+			if (k > slideLength - 1){
 				k = 0
 			}
 
@@ -167,7 +193,7 @@ block mainContent
 
 		function forward(){
 			n++
-			if(n > (arrayLength - 1)){
+			if(n > (slideLength - 1)){
 				n = 0
 			}
 			_('.slide').dataset.index = n
@@ -178,7 +204,7 @@ block mainContent
 		function backward(){
 			n = n -1
 			if(n < 0){
-				n = arrayLength - 1
+				n = slideLength - 1
 			}
 			_('.slide').dataset.index = n
 			clearTimeout(ticket)
