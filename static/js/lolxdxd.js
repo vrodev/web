@@ -1,4 +1,5 @@
 document.body.style.backgroundColor = '#e6e6e6'
+
 function addplane(){
 	var plane = _('.addplane')
 	var dark = _('.darkBackground')
@@ -67,27 +68,26 @@ api.food(function(err, weeks) {
 //- 	_(".slide").appendChild(temp)
 //- }
 
-function addSlide(post, i) {
-	if(post.isSlide){
-		var slide = post
+var slideLength = 0
+function addSlide(post) {
 
-		temp = document.createElement('div')
-		temp.className ="slideobject"
-		temp.style.backgroundImage = "url(" + slide.imgUrl + ")"
-		temp.style.left = i * 100 + "%"
-		temp.setAttribute("onclick", "window.location.href = '" + slide.link + "'")
+	var temp = document.createElement('div')
+	temp.className ="slideobject"
+	temp.style.backgroundImage = "url(" + post.imgUrl + ")"
+	temp.style.left = slideLength * 100 + "%"
+	temp.setAttribute("onclick", "window.location.href = '" + post.link + "'")
 
-		text = document.createElement('h1')
-		text.className = "bildtext"
-		temp.appendChild(text)
-		text.innerHTML = slide.text
+	var text = document.createElement('h1')
+	text.className = "bildtext"
+	temp.appendChild(text)
+	text.innerHTML = post.title
 
-		plupp = document.createElement('div')
-		plupp.className = "plupp"
-		plupp.className += " plupp" + i
-		_(".slidemarker").appendChild(plupp)
-		slideLength ++
-	}
+	var plupp = document.createElement('div')
+	plupp.className = "plupp"
+	plupp.className += " plupp" + slideLength
+	_(".slidemarker").appendChild(plupp)
+
+	slideLength++
 }
 
 
@@ -117,12 +117,11 @@ function addPostCard(post, i) {
 	}
 }
 
-var slideLength = 0
 Post.list(function(err, posts) {
 	if (err) return alert('Kunde inte ladda posterna')
 	posts.reverse().forEach(function (post, i) {
 		addPostCard(post, i)
-		addSlide(post, i)
+		if (post.isSlide) addSlide(post)
 	})
 	_(".card-container").appendChild(_('.utskottruta.addbox'))
 })
