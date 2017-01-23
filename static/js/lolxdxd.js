@@ -103,7 +103,7 @@ function addPostCard(post, i) {
 	box.appendChild(upper)
 
 	var bild = document.createElement('div')
-	bild.className ="utskottbild boxbild"
+	bild.className ="utskottbild image"
 	bild.style.backgroundImage = "url(" + post.imgUrl + ")"
 	upper.appendChild(bild)
 
