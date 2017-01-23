@@ -1,0 +1,178 @@
+.menu.addbox
+	background-image none
+	background-color transparent
+	cursor default
+	
+	@media (max-width:500px){
+		padding-top 48%
+	}
+	
+	&:hover
+		box-shadow none
+	
+	.addplusdiv
+		background-color white
+		border-radius 10%
+		width 80%
+		position absolute
+		top 0px
+		height 0
+		padding-top 80%
+		margin 10%
+		bg-image plus
+		background-size 80%
+		vertical-align top
+		transition all 0.2s
+		cursor pointer
+		
+		&:hover
+			box-shadow 0px 0px 10px 0px rgba(0,0,0,0.2)	
+	
+.addplane
+	position fixed
+	z-index 40
+	display none
+	width 100%
+	height 100%
+	
+.planebox
+	position fixed
+	width 95%
+	max-width 400px
+	background-color white
+	top 420px
+	left 50%
+	transform translate(-50%,-50%)
+	border-radius 5px
+		
+.close
+	width 20px
+	height 20px
+	border-radius 50%
+	position absolute
+	right 10px
+	top 10px
+	background-color white
+	border-style solid
+	border-width 1px
+	border-color rgba(0,0,0,.25)
+	transition all .2s
+	z-index 20
+	
+	&:hover
+		background-color #ff5c5c
+		
+.imageinput
+	width .1px
+	height .1px
+	overflow hidden
+	margin-top 40px
+			
+.label
+	font-size 150%
+	margin-top 30px
+	background-color black
+	color white
+	padding 6px
+	margin 5px
+	margin-left calc(50% - 46px)
+	margin-top 20px
+	box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
+	border-radius 2px
+	cursor pointer
+	transition all .2s
+	
+	&:hover
+		box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
+				
+.labelBild
+	display block
+	padding 0px
+	width 80%
+	padding-top 80%
+	background-size cover
+	margin 0 auto
+	background-position center
+			
+
+.planeinput
+	padding 5px
+	border-radius 5px
+	background-color rgba(0, 0, 0, 0.1)
+	border none
+	display block
+	width 90%
+	max-width 400px
+	margin 5%
+	font-size 120%
+	box-sizing border-box
+	text-align center
+	
+	@media (max-width:500px){
+		height 50px !important
+	}
+	
+	&:focus
+		outline none
+				
+.enddate
+	text-align center
+	margin 20px
+	margin-bottom 5px
+				
+.planeDateText
+	display inline-block
+	font-family Arial
+	color #929292
+				
+.planeDate
+	margin-top 3px
+	display inline-block
+	width 249px
+	margin-right 0px
+	margin-left 6px
+	font-size 120%
+				
+.addChoose 
+	bottom 0px
+	width 100%
+	height 50px
+	font-size 130%
+	text-align center
+	
+.chooseSlide
+	display inline-block
+	
+.choice
+	width 47%
+	display inline-block
+	text-align center
+	height 98%
+	color black
+	background-color rgba(0, 0, 0, 0.15)
+	border-radius 5px
+	margin 0% 0% 2% 2%
+	line-height 50px
+	cursor pointer
+	transition all 0.2s
+	
+	&:hover
+		box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
+		background-color black
+		color white
+					
+.publish
+	margin-left 26.5%
+	margin-top 20px
+	background-color: white;
+	border: black;
+	border-width: 2px;
+	border-style: solid;
+	
+.bottomPadding
+	width 100%
+	padding-top 2%
+	
+.preview
+	width 100%
+	

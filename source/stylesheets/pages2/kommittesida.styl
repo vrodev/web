@@ -1,0 +1,64 @@
+.kommittefalt
+	margin 0px
+	text-align center
+	
+.kommitteinfo
+	text-align center !important
+	
+.kommittelink
+	margin-bottom 20px
+	margin-top 20px
+	position relative
+	width auto
+	
+	@media (max-width:500px){
+		bottom 0px
+		position absolute
+		width 100%
+		margin 0px
+	}
+	
+	&:hover
+		cursor pointer
+	
+	.shine
+		background linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0))
+		
+		&:hover
+			cursor pointer
+			
+		@media (max-width:500px){
+			display none
+		}
+
+	.kommittelinktext
+		width auto
+		text-align left
+		display inline-block
+		padding 5px
+		border-radius 5px
+		color white
+		
+		&:hover
+			cursor pointer
+			
+		@media (max-width:500px){
+			width 100%
+			text-align center
+			padding-left 0px
+			padding-right 0px
+			border-radius 0px
+		}
+		
+.utskottrubrik.ordfarande
+	color black
+	margin-top 30px
+	margin-bottom 40px
+	font-size 100%
+	font-weight normal
+	
+	@media (max-width:500px){
+		margin 0px
+		margin-top 10px
+		margin-bottom 10px
+	}

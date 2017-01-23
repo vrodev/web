@@ -1,0 +1,56 @@
+.phonelinks
+	transition all .2s ease-in-out
+	top 0px
+	position fixed
+	text-align center
+	z-index 90
+	background-color #eaeaea
+	width 100%
+	height $headerheight
+	&.visible
+		top $headerheight
+	
+.p-link
+	padding 0px
+	margin 0px
+	width calc(100% / 3)
+	
+div.p-link
+	&:hover
+		background-color #696969
+	
+.p-sublink
+	@media (max-width:370px){
+		padding 0px
+		text-align center
+		font-size 90%
+	}
+	
+	background-color #696969
+	
+.whitelinks
+	.p-link
+		color white
+		
+		&:hover
+			color black
+			background-color white
+			
+			.p-sublink
+				color black
+				background-color white	
+				
+				&:hover
+					background-color grey
+					
+	
+.mainhide
+	width 100%
+	top $headerheight
+	height calc(100% - 50px)
+	position fixed
+	background-color black
+	opacity 0
+	z-index 50
+	display none
+	transition opacity .2s ease-in-out

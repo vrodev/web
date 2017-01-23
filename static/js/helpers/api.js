@@ -122,7 +122,8 @@ var API = function(domain) {
 	// Send a restfull get request
 	this.get = function(endpoint, opt, callback) {
 		this.post(endpoint, opt, callback, 'GET')}
-	this.patch = function() {this.post.apply(this, 'PATCH')}
-	this.delete = function() {this.post.apply(this, 'DELETE')}
-
+	this.patch = function(endpoint, opt, callback) {
+		this.post(endpoint, opt, callback, 'PATCH') }
+	this.delete = function(endpoint, opt, callback) {
+		this.post(endpoint, opt, callback, 'DELETE') }
 }
