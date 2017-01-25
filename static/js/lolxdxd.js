@@ -77,6 +77,8 @@ function addSlide(post) {
 	temp.style.left = slideLength * 100 + "%"
 	temp.setAttribute("onclick", "window.location.href = '" + post.link + "'")
 
+	_(".slide").appendChild(temp)
+
 	var text = document.createElement('h1')
 	text.className = "bildtext"
 	temp.appendChild(text)
