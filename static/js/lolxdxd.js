@@ -114,9 +114,9 @@ function addPostCard(post, i) {
 	text.innerText = post.title
 	box.appendChild(text)
 
-	if (i%4 === 0) {
-		box.style.marginRight = '0px'
-	}
+	// if (i%4 === 0) {
+	// 	box.style.marginRight = '0px'
+	// }
 }
 
 Post.list(function(err, posts) {
