@@ -217,7 +217,7 @@ _('.main-content').style.background = 'none'
 _('.main-content').style.boxShadow = 'none'
 
 var box = document.createElement('div')
-box.className ="utskottruta box menu addbox"
+box.className ="utskottruta card menu addbox"
 addTapEvent(box,showadd)
 _(".card-container").appendChild(box)
 
