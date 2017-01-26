@@ -101,35 +101,11 @@ html
 		.extendHeader
 			.shineheader
 
-		.darkBackground
-
-		.addplane
-			.planebox
+		.overlay
+			.lightbox
+				.button.prev
+				.button.next
 				.close
-				input.imageinput(id='bild' type='file' accept="image/*")
-				label.label(for='bild') Välj bild
-				input.planeinput.titleinput(placeholder='Title')
-				input.planeinput.bodyinput(placeholder='Body')
-				input.planeinput.dateinput(placeholder='Body' type='date')
-				.addChoose
-					.choice.chooseSlide Är nu inte slide
-					.choice.chooseNotify(style="display:none") Begär Notis
-				.choice.publish Publicera
-				.bottomPadding
-			.close2
-
-		.addplane.postPlane
-			.planebox.post-view
-				.close
-				.boxtop
-					.image
-				.info
-					.gradient-border
-					.gradient-border.gradient-bottom
-					.hide-scroll
-					.container
-						h2.header hej ock så där gd fgf df gds fg sdf
-						p.text  df sd   fsdfdsf sdf d fsd fsd sd f fs dsd gsd dfsf sd fsd f fasdf asdf asdf asdf asdf asdf adsf sd fasd sdf asf asdf asdf sadf saf asdf saf sdaf sdf as fasd fasdf asdf asdf asfsdf sadf asdf asdf asdf asdf asdf saf asdf asdf asf dsf sadfasd asf sdf gsdfg dfg dfgdfggd gs  gdfg sdfgdgfdg df gdfg fgdsfg sd d fg sdf gsdfg dg sf dsg dsfg dsgdfg gfddsfg sdg fdgsdg sdg dsfg sdf gds df dfs df g d fs g gsdfg dfg ds gd 
 
 		.main-content
 			//- include footer-made
@@ -261,12 +237,15 @@ html
 			for (q = 0; q < close.length; q++){
 				addTapEvent(close[q], closePanel)
 			}
-			addTapEvent(_('.darkBackground'), closePanel)
+			addTapEvent(_('body > .overlay'), closePanel)
 
 			function closePanel(){
-				var plane = document.querySelectorAll('.addplane')
-				document.body.classList.remove("dark-body")
-				for (q = 0; q < plane.length; q++){
-					plane[q].classList.remove("show-plane")
-				}
+				var lightbox = _('body > .overlay .lightbox')
+				document.body.classList.remove('lightbox-visible')
+
+				var items = lightbox.querySelectorAll('item')
+				items.forEach(function(item) {
+					//if (item.parentNode != lightbox) return
+					item.remove()
+				})
 			}

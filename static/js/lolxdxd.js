@@ -123,7 +123,17 @@ function addPostCard(post, i) {
 	card.classList.remove('template')
 
 	card.dataset.id = post._id
-	addTapEvent(card,doshowpost)
+	addTapEvent(card, function() {
+
+		document.body.classList.add('lightbox-visible')
+		var lightbox = _('body > .overlay .lightbox')
+
+		var cardCopy = card.cloneNode(true)
+		cardCopy.classList.add('item')
+
+		lightbox.appendChild(cardCopy)
+
+	})
 
 	var bild = card.querySelector('.image')
 	bild.style.backgroundImage = "url(" + post.imgUrl + ")"
@@ -143,15 +153,6 @@ Post.list(function(err, posts) {
 	})
 	_(".card-container").appendChild(_('.utskottruta.addbox'))
 })
-
-function doshowpost(){
-	showpost()
-}
-
-function showpost(){
-	document.getElementsByTagName("body")[0].className += ' dark-body'
-	_('.postPlane').className += ' show-plane'
-}
 
 var n = 0
 var ticket = setInterval(function next() {
