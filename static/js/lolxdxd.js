@@ -93,7 +93,7 @@ function addSlide(post) {
 }
 
 
-function addPostCard(post, i) {
+/*function addPostCard(post, i) {
 	var box = document.createElement('div')
 	box.className ="utskottruta box"
 	box.id = i
@@ -113,10 +113,26 @@ function addPostCard(post, i) {
 	text.className = "boxtext"
 	text.innerText = post.title
 	box.appendChild(text)
+}
+*/
+function addPostCard(post, i) {
+	var card = _('.card.template')
 
-	// if (i%4 === 0) {
-	// 	box.style.marginRight = '0px'
-	// }
+	card = card.cloneNode(true)
+	_('.card-container').appendChild(card)
+	card.classList.remove('template')
+
+	card.dataset.id = post._id
+	addTapEvent(card,doshowpost)
+
+	var bild = card.querySelector('.image')
+	bild.style.backgroundImage = "url(" + post.imgUrl + ")"
+
+	var title = card.querySelector('.title')
+	title.innerText = post.title
+
+	var text = card.querySelector('.text')
+	text.innerText = post.text
 }
 
 Post.list(function(err, posts) {
