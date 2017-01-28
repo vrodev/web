@@ -21,9 +21,9 @@
 		box-shadow 0px 0px 5px rgba(0, 0, 0, 0.3)			
 	
 	.image
-		width 100% !important
-		padding-top 100% !important
-		margin 0% !important
+		width 96%
+		padding-top 96%
+		margin 2%
 		background-size cover 
 		background-repeat no-repeat
 		background-position center center
@@ -32,9 +32,9 @@
 		margin 8px
 				
 		.title
-			font-family CenturyGothic !important
-			color #292929 !important
-			font-weight bold !important
+			font-family CenturyGothic
+			color #292929
+			font-weight bold
 			font-size 120%
 			height 50px
 			overflow hidden
@@ -96,8 +96,105 @@
 			position absolute
 			bottom 0px
 			color white
-	
 
-.lightbox > .card
-	width 100%
-	background red
+.overlay
+	display none
+	
+.lightbox-visible		
+			
+	.overlay
+		width 100%
+		height 100%
+		background-color rgba(0,0,0,0.75)
+		position absolute
+		display block
+		z-index 30
+		
+	.lightbox > .item
+		width 100%
+		text-align center
+		position absolute
+		background-color white
+		z-index 10
+		top 50%
+		transform translate(0%,-60%)
+		padding 50px 0px 50px 0px
+		display inline-block
+		
+		.image
+			width 40vw
+			height 40vw
+			max-width 500px
+			max-height 500px
+			padding-top 0
+			background-size cover
+			display inline-block
+			margin 0
+			vertical-align top
+			background-position center
+		
+		.info
+			box-sizing border-box
+			display inline-block
+			width 50vw
+			max-width 500px
+			padding 18px
+			padding-top 0px
+			height 100%
+			display inline-block
+				
+			.content
+				position relative !important
+				
+				.title
+					font-family BebasNeue
+					font-size 5vw
+					width calc(100% - 18px)
+					margin-bottom 10px
+					color #4a4a4a
+					text-align left
+					font-weight 600
+					
+					@media (min-width:1024px){
+						font-size 300%
+					}
+					
+				.text
+					text-align left
+					font-size 1.7vw
+					display block
+					
+					@media (min-width:1024px){
+						font-size 100%
+					}
+			
+		.close
+			position absolute
+			bottom -80px
+			font-size 300%
+			text-align center
+			background-color rgba(255,255,255,.2)
+			left 50%
+			transform translate(-50%,0%)
+			transform: rotate(45deg)
+			width 50px
+			height 50px
+			border-radius 50%
+			transition all .2s
+			
+			&:hover
+				background-color rgba(255,255,255,.3)
+				box-shadow 0px 0px 1px 0px rgba(white,.75)
+				cursor default
+			
+			.cross
+				color white
+				position absolute
+				top 50%
+				left 50%
+				transform translate(-50%,-50%)
+				
+			
+			
+			
+			

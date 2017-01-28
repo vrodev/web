@@ -130,8 +130,18 @@ function addPostCard(post, i) {
 
 		var cardCopy = card.cloneNode(true)
 		cardCopy.classList.add('item')
+		cardCopy.classList.remove('card')
+
+		var close = document.createElement('div')
+		close.className = 'close'
+
+		var cross = document.createElement('div')
+		cross.className = 'cross'
+		cross.innerText = '+'
 
 		lightbox.appendChild(cardCopy)
+		cardCopy.appendChild(close)
+		close.appendChild(cross)
 
 	})
 
