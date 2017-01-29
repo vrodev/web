@@ -18,6 +18,23 @@ block mainContent
 				.content
 					.title
 					.text
+			.close(onclick='closePanel()')
+				.cross +
+
+		.card.add-card
+			input.imageinput(id="bild" type="file" accept="image/*")
+			label.add-image(for='bild')
+			.image
+			.info
+				.content
+					.title.text-input(placeholder='rubrik' contentEditable="true")
+					.text.text-input(placeholder='text' contentEditable="true")
+					div.choice.chooseSlide Är nu inte slide
+					div.choice.publish Publicera
+
+			.close(onclick='closePanel()')
+				.cross +
+
 
 	.addplane
 		.planebox

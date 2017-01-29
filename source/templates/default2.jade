@@ -232,12 +232,6 @@ html
 				} else api.fileUpload(file, callback, {progress:progress})
 			}
 
-			var close = document.querySelectorAll('.close')
-			for (q = 0; q < close.length; q++){
-				addTapEvent(close[q], closePanel)
-			}
-			addTapEvent(_('body > .overlay'), closePanel)
-
 			function closePanel(){
 				var lightbox = _('body > .overlay .lightbox')
 				document.body.classList.remove('lightbox-visible')

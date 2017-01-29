@@ -92,7 +92,6 @@ function addSlide(post) {
 	slideLength++
 }
 
-
 /*function addPostCard(post, i) {
 	var box = document.createElement('div')
 	box.className ="utskottruta box"
@@ -115,6 +114,19 @@ function addSlide(post) {
 	box.appendChild(text)
 }
 */
+
+addTapEvent(_('.add-card'), function() {
+	document.body.classList.add('lightbox-visible')
+	var lightbox = _('body > .overlay .lightbox')
+
+	var cardCopy = _('.add-card').cloneNode(true)
+	cardCopy.classList.add('item')
+	cardCopy.classList.remove('card')
+
+	lightbox.appendChild(cardCopy)
+})
+
+
 function addPostCard(post, i) {
 	var card = _('.card.template')
 
@@ -132,17 +144,7 @@ function addPostCard(post, i) {
 		cardCopy.classList.add('item')
 		cardCopy.classList.remove('card')
 
-		var close = document.createElement('div')
-		close.className = 'close'
-
-		var cross = document.createElement('div')
-		cross.className = 'cross'
-		cross.innerText = '+'
-
 		lightbox.appendChild(cardCopy)
-		cardCopy.appendChild(close)
-		close.appendChild(cross)
-
 	})
 
 	var bild = card.querySelector('.image')
@@ -161,7 +163,6 @@ Post.list(function(err, posts) {
 		addPostCard(post, i)
 		if (post.isSlide) addSlide(post)
 	})
-	_(".card-container").appendChild(_('.utskottruta.addbox'))
 })
 
 var n = 0
@@ -221,8 +222,7 @@ function backward(){
 	}
 	_('.slide').dataset.index = n
 	clearTimeout(ticket)
-	plupparbak()
-}
+	plupparbakadd}
 
 _('.main-content').style.background = 'none'
 _('.main-content').style.boxShadow = 'none'
