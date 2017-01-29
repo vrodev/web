@@ -111,6 +111,7 @@ module.exports = (function() {
     {page:'lolxdxd'},
     {page:'loginvro'},
     {page:'mat'},
+    {page:'am'},
     {page:'om'},
     {page:'karen'},
     {page:'styrelsen'},
