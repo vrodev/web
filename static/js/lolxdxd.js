@@ -122,6 +122,7 @@ addTapEvent(_('.add-card'), function() {
 	var cardCopy = _('.add-card').cloneNode(true)
 	cardCopy.classList.add('item')
 	cardCopy.classList.remove('card')
+	cardCopy.classList.toggle('add-card-hidden')
 
 	lightbox.appendChild(cardCopy)
 })
