@@ -180,8 +180,8 @@ html
 
 			var savedFile = {}
 			function addObject(){
-				var sendBtn = _('.choice.publish')
-				var input = _('input.imageinput#bild')
+				var sendBtn = _('.add-card .choice.publish')
+				var input = _('.add-card input.imageinput#bild')
 				var file = input.files[0]
 				if (!file) return alert('No file was added')
 
@@ -193,8 +193,8 @@ html
 
 				var uploadPost = function(imgUrl) {
 					var post = new Post()
-					post.title = _('.titleinput').value
-					post.text = _('.bodyinput').value
+					post.title = _('.add-card .title').innerHTML
+					post.text = _('.add-card .text').innerHTML
 					post.isSlide = isSlide
 					post.imgUrl = imgUrl
 					post.save(function(err) {

@@ -149,7 +149,7 @@
 			display inline-block
 			width 50vw
 			max-width 500px
-			margin 25px
+			margin 0 25px 0 25px
 			padding-top 0px
 			height 100%
 			display inline-block
@@ -163,6 +163,11 @@
 			.content
 				position relative !important
 				
+				.add-choice
+					margin 0 auto
+					margin-top 15px
+					display block
+									
 				.title
 					font-family BebasNeue
 					font-size 5vw
@@ -171,6 +176,7 @@
 					color #4a4a4a
 					text-align left
 					font-weight 600
+					width 100%
 					
 					@media (min-width:1024px){
 						font-size 300%
@@ -241,13 +247,14 @@
 		
 .add-card
 	vertical-align top
-	input.imageinputv
 	label.add-image
-		display none		
+		display block	
 	.image
 		bg-image plus
 		background-size 80%
 		bottom 0px
+	.image-view
+		display none !important
 	.info
 		.content
 			.text-input
@@ -261,10 +268,10 @@
 			// .publish
 				
 .add-card-hidden
-	vertical-align top
-	input.imageinput
 	label.add-image
 		display none
+	.image-view
+		display block !important
 	.info
 		.content
 			display none

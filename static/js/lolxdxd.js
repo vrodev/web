@@ -123,6 +123,7 @@ addTapEvent(_('.add-card'), function() {
 	cardCopy.classList.add('item')
 	cardCopy.classList.remove('card')
 	cardCopy.classList.toggle('add-card-hidden')
+	addTapEvent(cardCopy.querySelector('.chooseSlide'),defineType)
 
 	lightbox.appendChild(cardCopy)
 })
