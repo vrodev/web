@@ -22,7 +22,7 @@ block mainContent
 				.cross +
 
 		.card.add-card.add-card-hidden
-			input.imageinput(id="bild" type="file" accept="image/*")
+			input.imageinput(type="file" accept="image/*")
 			label.image.add-image(for='bild')
 			.image.image-view
 			.info
@@ -35,20 +35,20 @@ block mainContent
 			.close(onclick='closePanel()')
 				.cross +
 
-
-	.addplane
-		.planebox
-			.close
-			input.imageinput(id='bild' type='file' accept="image/*")
-			label.label(for='bild') Välj bild
-			input.planeinput.titleinput(placeholder='Title')
-			input.planeinput.bodyinput(placeholder='Body')
-			input.planeinput.dateinput(placeholder='Body' type='date')
-			.addChoose
-				.choice.chooseSlide Är nu inte slide
-				.choice.chooseNotify(style="display:none") Begär Notis
-			.choice.publish Publicera
-			.bottomPadding
-		.close2
+	//
+		.addplane
+			.planebox
+				.close
+				input.imageinput(id='bild' type='file' accept="image/*")
+				label.label(for='bild') Välj bild
+				input.planeinput.titleinput(placeholder='Title')
+				input.planeinput.bodyinput(placeholder='Body')
+				input.planeinput.dateinput(placeholder='Body' type='date')
+				.addChoose
+					.choice.chooseSlide Är nu inte slide
+					.choice.chooseNotify(style="display:none") Begär Notis
+				.choice.publish Publicera
+				.bottomPadding
+			.close2
 
 	script(src='/js/lolxdxd.js')

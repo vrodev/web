@@ -8,7 +8,7 @@ function addplane(){
 }
 
 function cleanPlane(){
-	_('.imageinput').src = _('.titleinput').value = _('.bodyinput').value = ''
+	_('.imageinput').src = _('.titleinput').innerHTML = _('.textinput').innerHTML = ''
 }
 
 function foodLoadingError(err) {
@@ -120,10 +120,36 @@ addTapEvent(_('.add-card'), function() {
 	var lightbox = _('body > .overlay .lightbox')
 
 	var cardCopy = _('.add-card').cloneNode(true)
+	cardCopy.classList.toggle('add-card-hidden')
 	cardCopy.classList.add('item')
 	cardCopy.classList.remove('card')
-	cardCopy.classList.toggle('add-card-hidden')
 	addTapEvent(cardCopy.querySelector('.chooseSlide'),defineType)
+
+	var publishButton = cardCopy.querySelector('.publish.add-choice')
+	addTapEvent(publishButton, function() {
+		addObject(cardCopy)
+	})
+
+	var bildInput = cardCopy.querySelector('input.imageinput')
+	bildInput.id = 'bild'
+	if (bildInput) {
+		bildInput.addEventListener('change', function(e) {
+			if (!e.target || !e.target.files) return;
+			var fileReference = e.target.files[0]
+			if (!fileReference) return;
+
+			var fr = new FileReader();
+			fr.onload = function () {
+				var fileDataURL = fr.result
+
+				cardCopy.querySelector('label[for=bild]').style.backgroundImage = "url('" + fileDataURL + "')"
+				cardCopy.querySelector('label[for=bild]').innerText = ''
+				//cardCopy.querySelector('label[for=bild]').className += ' labelBild'
+			}
+			fr.readAsDataURL(fileReference);
+		})
+	}
+
 
 	lightbox.appendChild(cardCopy)
 })
@@ -224,23 +250,21 @@ function backward(){
 	}
 	_('.slide').dataset.index = n
 	clearTimeout(ticket)
-	plupparbakadd}
+	}
 
-_('.main-content').style.background = 'none'
-_('.main-content').style.boxShadow = 'none'
+// _('.main-content').style.background = 'none'
+// _('.main-content').style.boxShadow = 'none'
 
-var box = document.createElement('div')
-box.className ="utskottruta card menu addbox"
-addTapEvent(box,showadd)
-_(".card-container").appendChild(box)
+// var box = document.createElement('div')
+// box.className ="utskottruta card menu addbox"
+// addTapEvent(box,showadd)
+// _(".card-container").appendChild(box)
 
-var add = document.createElement('div')
-add.className ="addplusdiv"
-box.appendChild(add)
+// var add = document.createElement('div')
+// add.className ="addplusdiv"
+// box.appendChild(add)
 
-function showadd(){
-	document.getElementsByTagName("body")[0].className += ' dark-body'
-	_('.addplane').className += ' show-plane'
-}
-
-addTapEvent(_('.publish.add-choice'), 'addObject')
+// function showadd(){
+// 	document.getElementsByTagName("body")[0].className += ' dark-body'
+// 	_('.addplane').className += ' show-plane'
+// }

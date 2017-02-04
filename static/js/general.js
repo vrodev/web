@@ -29,25 +29,6 @@ var addEventListeners = function() {
 		var scroll = document.body.scrollTop
 		_('.topheader').classList.toggle('darkheader', scroll>=10)
 	})
-
-	var bildInput = _('#bild')
-	if (bildInput) {
-		bildInput.addEventListener('change', function(e) {
-			if (!e.target || !e.target.files) return;
-			var fileReference = e.target.files[0]
-			if (!fileReference) return;
-
-			var fr = new FileReader();
-			fr.onload = function () {
-				var fileDataURL = fr.result
-
-				_('label[for=bild]').style.backgroundImage = "url('" + fileDataURL + "')"
-				_('label[for=bild]').innerText = ''
-				_('label[for=bild]').className += ' labelBild'
-			}
-			fr.readAsDataURL(fileReference);
-		})
-	}
 }
 
 // Called when DOM (the html document)
