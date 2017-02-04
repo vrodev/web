@@ -242,3 +242,5 @@ function showadd(){
 	document.getElementsByTagName("body")[0].className += ' dark-body'
 	_('.addplane').className += ' show-plane'
 }
+
+addTapEvent(_('.publish.add-choice'), 'addObject')
