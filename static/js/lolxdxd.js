@@ -1,4 +1,21 @@
-document.body.style.backgroundColor = '#e6e6e6'
+/*document.body.style.backgroundColor = '#e6e6e6'
+*/
+if (window.innerWidth > 500){
+	_('.main-content').style.top = '80px'
+	_('.topheader').style.height = '80px'
+}
+
+scrollHeader()
+window.onscroll = function() {scrollHeader()}
+
+function scrollHeader() {
+	if (window.pageYOffset | document.body.scrollTop >= 0) {
+		_('.topheader').classList.add('no-shadow')
+	}else{
+		_('.topheader').classList.remove('no-shadow')
+	}
+	console.log('hej')
+}
 
 function addplane(){
 	var plane = _('.addplane')
@@ -38,36 +55,6 @@ api.food(function(err, weeks) {
 	_('.veg').innerText = day.courses.veg
 })
 
-//- var slides = JSON.parse('!{JSON.stringify(slides)}')
-
-//- var arrayLength = slides.length
-//- var temp
-//- var pluppdia = 8
-//- var bredd = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
-
-//- for (i = 0; i < arrayLength; i++) {
-//- 	var slide = slides[i]
-//- 	temp = document.createElement('div')
-//- 	temp.className ="slideobject"
-//- 	temp.style.backgroundImage = "url(" + slide.bild + ")"
-//- 	temp.style.left = i * 100 + "%"
-//- 	temp.setAttribute("onclick", "window.location.href = '" + slide.link + "'")
-
-
-//- 	text = document.createElement('h1')
-//- 	text.className = "bildtext"
-//- 	temp.appendChild(text)
-//- 	text.innerHTML = slide.text
-
-//- 	plupp = document.createElement('div')
-//- 	plupp.className = "plupp"
-//- 	plupp.className += " plupp" + i
-//- 	_(".slidemarker").appendChild(plupp)
-
-
-//- 	_(".slide").appendChild(temp)
-//- }
-
 var slideLength = 0
 function addSlide(post) {
 
@@ -91,29 +78,6 @@ function addSlide(post) {
 
 	slideLength++
 }
-
-/*function addPostCard(post, i) {
-	var box = document.createElement('div')
-	box.className ="utskottruta box"
-	box.id = i
-	addTapEvent(box,doshowpost)
-	_(".card-container").appendChild(box)
-
-	var upper = document.createElement('div')
-	upper.className ="utskotttop boxtop"
-	box.appendChild(upper)
-
-	var bild = document.createElement('div')
-	bild.className ="utskottbild image"
-	bild.style.backgroundImage = "url(" + post.imgUrl + ")"
-	upper.appendChild(bild)
-
-	var text = document.createElement('div')
-	text.className = "boxtext"
-	text.innerText = post.title
-	box.appendChild(text)
-}
-*/
 
 addTapEvent(_('.add-card'), function() {
 	document.body.classList.add('lightbox-visible')

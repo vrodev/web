@@ -7,8 +7,13 @@
 	background-color #eaeaea
 	width 100%
 	height $headerheight
+	
 	&.visible
 		top $headerheight
+		
+	@media (min-width:500px){
+		display none
+	}
 	
 .p-link
 	padding 0px

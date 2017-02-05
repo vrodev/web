@@ -13,6 +13,9 @@ body > .topheader
 	@media (max-width:500px){
 		box-shadow none
 	}
+
+.no-shadow
+	box-shadow none !important
 	
 .darkheader
 	@media (max-width:500px){
@@ -25,11 +28,12 @@ body > .topheader
 	}
 	
 .center-header
-	top 0px
+	position absolute
+	top 50%
+	left 50%
+	transform: translate(-50%, -50%)
 	width 100%
 	max-width 1040px
-	height 100%
-	margin auto
 
 .header
 	background-size cover !important
