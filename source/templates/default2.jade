@@ -106,11 +106,26 @@ html
 				.button.prev
 				.button.next
 
+		.add-card.add-card-hidden
+			.plus +
+			input.imageinput(type="file" accept="image/*")
+			label.image.add-image(for='bild')
+			.image.image-view
+			.info
+				.content
+					.title.text-input(placeholder='rubrik' contentEditable="true")
+					.text.text-input(placeholder='text' contentEditable="true")
+					div.choice.chooseSlide.add-choice Är nu inte slide
+					div.choice.publish.add-choice Publicera
+			.close(onclick='closePanel()')
+				.cross +
+
 		.main-content
 			//- include footer-made
 			block mainContent
 			//- if mainContent
 			//- 	| !{mainContent}
+
 		.creddiv(id='creddiv')
 			p.credits By VRO-Web, part of Kommunikationsutskottet - Made primarily by Erik Enger Karlson, Jacob Tilly and Leonard Pauli
 			//.shine

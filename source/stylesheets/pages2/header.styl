@@ -34,6 +34,12 @@ body > .topheader
 	transform: translate(-50%, -50%)
 	width 100%
 	max-width 1040px
+	
+	@media (max-width:500px){
+		height 100%
+	}
+	
+
 
 .header
 	background-size cover !important
@@ -117,7 +123,10 @@ body > .topheader
 	@media (max-width:500px){
 		width 80px
 		height 70%
-		top 15%
+		position absolute
+		right 7px
+		top 50%
+		transform translateY(-50%)
 		
 		text-align left
 	}
@@ -129,10 +138,10 @@ body > .topheader
 	color white
 	vertical-align middle
 	line-height 37px 
+	text-align center
 	
 	@media (max-width:500px){
 		line-height 37px
-		margin-left 5px
 	}
 	
 .menubutton

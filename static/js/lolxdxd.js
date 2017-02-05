@@ -1,5 +1,8 @@
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
+
+_('.add-card-hidden').style.display = 'block'
+
 if (window.innerWidth > 500){
 	_('.main-content').style.top = '80px'
 	_('.topheader').style.height = '80px'

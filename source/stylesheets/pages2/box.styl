@@ -15,8 +15,8 @@
 	box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
 
 	@media (max-width:500px){
-		margin 1%
-		width 48%
+		margin .5%
+		width 49%
 	}
 	
 	&.template
@@ -35,6 +35,12 @@
 		background-size cover 
 		background-repeat no-repeat
 		background-position center center
+		
+		@media (max-width:500px){
+			width 100%
+			padding-top 100%
+			margin 0
+		}
 		
 	.info
 		margin 8px
@@ -125,14 +131,24 @@
 		
 	.lightbox > .item
 		width 100%
+		max-width 1025px
 		text-align center
 		position fixed
 		background-color white
 		z-index 10
 		top 50%
-		transform translate(0%,-50%)
-		padding 50px 0px 50px 0px
+		left 50%
+		transform translate(-50%,-50%)
+		padding 50px
 		display inline-block
+		
+		@media (max-width:500px){
+			top $headerheight
+			transform translate(-50%,0)
+			padding 20px 0px 20px 0px
+			width 96%
+			margin-top 2%
+		}
 		
 		.image
 			width 40vw
@@ -157,7 +173,7 @@
 			display inline-block
 			width 50vw
 			max-width 500px
-			margin 0 25px 0 25px
+			margin-left 25px
 			padding-top 0px
 			height 100%
 			display inline-block
@@ -239,14 +255,6 @@
 			@media(max-width: 500px){
 				bottom -70px
 			}
-				
-		@media (max-width:500px){
-			top $headerheight
-			transform none
-			padding 20px 0px 20px 0px
-			width 96%
-			margin 2%
-		}
 
 /*[contenteditable=true]:empty:before {
 	content attr(placeholder)
@@ -255,8 +263,11 @@
 		
 .add-card
 	vertical-align top
+	.plus
+		display none
 	label.add-image
-		display block	
+		display block
+		max-width 499px !important
 	.image
 		bg-image plus
 		background-size 80%
@@ -276,6 +287,32 @@
 			// .publish
 				
 .add-card-hidden
+	position fixed
+	bottom 24px
+	right 24px
+	height 56px
+	width 56px
+	border-radius 50%
+	background-color #4b82a7/*#ececec*/
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+	cursor pointer
+	display none
+	transition all .2s
+	z-index 99
+	
+	&:hover
+		transform translateY(-.7px)
+		box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 2px 6px 0 rgba(0,0,0,0.12), 0 4px 2px -3px rgba(0,0,0,0.2);
+	
+	.plus
+		color white/*#4a4a4a*/
+		font-size 250%
+		display block
+		position absolute
+		width 100%
+		height 100%
+		text-align center
+		line-height 56px
 	label.add-image
 		display none
 	.image-view
