@@ -23,11 +23,15 @@
 	display inline-block
 	cursor pointer
 	position relative
+	transition all .4s
 	
 	@media (max-width:500px){
 		margin calc(4% / 6)
 		width 48%
 	}
+	
+	&:hover
+		transform scale(1.01) translateY(-4px)
 	
 	.utskotttop
 		width 80%
@@ -42,12 +46,7 @@
 			
 			background-repeat no-repeat
 			background-size cover
-			background-position center center
-			
-	&:hover .utskotttop
-		width 82%
-		padding 9%
-		
+			background-position center center		
 		
 	.utskotttext
 		text-align center

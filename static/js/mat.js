@@ -47,17 +47,17 @@ api.food(function(err, weeks) {
 			textreg.innerText = day.courses.main
 			temp.appendChild(textreg)
 
-			symbVeg = document.createElement('div')
+			/*symbVeg = document.createElement('div')
 			symbVeg.className = "veg-symbol"
-			temp.appendChild(symbVeg)					
+			temp.appendChild(symbVeg)		*/			
 
 			textveg = document.createElement('p')
 			textveg.className = "meny vegratt"
-			textveg.innerText = day.courses.veg
+			textveg.innerText = '✿ ' + day.courses.veg
 			temp.appendChild(textveg)
 
 			if (isCurrentDay && isCurrentWeek) {
-				[temp,text,textreg,textveg].forEach(function(el) {
+				[temp,text,textreg,textveg,textDate].forEach(function(el) {
 					el.className += " today" })
 			}
 

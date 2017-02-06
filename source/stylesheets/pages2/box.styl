@@ -72,10 +72,15 @@
 	display inline-block
 	position relative
 	vertical-align top
+	transform scale(.96)
 	
 	@media (max-width:500px){
-		padding-top calc(48% + 14vw)
+		padding-top calc(48% + 15vw)
+		transform scale(1)
 	}
+	
+	&:hover
+		transform scale(.96) translateY(-3px)
 		
 	.container
 		square 100%

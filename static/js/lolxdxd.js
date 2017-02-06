@@ -6,18 +6,7 @@ _('.add-card-hidden').style.display = 'block'
 if (window.innerWidth > 500){
 	_('.main-content').style.top = '80px'
 	_('.topheader').style.height = '80px'
-}
-
-scrollHeader()
-window.onscroll = function() {scrollHeader()}
-
-function scrollHeader() {
-	if (window.pageYOffset | document.body.scrollTop >= 0) {
-		_('.topheader').classList.add('no-shadow')
-	}else{
-		_('.topheader').classList.remove('no-shadow')
-	}
-	console.log('hej')
+	_('.topheader').style.boxShadow = 'none'
 }
 
 function addplane(){
