@@ -7,6 +7,11 @@ if (window.innerWidth > 500){
 	_('.main-content').style.top = '80px'
 	_('.topheader').style.height = '80px'
 	_('.topheader').style.boxShadow = 'none'
+
+	var links = document.querySelectorAll('.link')
+	links.forEach(function(element){
+		element.classList.add('subtle-link')
+	})
 }
 
 function addplane(){
