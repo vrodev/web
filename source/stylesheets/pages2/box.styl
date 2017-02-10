@@ -123,7 +123,6 @@
 	display none
 	
 .lightbox-visible
-	
 	overflow hidden
 			
 	.overlay
@@ -132,7 +131,11 @@
 		background-color rgba(0,0,0,0.75)
 		position fixed
 		display block
-		z-index 30
+		z-index 100
+		
+		@media (max-width:500px){
+			z-index 30
+		}
 		
 	.lightbox > .item
 		width 100%
@@ -153,80 +156,88 @@
 			padding 20px 0px 20px 0px
 			width 96%
 			margin-top 2%
+			max-height calc(100vh - 50px - 115px - 2%)
 		}
 		
-		.image
-			width 40vw
-			height 40vw
-			max-width 500px
-			max-height 500px
-			background-size cover
-			display inline-block
-			margin 0
-			vertical-align top
-			background-position center
+		.content2
 			
-			@media(max-width: 500px){
-				width 90%
-				height 0
-				padding-top 90%
-				margin 0% 5% 0% 5%
+			@media (max-width:500px){
+				max-height calc(100vh - 50px - 115px)
+				overflow scroll
 			}
 		
-		.info
-			box-sizing border-box
-			display inline-block
-			width 50vw
-			max-width 500px
-			margin-left 25px
-			padding-top 0px
-			height 100%
-			display inline-block
+			.image
+				width 40vw
+				height 40vw
+				max-width 500px
+				max-height 500px
+				background-size cover
+				display inline-block
+				margin 0
+				vertical-align top
+				background-position center
+				
+				@media(max-width: 500px){
+					width 90%
+					height 0
+					padding-top 90%
+					margin 0% 5% 0% 5%
+				}
 			
-			@media(max-width: 500px){
-				width 90%
-				margin 5% 5% 0% 5%
-				padding 0
-			}
+			.info
+				box-sizing border-box
+				display inline-block
+				width 50vw
+				max-width 500px
+				margin-left 25px
+				padding-top 0px
+				height 100%
+				display inline-block
 				
-			.content
-				position relative !important
-				
-				.add-choice
-					margin 0 auto
-					margin-top 15px
-					display block
-									
-				.title
-					font-family BebasNeue
-					font-size 5vw
-					width calc(100% - 18px)
-					margin-bottom 10px
-					color #4a4a4a
-					text-align left
-					font-weight 600
-					width 100%
+				@media(max-width: 500px){
+					width 90%
+					margin 5% 5% 0% 5%
+					padding 0
+				}
 					
-					@media (min-width:1024px){
-						font-size 300%
-					}
+				.content
+					position relative !important
 					
-					@media(max-width: 500px){
-						font-size 10vw
-					}
-					
-				.text
-					text-align left
-					font-size 1.7vw
-					display block
-					
-					@media (min-width:1024px){
-						font-size 100%
-					}
-					
-					@media(max-width: 500px){
-						font-size 4vw
-					}
+					.add-choice
+						margin 0 auto
+						margin-top 15px
+						display block
+										
+					.title
+						font-family BebasNeue
+						font-size 5vw
+						width calc(100% - 18px)
+						margin-bottom 10px
+						color #4a4a4a
+						text-align left
+						font-weight 600
+						width 100%
+						
+						@media (min-width:1024px){
+							font-size 300%
+						}
+						
+						@media(max-width: 500px){
+							font-size 10vw
+						}
+						
+					.text
+						text-align left
+						font-size 1.7vw
+						display block
+						
+						@media (min-width:1024px){
+							font-size 100%
+						}
+						
+						@media(max-width: 500px){
+							font-size 4vw
+						}
 			
 		.close
 			display block
@@ -240,6 +251,10 @@
 			height 50px
 			border-radius 50%
 			transition all .2s
+			
+			@media(max-width: 500px){
+				bottom -65px
+			}
 			
 			&:hover
 				background-color rgba(255,255,255,.3)
@@ -256,10 +271,6 @@
 				left 50%
 				transform translate(-50%,-50%)
 				font-size 300%
-				
-			@media(max-width: 500px){
-				bottom -70px
-			}
 
 /*[contenteditable=true]:empty:before {
 	content attr(placeholder)
@@ -298,12 +309,12 @@
 	height 56px
 	width 56px
 	border-radius 50%
-	background-color #4b82a7/*#ececec*/
+	background-color #1f1f1f /*#4b82a7 #ececec*/
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 	cursor pointer
 	display none
 	transition all .2s
-	z-index 30
+	z-index 20
 	
 	&:hover
 		transform translateY(-.7px)
