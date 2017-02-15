@@ -108,15 +108,15 @@ html
 
 		.add-card.add-card-hidden
 			.plus +
-			input.imageinput(type="file" accept="image/*")
-			label.image.add-image(for='bild')
-			.image.image-view
-			.info
-				.content
-					.title.text-input(placeholder='rubrik' contentEditable="true")
-					.text.text-input(placeholder='text' contentEditable="true")
-					div.choice.chooseSlide.add-choice Är nu inte slide
-					div.choice.publish.add-choice Publicera
+			.content
+				input.imageinput(type="file" accept="image/*")
+				label.image.add-image(for='bild')
+				.info
+					.content
+						.title.text-input(placeholder='rubrik' contentEditable="true")
+						.text.text-input(placeholder='text' contentEditable="true")
+						div.choice.chooseSlide.add-choice Är nu inte slide
+						div.choice.publish.add-choice Publicera
 			.close(onclick='closePanel()')
 				.cross +
 
