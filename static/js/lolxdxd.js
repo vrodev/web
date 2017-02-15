@@ -133,6 +133,18 @@ function addPostCard(post, i) {
 		cardCopy.classList.add('item')
 		cardCopy.classList.remove('card')
 
+		addTapEvent(cardCopy.querySelector('.remove'), function(){
+		console.log('försöker ta bort')
+		var post = new Post(cardCopy.dataset.id)
+		post.delete(function(err){
+			if(err) return console.log(err)
+			console.log('Post deleted')
+		})
+		
+		closePanel()
+		location.reload()
+	})
+
 		lightbox.appendChild(cardCopy)
 	})
 

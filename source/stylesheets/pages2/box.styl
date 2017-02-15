@@ -44,25 +44,29 @@
 		
 	.info
 		margin 8px
-				
-		.title
-			font-family CenturyGothic
-			color #292929
-			font-weight bold
-			font-size 120%
-			height 50px
-			overflow hidden
-			
-			@media (max-width:500px){
-				font-size 4vw
-				height 10vw
-			}
-			
-			&:hover
-				text-decoration underline
 		
-		.text
-			display none
+		.content	
+			.title
+				font-family CenturyGothic
+				color #292929
+				font-weight bold
+				font-size 120%
+				height 50px
+				overflow hidden
+				
+				@media (max-width:500px){
+					font-size 4vw
+					height 10vw
+				}
+				
+				&:hover
+					text-decoration underline
+			
+			.text
+				display none
+			
+			.remove
+				display none
 
 .card.menu
 	padding-top calc(24% + 66px)
@@ -238,6 +242,9 @@
 						@media(max-width: 500px){
 							font-size 4vw
 						}
+					.remove
+						display inline-block
+						margin 15px
 			
 		.close
 			display block
