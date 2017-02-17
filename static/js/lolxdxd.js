@@ -46,8 +46,11 @@ api.food(function(err, weeks) {
 	var week = weeks[weekIndex]
 
 	var day = week.days.find(function(day) {return day.nr==currentDayOfWeek})
-	if (!day) return foodLoadingError('Current day wasn\'t found') 
+	if (!day) return foodLoadingError('Current day wasn\'t found')
 
+	_('.weekday').innerText = day.name
+	var date = new Date(day.date)
+	_('.monthday').innerText = date.getDate()
 	_('.reg').innerText = day.courses.main
 	_('.veg').innerText = day.courses.veg
 })
