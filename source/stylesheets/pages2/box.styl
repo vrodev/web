@@ -73,16 +73,19 @@
 			
 			.remove
 				display none
+				
+$menu-header-height = 40px
 
 .card.menu
 	padding-top calc(24% + 66px)
-	bg-image foodbox
+	//bg-image foodbox
 	background-position center
 	background-size cover
 	display inline-block
 	position relative
 	vertical-align top
 	transform scale(.96)
+	border-radius 5px
 	
 	@media (max-width:500px){
 		padding-top calc(48% + 15vw)
@@ -92,39 +95,99 @@
 	&:hover
 		transform scale(.96) translateY(-3px)
 		
-	.container
-		square 100%
-		absolute top 0px left 0px
-		font-default()
+	a
+		position absolute
+		top 0px
+		height 100%
+		overflow hidden
 		
-		.mat
-			text-align center
-			line-height 110%
-			font-family Sans-serif
-			margin 7%
-			font-size 110%
-	
-
+		.date
+			width 94%
+			padding 3%
+			height $menu-header-height
+			
 			@media (max-width:500px){
-				margin 5px
+				height 15%
 			}
 			
-			@media (max-width:880px){
-				font-size 100%
+			.currentdate
+				color white
+				font-size 180%
+				
+				@media (max-width:500px){
+					font-size 8vw
+				}
+			
+			.weekday
+				float left
+			
+			.monthday
+				float right
+		.line
+			height 1px
+			width 94%
+			margin 0 3% 0 3%
+			background-color rgba(white, .7)
+			
+						
+		.container	
+			height "calc(100% - %s - 6%)" % $menu-header-height
+			width 100%
+			
+			@media (max-width:500px){
+				height calc(100% - 15% - 6%)
 			}
 			
-			@media (max-width:400px){
-				font-size 4vw
-			}
-	
-		.reg
-			top 0px
-			color #181313
-			
-		.veg
-			position absolute
-			bottom 0px
-			color white
+			.content
+
+				.mat
+					line-height 110%
+					font-family Sans-serif
+					padding 7%
+					font-size 110%
+					color white
+
+					@media (max-width:500px){
+						margin 5px
+					}
+					
+					@media (max-width:880px){
+						font-size 100%
+					}
+					
+					@media (max-width:500px){
+						font-size 4vw
+						padding 3%
+					}
+				.vegcontainer
+					background-color rgba(white, .2)
+					border-radius 5px 5px 0px 0px
+					margin-top 15px
+					height 500px
+					
+					.vegsymbol 
+						background-color rgba(white, .2)
+						bg-image leaf
+						background-position center
+						background-size 60%
+						border-radius 50%
+						height 45px
+						width 45px
+						position absolute
+						height
+						top 0px
+						left 50%
+						transform translate(-50%, -50%)
+						
+						@media (max-width:500px){
+							width 10vw
+							height 10vw
+						}
+					
+					.veg
+						padding-top 30px
+						
+		
 
 .overlay
 	display none

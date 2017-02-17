@@ -59,6 +59,7 @@ api.food(function(err, weeks) {
 			if (isCurrentDay && isCurrentWeek) {
 				[temp,text,textreg,textveg,textDate].forEach(function(el) {
 					el.className += " today" })
+				_('.day.today').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', .75)
 			}
 
 			//- if (i == arr.length -1 && !any){

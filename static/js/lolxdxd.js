@@ -29,6 +29,8 @@ function foodLoadingError(err) {
 	// TODO: Show in UI
 	console.error({api:'food', err:err})}
 
+_('.card.menu').style.backgroundColor = pageinfos.mat.color
+_('.vegsymbol').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', 0.4)
 api.food(function(err, weeks) {
 	if (err) return foodLoadingError(err)
 
