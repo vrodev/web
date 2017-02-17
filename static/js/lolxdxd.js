@@ -54,19 +54,21 @@ api.food(function(err, weeks) {
 
 var slideLength = 0
 function addSlide(post) {
+	var slide = _('.template.slideobject')
 
-	var temp = document.createElement('div')
-	temp.className ="slideobject"
-	temp.style.backgroundImage = "url(" + post.imgUrl + ")"
-	temp.style.left = slideLength * 100 + "%"
-	temp.setAttribute("onclick", "window.location.href = '" + post.link + "'")
+	slide = slide.cloneNode(true)
+	_('.slide').appendChild(slide)
+	slide.classList.remove('template')
 
-	_(".slide").appendChild(temp)
+	slide.querySelector('.image').style.backgroundImage = "url(" + post.imgUrl + ")"
+	slide.style.left = slideLength * 100 + "%"
 
-	var text = document.createElement('h1')
-	text.className = "bildtext"
-	temp.appendChild(text)
-	text.innerHTML = post.title
+	slide.querySelector('.title').innerHTML = post.title
+	slide.querySelector('.text').innerHTML = post.text
+
+	addTapEvent(slide, function() {
+		LightBoxClick(slide, 'slideobject')
+	})
 
 	var plupp = document.createElement('div')
 	plupp.className = "plupp"
@@ -125,27 +127,7 @@ function addPostCard(post, i) {
 
 	card.dataset.id = post._id
 	addTapEvent(card, function() {
-
-		document.body.classList.add('lightbox-visible')
-		var lightbox = _('body > .overlay .lightbox')
-
-		var cardCopy = card.cloneNode(true)
-		cardCopy.classList.add('item')
-		cardCopy.classList.remove('card')
-
-		addTapEvent(cardCopy.querySelector('.remove'), function(){
-		console.log('försöker ta bort')
-		var post = new Post(cardCopy.dataset.id)
-		post.delete(function(err){
-			if(err) return console.log(err)
-			console.log('Post deleted')
-		})
-		
-		closePanel()
-		location.reload()
-	})
-
-		lightbox.appendChild(cardCopy)
+		LightBoxClick(card, 'card')
 	})
 
 	var bild = card.querySelector('.image')
@@ -156,6 +138,29 @@ function addPostCard(post, i) {
 
 	var text = card.querySelector('.text')
 	text.innerText = post.text
+}
+
+function LightBoxClick(item, className){
+	document.body.classList.add('lightbox-visible')
+	var lightbox = _('body > .overlay .lightbox')
+
+	var cardCopy = item.cloneNode(true)
+	cardCopy.classList.add('item')
+	cardCopy.classList.remove(className)
+	cardCopy.removeAttribute("style")
+
+	addTapEvent(cardCopy.querySelector('.remove'), function(){
+		console.log('försöker ta bort')
+		var post = new Post(cardCopy.dataset.id)
+		post.delete(function(err){
+			if(err) return console.log(err)
+			console.log('Post deleted')
+		})
+		closePanel()
+		location.reload()
+	})
+
+	lightbox.appendChild(cardCopy)
 }
 
 Post.list(function(err, posts) {

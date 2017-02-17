@@ -18,36 +18,47 @@
 	width 100%
 	position absolute
 	transition margin-left .5s
-	background-size cover
-	background-repeat no-repeat
-	background-position center center
+	
+	.content
+		.image
+			height 100%
+			width 100%
+			position absolute
+			background-size cover
+			background-repeat no-repeat
+			background-position center center
+		.info
+			.content
+				.title
+					z-index 20
+					text-align center
+					color white
+					text-decoration none
+					font-size 500%
+					text-shadow 0px 0px 150px #000
+					top 50%
+					transform: translateY(-50%);
+					position absolute
+					height $height
+					width 100%
+					cursor default
+					
+					@media (max-width:500px){
+						font-size 10vw
+					}
+				.text
+					display none
+				.remove
+					display none
+			
+	.close
+		display none
 	
 $quote = '"'
 for num in 0 1 2 3 4 5 6 7 9 10 11 12 13 14 15 16 17 18 19 20 
 	.slide[data-index={$quote}{num}{$quote}]
 		.slideobject
 			margin-left (-100% * num)
-
-
-.bildtext
-	$height = 50px
-	z-index 20
-	text-align center
-	color white
-	text-decoration none
-	font-size 500%
-	text-shadow 0px 0px 150px #000
-	top 50%
-	position absolute
-	line-height $height
-	height $height
-	margin-top (-0.5 * $height)
-	width 100%
-	cursor default
-	
-	@media (max-width:500px){
-		font-size 10vw
-	}
 	
 .slidemarker
 	position absolute

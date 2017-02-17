@@ -5,6 +5,18 @@ block mainContent
 		.arrowr.arrow(onclick="forward()")
 		.arrowl.arrow(onclick="backward()")
 		.slidemarker
+
+		.slideobject.template
+			.content
+				.image
+				.info
+					.content
+						.title
+						.text
+						.choice.remove Remove Post
+			.close(onclick='closePanel()')
+				.cross +
+
 	.card-container
 		.card.menu
 			a(href="/mat")
