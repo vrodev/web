@@ -153,7 +153,7 @@ var pageinfos = {
 		color:'#ffffff'
 	},
 	om:{
-		color:'#000000'
+		color:'#273f7b'
 	}
 }
 

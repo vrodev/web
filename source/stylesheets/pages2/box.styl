@@ -1,6 +1,10 @@
 .card-container
 	max-width 1040px
 	margin-top calc(24% * .04)
+	
+	@media (max-width:500px){
+		margin-top calc(24% * .02)
+	}
 
 .card
 	width 24%
@@ -85,7 +89,6 @@ $menu-header-height = 40px
 	position relative
 	vertical-align top
 	transform scale(.96)
-	border-radius 5px
 	
 	@media (max-width:500px){
 		padding-top calc(48% + 15vw)
@@ -138,6 +141,12 @@ $menu-header-height = 40px
 				height calc(100% - 15% - 6%)
 			}
 			
+			.shine
+				display none
+				@media (max-width:500px){
+					display block
+				}
+			
 			.content
 
 				.mat
@@ -161,7 +170,6 @@ $menu-header-height = 40px
 					}
 				.vegcontainer
 					background-color rgba(white, .2)
-					border-radius 5px 5px 0px 0px
 					margin-top 15px
 					height 500px
 					
