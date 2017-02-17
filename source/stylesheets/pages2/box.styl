@@ -9,7 +9,6 @@
 	border-radius 0px
 	transition all 0.2s
 	display inline-block
-	cursor pointer
 	position relative
 	transition: box-shadow 0.4s, transform 0.4s
 	box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
@@ -27,6 +26,9 @@
 		box-shadow 0px 7px 36px rgba(0,0,0,0.2);
 		z-index 10
 		transform translateY(-3px)
+		
+		.image
+			background-color transparent
 	
 	.image
 		width 96%
@@ -35,6 +37,9 @@
 		background-size cover 
 		background-repeat no-repeat
 		background-position center center
+		transition all .4s
+		
+		background-color: rgba(0, 0, 0, 0.1);
 		
 		@media (max-width:500px){
 			width 100%
@@ -53,6 +58,7 @@
 				font-size 120%
 				height 50px
 				overflow hidden
+				cursor pointer
 				
 				@media (max-width:500px){
 					font-size 4vw
