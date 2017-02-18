@@ -1,7 +1,8 @@
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
 
-_('.add-card-hidden').style.display = 'block'
+_('.add-card-hidden').style.
+display = 'block'
 
 if (window.innerWidth > 500){
 	_('.main-content').style.top = '80px'
@@ -29,8 +30,8 @@ function foodLoadingError(err) {
 	// TODO: Show in UI
 	console.error({api:'food', err:err})}
 
-_('.card.menu').style.backgroundColor = pageinfos.mat.color
-_('.vegsymbol').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', 0.4)
+_('.card.menu').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', 0.1)
+_('.vegsymbol').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', 0.5)
 api.food(function(err, weeks) {
 	if (err) return foodLoadingError(err)
 
@@ -163,6 +164,11 @@ function LightBoxClick(item, className){
 		})
 		closePanel()
 		location.reload()
+	})
+
+	addTapEvent(_('.overlay'), function(e){
+		if(e.target != _('.overlay')) return
+		closePanel()
 	})
 
 	lightbox.appendChild(cardCopy)

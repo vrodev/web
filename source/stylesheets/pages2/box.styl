@@ -1,9 +1,9 @@
 .card-container
 	max-width 1040px
-	margin-top calc(24% * .04)
+	margin-top calc(4%/8)
 	
 	@media (max-width:500px){
-		margin-top calc(24% * .02)
+		margin-top calc(4%/8)
 	}
 
 .card
@@ -35,9 +35,8 @@
 			background-color transparent
 	
 	.image
-		width 96%
-		padding-top 96%
-		margin 2%
+		width 100%
+		padding-top 100%
 		background-size cover 
 		background-repeat no-repeat
 		background-position center center
@@ -88,7 +87,6 @@ $menu-header-height = 40px
 	display inline-block
 	position relative
 	vertical-align top
-	transform scale(.96)
 	
 	@media (max-width:500px){
 		padding-top calc(48% + 15vw)
@@ -96,7 +94,7 @@ $menu-header-height = 40px
 	}
 	
 	&:hover
-		transform scale(.96) translateY(-3px)
+		transform translateY(-3px)
 		
 	a
 		position absolute
