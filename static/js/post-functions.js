@@ -24,8 +24,8 @@ function addObject(card) {
 	var file = input.files[0]
 	if (!file) return alert('No file was added')
 
-	var aborted = function(msg) {
-		alert(msg)
+	var aborted = function(err) {
+		alert(err)
 		sendBtn.innerText = 'Publicera'
 		console.error(err)
 	}

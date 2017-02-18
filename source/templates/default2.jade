@@ -141,6 +141,23 @@ html
 			
 				ga('create', 'UA-85432260-1', 'auto');
 				ga('send', 'pageview');
+
+		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js")
+		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js")
+		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js")
+		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js")
+		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js")
 			
+		script.
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyCsw0zGUHgtaA0K4oPkAshIutfdEpyn31c",
+				authDomain: "vro-web.firebaseapp.com",
+				databaseURL: "https://vro-web.firebaseio.com",
+				storageBucket: "vro-web.appspot.com",
+				messagingSenderId: "902824305582"
+			};
+			firebase.initializeApp(config);
+
 		script(src='/js/default.js')
 		script(src='/js/post-functions.js')
