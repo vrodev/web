@@ -45,8 +45,14 @@ html
 					//- a.link(href="/mat") Matsedel
 					//- a.link(href="/karen") Kåren
 					//- a.link(href="/mat") Om
-				a.log(href='/loginvro')
-					h2.logtxt Logga in
+				if user
+					.logged-in(onclick="User.logout()")
+						.title= user.name
+						.image(style="background-image: url(#{user.picture})")
+				else
+					#login-button.log
+						h2.logtxt Logga in
+
 		.phonelinks(data-index = 0)
 		.mainhide(onclick="hidemenu()")
 
@@ -142,22 +148,40 @@ html
 				ga('create', 'UA-85432260-1', 'auto');
 				ga('send', 'pageview');
 
-		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js")
-		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js")
-		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js")
-		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js")
-		script(src="https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js")
-			
+		script(src="https://apis.google.com/js/api:client.js")
 		script.
-			// Initialize Firebase
-			var config = {
-				apiKey: "AIzaSyCsw0zGUHgtaA0K4oPkAshIutfdEpyn31c",
-				authDomain: "vro-web.firebaseapp.com",
-				databaseURL: "https://vro-web.firebaseio.com",
-				storageBucket: "vro-web.appspot.com",
-				messagingSenderId: "902824305582"
-			};
-			firebase.initializeApp(config);
+			var googleSigninClientId = '#{config.googleSigninClientId}'
+
+		if !user
+			script.
+				var googleUser = {};
+
+				function attachSignin(element) {
+					auth2.attachClickHandler(element, {},
+						function(_googleUser) {
+							googleUser = _googleUser
+							// alert("Signed in: " + googleUser.getBasicProfile().getName() + googleUser.getAuthResponse().id_token)
+
+							User.authenticate({googleUserToken: googleUser.getAuthResponse().id_token}, function(err) {
+								//console.log(err, api.currentUser)
+								window.location.reload()
+							})
+						}, function(error) {
+							alert(JSON.stringify(error, undefined, 2));
+						});
+				}
+
+				gapi.load('auth2', function(){
+					// Retrieve the singleton for the GoogleAuth library and set up the client.
+					auth2 = gapi.auth2.init({
+						client_id: googleSigninClientId,
+						cookiepolicy: 'single_host_origin',
+						// Request scopes in addition to 'profile' and 'email'
+						//scope: 'additional_scope'
+					});
+					attachSignin(_('#login-button'));
+				});
+
 
 		script(src='/js/default.js')
 		script(src='/js/post-functions.js')

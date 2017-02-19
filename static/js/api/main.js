@@ -8,7 +8,7 @@ var api = new API('/api')
 api.currentUser = (function getLocalUser() {
 	var userJSONRaw = localStorage['currentUser']
 	if (!userJSONRaw) return null;
-	var user = User(JSON.parse(userJSONRaw))
+	var user = new User(JSON.parse(userJSONRaw))
 	user.isCurrent = true
 	return user })();
 api.saveCurrentUserLocally = function() {

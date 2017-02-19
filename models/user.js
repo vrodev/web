@@ -13,9 +13,21 @@ const clc = require('cli-color');
 
 // Create schema
 const Schema = mongoose.Schema({
-	name: String,
-	email: String,
-	loginCode: String,
+  email: String,
+
+  picture: String,
+  syncPictureFromLogin: Boolean,
+
+  //TL:DR; Vi borde ha något i stil med "Fullt Namn" (fullName),
+  // "Vad kallar dina kollegor/vänner dig?" (_givenName -> givenName; default eg. first of fullName.split by space) "Initialer/förkortat namn"
+  // (_tinyName -> tinyName: default eg. ($first.$last.) letter, in uppercase, of (fullName.split by space))
+	fullName: String,
+  name: String,
+  tinyName: String,
+
+  login: {
+    googleUserId: String,
+  },
 
   line: String,
   graduationYear: Number,
@@ -40,6 +52,7 @@ const Schema = mongoose.Schema({
   // headadmin: Boolean
 
 
+	loginCode: String,
 	catcher: {
 		target: dbRef('User'),
     isNoobed: Boolean,
@@ -50,17 +63,28 @@ const Schema = mongoose.Schema({
     paid: Boolean,
     paidAt: Date
 	}
-}, {timestamps: true}) // createdAt/updatedAt
+}, {
+  timestamps: true, // createdAt/updatedAt
+  // toObject: { virtuals: true },
+  // toJSON: { virtuals: true }
+})
 
 
 // Hooks
 
-Schema.virtual('firstName').get(function () {
-  return this.name.split(' ')[0]
-})
-
-Schema.virtual('lastName').get(function () {
-  return this.name.split(' ').pop()
+// Schema.virtual('name').get(function () {
+//   if (this._name) return this._name
+//   return (this.fullName || '').split(' ')[0]
+// })
+// Schema.virtual('tinyName').get(function () {
+//   if (this._tinyName) return this._tinyName
+//   return (this._tin || '').split(' ')[0]
+// })
+Schema.virtual('initialFullName').set(function (fullName) {
+  this.fullName = fullName
+  const words = fullName.split(' ')
+  this.name = words[0]
+  this.tinyName = (words[0][0] + (words.length<2?'': words[words.length-1][0])).toUpperCase()
 })
 
 Schema.virtual('className').get(function () {

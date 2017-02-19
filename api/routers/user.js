@@ -5,8 +5,9 @@
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 
-var express = require('express')
+const express = require('express')
 const generateSimpleCode = require('../../helpers/helpers').generateSimpleCode;
+const authenticate = require('../functions/authenticate')
 
 
 // /api
@@ -22,7 +23,15 @@ const route = router=> {
 		}, err=> res.abortIf(err, 'Couldn\'t get users'))
 	})
 
+	router.post('/authenticate', (req, res)=> {
+		const googleUserToken = req.body.googleUserToken
+		authenticate.usingGoogle(googleUserToken, req, res)
+	})
 
+	router.post('/logout', (req, res)=> {
+		authenticate.setLoggedOut(req, res)
+		res.apiOK()
+	})
 
 	router.post('/', (req, res)=> {
 		const user = new req.models.User()
@@ -30,7 +39,7 @@ const route = router=> {
 		user.email = req.query.email
 		user.loginCode = generateSimpleCode(5)
 		user.line = req.query.line
-  	user.graduationYear = req.query.graduationYear
+		user.graduationYear = req.query.graduationYear
 
 		user.save(function(err, user) {
 			if (res.abortIf(err, 'Couldn\'t save the user')) return;
@@ -59,7 +68,7 @@ const route = router=> {
 module.exports = mainRouter=> {
 	routeMain(mainRouter)
 
-  var router = express.Router();
-  route(router)
+	var router = express.Router();
+	route(router)
 	mainRouter.use('/user', router)
 }

@@ -11,6 +11,9 @@ module.exports = {
 	jwtTokenSecret: 'tHis7777SooasfdasdjSEEEEEcret',
 	sendsEmails: false,
 	logSendingEmails: true,
-	webURL: 'http://localhost:3000'
+	webURL: 'http://localhost:3000',
+
+	googleSigninClientId: '999516689966-k3v9rvienco8ftjhc81s4i05lu3utg5j.apps.googleusercontent.com',
+	googleSigninClientSecret: 'GGo6x5g9FyDHFHuwNAm4btD9'
 
 }

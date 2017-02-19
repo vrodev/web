@@ -13,40 +13,9 @@ module.exports = function(req, res, next) {
   req.setLogout = function() {res.clearCookie('jwtToken')}
   function eraseAndContinue() {req.setLogout();next()}
 
-  function tryLogin() {
-    var loginHeader = req.headers['x-login-code'] || req.query.xLoginCode
-    if (!loginHeader) return eraseAndContinue()
-
-    // SEE END OF THIS FUNCTION, findOne called again
-    req.models.User.findOne({ loginCode: loginHeader }).populate('catcher.target').exec(function(err, user) {
-      // user not found 
-      if (err) { 
-        return res.status(401).redirect('/login?error=error');
-      // incorrect loginCode
-      } else if (!user) {
-        return res.status(401).redirect('/login?error=incorrect');
-      }
-    
-      // if (!user.validPassword(password)) {
-      //   // incorrect password
-      //   return res.send(401);
-      // }
-    
-      // User has authenticated OK
-      var maxAge = 3 * 31 * 24*60*60 * 1000
-      var token = jwt.encode({
-        iss: user.id,
-        exp: Math.abs(new Date()) + maxAge
-      }, res.app.get('jwtTokenSecret'));
-      res.cookie('jwtToken', token, { maxAge: maxAge, httpOnly: true });
-
-      req.user = user
-      next()
-    });
-  }
-
-  var token = req.cookies.jwtToken || req.headers['x-access-token']
-  if (!token) return tryLogin()
+  var token = req.cookies.jwtToken
+  if (!token) return next()
+  
   var decoded;
   try { var decoded = jwt.decode(token, req.app.get('jwtTokenSecret'));
   } catch (err) {return eraseAndContinue()}

@@ -11,5 +11,5 @@
 # Empty lines and lines starting with a hash (#) are excluded
 
 helpers: helpers, api, api-model
-api: main, group, user, post
+api: group, user, post, main
 : general, catcher
