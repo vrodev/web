@@ -1,10 +1,6 @@
 .card-container
 	max-width 1040px
-	margin-top calc(4%/8)
-	
-	@media (max-width:500px){
-		margin-top calc(4%/8)
-	}
+	margin .5%
 
 .card
 	width 24%
@@ -102,7 +98,8 @@ $menu-header-height = 40px
 		height 100%
 		width 100%
 		overflow hidden
-		
+		cursor default
+
 		.date
 			width 94%
 			padding 3%
@@ -376,6 +373,15 @@ $menu-header-height = 40px
 	label.add-image
 		display block
 		max-width 499px !important
+		background-size 40px !important
+		border 1px solid rgba(0,0,0, .2)
+		
+		.imagetext
+			position absolute
+			top calc(50% + 20)
+			left 50%
+			transform translateX(-50%)
+
 	.image
 		bg-image plus
 		background-size 80%
