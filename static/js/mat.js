@@ -1,6 +1,6 @@
 _('.main-content').style.maxWidth = 'none'
 
-if (api.currentUser){
+if (api.currentUser && window.matchMedia("(max-width: 500px)").matches){
 	_('.logged-in').style.backgroundColor = blendColors(pageinfos.mat.color, "#ffffff", 0.2)
 }
 
