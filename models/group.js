@@ -8,23 +8,20 @@ const dbRef = require('../helpers/helpers').mongooseRef
 // Create schema
 const Schema = new mongoose.Schema({
 	name: String,
-	leader: dbRef('User'),
-	administrators: [dbRef('User')],
-
-	members: [dbRef('User')],
+	memberships: [dbRef('Membership')],
 	about: String,
 
 	type: {
-		type: String,
-		enum : ['UTSKOTT','KOMMITTE','GROUP'],
-		default : 'GROUP'
+		$type: String,
+		enum: ['UTSKOTT','KOMMITTE','GROUP'],
+		default: 'GROUP'
 	}
 
 	// status: String,
 	// email: String,
 	// desc: String,
 	// URL: String
-}, {timestamps: true});
+}, {timestamps: true, typeKey: '$type'});
 
 // Register schema
 module.exports = mongoose.model('Group', Schema);

@@ -27,7 +27,8 @@ var addEventListeners = function() {
 	});
 	window.addEventListener('scroll',function() {
 		var scroll = document.body.scrollTop
-		_('.topheader').classList.toggle('darkheader', scroll>=10)
+		if (_('.topheader'))
+			_('.topheader').classList.toggle('darkheader', scroll>=10)
 	})
 }
 
@@ -203,7 +204,7 @@ function changeFromColor(color){
 	}
 }
 
-var pageinfo = pageinfos[dataPage]
+var pageinfo = typeof dataPage!=='undefined'? pageinfos[dataPage]: null
 var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
 	return subpageinfo.name.replace(/ /g,"_").toLowerCase() == subpage
 })

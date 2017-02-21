@@ -32,7 +32,15 @@ const Schema = mongoose.Schema({
   line: String,
   graduationYear: Number,
 
-  groups: [dbRef('Group')],
+  memberships: [dbRef('Membership')],
+  permissions: [{
+    group: dbRef('Group'),
+    title: {
+      $type: String,
+      enum: ['POST_PUBLIC','EDIT', 'NONE'],
+      default: 'NONE'
+    }
+  }]
 
   // cardno: {type: String, unique: true},
   // name: String,
@@ -63,11 +71,9 @@ const Schema = mongoose.Schema({
     paid: Boolean,
     paidAt: Date
 	}
-}, {
-  timestamps: true, // createdAt/updatedAt
-  // toObject: { virtuals: true },
-  // toJSON: { virtuals: true }
-})
+}, {timestamps: true, typeKey: '$type'}) // createdAt/updatedAt
+// toObject: { virtuals: true },
+// toJSON: { virtuals: true }
 
 
 // Hooks
