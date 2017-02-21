@@ -1,5 +1,8 @@
 _('.main-content').style.maxWidth = 'none'
 
+if (api.currentUser){
+	_('.logged-in').style.backgroundColor = blendColors(pageinfos.mat.color, "#ffffff", 0.2)
+}
 
 api.food(function(err, weeks) {
 	if (err) return (function foodLoadingError(err) {

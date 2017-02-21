@@ -166,10 +166,6 @@ function changeFromColor(color){
 		document.querySelectorAll('.shineheader')[1].style.background = 'none'
 	}
 
-	if((color !== '') && window.matchMedia("(max-width: 500px)").matches){
-		_('.topheader').style.background = 'transparent'
-	}
-
 	_('.phonelinks').style.backgroundColor = blendColors(color, "#000000", 0.2)
 	if(color == '#000000'){
 		_('.phonelinks').style.backgroundColor = blendColors(color, "#ffffff", 0.2)
@@ -187,8 +183,15 @@ function changeFromColor(color){
 		_(".logga").style.filter = "invert(100%)"
 
 		_(".center-header").style.backgroundColor = color
+
+		if (api.currentUser){
+			var object = _('.logged-in')
+			object.querySelector('.title').style.color = blendColors(color, "#ffffff", 0.9)
+		}else{
+			var object = _('.log')
+		}
+		object.style.backgroundColor = blendColors(color, "#ffffff", 0.1)
 		
-		_(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
 
 		link = document.createElement('div')
 		link.className ="kommittelink"

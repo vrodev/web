@@ -119,6 +119,10 @@ body > .topheader
 	position relative
 	text-align center
 	display inline-block
+	transition all .2s
+	
+	&:hover
+		box-shadow 0px 0px 10px 0px rgba(0,0,0,0.5)
 	
 	@media (max-width:500px){
 		width 80px
@@ -132,19 +136,31 @@ body > .topheader
 	}
 	
 .logged-in
-	absolute top 0px right 0px
+	absolute top 5px right 5px
+	background-color rgba(0,0,0,.075)
+	border-radius 3px
+	
+	height 40px
+	padding-left 8px
 	& > .title
 		font-weight bold
-		line-height 50px
-		absolute right 63px
+		line-height 40px
 		text-align right
-		width 170px
 		overflow-x hidden
+		display inline-block
+		margin-right 5px
+		
+		@media (max-width:500px){
+			font-size 130%
+		}
+
 	& > .image
+		display inline-block
 		background-size cover
 		background-repeat no-repeat
 		background-position center
-		size 50px
+		size 30px
+		margin 5px
 		border-radius 50%
 	
 .logtxt
@@ -154,6 +170,7 @@ body > .topheader
 	vertical-align middle
 	line-height 37px 
 	text-align center
+	cursor default
 	
 	@media (max-width:500px){
 		line-height 37px

@@ -26,7 +26,13 @@ bild.className ="utskottbildbottom"
 if (window.matchMedia("(max-width: 500px)").matches) {
 
 	_(".center-header").style.backgroundColor = utskott.color
-	_(".log").style.backgroundColor = blendColors(utskott.color, "#000000", 0.3)
+	if (api.currentUser){
+		var object = _('.logged-in')
+		object.querySelector('.title').style.color = blendColors(utskott.color, "#ffffff", 0.9)
+	}else{
+		var object = _('.log')
+	}
+	object.style.backgroundColor = blendColors(utskott.color, "#ffffff", 0.1)
 
 	link = document.createElement('div')
 	link.className ="kommittelink"
