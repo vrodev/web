@@ -12,12 +12,12 @@
 	position relative
 	transition box-shadow 0.4s, transform 0.4s
 	box-shadow 0px 0px 0px rgba(0,0,0,0.0);
+	box-sizing border-box
+	border solid 1px #f1f1f1
 
 	@media (max-width:500px){
 		margin .5%
 		width 49%
-		box-sizing border-box
-		border solid 1px #f1f1f1
 	}
 	
 	&.template
@@ -28,6 +28,7 @@
 		box-shadow 0px 7px 36px rgba(0,0,0,0.2);
 		z-index 10
 		transform translateY(-3px)
+		border-color transparent
 		
 		.image
 			background-color transparent
