@@ -40,7 +40,10 @@ block mainContent
 					.content
 						.title
 						.text
-						.choice.remove Remove Post
+
+						if user
+							.choice.remove Remove Post
+							
 			.close(onclick='closePanel()')
 				.cross +
 

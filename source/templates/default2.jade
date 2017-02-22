@@ -112,20 +112,21 @@ html
 				.button.prev
 				.button.next
 
-		.add-card.add-card-hidden
-			.plus +
-			.content
-				input.imageinput(type="file" accept="image/*")
-				label.image.add-image(for='bild')
-					.imagetext Lägg till en bild
-				.info
-					.content
-						.title.text-input(placeholder='rubrik' contentEditable="true")
-						.text.text-input(placeholder='text' contentEditable="true")
-						div.choice.chooseSlide.add-choice Är nu inte slide
-						div.choice.publish.add-choice Publicera
-			.close(onclick='closePanel()')
-				.cross +
+		if user
+			.add-card.add-card-hidden
+				.plus +
+				.content
+					input.imageinput(type="file" accept="image/*")
+					label.image.add-image(for='bild')
+						.imagetext Lägg till en bild
+					.info
+						.content
+							.title.text-input(placeholder='rubrik' contentEditable="true")
+							.text.text-input(placeholder='text' contentEditable="true")
+							div.choice.chooseSlide.add-choice Är nu inte slide
+							div.choice.publish.add-choice Publicera
+				.close(onclick='closePanel()')
+					.cross +
 
 		.main-content
 			//- include footer-made

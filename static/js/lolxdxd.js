@@ -1,8 +1,7 @@
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
 
-_('.add-card-hidden').style.
-display = 'block'
+if(api.currentUser) _('.add-card-hidden').style.display = 'block'
 
 if (window.innerWidth > 500){
 	_('.main-content').style.top = '80px'
@@ -84,45 +83,46 @@ function addSlide(post) {
 	slideLength++
 }
 
-addTapEvent(_('.add-card'), function() {
-	document.body.classList.add('lightbox-visible')
-	var lightbox = _('body > .overlay .lightbox')
+if(api.currentUser){
+	addTapEvent(_('.add-card'), function() {
+		document.body.classList.add('lightbox-visible')
+		var lightbox = _('body > .overlay .lightbox')
 
-	var cardCopy = _('.add-card').cloneNode(true)
-	cardCopy.classList.toggle('add-card-hidden')
-	cardCopy.classList.add('item')
-	cardCopy.classList.remove('card')
-	addTapEvent(cardCopy.querySelector('.chooseSlide'),defineType)
+		var cardCopy = _('.add-card').cloneNode(true)
+		cardCopy.classList.toggle('add-card-hidden')
+		cardCopy.classList.add('item')
+		cardCopy.classList.remove('card')
+		addTapEvent(cardCopy.querySelector('.chooseSlide'),defineType)
 
-	var publishButton = cardCopy.querySelector('.publish.add-choice')
-	addTapEvent(publishButton, function() {
-		addObject(cardCopy)
-	})
-
-	var bildInput = cardCopy.querySelector('input.imageinput')
-	bildInput.id = 'bild'
-	if (bildInput) {
-		bildInput.addEventListener('change', function(e) {
-			if (!e.target || !e.target.files) return;
-			var fileReference = e.target.files[0]
-			if (!fileReference) return;
-
-			var fr = new FileReader();
-			fr.onload = function () {
-				var fileDataURL = fr.result
-
-				cardCopy.querySelector('label[for=bild]').style.backgroundImage = "url('" + fileDataURL + "')"
-				cardCopy.querySelector('label[for=bild]').innerText = ''
-				//cardCopy.querySelector('label[for=bild]').className += ' labelBild'
-			}
-			fr.readAsDataURL(fileReference);
+		var publishButton = cardCopy.querySelector('.publish.add-choice')
+		addTapEvent(publishButton, function() {
+			addObject(cardCopy)
 		})
-	}
+
+		var bildInput = cardCopy.querySelector('input.imageinput')
+		bildInput.id = 'bild'
+		if (bildInput) {
+			bildInput.addEventListener('change', function(e) {
+				if (!e.target || !e.target.files) return;
+				var fileReference = e.target.files[0]
+				if (!fileReference) return;
+
+				var fr = new FileReader();
+				fr.onload = function () {
+					var fileDataURL = fr.result
+
+					cardCopy.querySelector('label[for=bild]').style.backgroundImage = "url('" + fileDataURL + "')"
+					cardCopy.querySelector('label[for=bild]').innerText = ''
+					//cardCopy.querySelector('label[for=bild]').className += ' labelBild'
+				}
+				fr.readAsDataURL(fileReference);
+			})
+		}
 
 
-	lightbox.appendChild(cardCopy)
-})
-
+		lightbox.appendChild(cardCopy)
+	})
+}
 
 function addPostCard(post, i) {
 	var card = _('.card.template')
@@ -155,16 +155,18 @@ function LightBoxClick(item, className){
 	cardCopy.classList.remove(className)
 	cardCopy.removeAttribute("style")
 
-	addTapEvent(cardCopy.querySelector('.remove'), function(){
-		console.log('försöker ta bort')
-		var post = new Post(cardCopy.dataset.id)
-		post.delete(function(err){
-			if(err) return console.log(err)
-			console.log('Post deleted')
+	if(api.currentUser){
+		addTapEvent(cardCopy.querySelector('.remove'), function(){
+			console.log('försöker ta bort')
+			var post = new Post(cardCopy.dataset.id)
+			post.delete(function(err){
+				if(err) return console.log(err)
+				console.log('Post deleted')
+			})
+			closePanel()
+			location.reload()
 		})
-		closePanel()
-		location.reload()
-	})
+	}
 
 	addTapEvent(_('.overlay'), function(e){
 		if(e.target != _('.overlay')) return
