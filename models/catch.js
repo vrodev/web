@@ -15,13 +15,6 @@ const Schema = mongoose.Schema({
 }, {timestamps: true})
 
 
-// Add object methods
-
-Schema.methods.firstName = function() {
-	return this.name.split(' ')[0]
-}
-
-
 // Add static methods
 
 Schema.statics.load = function (_id) {

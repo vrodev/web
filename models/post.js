@@ -14,7 +14,8 @@ const Schema = new mongoose.Schema({
 	url: String,
 	imgUrl: String,
 
-	isSlide: Boolean
+	isSlide: Boolean,
+	isPublic: Boolean
 }, {timestamps: true});
 
 // Register schema
