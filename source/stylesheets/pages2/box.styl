@@ -4,6 +4,9 @@
 
 .card
 	width 24%
+	padding-top calc(24% + 66px)
+	height 0
+	
 	margin calc(4%/8)
 	background-color white
 	border-radius 0px
@@ -17,8 +20,8 @@
 	border-radius 2px
 
 	@media (max-width:500px){
-		margin .5%
 		width 49%
+		padding-top calc(48% + 15vw)
 		box-shadow 0px 0px 1px rgba(0,0,0,0)
 	}
 	
@@ -26,7 +29,6 @@
 		display none
 		
 	&:hover
-		box-shadow 0px 0px 5px rgba(0, 0, 0, 0.3)
 		box-shadow 0px 7px 36px rgba(0,0,0,0.2);
 		z-index 10
 		transform translateY(-3px)
@@ -35,46 +37,53 @@
 		.image
 			background-color transparent
 	
-	.image
+	.content
+		position absolute
+		bottom 0
 		width 100%
-		padding-top 100%
-		background-size cover 
-		background-repeat no-repeat
-		background-position center center
-		transition all .4s
-		
-		@media (max-width:500px){
+		height 100%
+		display flex
+		flex-direction column
+	
+		.image
+			flex-grow 1
 			width 100%
-			padding-top 100%
-			margin 0
-		}
-		
-	.info
-		margin 8px
-		
-		.content	
-			.title
-				font-family CenturyGothic
-				color #292929
-				font-weight bold
-				font-size 120%
-				height 50px
-				overflow hidden
-				cursor pointer
-				
-				@media (max-width:500px){
-					font-size 4vw
-					height 10vw
-				}
-				
-				&:hover
-					text-decoration underline
+			background-size cover 
+			background-repeat no-repeat
+			background-position center center
+			transition all .4s
 			
-			.text
-				display none
+			@media (max-width:500px){
+				width 100%
+				padding-top 100%
+				margin 0
+			}
 			
-			.remove
-				display none
+		.info
+			margin 8px
+			max-height calc(50% - 8px * 2)
+			
+			.text-content
+				.title
+					font-family CenturyGothic
+					color #292929
+					font-weight bold
+					font-size 120%
+					overflow hidden
+					cursor pointer
+					
+					@media (max-width:500px){
+						font-size 4vw
+					}
+					
+					&:hover
+						text-decoration underline
+				
+				.text
+					display none
+				
+				.remove
+					display none
 				
 $menu-header-height = 40px
 
@@ -86,11 +95,18 @@ $menu-header-height = 40px
 	display inline-block
 	position relative
 	vertical-align top
+	box-shadow: 0px 0px 0px rgba(0,0,0,0.4)
 	
 	@media (max-width:500px){
 		padding-top calc(48% + 15vw)
 		transform scale(1)
 	}
+	
+	&:hover
+		box-shadow 0px 7px 36px rgba(0,0,0,0.2);
+		z-index 10
+		transform translateY(-3px)
+		border-color transparent
 		
 	a
 		position absolute
@@ -286,7 +302,7 @@ $menu-header-height = 40px
 					padding 0
 				}
 					
-				.content
+				.text-content
 					position relative !important
 					
 					.add-choice
@@ -391,7 +407,7 @@ $menu-header-height = 40px
 	.image-view
 		display none !important
 	.info
-		.content
+		.text-content
 			.text-input
 				border-style solid
 				border-width 1px
@@ -434,5 +450,5 @@ $menu-header-height = 40px
 	.image-view
 		display block !important
 	.info
-		.content
+		.text-content
 			display none
