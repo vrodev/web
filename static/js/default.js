@@ -1,4 +1,6 @@
 var menuVisible = false
+var defaultShadow = false
+
 function hidemenu(){
 	menuVisible = !menuVisible
 
@@ -10,11 +12,22 @@ function hidemenu(){
 		setTimeout(function(){mainhideStyle.opacity = ".9"},10)
 		_('.menubutton').style.transform = "rotate(-180deg)"
 		_('.creddiv').style.bottom = "0px"
+
+		if(_('.topheader').classList.contains('darkheader')){
+			defaultShadow = true
+		}else{
+			_('.topheader').classList.add('darkheader')
+		}
+
 	} else {
 		mainhideStyle.opacity = "0"
 		setTimeout(function(){mainhideStyle.display = "none"},200)
 		_('.menubutton').style.transform = "rotate(0deg)"
 		_('.creddiv').style.bottom = "-50px"
+
+		if(!defaultShadow){
+			_('.topheader').classList.remove('darkheader')
+		}
 	}
 }
 

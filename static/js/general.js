@@ -195,15 +195,21 @@ function changeFromColor(color){
 			var object = _('.log')
 		}
 		object.style.backgroundColor = blendColors(color, "#ffffff", 0.1)
-		
 
+	}else if(window.matchMedia("(max-width: 500px)").matches){
 		link = document.createElement('div')
 		link.className ="kommittelink"
 		link.style.backgroundColor = color
 		link.style.minHeight = "20px"
+		link.innerText = "By VRO-Web"
 
 		var el = _('center') || _('.main-content')
 		el.appendChild(link)
+
+		if(color == '#ffffff'){
+			link.style.backgroundColor = 'rgba(0, 0, 0, 0.2)'
+			link.style.color = 'rgba(0,0,0,0.5)'
+		}
 	}
 }
 
