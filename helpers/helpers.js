@@ -32,7 +32,21 @@ module.exports.awaitres = function(fn, onError) { return await (async (() => {
 const mongoose = require('mongoose')
 
 module.exports.mongooseRef = function(modelName, opt) {
-	return { type:mongoose.Schema.ObjectId, ref:modelName }
+  if (!opt) opt = {}
+  if (!opt.typeKey) opt.typeKey = 'type'
+  
+  const getRef = function (modelName, options) {
+    if (!options) options = {}
+    Object.assign(options, opt)
+    const obj = {ref:modelName}
+    obj[options.typeKey] = mongoose.Schema.Types.ObjectId
+    return obj
+  }
+
+  if (!modelName)
+    return getRef
+
+	return getRef(modelName)
 }
 
 

@@ -6,7 +6,7 @@
 // Inspired by https://github.com/madhums/node-express-mongoose-demo
 
 const mongoose = require('mongoose')
-const dbRef = require('../helpers/helpers').mongooseRef
+const dbRef = require('../helpers/helpers').mongooseRef(null, {typeKey:'$type'})
 const async = require('asyncawait/async');
 const await = require('asyncawait/await');
 const clc = require('cli-color');
@@ -40,7 +40,7 @@ const Schema = mongoose.Schema({
       enum: ['POST_PUBLIC','EDIT', 'NONE'],
       default: 'NONE'
     }
-  }]
+  }],
 
   // cardno: {type: String, unique: true},
   // name: String,

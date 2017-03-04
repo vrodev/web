@@ -3,7 +3,7 @@
 // VRO Web
 
 const mongoose = require('mongoose')
-const dbRef = require('../helpers/helpers').mongooseRef
+const dbRef = require('../helpers/helpers').mongooseRef(null, {typeKey:'$type'})
 
 // Create schema
 const Schema = new mongoose.Schema({
