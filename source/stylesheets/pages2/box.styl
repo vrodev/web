@@ -223,7 +223,7 @@ $menu-header-height = 40px
 		
 	.lightbox > .item
 		width 100%
-		max-width 1025px
+		max-width 1030px
 		text-align center
 		position fixed
 		background-color white
@@ -372,14 +372,16 @@ $menu-header-height = 40px
 	label.add-image
 		display block
 		max-width 499px !important
-		background-size 40px !important
 		border 1px solid rgba(0,0,0, .2)
+		position relative
+		cursor pointer
 		
 		.imagetext
 			position absolute
-			top calc(50% + 20)
+			top calc(50% + 40px)
 			left 50%
 			transform translateX(-50%)
+			color grey
 
 	.image
 		bg-image plus
@@ -393,11 +395,11 @@ $menu-header-height = 40px
 				border-style solid
 				border-width 1px
 				border-color rgba(0, 0, 0, 0.2)
-				
 				width 100%
-			// .choice
-			// .chooseSlide
-			// .publish
+				
+			.text-input:empty:before
+				content attr(data-placeholder)
+				color gray
 				
 .add-card-hidden
 	position fixed

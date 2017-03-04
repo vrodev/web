@@ -178,7 +178,7 @@ function LightBoxClick(item, className){
 
 Post.list(function(err, posts) {
 	if (err) return alert('Kunde inte ladda posterna')
-	posts.reverse().forEach(function (post, i) {
+	posts.forEach(function (post, i) {
 		addPostCard(post, i)
 		if (post.isSlide) addSlide(post)
 	})
