@@ -182,21 +182,7 @@ function changeFromColor(color){
 		_(".phonelinks").className += " whitelinks"
 	}
 
-	if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
-		_(".menubutton").style.filter = "invert(100%)"
-		_(".logga").style.filter = "invert(100%)"
-
-		_(".center-header").style.backgroundColor = color
-
-		if (api.currentUser){
-			var object = _('.logged-in')
-			object.querySelector('.title').style.color = blendColors(color, "#ffffff", 0.9)
-		}else{
-			var object = _('.log')
-		}
-		object.style.backgroundColor = blendColors(color, "#ffffff", 0.1)
-
-	}else if(window.matchMedia("(max-width: 500px)").matches){
+	if(window.matchMedia("(max-width: 500px)").matches){
 		link = document.createElement('div')
 		link.className ="kommittelink"
 		link.style.backgroundColor = color
@@ -210,6 +196,21 @@ function changeFromColor(color){
 			link.style.backgroundColor = 'rgba(0, 0, 0, 0.2)'
 			link.style.color = 'rgba(0,0,0,0.5)'
 		}
+	}
+
+	if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
+		_(".menubutton").style.filter = "invert(100%)"
+		_(".logga").style.filter = "invert(100%)"
+
+		_(".center-header").style.backgroundColor = color
+
+		if (api.currentUser){
+			var object = _('.logged-in')
+			object.querySelector('.title').style.color = blendColors(color, "#ffffff", 0.9)
+		}else{
+			var object = _('.log')
+		}
+		object.style.backgroundColor = blendColors(color, "#ffffff", 0.1)
 	}
 }
 
