@@ -155,28 +155,31 @@ var pageinfos = {
 	},
 	om:{
 		color:'#273f7b'
+	},
+	lolxdxd:{
+		color:'#1f1f1f'
 	}
 }
 
 function changeFromColor(color){
-
-	_(".header").style.backgroundColor = color
-	_(".extendHeader").style.backgroundColor = color
-	if(color == '#ffffff'){
-		document.querySelectorAll('.shineheader')[0].style.background = 'none'
-		document.querySelectorAll('.shineheader')[1].style.background = 'none'
+	if(document.querySelectorAll('.header').length){
+		_(".header").style.backgroundColor = color
+		_(".extendHeader").style.backgroundColor = color
+		if(color == '#ffffff'){
+			document.querySelectorAll('.shineheader')[0].style.background = 'none'
+			document.querySelectorAll('.shineheader')[1].style.background = 'none'
+			_('.headertext').style.color = 'black'
+			_('.headertext').style.backgroundColor = color
+		}else{
+			_('.headertext').style.color = 'white'
+		}
 	}
-
 	_('.phonelinks').style.backgroundColor = blendColors(color, "#000000", 0.2)
 	if(color == '#000000'){
 		_('.phonelinks').style.backgroundColor = blendColors(color, "#ffffff", 0.2)
 	}
 	if(color !== "#ffffff"){
 		_(".phonelinks").className += " whitelinks"
-		_('.headertext').style.color = 'white'
-	}else{
-		_('.headertext').style.color = 'black'
-		_('.headertext').style.backgroundColor = color
 	}
 
 	if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){

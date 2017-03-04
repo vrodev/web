@@ -14,6 +14,7 @@ if (window.innerWidth > 500){
 	})
 }else{
 	document.body.style.backgroundColor = '#f1f1f1'
+	document.querySelector('.topheader').style.boxShadow = '0px 0px 5px rgba(0,0,0,0.3)'
 }
 
 function addplane(){
