@@ -10,12 +10,16 @@
 	display inline-block
 	position relative
 	transition all 0.4s
-	box-shadow 0px 0px 1px rgba(0,0,0,0.2)
+	box-shadow 0px 0px 1px rgba(0,0,0,0.4)
 	box-sizing border-box
+	vertical-align bottom
+	overflow hidden
+	border-radius 2px
 
 	@media (max-width:500px){
 		margin .5%
 		width 49%
+		box-shadow 0px 0px 1px rgba(0,0,0,0)
 	}
 	
 	&.template
@@ -38,8 +42,6 @@
 		background-repeat no-repeat
 		background-position center center
 		transition all .4s
-		
-		background-color: rgba(0, 0, 0, 0.1);
 		
 		@media (max-width:500px){
 			width 100%

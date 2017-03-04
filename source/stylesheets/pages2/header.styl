@@ -32,11 +32,12 @@ body > .topheader
 	top 50%
 	left 50%
 	transform: translate(-50%, -50%)
-	width 100%
-	max-width 1040px
+	width 98%
+	max-width calc(1040px * .98)
 	
 	@media (max-width:500px){
 		height 100%
+		width 100%
 	}
 	
 
@@ -236,14 +237,16 @@ div.link
 		max-height 200px
 		box-shadow 5px alpha(#000, 30%)
 		
-.sublink
-	display block
-	padding 0px 10px 0px 10px
-	color white
-	background-color black
-	transition: all 0.2s ease-out
-	text-align center
-	
-	&:hover
-		background-color darken(white, 80)
-		box-shadow 5px alpha(#000, 30%)
+		.sublink
+			background-color black
+		
+	.sublink
+		display block
+		padding 0px 10px 0px 10px
+		color white
+		transition: all 0.2s ease-out
+		text-align center
+		
+		&:hover
+			background-color darken(white, 80)
+			box-shadow 5px alpha(#000, 30%)

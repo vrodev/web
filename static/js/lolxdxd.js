@@ -12,6 +12,8 @@ if (window.innerWidth > 500){
 	links.forEach(function(element){
 		element.classList.add('subtle-link')
 	})
+}else{
+	document.body.style.backgroundColor = '#f1f1f1'
 }
 
 function addplane(){
