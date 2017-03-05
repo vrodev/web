@@ -147,6 +147,10 @@ function addPostCard(post, i) {
 
 	var text = card.querySelector('.text')
 	text.innerText = post.text
+
+	if(post.title.length == 0){
+		card.querySelector('.info').style.margin = 0
+	}
 }
 
 function LightBoxClick(item, className){
@@ -244,7 +248,7 @@ function backward(){
 	}
 	_('.slide').dataset.index = n
 	clearTimeout(ticket)
-	}
+}
 
 // _('.main-content').style.background = 'none'
 // _('.main-content').style.boxShadow = 'none'

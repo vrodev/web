@@ -9,7 +9,7 @@ function hidemenu(){
 
 	if (menuVisible) {
 		mainhideStyle.display = "block"
-		setTimeout(function(){mainhideStyle.opacity = ".9"},10)
+		setTimeout(function(){mainhideStyle.opacity = ".7"},10)
 		_('.menubutton').style.transform = "rotate(-180deg)"
 		_('.creddiv').style.bottom = "0px"
 

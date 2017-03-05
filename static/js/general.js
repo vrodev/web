@@ -162,6 +162,12 @@ var pageinfos = {
 }
 
 function changeFromColor(color){
+
+	var metaThemeColor = document.querySelector("meta[name=theme-color]")
+	var appleThemeColor = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]")
+	metaThemeColor.setAttribute("content", color)
+	appleThemeColor.setAttribute("content", color)
+
 	if(document.querySelectorAll('.header').length){
 		_(".header").style.backgroundColor = color
 		_(".extendHeader").style.backgroundColor = color

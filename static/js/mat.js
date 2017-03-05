@@ -14,7 +14,7 @@ api.food(function(err, weeks) {
 	weeks.forEach(function(week) {
 		if (week.nr<currentWeekNr) return;
 		if (week.nr>currentWeekNr+1) return;
-		var isCurrentWeek = currentWeekNr==week.nr
+		var isCurrentWeek = currentWeekNr == week.nr
 
 		if (!isCurrentWeek) {
 			temp = document.createElement('div')
