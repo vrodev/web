@@ -61,7 +61,7 @@ api.food(function(err, weeks) {
 })
 
 var slideLength = 0
-function addSlide(post) {
+function addSlide(post, first) {
 	var slide = _('.template.slideobject')
 
 	slide = slide.cloneNode(true)
@@ -82,7 +82,7 @@ function addSlide(post) {
 	plupp.className = "plupp"
 	plupp.className += " plupp" + slideLength
 	_(".slidemarker").appendChild(plupp)
-
+	if(first) plupp.style.backgroundColor = "white"
 	slideLength++
 }
 
@@ -185,9 +185,10 @@ function LightBoxClick(item, className){
 
 Post.list(function(err, posts) {
 	if (err) return alert('Kunde inte ladda posterna')
+		var first = true
 	posts.forEach(function (post, i) {
 		addPostCard(post, i)
-		if (post.isSlide) addSlide(post)
+		if (post.isSlide){addSlide(post, first);first = false}
 	})
 })
 
@@ -212,7 +213,7 @@ function pluppar(){
 		}
 
 	var inactive = ".plupp" + k
-	_(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
+	_(inactive).style.backgroundColor = ""
 	_(active).style.backgroundColor = "white"
 }
 
