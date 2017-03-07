@@ -231,5 +231,3 @@ var pageinfo = typeof dataPage!=='undefined'? pageinfos[dataPage]: null
 var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
 	return subpageinfo.name.replace(/ /g,"_").toLowerCase() == subpage
 })
-
-console.log(subpageinfo)

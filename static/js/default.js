@@ -38,3 +38,8 @@ if(pageinfo){
 	changeFromColor(!subpage?pageinfo.color:
 		(subpageinfo?subpageinfo.color:'#222222'))
 }
+window.onload = function() {
+	if(document.querySelectorAll('.header').length){
+		_(".extendHeader").style.height = _(".header").offsetHeight + 'px'
+	}
+}
