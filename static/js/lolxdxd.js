@@ -34,7 +34,7 @@ function foodLoadingError(err) {
 	console.error({api:'food', err:err})}
 
 _('.card.menu').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', 0.1)
-_('.vegsymbol').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', 0.5)
+_('.vegstamp>.text').style.color = pageinfos.mat.color
 api.food(function(err, weeks) {
 	if (err) return foodLoadingError(err)
 

@@ -116,53 +116,48 @@ $menu-header-height = 40px
 		width 100%
 		overflow hidden
 		cursor default
+		display flex
+		flex-direction column
+		
+		.datecontainer
 
-		.date
-			width 94%
-			padding 3%
-			height $menu-header-height
-			
-			@media (max-width:500px){
-				height 15%
-			}
-			
-			.currentdate
-				color white
-				font-size 180%
+			.date
+				width 94%
+				padding 3%
+				height $menu-header-height
 				
 				@media (max-width:500px){
-					font-size 8vw
+					height 15%
 				}
-			
-			.weekday
-				float left
-			
-			.monthday
-				float right
-		.line
-			height 1px
-			width 94%
-			margin 0 3% 0 3%
-			background-color rgba(white, .7)
-			
-						
+				
+				.currentdate
+					color white
+					font-size 180%
+					
+					@media (max-width:500px){
+						font-size 8vw
+					}
+				
+				.weekday
+					float left
+				
+				.monthday
+					float right
+			.line
+				height 1px
+				width 94%
+				margin 0 3% 0 3%
+				background-color rgba(white, .7)
+					
 		.container	
-			height "calc(100% - %s - 6%)" % $menu-header-height
+			flex-grow 1
 			width 100%
-			position absolute
-			
-			@media (max-width:500px){
-				height calc(100% - 15% - 6%)
-			}
-			
-			.shine
-				display none
-				@media (max-width:500px){
-					display block
-				}
+			position relative
 			
 			.content
 				position absolute
+				display flex
+				flex-direction column
 
 				.mat
 					line-height 110%
@@ -185,48 +180,25 @@ $menu-header-height = 40px
 						padding 3%
 					}
 				
-				.reg
-					padding-bottom 10px
-					
-					@media (max-width:500px){
-						padding-bottom 0
-					}	
+				/*.reg*/
 						
 				.vegcontainer
-					margin-top 20px
-					
-					.vegoverlay
-						height 500px
-						background-color rgba(white, .2)
+					flex-grow 1
+					background-color rgba(white, .2)
+
+					.vegstamp
+						text-align center
+						margin 2%
 						
-						position absolute
-						width 100%
-					
-					.vegsymbol 
-						background-color rgba(white, .2)
-						bg-image leaf
-						background-position center
-						background-size 60%
-						border-radius 50%
-						height 45px
-						width 45px
-						position absolute
-						height
-						top 0px
-						left 50%
-						transform translate(-50%, -40%)
-						
-						@media (max-width:500px){
-							width 10vw
-							height 10vw
-						}
+						.text
+							background-color rgba(white,.5)
+							padding 0px 4px 0px 4px
+							margin 4px
+							border-radius 4px
+							display inline-block				
 					
 					.veg
-						padding-top 40px
-						
-						@media (max-width:500px){
-							padding-top 25px
-						}			
+						padding-top 0
 
 .overlay
 	display none
