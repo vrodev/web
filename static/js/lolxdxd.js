@@ -1,5 +1,6 @@
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
+_('.extendHeader').classList.add('extendHeader-main')
 
 if(api.currentUser) _('.add-card-hidden').style.display = 'block'
 
@@ -31,10 +32,13 @@ function cleanPlane(){
 
 function foodLoadingError(err) {
 	// TODO: Show in UI
-	console.error({api:'food', err:err})}
+	console.error({api:'food', err:err})
+}
 
-_('.card.menu').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', 0.1)
-_('.vegstamp>.text').style.color = pageinfos.mat.color
+var foodColor = /*'#00b3ab' */ pageinfos.mat.color
+
+_('.card.menu').style.backgroundColor = blendColors(foodColor, '#ffffff', 0.1)
+_('.vegstamp>.text').style.color = foodColor
 api.food(function(err, weeks) {
 	if (err) return foodLoadingError(err)
 
