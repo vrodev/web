@@ -8,7 +8,6 @@ if (window.innerWidth > 500){
 	_('.main-content').style.top = '80px'
 	_('.topheader').style.height = '80px'
 	_('.topheader').style.boxShadow = 'none'
-	_('.topheader').style.background = 'transparent'
 
 	var links = document.querySelectorAll('.link')
 	links.forEach(function(element){
