@@ -126,7 +126,9 @@ html
 						.text-content
 							.title.text-input(data-placeholder='Rubrik' contentEditable="true")
 							.text.text-input(data-placeholder='Text' contentEditable="true")
-							div.choice.chooseSlide.add-choice Är nu inte slide
+							div.checkboxdiv.choice.add-choice
+								input.checkbox(type='checkbox' id='slideCheckbox')
+								label.label2(for='slideCheckbox') Även som slide
 							div.choice.publish.add-choice Publicera
 				.close(onclick='closePanel()')
 					.cross +

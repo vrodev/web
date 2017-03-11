@@ -99,7 +99,6 @@ if(api.currentUser){
 		cardCopy.classList.toggle('add-card-hidden')
 		cardCopy.classList.add('item')
 		cardCopy.classList.remove('card')
-		addTapEvent(cardCopy.querySelector('.chooseSlide'),defineType)
 
 		var publishButton = cardCopy.querySelector('.publish.add-choice')
 		addTapEvent(publishButton, function() {

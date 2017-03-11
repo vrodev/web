@@ -149,6 +149,10 @@ $menu-header-height = 40px
 				width 94%
 				margin 0 3% 0 3%
 				background-color rgba(white, .7)
+				
+				@media (max-width:500px){
+					margin-top 20%
+				}
 					
 		.container	
 			flex-grow 1
@@ -194,15 +198,31 @@ $menu-header-height = 40px
 						position absolute
 						right 0
 						
+						background-color rgba(white,.5)
+						border-radius 0 0 0 4px
+						
+						@media(max-width:500px){
+							padding-bottom 4px
+						}
+						
 						.text
-							background-color rgba(white,.5)
 							padding 0px 4px 2px 4px
 							margin-bottom 4px
 							
-							border-radius 0 0 0 4px
-							display inline-block				
-					
-					/*.veg*/
+							display inline-block	
+							
+							.character
+								display inline-block
+								
+								@media(max-width:500px){
+									height .9em
+									text-align center
+									display block
+								}
+					.veg
+						@media(max-width:500px){
+							padding-right 20px
+						}
 
 .overlay
 	display none
@@ -404,6 +424,20 @@ $menu-header-height = 40px
 			.text-input:empty:before
 				content attr(data-placeholder)
 				color gray
+				
+			div.checkboxdiv
+				display flex !important
+				
+				.checkbox
+					display inline-block
+					height 30px
+					width 30px
+					margin 10px
+					
+				label.label2
+					display inline-block
+					flex-grow 1
+					line-height 50px
 				
 .add-card-hidden
 	position fixed

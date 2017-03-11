@@ -1,11 +1,3 @@
-
-var isSlide = false
-addTapEvent(_('.chooseSlide'),defineType)
-function defineType(){
-	isSlide = !isSlide
-	_('.chooseSlide').innerText = isSlide? 'Är nu slide': 'Är nu inte slide'
-}
-
 var isNotafication = false
 //addTapEvent(_('.chooseNotify'),isNotafication)
 function defineNotify(){
@@ -34,7 +26,7 @@ function addObject(card) {
 		var post = new Post()
 		post.title = card.querySelector('.title').innerHTML
 		post.text = card.querySelector('.text').innerHTML
-		post.isSlide = isSlide
+		post.isSlide = _('#slideCheckbox').checked
 		post.imgUrl = imgUrl
 		post.save(function(err) {
 			if (err) return aborted(err)
@@ -43,7 +35,6 @@ function addObject(card) {
 			closePanel()
 			isSlide = false
 			sendBtn.innerText = 'Publicera'
-			card.querySelector('.chooseSlide').innerText = 'Är nu inte slide'
 			window.location.reload()
 		})
 	}
