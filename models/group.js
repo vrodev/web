@@ -10,6 +10,7 @@ const Schema = new mongoose.Schema({
 	name: String,
 	memberships: [dbRef('Membership')],
 	about: String,
+	open: Boolean, // Bestämmer om medlemmar kan joina utan godkännande från behörig användare i gruppen
 
 	type: {
 		$type: String,

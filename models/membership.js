@@ -11,8 +11,7 @@ const dbRef = require('../helpers/helpers').mongooseRef
 const Schema = mongoose.Schema({
 	group: dbRef('Group'),
 	user: dbRef('User'),
-	title: {type: String},
-  isAdmin: {type: Boolean}
+	title: {type: String}
 }, {timestamps: true})
 
 // Register schema

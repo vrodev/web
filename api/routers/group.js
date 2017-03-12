@@ -24,6 +24,52 @@ const routeMain = router=> {
 // /api/group
 const route = router=> {
 
+	router
+
+	// returnerar alla grupper
+	.get('/', (req, res)=> {
+
+	})
+
+	// returnerar information för grupp med id :id
+	.get('/:id', (req, res)=> {
+		
+	})
+
+	// Skapa grupp
+	.post('/', (req, res)=> {
+		
+	})
+
+	// uppdatera grupp
+	.put('/:id', (req, res)=> {
+		
+	})
+
+	// radera grupp
+	.delete('/:id', (req, res)=> {
+		
+	})
+
+	// visa alla användare i en grupp
+	.get('/:id/users', (req, res)=> {
+		
+	})
+
+	// stoppa in användare med :id i grupp med id :id
+	.post('/:gid/users/:uid', (req, res)=> {
+		
+	})
+
+	// uppdatera inställningar för användare med id :id i grupp med id :id
+	.put('/:gid/users/:uid', (req, res)=> {
+		
+	})
+
+	// banna idiot
+	.delete('/:gid/users/:uid', (req, res)=> {
+		
+	})
 
 }
 
