@@ -207,7 +207,6 @@ $menu-header-height = 40px
 						
 						.text
 							padding 0px 4px 2px 4px
-							margin-bottom 4px
 							
 							display inline-block	
 							
@@ -393,51 +392,65 @@ $menu-header-height = 40px
 	vertical-align top
 	.plus
 		display none
-	label.add-image
-		display block
-		max-width 499px !important
-		background-color rgba(0,0,0,.05)
-		position relative
-		cursor pointer
+	.content
+		width 100%
 		
-		.imagetext
-			position absolute
-			top calc(50% + 40px)
-			left 50%
-			transform translateX(-50%)
-			color grey
-
-	.image
-		bg-image plus
-		background-size 80%
-		bottom 0px
-	.image-view
-		display none !important
-	.info
-		.text-content
-			.text-input
-				background-color rgba(0,0,0,.05)
-				width 100%
-				padding 5px
-				outline none
-				
-			.text-input:empty:before
-				content attr(data-placeholder)
-				color gray
-				
-			div.checkboxdiv
-				display flex !important
-				
-				.checkbox
-					display inline-block
-					height 30px
-					width 30px
-					margin 10px
+		.imageinput
+			margin 0
 					
-				label.label2
-					display inline-block
-					flex-grow 1
-					line-height 50px
+		label.add-image
+			display block
+			max-width 499px !important
+			background-color rgba(0,0,0,.05)
+			position relative
+			cursor pointer
+			width 50%
+			
+			.imagetext
+				position absolute
+				top calc(50% + 40px)
+				left 50%
+				transform translateX(-50%)
+				color grey
+			
+		.image-view
+			display none !important
+			
+		.info
+			display flex
+			height 100%
+			width 50%
+			flex-direction column
+			.text-content
+				flex-grow 1
+				.text-input
+					background-color rgba(0,0,0,.05)
+					width 100%
+					padding 5px
+					outline none
+					
+				.text-input:empty:before
+					content attr(data-placeholder)
+					color gray
+					
+			.options
+				.choice
+					margin auto
+					margin-top 20px
+
+				div.checkboxdiv
+					display flex !important
+					
+					.checkbox
+						display inline-block
+						height 30px
+						width 30px
+						margin 10px
+						
+					label.label2
+						display inline-block
+						flex-grow 1
+						line-height 50px
 				
 .add-card-hidden
 	position fixed
@@ -466,10 +479,5 @@ $menu-header-height = 40px
 		height 100%
 		text-align center
 		line-height 56px
-	label.add-image
+	.content
 		display none
-	.image-view
-		display block !important
-	.info
-		.text-content
-			display none
