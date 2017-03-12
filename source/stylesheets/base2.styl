@@ -22,11 +22,6 @@ body
 	@media (max-width:500px){
 		display none
 	}
-	
-.extendHeader-main
-	top 0
-	height 250px
-	//background linear-gradient(rgba(#00b3ab, .1), rgba(0,0,0,0)) 
 
 .main-content
 	max-width 1040px
@@ -38,13 +33,13 @@ body
 	box-shadow none 
 	border none
 	z-index 1
-	background none
+	background white
 	
 	@media (max-width:500px){
 		box-shadow none
 		min-height calc(100vh - 50px)
 		top $headerheight - 1
-		padding-bottom 20px
+		padding-bottom 25px		
 	}
 	
 
@@ -75,13 +70,14 @@ body
 	border-width 1px 0px 0px 0px
 	border-color #909090*/
 	margin-top 5px
-	transition bottom 0.2s ease-in-out
+	transition all 0.2s ease-in-out
 	width 100%
+	text-align center
 	
 	@media (max-width:500px){
 		position fixed
 		background-color transparent
-		bottom -50px
+		bottom -100px
 		z-index 50
 	}
 	
@@ -97,11 +93,16 @@ body
 		font-size 80%
 		text-align center
 		font-family Arial
+		display inline-block
 		padding 2px 0px 2px 0px
 		color #5f5f5f
 		
 		@media (max-width:500px){
-			color rgba(255, 255, 255, 0.75)
+			color rgba(255, 255, 255, 0.85)
+			background rgba(0, 0, 0, 0.5)
+			border-radius 6px
+			width auto
+			padding 10px
 		}
 		
 //kommitte

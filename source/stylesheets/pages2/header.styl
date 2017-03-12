@@ -39,9 +39,18 @@ body > .topheader
 	width 98%
 	max-width calc(1040px * .98)
 	
+	@media (max-width:1040px){
+		width 100%
+		box-sizing border-box
+		padding 0 5px 0 5px
+	}
+	
+	@media (min-width:500px){
+		background-color white !important
+	}
+	
 	@media (max-width:500px){
 		height 100%
-		width 100%
 	}
 	
 
@@ -91,10 +100,16 @@ body > .topheader
 	top 5px
 	display inline-block
 	z-index 20
+	@media (max-width:800px){
+		top 2px
+	}
 	
 	@media (max-width:500px){
 		left calc(50% - 20px - 50px)
 		top -5px
+	}
+	@media (min-width:500px){
+		filter: none !important
 	}
 	
 .vrotxt
@@ -108,7 +123,7 @@ body > .topheader
 	bottom 2px
 	z-index 20
 	
-	@media (max-width:500px){
+	@media (max-width:800px){
 		display none
 	}
 	
@@ -129,6 +144,14 @@ body > .topheader
 	
 	&:hover
 		box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
+		
+	@media (max-width:1040px){
+		right 5px
+	}
+	
+	@media (max-width:800px){
+		top 2px
+	}
 	
 	@media (max-width:500px){
 		width 80px
@@ -160,6 +183,9 @@ body > .topheader
 		@media (max-width:500px){
 			font-size 130%
 		}
+		@media (min-width:500px){
+			color black !important
+		}
 
 	& > .image
 		display inline-block
@@ -169,6 +195,17 @@ body > .topheader
 		size 30px
 		margin 5px
 		border-radius 50%
+	
+	@media (max-width:1040px){
+		right 5px
+	}
+	@media (max-width:800px){
+		top 2px
+	}
+	
+	@media (min-width:500px){
+		background-color rgba(0,0,0,.075) !important
+	}
 	
 .logtxt
 	font-title()
@@ -210,6 +247,10 @@ body > .topheader
 	&:hover
 		background-color black
 		color white
+	
+	@media (max-width:800px), (min-width:500px)
+		color black !important
+
 
 .subtle-link
 	&:hover

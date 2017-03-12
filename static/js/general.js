@@ -196,6 +196,7 @@ function changeFromColor(color){
 	}
 
 	if(window.matchMedia("(max-width: 500px)").matches){
+		document.body.style.background = color
 		link = document.createElement('div')
 		link.className ="kommittelink"
 		link.style.backgroundColor = color
