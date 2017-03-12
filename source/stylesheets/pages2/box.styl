@@ -414,30 +414,45 @@ $menu-header-height = 40px
 	.image-view
 		display none !important
 	.info
+		display inline-flex
+		flex-direction column
+		position relative
 		.text-content
-			.text-input
-				background-color rgba(0,0,0,.05)
-				width 100%
-				padding 5px
-				outline none
-				
-			.text-input:empty:before
-				content attr(data-placeholder)
-				color gray
-				
+			.textinputs
+				.text-input
+					background-color rgba(0,0,0,.05)
+					width 100%
+					padding 5px
+					outline none
+					
+				.text-input:empty:before
+					content attr(data-placeholder)
+					color gray
+		.options
+			//absolute bottom 0px right 0px
+			margin-top 20px
+			width 100%
 			div.checkboxdiv
-				display flex !important
-				
+				padding-left 30px
 				.checkbox
 					display inline-block
 					height 30px
 					width 30px
-					margin 10px
+					relative top 10px left -10px
 					
 				label.label2
 					display inline-block
 					flex-grow 1
 					line-height 50px
+			.choice
+				margin 0px
+				width auto
+				padding 0px 23px
+				line-height 44px
+			.publish
+				box-sizing border-box
+				margin 0px
+				margin-left 10px
 				
 .add-card-hidden
 	position fixed
@@ -471,5 +486,4 @@ $menu-header-height = 40px
 	.image-view
 		display block !important
 	.info
-		.text-content
-			display none
+		display none
