@@ -14,9 +14,7 @@ const defaults = {
   fromEmail: 'odenplanselevkar@vrg.se',//'Odenplans Elevkår <odenplanselevkar@vrg.se>',
   isDev: false,
   expressPort: 3000,
-  catcher: require('./catcher'),
-  usingCRLF:true
-
+  catcher: require('./catcher')
 }
 
 
