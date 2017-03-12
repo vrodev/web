@@ -32,7 +32,6 @@ const Schema = mongoose.Schema({
   line: String,
   graduationYear: Number,
 
-  memberships: [dbRef('Membership')],
   permissions: [{
     group: dbRef('Group'),
     title: {
@@ -102,6 +101,13 @@ Schema.virtual('className').get(function () {
     this.graduationYear +
     (c=>c.length>1?c[1].toLowerCase():'')(lineComponents)
   return className
+})
+
+
+Schema.virtual('memberships', {
+  ref: 'Membership',
+  localField: '_id',
+  foreignField: 'user'
 })
 
 
