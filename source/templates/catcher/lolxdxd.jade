@@ -10,10 +10,11 @@ block mainContent
 			.content
 				.image
 				.info
-					.content
+					.text-content
 						.title
 						.text
-						.choice.remove Remove Post
+						if user
+							.choice.remove Remove Post
 			.close(onclick='closePanel()')
 				.cross +
 
