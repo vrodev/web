@@ -1,4 +1,20 @@
-extend ../default
+extend ../default2
 block mainContent
-	h1 Admin
-	p This is supposed to be like an admin page but duh..
+
+	.header.utskottheader
+		.shineheader
+		h1.headertext.utskottheadtext Admin
+
+	input(id='name' placeholder='name')
+	input(id='about' placeholder='about')
+	input(id='type' placeholder='type')
+	input(id='open' placeholder='open(nothing for false)')
+	button(onclick='addgroup()')
+
+	script(src='/js/admin.js')
+
+		
+
+
+
+		

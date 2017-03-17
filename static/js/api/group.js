@@ -34,5 +34,5 @@ var Group = APIModel('group', {init:function() {
 
 Group.prototype.toJSON = function() {
 	return {
-		_id:this._id, name:this.name,
+		_id:this._id, name:this.name, about:this.about, open:this.open, type:this.type,
 		members:this.members.map(function(u) {return u._id}) }}
