@@ -42,17 +42,6 @@ const route = router=> {
 
 	})
 
-	/*// returnerar alla grupper med speciell typ
-	.get('/:type', (req, res)=> {
-		const type = req.params.type
-		req.models.Group.find({type:type}, function(err, foundData) {
-			if (err) {
-				res.abortIf(err, "Could NOT find groups")
-			}
-			res.apiOK(foundData);
-		})
-	})*/
-
 	// returnerar information för grupp med id :id
 	.get('/:id', (req, res)=> {
 		const id = req.params.id;
