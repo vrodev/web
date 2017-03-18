@@ -48,7 +48,7 @@ const route = router=> {
 	})
 
 	router.get('/:id', (req, res) => {
-		req.models.User.load(req.params.id, 'catcher.target').then((item)=> {
+		req.models.User.findOne({_id:req.params.id}).populate('memberships catcher.target').exec().then((item)=> {
 			res.apiOK(item)
 		}, err=> res.abortIf(err, 'Couldn\'t find the user'))
 	})

@@ -26,7 +26,7 @@ const routeMain = router=> {
 
 
 // /api/group
-const on3l1n3r3 = (item,res)=>item.save((err, item)=>{ if(res.abortIf(err, 'could not save')) return; res.apiOK(item) });
+const saveItemAndRespond = (item,res)=>item.save((err, item)=>{ if(res.abortIf(err, 'could not save')) return; res.apiOK(item) });
 const route = router=> {
 
 	router
@@ -112,11 +112,16 @@ const route = router=> {
 	.post('/:gid/users/:uid', (req, res)=> {
 		const gid = req.params.gid
 		const uid = req.params.uid
-		const item = new req.models.Membership();
-		item.user = uid;
-		item.group = gid;
-		item.title = req.body.title
-		on3l1n3r(item, res);
+
+		req.models.Membership.findOne({user:uid, group:gid}).exec(function(err, foundData) {
+			if (res.abortIf(err, "Error looking for membership")) return
+			if (res.abortIf(foundData, "User already member in this group")) return
+			const item = new req.models.Membership();
+			item.user = uid;
+			item.group = gid;
+			item.title = req.body.title
+			saveItemAndRespond(item, res);
+		})
 	})
 
 	// uppdatera inställningar för användare med id :id i grupp med id :id

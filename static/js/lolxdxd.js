@@ -1,3 +1,10 @@
+/*var url = "/api/user/:id/";
+var params = "id=" + api.currentUser._id
+var http = new XMLHttpRequest();
+
+http.open("GET", url+"?"+params, true);
+http.send(console.log);*/
+
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
 _('.extendHeader').classList.add('extendHeader-main')

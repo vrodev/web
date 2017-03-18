@@ -70,10 +70,14 @@ const Schema = mongoose.Schema({
     paid: Boolean,
     paidAt: Date
 	}
-}, {timestamps: true, typeKey: '$type'}) // createdAt/updatedAt
-// toObject: { virtuals: true },
-// toJSON: { virtuals: true }
 
+}, {timestamps: true, typeKey: '$type', toJSON: {virtuals: true}})
+
+Schema.virtual('memberships', {
+  ref: 'Membership',
+  localField: '_id',
+  foreignField: 'user'
+})
 
 // Hooks
 
