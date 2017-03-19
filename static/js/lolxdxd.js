@@ -7,9 +7,24 @@ http.send(console.log);*/
 
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
+
+var editAccess = false
+if(api.currentUser){
+	var userProfile
+	User.list(function(err, users, all){
+		users.forEach(function(user){
+			if(user._id == api.currentUser._id && user.memberships.length > 0){
+				editAccess = true
+			}
+		})
+	})
+}
+
+
+
 _('.extendHeader').classList.add('extendHeader-main')
 
-if(api.currentUser) _('.add-card-hidden').style.display = 'block'
+if(editAccess) _('.add-card-hidden').style.display = 'block'
 
 if (window.innerWidth > 500){
 	_('.main-content').style.top = '80px'
@@ -98,7 +113,7 @@ function addSlide(post, first) {
 	slideLength++
 }
 
-if(api.currentUser){
+if(editAccess){
 	addTapEvent(_('.add-card'), function() {
 		document.body.classList.add('lightbox-visible')
 		var lightbox = _('body > .overlay .lightbox')
@@ -173,7 +188,7 @@ function LightBoxClick(item, className){
 	cardCopy.classList.remove(className)
 	cardCopy.removeAttribute("style")
 
-	if(api.currentUser){
+	if(editAccess){
 		addTapEvent(cardCopy.querySelector('.remove'), function(){
 			console.log('försöker ta bort')
 			var post = new Post(cardCopy.dataset.id)
