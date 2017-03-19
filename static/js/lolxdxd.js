@@ -13,7 +13,7 @@ if(api.currentUser){
 	var userProfile
 	User.list(function(err, users, all){
 		users.forEach(function(user){
-			if(user._id == api.currentUser._id && user.memberships.length > 0){
+			if(user._id == api.currentUser._id && user.memberships){
 				editAccess = true
 			}
 		})
