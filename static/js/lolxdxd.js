@@ -29,10 +29,7 @@ _('.extendHeader').classList.add('extendHeader-main')
 if(editAccess) _('.add-card-hidden').style.display = 'block'
 
 if (window.innerWidth > 500){
-	_('.main-content').style.top = '80px'
-	_('.topheader').style.height = '80px'
 	_('.topheader').style.boxShadow = 'none'
-
 	var links = document.querySelectorAll('.link')
 	links.forEach(function(element){
 		element.classList.add('subtle-link')
@@ -41,6 +38,10 @@ if (window.innerWidth > 500){
 	document.body.style.backgroundColor = '#f1f1f1'
 	document.querySelector('.topheader').style.boxShadow = '0px 0px 5px rgba(0,0,0,0.3)'
 	_('.main-content').classList.add('greymain')
+}
+if (window.innerWidth > 1040){
+	_('.main-content').style.top = '80px'
+	_('.topheader').style.height = '80px'
 }
 
 function addplane(){
