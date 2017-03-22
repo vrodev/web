@@ -161,7 +161,7 @@ var pageinfos = {
 		color:'#ffffff'
 	},
 	om:{
-		color:'#1a4dcc'
+		color:'#28825F'
 	},
 	admin:{
 		color:'#ffffff'

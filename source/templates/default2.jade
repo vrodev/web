@@ -67,44 +67,48 @@ html
 			var links = JSON.parse('!{JSON.stringify(links)}')
 
 			for (i = 0; i < links.length; i++) {
-				var temp;
-
+				var normalLink
 				if (links[i][0]["link"] != undefined){
-					temp = document.createElement('a')
-					temp.innerText = links[i][0].name
+					var normalLink = document.createElement('a')
+					normalLink.innerText = links[i][0].name
 
-					temp2 = document.createElement('a')
-					temp2.innerText = links[i][0].name
-				} else {
-					temp = document.createElement('div')
-					temp.innerText = links[i][0].name
+					var phoneLink = document.createElement('a')
+					phoneLink.innerText = links[i][0].name
+				}else{
+					normalLink = document.createElement('div')
+					normalLink.innerText = links[i][0].name
 
-					temp2 = document.createElement('div')
-					temp2.innerText = links[i][0].name
+					var phoneLink = document.createElement('div')
+					phoneLink.innerText = links[i][0].name
+
+					var arrow = document.createElement('div')
+					arrow.innerText = '▾'
+					normalLink.appendChild(arrow)
+					arrow.classList.add('linkArrow')
 
 					for (e = 1; e < links[i].length; e++) {
 						sub = document.createElement('a')
 						sub.className = "sublink"
 						sub.innerText = links[i][e].name
 						sub.href = "/" + links[i][e].link
-						temp.appendChild(sub)
+						normalLink.appendChild(sub)
 
 						sub2 = document.createElement('a')
 						sub2.className = "sublink p-sublink"
 						sub2.innerText = links[i][e].name
 						sub2.href = "/" + links[i][e].link
-						temp2.appendChild(sub2)
+						phoneLink.appendChild(sub2)
 					}
 				}
 
-				temp.className = "link"
-				temp.href = "/" + links[i][0].link
+				normalLink.className = "link"
+				normalLink.href = "/" + links[i][0].link
 
-				temp2.className = "link p-link"
-				temp2.href = "/" + links[i][0].link
+				phoneLink.className = "link p-link"
+				phoneLink.href = "/" + links[i][0].link
 
-				_(".links").appendChild(temp)
-				_(".phonelinks").appendChild(temp2)
+				_(".links").appendChild(normalLink)
+				_(".phonelinks").appendChild(phoneLink)
 			}
 
 		.extendHeader

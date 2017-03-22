@@ -208,7 +208,7 @@ body > .topheader
 	font-size 150%
 	color white
 	vertical-align middle
-	line-height 37px 
+	line-height 35px 
 	text-align center
 	cursor default
 	
@@ -273,12 +273,25 @@ div.link
 	padding 0px
 	cursor pointer
 	user-select none
+	position relative
 	
 	&:hover
 		color white
 		background-color black
 		max-height 200px
-		box-shadow 0 0 5px alpha(#000, 30%)			
+		box-shadow 0 0 5px alpha(#000, 30%)	
+	
+		.linkArrow
+			display none		
+		
+	.linkArrow
+		position absolute
+		bottom 2px
+		width 100%
+		text-align center
+		font-size .6em
+		height 1em
+		line-height 1.4em
 		
 	.sublink
 		display block
