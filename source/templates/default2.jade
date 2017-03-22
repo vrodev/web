@@ -68,7 +68,7 @@ html
 
 			for (i = 0; i < links.length; i++) {
 				var normalLink
-				if (links[i][0]["link"] != undefined){
+				if(links[i][0]["link"] != undefined){
 					var normalLink = document.createElement('a')
 					normalLink.innerText = links[i][0].name
 
@@ -85,6 +85,11 @@ html
 					arrow.innerText = '▾'
 					normalLink.appendChild(arrow)
 					arrow.classList.add('linkArrow')
+
+					var phoneArroq = document.createElement('div')
+					phoneArroq.innerText = '▾'
+					phoneLink.appendChild(phoneArroq)
+					phoneArroq.classList.add('linkArrow')
 
 					for (e = 1; e < links[i].length; e++) {
 						sub = document.createElement('a')
