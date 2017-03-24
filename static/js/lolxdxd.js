@@ -22,7 +22,12 @@ if(api.currentUser){
 	})
 }
 
-
+if(!api.currentUser){
+	document.body.classList.add('noUser')
+	_('.slide').style.display = 'none'
+	_('.main-content').style.maxWidth = '100%'
+	_('.main-content').style.textAlign = 'center'
+} 
 
 _('.extendHeader').classList.add('extendHeader-main')
 
