@@ -1,31 +1,19 @@
 extend ../default2
 block mainContent
 
-	.slide(data-index=0)
-		.arrowr.arrow(onclick="forward()")
-		.arrowl.arrow(onclick="backward()")
-		.slidemarker
+	.showoff
+		.gradient
+		.background
+		.content
+			.logo
+			.name viktor rydberg odenplan <br> elevkår
 
-		.slideobject.template
-			.content
-				.image
-				.info
-					.text-content
-						.title
-						.text
-						if user
-							.choice.remove Remove Post
-			.close(onclick='closePanel()')
-				.cross +
-	if !user
-		.showoff
-			.gradient
-			.background
-			.content
-				.logo
-				.name viktor rydberg odenplan <br> elevkår
+	.sort-options
+			.option(onclick='sortPosts("prioritized")' id='prioritized') Prioriterade poster
+			.option(onclick='sortPosts("all")' id='all') Alla poster
 
 	.card-container
+
 		.card.menu
 			a(href="/mat")
 				.datecontainer

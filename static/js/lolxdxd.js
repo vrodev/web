@@ -9,6 +9,7 @@ http.send(console.log);*/
 */
 
 var editAccess = false
+if(api.currentUser) editAccess = true
 if(api.currentUser){
 	var userProfile
 	User.list(function(err, users, all){
@@ -22,12 +23,12 @@ if(api.currentUser){
 	})
 }
 
-if(!api.currentUser){
-	document.body.classList.add('noUser')
-	_('.slide').style.display = 'none'
-	_('.main-content').style.maxWidth = '100%'
-	_('.main-content').style.textAlign = 'center'
-} 
+
+document.body.classList.add('noUser')
+_('.topheader').classList.add('whiteheader')
+_('.main-content').style.maxWidth = '100%'
+_('.main-content').style.textAlign = 'center'
+
 
 _('.extendHeader').classList.add('extendHeader-main')
 
@@ -85,32 +86,6 @@ api.food(function(err, weeks) {
 	_('.veg').innerText = day.courses.veg
 })
 
-var slideLength = 0
-function addSlide(post, first) {
-	var slide = _('.template.slideobject')
-
-	slide = slide.cloneNode(true)
-	_('.slide').appendChild(slide)
-	slide.classList.remove('template')
-
-	slide.querySelector('.image').style.backgroundImage = "url(" + post.imgUrl + ")"
-	slide.style.left = slideLength * 100 + "%"
-
-	slide.querySelector('.title').innerHTML = post.title
-	slide.querySelector('.text').innerHTML = post.text
-
-	addTapEvent(slide, function() {
-		LightBoxClick(slide, 'slideobject')
-	})
-
-	var plupp = document.createElement('div')
-	plupp.className = "plupp"
-	plupp.className += " plupp" + slideLength
-	_(".slidemarker").appendChild(plupp)
-	if(first) plupp.style.backgroundColor = "white"
-	slideLength++
-}
-
 if(editAccess){
 	addTapEvent(_('.add-card'), function() {
 		document.body.classList.add('lightbox-visible')
@@ -167,10 +142,10 @@ function addPostCard(post, i) {
 	bild.style.backgroundImage = "url(" + post.imgUrl + ")"
 
 	var title = card.querySelector('.title')
-	title.innerText = post.title
+	title.innerHTML = post.title
 
 	var text = card.querySelector('.text')
-	text.innerText = post.text
+	text.innerHTML = post.text
 
 	if(post.title.length == 0){
 		card.querySelector('.info').style.margin = 0
@@ -206,74 +181,33 @@ function LightBoxClick(item, className){
 
 	lightbox.appendChild(cardCopy)
 }
-
-Post.list(function(err, posts) {
-	if (err) return alert('Kunde inte ladda posterna')
-		var first = true
-	posts.forEach(function (post, i) {
-		addPostCard(post, i)
-		if (post.isSlide){addSlide(post, first);first = false}
+function sortPosts(selected){
+	_('.card-container').querySelectorAll('.card').forEach(function(el){
+		if(!el.classList.contains('menu') && !el.classList.contains('template')){
+			el.remove()
+		}
 	})
-})
+	Post.list(function(err, posts) {
+		if (err) return alert('Kunde inte ladda posterna')
+			var first = true
+		posts.forEach(function (post, i) {
+			if(selected == 'prioritized'){
+				if (post.prioritized){addPostCard(post, i)}
+			}else if(selected == 'all') addPostCard(post, i)
+		})
+	})
 
-var n = 0
-var ticket = setInterval(function next() {
-		n++
-		if(n > (slideLength - 1)){
-			n = 0
-		}
-		_('.slide').dataset.index = n
-
-		pluppar()
-
-}, 5000)
-
-function pluppar(){
-	var active = ".plupp" + n
-	var k = n-1
-
-	if (k<0){
-		k = slideLength - 1
-		}
-
-	var inactive = ".plupp" + k
-	_(inactive).style.backgroundColor = ""
-	_(active).style.backgroundColor = "white"
-}
-
-function plupparbak(){
-	var active = ".plupp" + n
-	_(active).style.backgroundColor = "white"
-
-	var k = n + 1
-
-	if (k > slideLength - 1){
-		k = 0
+	if(selected == 'all'){
+		_('.menu').style.display = 'none'
+	}else if(selected == 'prioritized'){
+		_('.menu').style.display = 'inline-block'
 	}
 
-	var inactive = ".plupp" + k
-	_(inactive).style.backgroundColor = "rgba(255, 255, 255, 0)"
-	
+	if(_('.sort-options').querySelector('.selected') !== null) _('.sort-options').querySelector('.selected').classList.remove('selected')
+	_('#' + selected).classList.add('selected')
 }
 
-function forward(){
-	n++
-	if(n > (slideLength - 1)){
-		n = 0
-	}
-	_('.slide').dataset.index = n
-	clearTimeout(ticket)
-	pluppar()
-}
-
-function backward(){
-	n = n -1
-	if(n < 0){
-		n = slideLength - 1
-	}
-	_('.slide').dataset.index = n
-	clearTimeout(ticket)
-}
+sortPosts('prioritized')
 
 // _('.main-content').style.background = 'none'
 // _('.main-content').style.boxShadow = 'none'

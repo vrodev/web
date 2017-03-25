@@ -45,7 +45,7 @@ const route = router=> {
 		post.text = req.body.text
 		post.author = req.user
 		post.group = group
-		post.isSlide = req.body.isSlide
+		post.prioritized = req.body.prioritized
 		post.imgUrl = req.body.imgUrl
 		post.url = req.body.url
 		post.save(function(err, post) {

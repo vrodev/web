@@ -108,9 +108,6 @@ body > .topheader
 		left calc(50% - 20px - 50px)
 		top -5px
 	}
-	@media (min-width:500px){
-		filter: none !important
-	}
 	
 .vrotxt
 	position relative
@@ -304,3 +301,16 @@ div.link
 		&:hover
 			background-color darken(white, 80)
 			box-shadow 5px alpha(#000, 30%)
+			
+.whiteheader
+	.logga
+		filter: invert(100%)
+	.vrotxt
+		color white
+	.link
+		color white
+	.log
+		background-color rgba(white, .2)
+		.logtxt
+			color white
+		

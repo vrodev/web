@@ -1,13 +1,13 @@
 var isNotafication = false
 //addTapEvent(_('.chooseNotify'),isNotafication)
-function defineNotify(){
+/*function defineNotify(){
 	isNotafication = !isNotafication
 	if(isNotafication){
 		_('.chooseSlide').innerText = 'Notis begärd'
 	}else{
 		_('.chooseSlide').innerText = 'Begärd notis'
 	}
-}
+}*/
 
 var savedFile = {}
 function addObject(card) {
@@ -26,14 +26,13 @@ function addObject(card) {
 		var post = new Post()
 		post.title = card.querySelector('.title').innerHTML
 		post.text = card.querySelector('.text').innerHTML
-		post.isSlide = _('#slideCheckbox').checked
+		post.prioritized = _('#prioritizedCheckbox').checked
 		post.imgUrl = imgUrl
 		post.save(function(err) {
 			if (err) return aborted(err)
 			//alert('Publicerad!')
 
 			closePanel()
-			isSlide = false
 			sendBtn.innerText = 'Publicera'
 			window.location.reload()
 		})

@@ -14,7 +14,7 @@ const Schema = new mongoose.Schema({
 	url: String,
 	imgUrl: String,
 
-	isSlide: Boolean,
+	prioritized: Boolean,
 	isPublic: Boolean
 }, {timestamps: true});
 
