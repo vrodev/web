@@ -29,7 +29,16 @@ var addEventListeners = function() {
 		var scroll = document.body.scrollTop
 		if (_('.topheader'))
 			_('.topheader').classList.toggle('darkheader', scroll>=10)
+
 	})
+	if(_('.whiteheader')){
+		window.addEventListener('scroll',function() {
+			var scroll = document.body.scrollTop
+			if (_('.topheader'))
+				_('.topheader').classList.toggle('whiteheader', scroll<=10)
+
+		})
+	}
 }
 
 // Called when DOM (the html document)
