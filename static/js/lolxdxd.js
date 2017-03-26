@@ -8,6 +8,8 @@ http.send(console.log);*/
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
 
+if(window.matchMedia("(max-width: 500px)").matches) _('.showoff').querySelector('.name').innerHTML = 'Vro Elevkår'
+
 var editAccess = false
 if(api.currentUser) editAccess = true
 if(api.currentUser){

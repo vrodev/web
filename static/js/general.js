@@ -167,7 +167,7 @@ var pageinfos = {
 		color:'#ffffff'
 	},
 	lolxdxd:{
-		color:'#34a97c'
+		color:'#28825f'
 	}
 }
 
