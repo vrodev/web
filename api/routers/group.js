@@ -33,7 +33,7 @@ const route = router=> {
 
 	// returnerar alla grupper
 	.get('/', (req, res)=> {
-		req.models.Group.find({}, function(err, foundData) {
+		req.models.Group.find({}).populate('memberships').exec(function(err, foundData) {
 			if (err) {
 				res.abortIf(err, "Could NOT find groups")
 			}

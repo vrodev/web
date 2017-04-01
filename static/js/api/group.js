@@ -2,32 +2,33 @@
 // VRO Web
 // Initially created by Leonard Pauli, jan 2017
 
-var Group = APIModel('group', {init:function() {
-	// id, name, members, ...
+var Group = APIModel('group', {init:function(a) {
+	// id, name, memberships, ...
 	var self = this
-	
-	this._setMembers = function(membersRaw) {
-		self.members = membersRaw.map(function(userRaw) {
-			return User(userRaw) })
+	this._setMemberships = function(membershipsRaw) {
+		self.memberships = membershipsRaw.map(function(membership) {
+			console.log(membership)
+			membership.user = User(membership.user) 
+			return membership })
 
-		self.members.patch = function(usersToAdd, usersToRemove, callback) {
-			api.patch(this._name+'/'+self.id+'/members',{jsonData:{
+		self.memberships.patch = function(usersToAdd, usersToRemove, callback) {
+			api.patch(this._name+'/'+self.id+'/memberships',{jsonData:{
 				add: usersToAdd, remove: usersToRemove}},
 				function(err, data, all) {
 					if (err) return callback(err)
-					self._setMembers(data)
+					self._setMemberships(data)
 					callback()
 				})
 			}
 
-		self.members.add = function(userOrUsers, callback) {
+		self.memberships.add = function(userOrUsers, callback) {
 			var users = userOrUsers instanceof Array? userOrUsers: [userOrUsers]
-			self.members.patch(users, [], callback)}
-		self.members.remove = function(userOrUsers, callback) {
+			self.memberships.patch(users, [], callback)}
+		self.memberships.remove = function(userOrUsers, callback) {
 			var users = userOrUsers instanceof Array? userOrUsers: [userOrUsers]
-			self.members.patch([], users, callback)}
+			self.memberships.patch([], users, callback)}
 	}
-	this._setMembers(this.members || [])
+	this._setMemberships(this.memberships || [])
 	
 	return this
 }})
@@ -35,4 +36,6 @@ var Group = APIModel('group', {init:function() {
 Group.prototype.toJSON = function() {
 	return {
 		_id:this._id, name:this.name, about:this.about, open:this.open, type:this.type,
-		members:this.members.map(function(u) {return u._id}) }}
+		memberships:this.memberships.map(function(u) {
+			u.user = u.user.id
+			return u}) }}
