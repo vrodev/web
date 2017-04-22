@@ -64,13 +64,13 @@ function blendColors(c0, c1, p) {
 var pageinfos = {
 	enkommitte: [
 		{name:'Harry Potter',color:'#A21D20',
-		ord:'Matilda Andersson & Ellen Gustavson',
+		ord:'Erik Södergren & Julia Ivarsson',
 		desc:'9¾ är VRG Odenplans alldeles egna Harry Potter kommitté. Vi planerar att arrangera filmmaratons, gemensamma omläsningar av serien, bak av godsaker som skulle platsa på en festmåltid på Hogwarts, tävlingar mellan elevhemmen och mycket mer! Framförallt kommer 9¾ alltid vara en plats att träffa, umgås och mysa med andra som också gillar Harry Potter. Här kan du diskutera allt från favoritships och favoritkaraktärer, till headcanons, teorier och frågor som "Var Snape verkligen en god människa eller inte?"... Välkomna! Draco dormiens nunquam titillandus.',
 		link:'https://www.facebook.com/groups/506981442801441/?ref=browser'},
 
 		{name:'Acapella',color:'#78A942',
 		ord:'Nikol Kanavakis & Nora Nattorp',
-		desc:'Acapella kommittén är till för de som älskar att sjunga och skapa musik med sina röster som instrument. Självklart inspireras vi av Pitch Perfect och Pentatonix men vi skapar vårat eget sound av det lilla arbete vi utför och den stora mängd skratt vi tillför. ',
+		desc:'Acapella kommittén är till för de som älskar att sjunga och skapa musik med sina röster som instrument. Självklart inspireras vi av Pitch Perfect och Pentatonix men vi skapar vårat eget sound av det lilla arbete vi utför och den stora mängd skratt vi tillför.',
 		link:''},
 
 		{name:'Amnesty',color:'#deb117',
@@ -94,12 +94,22 @@ var pageinfos = {
 		link:'https://www.instagram.com/ernstkommitten/'},
 
 		{name:'HBTQ+',color:'#AB47CB',
-		ord:'Sam Widén',
+		ord:'Sam Widén & Emma Wallin',
 		desc:'HBTQ+-kommittén är till för HBTQ+ -personer och ska verka som en safe-zone för folk. Kommittén ska vara en plats för trygghet för folk, där de kan komma som de är och vara som de vill. Vi vill uppmärksamma HBTQ+-personer, våran situation på skolan, och föra upp en diskussion om cis-heteronormen. HBTQ+ -kommittén är till för att lära känna andra HBTQ+ -personer, knyta kontaker, och bara umgås utan att vara rädd för vad folk ska tycka.',
 		link:'https://www.facebook.com/groups/794754800651251/?ref=browser'},
 
+		{name:'Kaffe', color:'#562D2A',
+		ord:'Martin Babazadeh, Meilin Pei Purroy & Sofia Sollbe',
+		desc:'Vi skapade en kaffekommitté för att vi ville ha ett mer ekonomiskt och hållbart sätt för oss elever att kunna unna sig gott kaffe i skolan. Vårt koncept är att få ett skåp där det kommer finnas en Nespressomaskin, mjölkskummare samt andra kaffetillbehör tillgängliga för medlemmar. Medlemmarna får alltså själv ansvara för sina egna kaffekapslar. För att ha råd med har vi ha en medlemsavgift på 100 kr där en kaffetermos ingår, detta är även ett sätt att hålla reda på vilka som är medlemmar så att inte andra utnyttjar skåpet.',
+		link:''},
+
+		{name:'Memeteam', color:'#AD00FF',
+		ord:'Elsa Berlin, Gustav & Agnes',
+		desc:'Vårt syfte är att ha kul, uppmärksamma memesen som kulturarv och tillsammans skapa dank memes.',
+		link:''},
+
 		{name:'Östasiatisk kultur',color:'#C42C00',
-		ord:'Alex Hambén',
+		ord:'Alex Will Hambén & Johanna Li',
 		desc:'Syftet är att bringa samman människor, östasiater som icke-östasiater, som är intresserade av och/eller uppskattar den östasiatiska kulturen och traditionerna. På mötena kan vi tänka oss ha traditionellt fika så som grönt te och frön, titta på och skratta åt dåligt producerade östasiatiska filmer eller tv-serier, sushi, nudlar, maskerad/utklädnad, bak, anime-maraton etc. etc.',
 		link:'https://www.facebook.com/groups/1676078619272950/?fref=ts'},
 
@@ -114,7 +124,7 @@ var pageinfos = {
 		link:'https://www.facebook.com/groups/673554036115232/?fref=ts'},
 
 		{name:'Aktiesparare',color:'#8447cb',
-		ord:'',
+		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
 		desc:'Unga Aktiesparare VRG Opl delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
 		link:''}
 	],

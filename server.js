@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 //app.use(bodyParser.text({type: '*/*'}));
 
+
 // Models
 app.use(function(req, res, next) {
   req.models = models

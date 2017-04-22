@@ -9,12 +9,12 @@ block mainContent
 			.name viktor rydberg odenplan <br> elevkår
 
 	.sort-options
-			.option(onclick='sortPosts("prioritized")' id='prioritized') Prioriterade poster
-			.option(onclick='sortPosts("all")' id='all') Alla poster
+		.option(v-for='tab in tabs', :key='tab',:class='{selected:selectedTab == tab}', @click='selectedTab = tab') {{tab}}
+
 
 	.card-container
 
-		.card.menu
+		.card.menu(v-show='selectedTab == "Prioriterade poster"')
 			a(href="/mat")
 				.datecontainer
 					.date
@@ -30,20 +30,8 @@ block mainContent
 									.character v
 									.character e
 									.character g
-							p.mat.veg 
+							p.mat.veg
 
-		.card.template
-			.content
-				.image
-				.info
-					.text-content
-						.title
-						.text
-
-						if user
-							.choice.remove Remove Post
-							
-			.close(onclick='closePanel()')
-				.cross +
+		post-card(v-if='filteredPosts.length', v-for='post in filteredPosts', :key='post.id', :post='post')
 
 	script(src='/js/lolxdxd.js')

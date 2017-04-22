@@ -33,6 +33,65 @@ links.forEach(function(element){
 	element.classList.add('subtle-link')
 })
 
+var app;
+var overlayApp = new Vue({
+	el: '#overlay-app',
+	data: {
+		post: null,
+	},
+	watch: {
+		post (newVal) {
+			document.body.classList.toggle('lightbox-visible', !!newVal)
+		},
+	},
+	methods: {
+		closePanel() {
+			this.post = null
+		},
+		postWasDeleted (item) {
+			app.posts.splice(app.posts.indexOf(item.post),1)
+			this.closePanel()
+		},
+	},
+})
+
+
+
+
+app = new Vue({
+	el: '.main-content',
+	data: {
+		message: 'Hello Vue!',
+		posts: [],
+		tabs: ['Prioriterade poster', 'Alla poster'],
+		selectedTab: 'Prioriterade poster',
+	},
+	computed: {
+		filteredPosts(){
+			var self = this
+			return this.posts.filter(function(item){
+				return self.selectedTab == 'Alla poster' || item.prioritized
+			})
+		},
+	},
+	methods: {
+		change(){
+			this.message = 'hej'
+		},
+	},
+	mounted(){
+		var self = this
+		Post.list(function(err, posts) {
+			if (err) return alert('Kunde inte ladda posterna')
+			self.posts = posts
+		})
+	},
+})
+
+
+
+
+
 function addplane(){
 	var plane = _('.addplane')
 	var dark = _('.darkBackground')
@@ -79,6 +138,17 @@ api.food(function(err, weeks) {
 	_('.veg').innerText = day.courses.veg
 })
 
+
+
+function closeAddCard() {
+
+		document.body.classList.remove('lightbox-visible')
+		var lightbox = _('body > .overlay .lightbox')
+
+		lightbox.querySelector('.add-card').remove()
+
+}
+
 if(editAccess){
 	addTapEvent(_('.add-card'), function() {
 		document.body.classList.add('lightbox-visible')
@@ -118,103 +188,3 @@ if(editAccess){
 		lightbox.appendChild(cardCopy)
 	})
 }
-
-function addPostCard(post, i) {
-	var card = _('.card.template')
-
-	card = card.cloneNode(true)
-	_('.card-container').appendChild(card)
-	card.classList.remove('template')
-
-	card.dataset.id = post._id
-	addTapEvent(card, function() {
-		LightBoxClick(card, 'card')
-	})
-
-	var bild = card.querySelector('.image')
-	bild.style.backgroundImage = "url(" + post.imgUrl + ")"
-
-	var title = card.querySelector('.title')
-	title.innerHTML = post.title
-
-	var text = card.querySelector('.text')
-	text.innerHTML = post.text
-
-	if(post.title.length == 0){
-		card.querySelector('.info').style.margin = 0
-	}
-}
-
-function LightBoxClick(item, className){
-	document.body.classList.add('lightbox-visible')
-	var lightbox = _('body > .overlay .lightbox')
-
-	var cardCopy = item.cloneNode(true)
-	cardCopy.classList.add('item')
-	cardCopy.classList.remove(className)
-	cardCopy.removeAttribute("style")
-
-	if(editAccess){
-		addTapEvent(cardCopy.querySelector('.remove'), function(){
-			console.log('försöker ta bort')
-			var post = new Post(cardCopy.dataset.id)
-			post.delete(function(err){
-				if(err) return console.log(err)
-				console.log('Post deleted')
-			})
-			closePanel()
-			location.reload()
-		})
-	}
-
-	addTapEvent(_('.overlay'), function(e){
-		if(e.target != _('.overlay')) return
-		closePanel()
-	})
-
-	lightbox.appendChild(cardCopy)
-}
-function sortPosts(selected){
-	_('.card-container').querySelectorAll('.card').forEach(function(el){
-		if(!el.classList.contains('menu') && !el.classList.contains('template')){
-			el.remove()
-		}
-	})
-	Post.list(function(err, posts) {
-		if (err) return alert('Kunde inte ladda posterna')
-			var first = true
-		posts.forEach(function (post, i) {
-			if(selected == 'prioritized'){
-				if (post.prioritized){addPostCard(post, i)}
-			}else if(selected == 'all') addPostCard(post, i)
-		})
-	})
-
-	if(selected == 'all'){
-		_('.menu').style.display = 'none'
-	}else if(selected == 'prioritized'){
-		_('.menu').style.display = 'inline-block'
-	}
-
-	if(_('.sort-options').querySelector('.selected') !== null) _('.sort-options').querySelector('.selected').classList.remove('selected')
-	_('#' + selected).classList.add('selected')
-}
-
-sortPosts('prioritized')
-
-// _('.main-content').style.background = 'none'
-// _('.main-content').style.boxShadow = 'none'
-
-// var box = document.createElement('div')
-// box.className ="utskottruta card menu addbox"
-// addTapEvent(box,showadd)
-// _(".card-container").appendChild(box)
-
-// var add = document.createElement('div')
-// add.className ="addplusdiv"
-// box.appendChild(add)
-
-// function showadd(){
-// 	document.getElementsByTagName("body")[0].className += ' dark-body'
-// 	_('.addplane').className += ' show-plane'
-// }

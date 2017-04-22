@@ -11,6 +11,16 @@ const await = require('asyncawait/await');
 var fs = require('fs')
 var path = require('path')
 
+const pug = require('jade')
+const compDir = path.join(__dirname, '../source/templates/components')
+const componentTemplates = fs.readdirSync(compDir)
+  .filter(c=> c.substr(-5)=='.jade')
+  .map(c=> c.substr(0,c.length-5))
+  .map(name=> ({ name, html: pug.compileFile(path.join(compDir, name+'.jade'))({}) }))
+
+const componentTemplatesDict = {}
+componentTemplates.forEach(item=> componentTemplatesDict[item.name] = item.html)
+const componentTemplatesString = JSON.stringify(componentTemplatesDict)
 
 function randomWrongCodeMessage() {
   const messages =
@@ -144,6 +154,10 @@ module.exports = (function() {
       if (!route.data.jsFilesToLoad) route.data.jsFilesToLoad = jsFilesToLoad
       if (!route.data.config) route.data.config = config
       route.data.dataPage = route.page
+
+      route.data.componentTemplatesString = componentTemplatesString
+
+      console.log(Array(1000).fill('g').join('1'))
       res.render('catcher/'+route.page, route.data)
     })()}})(route) )
   }

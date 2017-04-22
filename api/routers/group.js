@@ -15,7 +15,7 @@ const routeMain = router=> {
 	// returnerar alla grupper
 	router.get('/membership', (req, res)=> {
 		if (res.requiredPermissions("EDIT")) return;
-		
+
 		req.models.Membership.find({}, function(err, foundData) {
 			if (err) {
 				res.abortIf(err, "Could NOT find items")
@@ -28,7 +28,7 @@ const routeMain = router=> {
 
 
 // /api/group
-const saveItemAndRespond = (item,res)=>item.save((err, item)=>{ if(res.abortIf(err, 'could not save')) return; res.apiOK(item) });
+const saveItemAndRespond = (item,res)=>item.save((err, item)=>{ if(res.abortIf(err, 'could not save')) return; res.apiOK(item) })
 const route = router=> {
 
 	router

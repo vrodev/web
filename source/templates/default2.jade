@@ -26,6 +26,9 @@ html
 		link(rel='stylesheet', href='/css/coat2.css')
 
 		script.
+			var componentTemplates = !{componentTemplatesString}
+
+		script.
 			var dataPage = '#{dataPage}'
 			var subpage = dataPage == 'ettutskott'? "#{utskott}":
 				dataPage == 'enkommitte'? "#{kommitte}":
@@ -122,10 +125,12 @@ html
 		.extendHeader
 			.shineheader
 
-		.overlay
+		.overlay#overlay-app(@click.self='closePanel')
 			.lightbox
 				.button.prev
 				.button.next
+				post-card(v-if='post', :post='post', @deleted='postWasDeleted', class="item", :expanded="true")
+
 
 		if user
 			.add-card.add-card-hidden
@@ -144,7 +149,7 @@ html
 								input.checkbox(type='checkbox' id='prioritizedCheckbox')
 								label.label2(for='prioritizedCheckbox') Prioriterad
 							div.choice.publish.add-choice Publicera
-				.close(onclick='closePanel()')
+				.close(onclick='closeAddCard()')
 					.cross +
 
 		.main-content

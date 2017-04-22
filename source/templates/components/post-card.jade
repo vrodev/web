@@ -1,0 +1,12 @@
+.card(@click="expand")
+	.content
+		.image(:style='{backgroundImage:"url(" + post.imgUrl + ")"}')
+		.info
+			.text-content
+				.title {{post.title}}
+				.text(:html='post.text')
+				
+				.choice.remove(v-if='editable', @click='deleteItem') Remove Post
+
+	.close(@click='closePanel')
+		.cross +

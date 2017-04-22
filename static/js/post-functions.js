@@ -32,7 +32,7 @@ function addObject(card) {
 			if (err) return aborted(err)
 			//alert('Publicerad!')
 
-			closePanel()
+			overlayApp.closePanel()
 			sendBtn.innerText = 'Publicera'
 			window.location.reload()
 		})
@@ -58,15 +58,4 @@ function addObject(card) {
 	if (file.name == savedFile.name) {
 		uploadPost(savedFile.url)
 	} else api.fileUpload(file, callback, {progress:progress})
-}
-
-function closePanel(){
-	var lightbox = _('body > .overlay .lightbox')
-	document.body.classList.remove('lightbox-visible')
-
-	var items = lightbox.querySelectorAll('.item')
-	items.forEach(function(item) {
-		//if (item.parentNode != lightbox) return
-		item.remove()
-	})
 }
