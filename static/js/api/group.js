@@ -1,14 +1,11 @@
 // api/group.js
 // VRO Web
 // Initially created by Leonard Pauli, jan 2017
-
-var Group = APIModel('group', {init:function(a) {
-	// id, name, memberships, ...
-	var self = this
-	this._setMemberships = function(membershipsRaw) {
+function addMembershipsFieldToModel(self) {
+	self._setMemberships = function(membershipsRaw) {
 		self.memberships = membershipsRaw.map(function(membership) {
 			console.log(membership)
-			membership.user = User(membership.user) 
+			membership.user = User(membership.user)
 			return membership })
 
 		self.memberships.patch = function(usersToAdd, usersToRemove, callback) {
@@ -28,8 +25,16 @@ var Group = APIModel('group', {init:function(a) {
 			var users = userOrUsers instanceof Array? userOrUsers: [userOrUsers]
 			self.memberships.patch([], users, callback)}
 	}
-	this._setMemberships(this.memberships || [])
-	
+	self._setMemberships(self.memberships || [])
+}
+
+
+
+
+var Group = APIModel('group', {init:function(a) {
+	// id, name, memberships, ...
+	var self = this
+	addMembershipsFieldToModel(self)
 	return this
 }})
 

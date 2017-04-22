@@ -11,7 +11,13 @@ const dbRef = require('../helpers/helpers').mongooseRef
 const Schema = mongoose.Schema({
 	group: dbRef('Group'),
 	user: dbRef('User'),
-	title: {type: String}
+	title: {type: String},
+
+	permissions: [{
+		type: String,
+		enum: ['POST', 'EDIT_MEMBERSHIPS'],
+	}],
+
 }, {timestamps: true})
 
 // Register schema

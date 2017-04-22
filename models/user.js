@@ -32,15 +32,6 @@ const Schema = mongoose.Schema({
   line: String,
   graduationYear: Number,
 
-  permissions: [{
-    group: dbRef('Group'),
-    title: {
-      $type: String,
-      enum: ['POST_PUBLIC','EDIT', 'NONE'],
-      default: 'NONE'
-    }
-  }],
-
   // cardno: {type: String, unique: true},
   // name: String,
   // surname: String,

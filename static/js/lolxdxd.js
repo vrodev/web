@@ -11,19 +11,10 @@ http.send(console.log);*/
 if(window.matchMedia("(max-width: 500px)").matches) _('.showoff').querySelector('.name').innerHTML = 'Vro Elevkår'
 
 var editAccess = false
-if(api.currentUser) editAccess = true
-if(api.currentUser){
-	var userProfile
-	User.list(function(err, users, all){
-		users.forEach(function(user){
-			if(user._id == api.currentUser._id){
-				if(user.memberships){
-					editAccess = true
-				}
-			}
-		})
+if (api.currentUser)
+	editAccess = api.currentUser.memberships.some(function(membership) {
+		return membership.group.name == "redigera" && membership.permissions.indexOf("POST")>=0
 	})
-}
 
 
 document.body.classList.add('noUser')

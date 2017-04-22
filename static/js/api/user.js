@@ -5,12 +5,22 @@
 var User = APIModel('user', {save:function(err, data, callback, all) {
 	if (err) return callback(err)
 	if (this.isCurrent) api.saveCurrentUserLocally()
+
+debugger
+	addMembershipsFieldToModel(this)
+
 	callback()
 }})
 
 User.prototype.toJSON = function() {
 	// Todo: Not DRY enough
-	return {_id:this._id, name:this.name, email:this.email}}
+	return {_id:this._id, name:this.name, email:this.email,
+
+memberships:this.memberships.map(function(u) {
+			u.user = u.user.id
+			return u}),
+
+	}}
 
 User.login = function(email, pass, callback) {
 	api.post(this._name+'/login', {jsonData:{email:email, pass:pass}}, function(err, data, all) {

@@ -71,7 +71,7 @@ module.exports.usingGoogle = (userToken, req, res)=> {
 		}
 
 		function tryEmailLogin() {
-			req.models.User.findOne({email: userEmail}).exec((err,obj) => {
+			req.models.User.findOne({email: userEmail}).populate('memberships').exec((err,obj) => {
 				if (res.abortIf(err, 'Error finding user.')) return;
 				if (!obj) return createUserFromGooglePayload(payload);
 
@@ -99,7 +99,12 @@ module.exports.usingGoogle = (userToken, req, res)=> {
 			})
 		}
 
-		req.models.User.findOne({'login.googleUserId': userId}).exec((err,obj) => {
+		req.models.User.findOne({'login.googleUserId': userId}).populate({
+			path: 'memberships',
+			populate: {
+				path: 'group',
+			}
+		}).exec((err,obj) => {
 			if (res.abortIf(err, 'Error finding user')) return;
 			if (!obj) return tryEmailLogin();
 			if (payload.picture && obj.syncPictureFromLogin) {

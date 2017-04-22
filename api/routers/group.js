@@ -109,29 +109,31 @@ const route = router=> {
 	})
 
 	// stoppa in användare med :id i grupp med id :id
+	// eller uppdatera inställningar för användare med id :id i grupp med id :id
 	.post('/:gid/users/:uid', (req, res)=> {
 		const gid = req.params.gid
 		const uid = req.params.uid
 
-		req.models.Membership.findOne({user:uid, group:gid}).exec(function(err, foundData) {
+		req.models.Membership.findOne({user:uid, group:gid}).exec(function(err, foundItem) {
 			if (res.abortIf(err, "Error looking for membership")) return
-			if (res.abortIf(foundData, "User already member in this group")) return
-			const item = new req.models.Membership();
+			const item = foundItem || new req.models.Membership();
 			item.user = uid;
 			item.group = gid;
-			item.title = req.body.title
+			item.title = req.body.title || item.title
+			item.permissions = req.body.permissions || item.permissions || []
 			saveItemAndRespond(item, res);
 		})
 	})
 
-	// uppdatera inställningar för användare med id :id i grupp med id :id
-	.put('/:gid/users/:uid', (req, res)=> {
-		
-	})
-
 	// banna idiot
 	.delete('/:gid/users/:uid', (req, res)=> {
-		
+		const gid = req.params.gid
+		const uid = req.params.uid
+
+		req.models.Membership.findOneAndRemove({user:uid, group:gid}).exec(function(err) {
+			if (res.abortIf(err, "Error looking for membership")) return
+			res.apiOK({})
+		})
 	})
 
 }
