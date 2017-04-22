@@ -14,6 +14,8 @@ const routeMain = router=> {
 	
 	// returnerar alla grupper
 	router.get('/membership', (req, res)=> {
+		if (res.requiredPermissions("EDIT")) return;
+		
 		req.models.Membership.find({}, function(err, foundData) {
 			if (err) {
 				res.abortIf(err, "Could NOT find items")
@@ -49,13 +51,15 @@ const route = router=> {
 			if (res.abortIf(err || !foundData, "Could NOT find groups")) {
 				return
 			}
-			console.log(foundData.memberships)
+			//console.log(foundData.memberships)
 			res.apiOK(foundData);
 		})		
 	})
 
 	// Skapa grupp
 	.post('/', (req, res)=> {
+		if (res.requiredPermissions("EDIT")) return;
+
 		const item = new req.models.Group()
 		item.name = req.body.name
 		item.about = req.body.about
@@ -68,6 +72,8 @@ const route = router=> {
 
 	// uppdatera grupp
 	.put('/:id', (req, res)=> {
+		if (res.requiredPermissions("EDIT")) return;
+
 		const id = req.params.id;
 		req.models.Group.findOne({_id:id}, function(err, item) {
 			if (res.abortIf(err, 'Could not find user for handling update')) { return }
@@ -88,6 +94,8 @@ const route = router=> {
 
 	// radera grupp
 	.delete('/:id', (req, res)=> {
+		if (res.requiredPermissions("EDIT")) return;
+
 		const id = req.params.id;
 		req.models.Group.findOneAndRemove({_id:id}, function(err) {
 			if (res.abortIf(err, 'Could NOT remove')) {
@@ -111,6 +119,8 @@ const route = router=> {
 	// stoppa in användare med :id i grupp med id :id
 	// eller uppdatera inställningar för användare med id :id i grupp med id :id
 	.post('/:gid/users/:uid', (req, res)=> {
+		if (res.requiredPermissions("EDIT")) return;
+
 		const gid = req.params.gid
 		const uid = req.params.uid
 
@@ -127,6 +137,8 @@ const route = router=> {
 
 	// banna idiot
 	.delete('/:gid/users/:uid', (req, res)=> {
+		if (res.requiredPermissions("EDIT")) return;
+
 		const gid = req.params.gid
 		const uid = req.params.uid
 

@@ -1,3 +1,4 @@
+"use strict"
 // server.js
 // VRO Web
 // 
@@ -40,6 +41,22 @@ app.use(function(req, res, next) {
 	res.apiOK = (data)=> {
 		res.json({data:data})
 	}
+
+  // if (res.requiredPermissions("EDIT")) return;
+  res.requiredPermissions = (permissions, group)=> {
+    const perms = (typeof permissions == 'string'?[permissions]:permissions)
+    const gname = group || "redigera"
+    let ok = true
+    ok = ok && req.user
+    ok = ok && ok.memberships.find(m=> m.group.name == gname)
+    console.log(Array(100).fill('-').join(''))
+    console.dir(ok)
+    ok = ok && !perms.map(p=> ok.permissions.indexOf(p)>-1).some(v=> !v)
+    console.dir(ok)
+    
+    if (!ok) res.status(401).json({error: 'Unsufficient permissions', permissionsRequired: perms})
+    return !ok
+  }
 
   next()
 })

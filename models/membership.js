@@ -15,7 +15,7 @@ const Schema = mongoose.Schema({
 
 	permissions: [{
 		type: String,
-		enum: ['POST', 'EDIT_MEMBERSHIPS'],
+		enum: ['POST', 'EDIT'],
 	}],
 
 }, {timestamps: true})

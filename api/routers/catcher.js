@@ -14,7 +14,8 @@ const sendEmail = require('../../helpers/helpers').sendEmail;
 const routeMain = router=> {
 
   router.get('/catches', (req, res) => {
-    if (req.query.secret!='kanelbulle') return res.send('wuut');
+    if (res.requiredPermissions("CATCHER_MASTER")) return;
+
     async (() => {
       let catches = await (req.models.Catch.find({}).exec())
       // if (req.query.html) {
@@ -58,6 +59,7 @@ const routeMain = router=> {
   })
 
   router.get('/getEmail', function(req, res) {
+    if (res.requiredPermissions("CATCHER_MASTER")) return;
     req.models.User.find(function(error, users) {
       var emailString = "";
       for(var i = 0; i < users.length; i++) {
@@ -72,6 +74,7 @@ const routeMain = router=> {
   })
 
   router.get('/sendEmail', function(req, res) {
+    if (res.requiredPermissions("CATCHER_MASTER")) return;
     "use strict";
     if (req.query.secret!='kanelbulle') return res.send('wuut');
     let filter = {}

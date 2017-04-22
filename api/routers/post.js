@@ -35,6 +35,8 @@ const route = router=> {
 
 
 	router.post('/', function(req,res) {
+		if (res.requiredPermissions("POST")) return;
+
 		const group = req.body.group
 		// if (req.user.groups.indexOf('Group') == -1) {
 		// 	return api.status(403).json({error:'Unauthorized.'})
@@ -55,6 +57,8 @@ const route = router=> {
 	})
 
 	router.delete('/:id', function(req, res) {
+		if (res.requiredPermissions("POST EDIT".split(' '))) return;
+
 		const id = req.params.id
 		req.models.Post.findOneAndRemove({_id:id}, function(err) {
 			if (res.abortIf(err, 'Could not delete post')) return;

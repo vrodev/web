@@ -10,6 +10,14 @@ var jwt = require('jwt-simple');
 // JWT - Authenticate
 // for jwt, see https://www.sitepoint.com/using-json-web-tokens-node-js/
 module.exports = function(req, res, next) {
+    
+
+// var maxAge = 3 * 31 * 24*60*60 * 1000
+//   var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+//   res.cookie('jwtToken', token, { maxAge: maxAge, httpOnly: true });
+// res.send("asdfsadf")
+// return next();
+
   req.setLogout = function() {res.clearCookie('jwtToken')}
   function eraseAndContinue() {req.setLogout();next()}
 
@@ -25,7 +33,12 @@ module.exports = function(req, res, next) {
     return eraseAndContinue()
   
   // Find user
-  req.models.User.findOne({ _id: decoded.iss }).populate('catcher.target').exec(function(err, user) {
+  req.models.User.findOne({ _id: decoded.iss }).populate({
+      path: 'memberships catcher.target',
+      populate: {
+        path: 'group',
+      }
+    }).exec(function(err, user) {
     if (err) return eraseAndContinue()
     req.user = user
     next()
