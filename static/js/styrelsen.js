@@ -6,6 +6,16 @@ for (i = 0; i < parts.length; i++) {
 	ruta.style.backgroundColor = parts[i].color
 	_('.styrelsencenter').appendChild(ruta)
 
+	upper = document.createElement('div')
+	upper.className ="utskotttop"
+	upper.style.backgroundColor = parts[i].color
+	ruta.appendChild(upper)
+
+	image = document.createElement('div')
+	image.className ="utskottbild"
+	image.style.backgroundImage = "url(" + parts[i].image + ")" 
+	upper.appendChild(image)
+
 	header = document.createElement('h2')
 	header.className ="utskottrubrik styrelsenrubrik"
 	header.innerText = parts[i].title
