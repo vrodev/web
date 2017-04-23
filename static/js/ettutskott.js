@@ -45,7 +45,7 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 }
 
 bild.style.backgroundColor = utskott.color
-bild.style.webkitMaskBoxImage = "url('/images/" + utskott.name + ".png')"
+bild.style.webkitMaskBoxImage = "url('/images/" + utskott.title + ".png')"
 
 _('.loggacenter').appendChild(bild)
 

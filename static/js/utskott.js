@@ -7,7 +7,7 @@ for (i = 0; i < utskott.length; i++) {
 	temp.className ="utskottruta"
 	temp.style.backgroundColor = blendColors(utskott[i].color,'#000000',0.15)
 	document.querySelector(".utskottfield").appendChild(temp)
-	temp.setAttribute("onclick", "window.location.href = '/utskott/" + utskott[i].name.toLowerCase() + "'")
+	temp.setAttribute("onclick", "window.location.href = '/utskott/" + utskott[i].title.toLowerCase() + "'")
 
 	upper = document.createElement('div')
 	upper.className ="utskotttop"
@@ -20,11 +20,11 @@ for (i = 0; i < utskott.length; i++) {
 
 	bild = document.createElement('div')
 	bild.className ="utskottbild"
-	bild.style.backgroundImage = "url(images/" + utskott[i].name + ".png)"
+	bild.style.backgroundImage = "url(images/" + utskott[i].title + ".png)"
 	upper.appendChild(bild)
 
 	text = document.createElement('div')
 	text.className = "utskotttext"
-	text.innerText = utskott[i].name
+	text.innerText = utskott[i].title
 	temp.appendChild(text)
 }

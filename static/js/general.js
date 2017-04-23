@@ -63,110 +63,119 @@ function blendColors(c0, c1, p) {
 
 var pageinfos = {
 	enkommitte: [
-		{name:'Harry Potter',color:'#A21D20',
+		{title:'Harry Potter',color:'#A21D20',
 		ord:'Erik Södergren & Julia Ivarsson',
 		desc:'9¾ är VRG Odenplans alldeles egna Harry Potter kommitté. Vi planerar att arrangera filmmaratons, gemensamma omläsningar av serien, bak av godsaker som skulle platsa på en festmåltid på Hogwarts, tävlingar mellan elevhemmen och mycket mer! Framförallt kommer 9¾ alltid vara en plats att träffa, umgås och mysa med andra som också gillar Harry Potter. Här kan du diskutera allt från favoritships och favoritkaraktärer, till headcanons, teorier och frågor som "Var Snape verkligen en god människa eller inte?"... Välkomna! Draco dormiens nunquam titillandus.',
 		link:'https://www.facebook.com/groups/506981442801441/?ref=browser'},
 
-		{name:'Acapella',color:'#78A942',
+		{title:'Acapella',color:'#78A942',
 		ord:'Nikol Kanavakis & Nora Nattorp',
 		desc:'Acapella kommittén är till för de som älskar att sjunga och skapa musik med sina röster som instrument. Självklart inspireras vi av Pitch Perfect och Pentatonix men vi skapar vårat eget sound av det lilla arbete vi utför och den stora mängd skratt vi tillför.',
 		link:''},
 
-		{name:'Amnesty',color:'#deb117',
+		{title:'Amnesty',color:'#deb117',
 		ord:'Julia Berndtsson',
 		desc:'Vi i Amnestykommittén arbetar för att stärka situationen för de mänskliga rättigheterna runt om i världen genom att bland annat genomföra aktioner för att uppmärksamma och samla in namnunderskrifter. Vi jobbar både på och utanför skolan. Då vi är kopplade till internationella Amnesty finns möjligheter till utbildningar med mera att delta på. Alla är varmt välkomna!',
 		link:'https://www.facebook.com/groups/amnestyvrgopl/?ref=browser'},
 
-		{name:'Bajenfans',color:'#007A43',
+		{title:'Bajenfans',color:'#007A43',
 		ord:'Hugo Rosell & Sebastian Lian',
 		desc:'En kommitté med syfte att skapa en gemenskap med alla Hammarbyare på VRG. Målet är att någon gång i framtiden kunna gå på Hammarby-match tillsammans. :)',
 		link:''},
 
-		{name:'Debate Society',color:'#0F7EFF',
+		{title:'Debate Society',color:'#0F7EFF',
 		ord:'Willam Karlsson & Simon Norman',
 		desc:'In the Viktor Rydberg Odenplan Debate Society we discuss, analyze and practice World Schools Style debating. We learn together, help one another and debate each other. Besides competing within the society regularly, we continually aspire to and work towards competing against other schools and teams internationally in famous competitions! Everyone is always welcome to participate! Join in!',
 		link:''},
 
-		{name:'Ernst',color:'#e0590d',
+		{title:'Ernst',color:'#e0590d',
 		ord:'Alma Nording',
 		desc:'Själva syftet med kommittén lär vara att ha öppna möten för alla som går på vrg någon gång i månaden, men fler spontana möten kan självklart uppkomma. Målet är att få Ernst Kirchsteiger hit till vrg Odenplan för en föreläsning.',
 		link:'https://www.instagram.com/ernstkommitten/'},
 
-		{name:'HBTQ+',color:'#AB47CB',
+		{title:'HBTQ+',color:'#AB47CB',
 		ord:'Sam Widén & Emma Wallin',
 		desc:'HBTQ+-kommittén är till för HBTQ+ -personer och ska verka som en safe-zone för folk. Kommittén ska vara en plats för trygghet för folk, där de kan komma som de är och vara som de vill. Vi vill uppmärksamma HBTQ+-personer, våran situation på skolan, och föra upp en diskussion om cis-heteronormen. HBTQ+ -kommittén är till för att lära känna andra HBTQ+ -personer, knyta kontaker, och bara umgås utan att vara rädd för vad folk ska tycka.',
 		link:'https://www.facebook.com/groups/794754800651251/?ref=browser'},
 
-		{name:'Kaffe', color:'#562D2A',
+		{title:'Kaffe', color:'#562D2A',
 		ord:'Martin Babazadeh, Meilin Pei Purroy & Sofia Sollbe',
 		desc:'Vi skapade en kaffekommitté för att vi ville ha ett mer ekonomiskt och hållbart sätt för oss elever att kunna unna sig gott kaffe i skolan. Vårt koncept är att få ett skåp där det kommer finnas en Nespressomaskin, mjölkskummare samt andra kaffetillbehör tillgängliga för medlemmar. Medlemmarna får alltså själv ansvara för sina egna kaffekapslar. För att ha råd med har vi ha en medlemsavgift på 100 kr där en kaffetermos ingår, detta är även ett sätt att hålla reda på vilka som är medlemmar så att inte andra utnyttjar skåpet.',
 		link:''},
 
-		{name:'Memeteam', color:'#AD00FF',
+		{title:'Memeteam', color:'#AD00FF',
 		ord:'Elsa Berlin, Gustav & Agnes',
 		desc:'Vårt syfte är att ha kul, uppmärksamma memesen som kulturarv och tillsammans skapa dank memes.',
 		link:''},
 
-		{name:'Östasiatisk kultur',color:'#C42C00',
+		{title:'Östasiatisk kultur',color:'#C42C00',
 		ord:'Alex Will Hambén & Johanna Li',
 		desc:'Syftet är att bringa samman människor, östasiater som icke-östasiater, som är intresserade av och/eller uppskattar den östasiatiska kulturen och traditionerna. På mötena kan vi tänka oss ha traditionellt fika så som grönt te och frön, titta på och skratta åt dåligt producerade östasiatiska filmer eller tv-serier, sushi, nudlar, maskerad/utklädnad, bak, anime-maraton etc. etc.',
 		link:'https://www.facebook.com/groups/1676078619272950/?fref=ts'},
 
-		{name:'Retorik',color:'#DD9400',
+		{title:'Retorik',color:'#DD9400',
 		ord:'Willam Karlsson & Victor Lagrelius',
 		desc:'Vi lär oss tala. För att kunna övertyga i politik, affärer, kärlek och närhelst det enda du har är din röst och nervöst darrande händer. Vi debatterar, har teoriföreläsningar, analyserar bra och dåliga retoriker, anordnar partidebatter och mycket mer.',
 		link:''},
 
-		{name:'Smått och Gott',color:'#ED588D',
+		{title:'Smått och Gott',color:'#ED588D',
 		ord:'Filippa Vasilis & Sofia Gerhardsson',
 		desc:'Vi vill sprida glädje genom att sprida godsaker på skolan till alla sötsugna! Med hjälp av oss kommer alla klara skolans tuffa plugg ännu lite bättre. Vi vill bjuda in alla som gillar att baka, äta och hänga till vår komitté. Vi kommer baka för dagar som Kanelbullens dag, Fettisdagen, fixa äggjakt, Hela VRG Bakar och mycket mer.  Välkommen och smaklig måltid!',
 		link:'https://www.facebook.com/groups/673554036115232/?fref=ts'},
 
-		{name:'Aktiesparare',color:'#8447cb',
+		{title:'Aktiesparare',color:'#8447cb',
 		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
 		desc:'Unga Aktiesparare VRG Opl delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
 		link:''}
 	],
 	ettutskott: [
-		{name:'Tradition',color:'#C42C00',
+		{title:'Tradition',color:'#C42C00',
 		ord:'Andrea Wach',
 		desc:'Traditionsutskottet jobbar främst med att uppmärksamma olika traditioner genom både större och mindre firanden, ibland firar de ju varje dag i december och ibland arrangerar de äggjakt för att uppmärksamma påsken. De firar och uppmärksammar helt enkelt de traditioner som efterfrågas av kårens medlemmar!<br><br>Andrea är ordförande för traditionsutskottet och därmed också en del av utskottsgruppen. Hon är huvudansvarig för kårens traditionsfiranden och ska leda sitt utskott där de arbetar för att vi ska fira många och roliga traditioner.',
 		},
 
-		{name:'Sociala',color:'#ED588D',
+		{title:'Sociala',color:'#ED588D',
 		ord:'Hannes Hellmér',
 		desc:'Sociala utskottet jobbar med att främja den sociala aktiviteten på skolan genom att jobba för en god sammanhållning mellan skolans elever. Detta sker genom att anordna spännande och roliga aktiviteter, evenemang och tävlingar. De jobbar också en del med VRG-kampen, tävlingen där alla tre VRG-skolor möts i en trekamp. <br><br>Hannes är ordförande för det sociala utskottet och del av utskottsgruppen. Han är huvudansvarig för skolans sociala aktiviteter såsom klasspokalen, inspark och olika temadagar. ',
 		},
 
-		{name:'Kommunikation',color:'#0A7BFF',
+		{title:'Kommunikation',color:'#0A7BFF',
 		ord:'David Sundström',
 		desc:' Kommunikationsutskottet är ansvariga för kårens marknadsföring och sociala medier. Detta innebär att de är som gör alla affischer som sitter i skolan men är också ansvariga för mycket av det som kommer ut på våra sociala medier såsom instagram, youtube och facebook. Det är också kommunikationsutskottet som har utvecklat vår fantastiska app och hemsida. Det är också oftast detta utskott som ofta är ute och fotar och filmar kårens verksamhet.<br><br>David är ordförande för kommunikationsutskottet, vilket innebär att han ska leda sitt utskott samt vara en del av utskottsgruppen. Han är huvudansvarig för marknadsföringen via elevkåren och elevkårens sociala plattformar.'
 		},
 
-		{name:'Finansiella',color:'#AB47CB',
+		{title:'Finansiella',color:'#AB47CB',
 		ord:'Isac Diamant',
 		desc:'Finansiella utskottet jobbar för att främja samarbeten mellan kåren och olika företag för att kunna förse medlemmar med service och förmåner. Detta sker exempelvis genom att de fixar  sponsring till kåren och dess medlemmar, men också genom att ge medlemmarna möjlighet till rabatt hos närliggande företag. <br><br>Isac är ordförande för finansiella utskottet och därmed också en del av utskottsgruppen. Han är delaktig i många av de stora förhandlingar som pågår för att ge er medlemmar ett så förmånligt medlemskap som möjligt. Han ska också leda sitt utskott där alla delegater också jobbar för att ge er medlemmar ett så gynnsamt medlemskap som möjligt.',
 		},
 
-		{name:'Miljö',color:'#78A942',
+		{title:'Miljö',color:'#78A942',
 		ord:'Sebastian Lian',
 		desc:'Miljöutskottet jobbar för att främja skolans miljötänk men också att informera och utbilda kårens medlemmar om miljöfrågor. Detta leder då förhoppningsvis till en grönare tänk både hos skolan och hos kårens medlemmar. <br><br>Sebastian är ordförande för miljöutskottet och medlem i utskottsgruppen. Han är huvudansvarig för att driva medlemmarnas och kårens miljöfrågor för att skolan och kårens medlemmar ska bli ännu mer miljömedvetna.',
 		},
 
-		{name:'Påverkan',color:'#DD9400',
+		{title:'Påverkan',color:'#DD9400',
 		ord:'Angel GB',
 		desc:"Påverkansutskottet jobbar med påverkansfrågor - allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. De är dem som är ansvariga för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan att bli ännu lite bättre. ",
 		},
 	],
 	styrelsen: {
 		color:'#ffffff',
-		personer:[
-			{name:'Ordförande',person:'Nora Uvemo',color:'#5176e4'},
-			{name:'Vice Ordförande',person:'Richard Wahlström',color:'#47b2cc'},
-			{name:'Skattmästare',person:'Julia Frislund',color:'#e4902c'},
-			{name:'Administratör',person:'Sandra Pernkrans',color:'#e45151'},
-			{name:'Utskottsansvarig',person:'Corinne Jerand',color:'#6abf40'}
+		parts:[
+			{title:'Ordförande',ord:'Richard Wahlström',color:'#5176e4',
+			desc:'Richard är kårens ordförande och är elevkårens visionerande ledare. Han uppgift är bland annat att kalla till och leda styrelsemöten samt för att samordna hela kåren som organisation. Richard är också huvudansvarig för att kårens stadgar ochs styrdokument efterföljs samt att representera kåren utåt vid större event. '},
+			{title:'Vice Ordförande',ord:'Sandra Pernkrans',color:'#47b2cc',
+			desc:'Sandra är kårens vice ordförande och är ställföreträdare för ordförande. Hon är också en hjälpande hand och ett extra bollplank för alla förtroendevalda samt ansvarig för bland annat kårpoolen och månadens medlem. '},
+			{title:'Utskottsansvarig',ord:'Pelle Melin',color:'#6abf40',
+			desc:'Pelle är utskottsansvarig och ordförande för utskottsgruppen. Hans viktigaste uppdrag är att koordinera alla kårens utskott. Han är också den viktiga länken mellan styrelsen och utskottsgruppen vilket är viktigt för att hela kårens verksamhet ska fungera så bra som möjligt!'},
+			{title:'Administratör',ord:'Malin Öster',color:'#e45151',
+			desc:'Malin är kårens administratör vilket innebär att hon är sekreterare på kårens styrelsemöten men är också ansvarig för vårt medlemsregister. Hon är också ansvarig för kommittéverksamheten så det är henne du ska hör av dig till om du har någon bra idé för en kommitté!'},
+			{title:'Skattmästare',ord:'August Eklund',color:'#e4902c',
+			desc:'August är kårens skattmästare och därför den som har mest koll på kårens ekonomi. Han sköter alla viktiga saker såsom bokföring och kassaredovisning men är också med och förhandlar vid stora och viktiga avtal - allt för att ni medlemmar ska få ett så fördelaktigt medlemskap som möjligt!'},
+			{title:'Suppleant',ord:'Julia Ivarsson',color:'#848484',
+			desc:'Julia är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Hon bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer.'},
+			{title:'Suppleant',ord:'Martin Babazadeh',color:'#848484',
+			desc:'Martin är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Han bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer.'},		
 		]
 	},
 	mat:{
@@ -255,5 +264,5 @@ function changeFromColor(color){
 
 var pageinfo = typeof dataPage!=='undefined'? pageinfos[dataPage]: null
 var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
-	return subpageinfo.name.replace(/ /g,"_").toLowerCase() == subpage
+	return subpageinfo.title.replace(/ /g,"_").toLowerCase() == subpage
 })

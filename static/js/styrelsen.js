@@ -1,20 +1,20 @@
-var personer = pageinfos.styrelsen.personer
+var parts = pageinfos.styrelsen.parts
 
-for (i = 0; i < personer.length; i++) {
+for (i = 0; i < parts.length; i++) {
 	ruta = document.createElement('div')
 	ruta.className ="utskottruta styrelsenruta"
-	ruta.style.backgroundColor = personer[i].color
+	ruta.style.backgroundColor = parts[i].color
 	_('.styrelsencenter').appendChild(ruta)
 
 	header = document.createElement('h2')
 	header.className ="utskottrubrik styrelsenrubrik"
-	header.innerText = personer[i].name
+	header.innerText = parts[i].title
 	ruta.appendChild(header)
 
 	text = document.createElement('div')
 	text.className ="utskottinfo styrelseninfo"
-	text.innerText = personer[i].person
-	text.style.backgroundColor = blendColors(personer[i].color, '#000000', 0.1)
+	text.innerText = parts[i].ord
+	text.style.backgroundColor = blendColors(parts[i].color, '#000000', 0.1)
 	ruta.appendChild(text)
 
 	shine = document.createElement('div')
