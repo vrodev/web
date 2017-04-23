@@ -1,7 +1,5 @@
 var kommitte = subpageinfo
 
-var num
-
 _('.headertext').innerHTML = kommitte.name
 
 _(".utskottheader").style.backgroundColor = kommitte.color

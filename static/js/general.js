@@ -130,32 +130,34 @@ var pageinfos = {
 	],
 	ettutskott: [
 		{name:'Tradition',color:'#C42C00',
-		arbete:'• Fira traditioner och sprida traditionsglädje i skolan, samt öka gemenskapen mellan eleverna<br>• Fira internationella traditioner och därmed även mer gemenskap och förståelse för andra kulturer Ha kul!',
-		hjalp:'• Kom med förslag till oss (!) om det är någon traditioner du vill fira/anser att vi bör fira, från vilken kultur/religion/land spelar ingen roll<br>• Alltid öppna för feedback och förslag på hur vi ska fira traditionerna också'},
+		ord:'Andrea Wach',
+		desc:'Traditionsutskottet jobbar främst med att uppmärksamma olika traditioner genom både större och mindre firanden, ibland firar de ju varje dag i december och ibland arrangerar de äggjakt för att uppmärksamma påsken. De firar och uppmärksammar helt enkelt de traditioner som efterfrågas av kårens medlemmar!<br><br>Andrea är ordförande för traditionsutskottet och därmed också en del av utskottsgruppen. Hon är huvudansvarig för kårens traditionsfiranden och ska leda sitt utskott där de arbetar för att vi ska fira många och roliga traditioner.',
+		},
 
 		{name:'Sociala',color:'#ED588D',
-		arbete:'• Roliga temadagar och event som till exempel SUIT-UP Day, Insparken och VRG-Kampen. <br>• Klasspokalen, en tävling mellan klasserna på skolan. Under läsårets gång får man möjlighet att samla in poäng till tävlingen som pågår ända tills slutet av läsåret. <br>• Att din tid här på skolan ska bli så rolig som möjligt!',
-		hjalp:'• Att förgylla din skoltid med massa roliga aktiviteter som gör att vi alla kan bli närmare vänner på skolan<br>• Att få din idé igenom. Om du har ett önskemål, exempelvis att du skulle vilja ha temadagen: Pyjamasparty eller något annat. HÖR AV DIG! Vi älskar nya idéer'},
+		ord:'Hannes Hellmér',
+		desc:'Sociala utskottet jobbar med att främja den sociala aktiviteten på skolan genom att jobba för en god sammanhållning mellan skolans elever. Detta sker genom att anordna spännande och roliga aktiviteter, evenemang och tävlingar. De jobbar också en del med VRG-kampen, tävlingen där alla tre VRG-skolor möts i en trekamp. <br><br>Hannes är ordförande för det sociala utskottet och del av utskottsgruppen. Han är huvudansvarig för skolans sociala aktiviteter såsom klasspokalen, inspark och olika temadagar. ',
+		},
 
 		{name:'Kommunikation',color:'#0A7BFF',
-		arbete:'• Vi ser till att information om allt det som elevkåren gör och arrangerar når ut till medlemmarna<br>• Detta genom att hålla igång alla olika media plattformer samtidigt som vi utvecklar de kanaler vi har!',
-		hjalp:''},
+		ord:'David Sundström',
+		desc:' Kommunikationsutskottet är ansvariga för kårens marknadsföring och sociala medier. Detta innebär att de är som gör alla affischer som sitter i skolan men är också ansvariga för mycket av det som kommer ut på våra sociala medier såsom instagram, youtube och facebook. Det är också kommunikationsutskottet som har utvecklat vår fantastiska app och hemsida. Det är också oftast detta utskott som ofta är ute och fotar och filmar kårens verksamhet.<br><br>David är ordförande för kommunikationsutskottet, vilket innebär att han ska leda sitt utskott samt vara en del av utskottsgruppen. Han är huvudansvarig för marknadsföringen via elevkåren och elevkårens sociala plattformar.'
+		},
 
 		{name:'Finansiella',color:'#AB47CB',
-		arbete:'',
-		hjalp:''},
+		ord:'Isac Diamant',
+		desc:'Finansiella utskottet jobbar för att främja samarbeten mellan kåren och olika företag för att kunna förse medlemmar med service och förmåner. Detta sker exempelvis genom att de fixar  sponsring till kåren och dess medlemmar, men också genom att ge medlemmarna möjlighet till rabatt hos närliggande företag. <br><br>Isac är ordförande för finansiella utskottet och därmed också en del av utskottsgruppen. Han är delaktig i många av de stora förhandlingar som pågår för att ge er medlemmar ett så förmånligt medlemskap som möjligt. Han ska också leda sitt utskott där alla delegater också jobbar för att ge er medlemmar ett så gynnsamt medlemskap som möjligt.',
+		},
 
 		{name:'Miljö',color:'#78A942',
-		arbete:'• Vi ökar miljömedvetenheten hos alla på skolan genom att sprida information om miljön<br>• Genom alla möjliga medel försöker vi minska skolans, elevernas och personalens miljöpåverkan.',
-		hjalp:'• Om du reagerar på något inom skolan där du tycker miljötänket är för dåligt<br>• Om du vill lyfta fram något till skolan gällande miljö'},
+		ord:'Sebastian Lian',
+		desc:'Miljöutskottet jobbar för att främja skolans miljötänk men också att informera och utbilda kårens medlemmar om miljöfrågor. Detta leder då förhoppningsvis till en grönare tänk både hos skolan och hos kårens medlemmar. <br><br>Sebastian är ordförande för miljöutskottet och medlem i utskottsgruppen. Han är huvudansvarig för att driva medlemmarnas och kårens miljöfrågor för att skolan och kårens medlemmar ska bli ännu mer miljömedvetna.',
+		},
 
 		{name:'Påverkan',color:'#DD9400',
-		arbete:"• Debatter, både bland elever och politiska partier<br>• Förmedla dina åsikter till de som ska höra dem<br>• Hjälpa dig påverka din skolgång så mycket som möjligt!",
-		hjalp:'• Har du frågor kring elevrätt, känner du dig orättvist behandlad av en lärare, hör av dig till oss!<br>• Har du något du vill ändra i skolan, säg till!'},
-
-		{name:'Student',color:'#707070',
-		arbete:'',
-		hjalp:''}
+		ord:'Angel GB',
+		desc:"Påverkansutskottet jobbar med påverkansfrågor - allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. De är dem som är ansvariga för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan att bli ännu lite bättre. ",
+		},
 	],
 	styrelsen: {
 		color:'#ffffff',

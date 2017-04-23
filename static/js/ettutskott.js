@@ -7,18 +7,18 @@ if(utskott.color !== "#00000"){
 	_(".phonelinks").className += " whitelinks"
 }
 
-_(".arbete").innerHTML = utskott.arbete
-if(utskott.hjalp !== ""){
-	_(".hjalp").innerHTML = utskott.hjalp
-}else{
-	_(".hjalp").style.margin = "0px"
-}
+_('.utskottrubrik').style.color = blendColors(utskott.color, "#000000", 0.3)
 
-if(utskott.arbete == '' && utskott.hjalp == ''){
-	_(".arbete").innerHTML = 'Det finns tyvärr ingen information om detta utskott för närvarande.<br><br>Om du är medlem i detta utskott får du gärna skicka en text lik texterna för de andra utskotten till någon i Kommunikationutskottet.'
-	_(".arbete").className += ' ingentext'
-	_('.utskotttextfalt').style.margin = '0px'
-}	
+_(".utskottinfo").innerHTML = utskott.desc
+
+if(utskott.ord !== ''){
+	text = document.createElement('h2')
+	text.className ="utskottrubrik ordfarande"
+	text.innerText = utskott.ord + ' är ordförande'
+	_('.center').appendChild(text)
+
+	text.style.color = utskott.color
+}
 
 bild = document.createElement('div')
 bild.className ="utskottbildbottom"
