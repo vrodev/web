@@ -132,25 +132,24 @@ html
 				post-card(v-if='post', :post='post', @deleted='postWasDeleted', class="item", :expanded="true")
 
 
-		if user
-			.add-card.add-card-hidden
-				.plus +
-				.content
-					input.imageinput(type="file" accept="image/*")
-					label.image.add-image(for='bild')
-						.imagetext Lägg till en bild
-					.info
-						.text-content
-							.textinputs
-								.title.text-input(data-placeholder='Rubrik' contentEditable="true")
-								.text.text-input(data-placeholder='Text' contentEditable="true")
-						.options
-							div.checkboxdiv.choice.add-choice
-								input.checkbox(type='checkbox' id='prioritizedCheckbox')
-								label.label2(for='prioritizedCheckbox') Prioriterad
-							div.choice.publish.add-choice Publicera
-				.close(onclick='closeAddCard()')
-					.cross +
+		.add-card.add-card-hidden(v-if='post')
+			.plus +
+			.content
+				input.imageinput(type="file" accept="image/*")
+				label.image.add-image(for='bild')
+					.imagetext Lägg till en bild
+				.info
+					.text-content
+						.textinputs
+							.title.text-input(data-placeholder='Rubrik' contentEditable="true")
+							.text.text-input(data-placeholder='Text' contentEditable="true")
+					.options
+						div.checkboxdiv.choice.add-choice
+							input.checkbox(type='checkbox' id='prioritizedCheckbox')
+							label.label2(for='prioritizedCheckbox') Prioriterad
+						div.choice.publish.add-choice Publicera
+			.close(onclick='closeAddCard()')
+				.cross +
 
 		.main-content
 			//- include footer-made
