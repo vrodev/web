@@ -1,8 +1,9 @@
-var parts = pageinfos.styrelsen.parts
+var parts = pageinfos.styrelsenpers
 
 for (i = 0; i < parts.length; i++) {
 	ruta = document.createElement('div')
 	ruta.className ="utskottruta styrelsenruta"
+	ruta.setAttribute("onclick", "window.location.href = '/styrelsen/" + parts[i].ord.toLowerCase().replace(/ /g,"_") + "'")
 	ruta.style.backgroundColor = parts[i].color
 	_('.styrelsencenter').appendChild(ruta)
 

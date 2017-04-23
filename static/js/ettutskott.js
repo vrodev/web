@@ -7,8 +7,6 @@ if(utskott.color !== "#00000"){
 	_(".phonelinks").className += " whitelinks"
 }
 
-_('.utskottrubrik').style.color = blendColors(utskott.color, "#000000", 0.3)
-
 _(".utskottinfo").innerHTML = utskott.desc
 
 if(utskott.ord !== ''){

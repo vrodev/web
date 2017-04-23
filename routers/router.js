@@ -125,6 +125,9 @@ module.exports = (function() {
     {page:'om'},
     {page:'karen'},
     {page:'styrelsen'},
+    {path:'styrelsen/:info',page:'styrelsenpers', dataGen: req=>{
+      return {styrelsen:req.params.info}
+    }},
     {page:'kommitte'},
     {page:'admin'},
     {page:'added'},

@@ -159,33 +159,36 @@ var pageinfos = {
 		desc:"Påverkansutskottet jobbar med påverkansfrågor - allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. De är dem som är ansvariga för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan att bli ännu lite bättre. ",
 		},
 	],
+	styrelsenpers:[
+		{title:'Ordförande',ord:'Richard Wahlström', image:'images/styrelsen/richard.jpg',color:'#5176e4',
+		desc:'Richard är kårens ordförande och är elevkårens visionerande ledare. Han uppgift är bland annat att kalla till och leda styrelsemöten samt för att samordna hela kåren som organisation. Richard är också huvudansvarig för att kårens stadgar ochs styrdokument efterföljs samt att representera kåren utåt vid större event. '},
+		{title:'Vice Ordförande',ord:'Sandra Pernkrans',image:'images/styrelsen/sandra.jpg',color:'#47b2cc',
+		desc:'Sandra är kårens vice ordförande och är ställföreträdare för ordförande. Hon är också en hjälpande hand och ett extra bollplank för alla förtroendevalda samt ansvarig för bland annat kårpoolen och månadens medlem. '},
+		{title:'Utskottsansvarig',ord:'Pelle Melin',image:'images/styrelsen/pelle.jpg',color:'#6abf40',
+		desc:'Pelle är utskottsansvarig och ordförande för utskottsgruppen. Hans viktigaste uppdrag är att koordinera alla kårens utskott. Han är också den viktiga länken mellan styrelsen och utskottsgruppen vilket är viktigt för att hela kårens verksamhet ska fungera så bra som möjligt!'},
+		{title:'Administratör',ord:'Malin Öster',image:'images/styrelsen/malin.jpg',color:'#e45151',
+		desc:'Malin är kårens administratör vilket innebär att hon är sekreterare på kårens styrelsemöten men är också ansvarig för vårt medlemsregister. Hon är också ansvarig för kommittéverksamheten så det är henne du ska hör av dig till om du har någon bra idé för en kommitté!'},
+		{title:'Skattmästare',ord:'August Eklund',image:'images/styrelsen/august.jpg',color:'#e4902c',
+		desc:'August är kårens skattmästare och därför den som har mest koll på kårens ekonomi. Han sköter alla viktiga saker såsom bokföring och kassaredovisning men är också med och förhandlar vid stora och viktiga avtal - allt för att ni medlemmar ska få ett så fördelaktigt medlemskap som möjligt!'},
+		{title:'Suppleant',ord:'Julia Ivarsson',image:'images/styrelsen/julia.jpg',color:'#848484',
+		desc:'Julia är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Hon bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer.'},
+		{title:'Suppleant',ord:'Martin Babazadeh',image:'images/styrelsen/martin.jpg',color:'#848484',
+		desc:'Martin är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Han bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer.'},		
+	],
 	styrelsen: {
 		color:'#ffffff',
-		parts:[
-			{title:'Ordförande',ord:'Richard Wahlström', image:'images/styrelsen/richard.jpg',color:'#5176e4',
-			desc:'Richard är kårens ordförande och är elevkårens visionerande ledare. Han uppgift är bland annat att kalla till och leda styrelsemöten samt för att samordna hela kåren som organisation. Richard är också huvudansvarig för att kårens stadgar ochs styrdokument efterföljs samt att representera kåren utåt vid större event. '},
-			{title:'Vice Ordförande',ord:'Sandra Pernkrans',image:'images/styrelsen/sandra.jpg',color:'#47b2cc',
-			desc:'Sandra är kårens vice ordförande och är ställföreträdare för ordförande. Hon är också en hjälpande hand och ett extra bollplank för alla förtroendevalda samt ansvarig för bland annat kårpoolen och månadens medlem. '},
-			{title:'Utskottsansvarig',ord:'Pelle Melin',image:'images/styrelsen/pelle.jpg',color:'#6abf40',
-			desc:'Pelle är utskottsansvarig och ordförande för utskottsgruppen. Hans viktigaste uppdrag är att koordinera alla kårens utskott. Han är också den viktiga länken mellan styrelsen och utskottsgruppen vilket är viktigt för att hela kårens verksamhet ska fungera så bra som möjligt!'},
-			{title:'Administratör',ord:'Malin Öster',image:'images/styrelsen/malin.jpg',color:'#e45151',
-			desc:'Malin är kårens administratör vilket innebär att hon är sekreterare på kårens styrelsemöten men är också ansvarig för vårt medlemsregister. Hon är också ansvarig för kommittéverksamheten så det är henne du ska hör av dig till om du har någon bra idé för en kommitté!'},
-			{title:'Skattmästare',ord:'August Eklund',image:'images/styrelsen/august.jpg',color:'#e4902c',
-			desc:'August är kårens skattmästare och därför den som har mest koll på kårens ekonomi. Han sköter alla viktiga saker såsom bokföring och kassaredovisning men är också med och förhandlar vid stora och viktiga avtal - allt för att ni medlemmar ska få ett så fördelaktigt medlemskap som möjligt!'},
-			{title:'Suppleant',ord:'Julia Ivarsson',image:'images/styrelsen/julia.jpg',color:'#848484',
-			desc:'Julia är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Hon bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer.'},
-			{title:'Suppleant',ord:'Martin Babazadeh',image:'images/styrelsen/martin.jpg',color:'#848484',
-			desc:'Martin är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Han bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer.'},		
-		]
+		content:'styrelsenpers',
 	},
 	mat:{
 		color:"#ff9b20"
 	},
 	kommitte:{
-		color:'#ffffff'
+		color:'#ffffff',
+		content:'enkommitte',
 	},
 	utskott:{
-		color:'#ffffff'
+		color:'#ffffff',
+		content:'ettutskott',
 	},
 	loginvro:{
 		color:'#ffffff'
