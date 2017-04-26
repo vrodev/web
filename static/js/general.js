@@ -265,7 +265,11 @@ function changeFromColor(color){
 	}
 }
 
+var subpage = window.location.pathname.replace(/\/$/,'').split('/');
+subpage = subpage[subpage.length-1]
 var pageinfo = typeof dataPage!=='undefined'? pageinfos[dataPage]: null
-var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
+var subpageinfo = !pageinfo||!subpage||!(pageinfo instanceof Array)?pageinfo:pageinfo.find(function(subpageinfo){
+	if (dataPage=='styrelsenpers')
+		return subpageinfo.ord.replace(/ /g,"_").toLowerCase() == subpage
 	return subpageinfo.title.replace(/ /g,"_").toLowerCase() == subpage
 })
