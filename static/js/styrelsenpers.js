@@ -13,40 +13,8 @@ if (window.matchMedia("(max-width: 500px)").matches && _('.headertext').innerHTM
 if(kommitte.ord !== ''){
 	text = document.createElement('h2')
 	text.className ="utskottrubrik ordfarande"
-	text.innerText = kommitte.ord + ' är ordförande'
+	text.innerText = kommitte.ord
 	_('.center').appendChild(text)
 
 	text.style.color = kommitte.color
-}
-
-link = document.createElement('div')
-link.className ="kommittelink"
-link.style.minHeight = "20px"
-link.style.zIndex = '20'
-_('.center').appendChild(link)
-
-if(kommitte.link !== ''){
-	
-	link.setAttribute("onclick", "window.location.href = '" + kommitte.link + "'")
-
-	linktx = document.createElement('h2')
-	linktx.className = "kommittelinktext"
-	linktx.style.backgroundColor = kommitte.color
-	link.appendChild(linktx)
-
-	if(kommitte.link.indexOf("facebook") !== -1){
-		linktx.innerText = "Kommitténs Facebook"
-	}else if(kommitte.link.indexOf("instagram") !== -1){
-		linktx.innerText = "Kommitténs Instagram"
-	}else{
-		linktx.innerText = "Kommitténs sociala nätverk"
-	}
-
-	shine = document.createElement('div')
-	shine.className = "shine"
-	link.appendChild(shine)
-
-	_('.ordfarande').style.color = kommitte.color
-}else{
-	link.style.position = "absolute"
 }
