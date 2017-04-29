@@ -24,7 +24,7 @@ api.food(function(err, weeks) {
 			text = document.createElement('p')
 			text.className = "veckodag nextWeek"
 			temp.appendChild(text)
-			text.innerHTML = week.nr==currentWeekNr+1? "Nästa vecka": "Vecka "+week.nr
+			text.innerHTML = week.nr==currentWeekNr+1? "Veckan efter": "Vecka "+week.nr
 		}1
 
 		week.days.forEach(function(day) {
