@@ -54,7 +54,7 @@ module.exports = (function() {
   // fn: return false to prevent auto res.render()
   var routes = [
     {page:'', path:'', fn:async (function(req, res) {
-      res.redirect('/main');return false;})},
+      res.redirect('/lolxdxd');return false;})},
     {page:'login', fn:async (function(req, res, data) {
       if (req.query.error=="incorrect") {
         data.errorMessage = randomWrongCodeMessage()
