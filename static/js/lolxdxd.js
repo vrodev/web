@@ -11,7 +11,7 @@ http.send(console.log);*/
 if(window.matchMedia("(max-width: 500px)").matches) _('.showoff').querySelector('.name').innerHTML = 'Vro Elevkår'
 
 var editAccess = false
-if (api.currentUser.memberships)
+if (api.currentUser && api.currentUser.memberships)
 	editAccess = api.currentUser.memberships.some(function(membership) {
 		return membership.group.name == "redigera" && membership.permissions.indexOf("POST")>=0
 	})

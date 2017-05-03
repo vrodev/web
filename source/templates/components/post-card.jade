@@ -4,7 +4,7 @@
 		.info
 			.text-content
 				.title {{post.title}}
-				.text(:html='post.text')
+				.text(v-html='post.text')
 				
 				.choice.remove(v-if='editable', @click='deleteItem') Remove Post
 

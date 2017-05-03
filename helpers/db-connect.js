@@ -6,6 +6,7 @@
 
 const mongoose = require('mongoose')
 const Promise = require('bluebird')
+const config = require('../config')
 
 
 // Connect promise lib
@@ -36,7 +37,7 @@ function connect(dbURL) {
 }
 
 // username:password@host:port
-connect('mongodb://localhost:27017/testWeb')
+connect(config.db)
 	.on('error', function() {
 		console.error.bind(console, 'DB error:').apply(console, arguments)
 	})

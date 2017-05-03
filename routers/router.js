@@ -53,8 +53,7 @@ module.exports = (function() {
   // data:{title:'...'}, fn:function(req,res){}}
   // fn: return false to prevent auto res.render()
   var routes = [
-    {page:'', path:'', fn:async (function(req, res) {
-      res.redirect('/lolxdxd');return false;})},
+    {page:'lolxdxd', path:'', },
     {page:'login', fn:async (function(req, res, data) {
       if (req.query.error=="incorrect") {
         data.errorMessage = randomWrongCodeMessage()
@@ -118,7 +117,6 @@ module.exports = (function() {
       data.catchCode = await (require('../helpers/catchLogic').initializeCatchCode(req.user))
     })},
     {page:'faq'},
-    {page:'lolxdxd'},
     {page:'loginvro'},
     {page:'mat'},
     {page:'am'},
@@ -147,7 +145,7 @@ module.exports = (function() {
   // register them with the express router
   for (var i = 0; i<routes.length; i++) {
     var route = routes[i]
-    if (!route.path) route.path = route.page
+    if (!route.path && route.path != '') route.path = route.page
 
     router.get('/'+route.path, (function(route) {return function(req, res) {async (function(){
       route.data = route.dataGen ? route.dataGen(req) : {}
@@ -160,7 +158,6 @@ module.exports = (function() {
 
       route.data.componentTemplatesString = componentTemplatesString
 
-      console.log(Array(1000).fill('g').join('1'))
       res.render('catcher/'+route.page, route.data)
     })()}})(route) )
   }
