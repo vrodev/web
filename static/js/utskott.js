@@ -20,7 +20,7 @@ for (i = 0; i < utskott.length; i++) {
 
 	bild = document.createElement('div')
 	bild.className ="utskottbild"
-	bild.style.backgroundImage = "url(images/" + utskott[i].title + ".png)"
+	bild.style.backgroundImage = "url(images/" + utskott[i].title.replace("å","a").replace("ä","a").replace('ö','o') + ".png)"
 	upper.appendChild(bild)
 
 	text = document.createElement('div')
