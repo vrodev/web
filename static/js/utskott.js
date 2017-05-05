@@ -7,7 +7,7 @@ for (i = 0; i < utskott.length; i++) {
 	temp.className ="utskottruta"
 	temp.style.backgroundColor = blendColors(utskott[i].color,'#000000',0.15)
 	document.querySelector(".utskottfield").appendChild(temp)
-	temp.setAttribute("onclick", "window.location.href = '/utskott/" + utskott[i].title.toLowerCase() + "'")
+	temp.setAttribute("onclick", "window.location.href = '/utskott/" + utskott[i].title.toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') + "'")
 
 	upper = document.createElement('div')
 	upper.className ="utskotttop"

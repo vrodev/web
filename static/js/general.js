@@ -61,6 +61,8 @@ function blendColors(c0, c1, p) {
 	return "#"+(0x1000000+(Math.round((R2-R1)*p)+R1)*0x10000+(Math.round((G2-G1)*p)+G1)*0x100+(Math.round((B2-B1)*p)+B1)).toString(16).slice(1);
 }
 
+function nonSwe(){replace("å","a").replace("ä","a").replace('ö','o')}
+
 var pageinfos = {
 	enkommitte: [
 		{title:'Harry Potter',color:'#A21D20',
@@ -270,6 +272,6 @@ subpage = subpage[subpage.length-1]
 var pageinfo = typeof dataPage!=='undefined'? pageinfos[dataPage]: null
 var subpageinfo = !pageinfo||!subpage||!(pageinfo instanceof Array)?pageinfo:pageinfo.find(function(subpageinfo){
 	if (dataPage=='styrelsenpers')
-		return subpageinfo.ord.replace(/ /g,"_").toLowerCase() == subpage
-	return subpageinfo.title.replace(/ /g,"_").toLowerCase() == subpage
+		return subpageinfo.ord.replace(/ /g,"_").toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') == subpage
+	return subpageinfo.title.replace(/ /g,"_").toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') == subpage
 })

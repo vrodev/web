@@ -3,7 +3,7 @@ var parts = pageinfos.styrelsenpers
 for (i = 0; i < parts.length; i++) {
 	ruta = document.createElement('div')
 	ruta.className ="utskottruta styrelsenruta"
-	ruta.setAttribute("onclick", "window.location.href = '/styrelsen/" + parts[i].ord.toLowerCase().replace(/ /g,"_") + "'")
+	ruta.setAttribute("onclick", "window.location.href = '/styrelsen/" + parts[i].ord.toLowerCase().replace(/ /g,"_").replace("å","a").replace("ä","a").replace('ö','o') + "'")
 	ruta.style.backgroundColor = parts[i].color
 	_('.styrelsencenter').appendChild(ruta)
 

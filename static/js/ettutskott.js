@@ -43,26 +43,8 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 }
 
 bild.style.backgroundColor = utskott.color
-bild.style.webkitMaskBoxImage = "url('/images/" + utskott.title + ".png')"
+bild.style.webkitMaskBoxImage = "url('/images/" + utskott.title.replace("å","a").replace("ä","a").replace('ö','o') + ".png')"
 
 _('.loggacenter').appendChild(bild)
 
-if(utskott.arbete == ''){
-	_('.arbeterubrik').style.display = "none"
-}else{
-	_('.arbeterubrik').style.color = blendColors(utskott.color, "#000000", 0.3)
-}
-
-if(utskott.hjalp == ''){
-	_('.hjalprubrik').style.display = "none"
-}else{
-	_('.hjalprubrik').style.color = blendColors(utskott.color, "#000000", 0.3)
-}
-
-if("#{utskott}".localeCompare("kommunikation") ===  0 || "#{utskott}".localeCompare("tradition") === 0){
-	if (window.matchMedia("(max-width: 500px)").matches) {
-		_('.utskottheadtext').innerText = "#{utskott}"
-	}else{
-		_('.utskottheadtext').innerText = "#{utskott}"
-	}
-}
+_('.utskottheadtext').innerText = utskott.title
