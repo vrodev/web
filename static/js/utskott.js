@@ -3,11 +3,16 @@ var utskott = pageinfos.ettutskott
 for (i = 0; i < utskott.length; i++) {
 	//utskott[i].color = blendColors(utskott[i].color,'#ffffff',0.10)
 
+	var namespace = utskott[i].title.toLowerCase()
+		.replace(/å|ä/g, 'a')
+		.replace(/ö/g, 'o')
+		.replace(/[^a-z1-9_-]/g, '-')
+
 	temp = document.createElement('div')
 	temp.className ="utskottruta"
 	temp.style.backgroundColor = blendColors(utskott[i].color,'#000000',0.15)
 	document.querySelector(".utskottfield").appendChild(temp)
-	temp.setAttribute("onclick", "window.location.href = '/utskott/" + utskott[i].title.toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') + "'")
+	temp.setAttribute("onclick", "window.location.href = '/utskott/" + namespace + "'")
 
 	upper = document.createElement('div')
 	upper.className ="utskotttop"
@@ -20,7 +25,7 @@ for (i = 0; i < utskott.length; i++) {
 
 	bild = document.createElement('div')
 	bild.className ="utskottbild"
-	bild.style.backgroundImage = "url(images/" + utskott[i].title.replace("å","a").replace("ä","a").replace('ö','o') + ".png)"
+	bild.style.backgroundImage = "url(images/" + namespace + ".png)"
 	upper.appendChild(bild)
 
 	text = document.createElement('div')
