@@ -239,7 +239,7 @@ function changeFromColor(color){
 		link.className ="kommittelink"
 		link.style.backgroundColor = color
 		link.style.minHeight = "20px"
-		link.innerText = "By VRO-Dev"
+		link.innerText = "By Kommmunikationsutskottet"
 		link.onclick = function(){hidemenu()}
 
 		var el = _('center') || _('.main-content')
