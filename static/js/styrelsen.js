@@ -1,9 +1,14 @@
 var parts = pageinfos.styrelsenpers
 
 for (i = 0; i < parts.length; i++) {
+	var namespace = parts[i].ord.toLowerCase()
+		.replace(/å|ä/g, 'a')
+		.replace(/ö/g, 'o')
+		.replace(/[^a-z1-9_-]/g, '-')
+
 	ruta = document.createElement('div')
 	ruta.className ="utskottruta styrelsenruta"
-	ruta.setAttribute("onclick", "window.location.href = '/styrelsen/" + parts[i].ord.toLowerCase().replace(/ /g,"_").replace("å","a").replace("ä","a").replace('ö','o') + "'")
+	ruta.setAttribute("onclick", "window.location.href = '/styrelsen/" + namespace + "'")
 	ruta.style.backgroundColor = parts[i].color
 	_('.styrelsencenter').appendChild(ruta)
 

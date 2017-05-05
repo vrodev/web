@@ -1,10 +1,15 @@
 var kommitte = pageinfos.enkommitte
 
 for (i = 0; i < kommitte.length; i++) {
+	var namespace = kommitte[i].title.toLowerCase()
+		.replace(/å|ä/g, 'a')
+		.replace(/ö/g, 'o')
+		.replace(/[^a-z1-9_-]/g, '-')
+
 	temp = document.createElement('div')
 	temp.className ="utskottruta kommitteruta"
 	temp.style.backgroundColor = kommitte[i].color
-	temp.setAttribute("onclick", "window.location.href = '/kommitte/" + kommitte[i].title.toLowerCase().replace(/ /g,"_").replace("å","a").replace("ä","a").replace('ö','o') + "'")
+	temp.setAttribute("onclick", "window.location.href = '/kommitte/" + namespace + "'")
 	document.querySelector(".utskottfield").appendChild(temp)
 
 	text = document.createElement('p')
