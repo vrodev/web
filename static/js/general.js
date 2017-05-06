@@ -272,6 +272,6 @@ subpage = subpage[subpage.length-1]
 var pageinfo = typeof dataPage!=='undefined'? pageinfos[dataPage]: null
 var subpageinfo = !pageinfo||!subpage||!(pageinfo instanceof Array)?pageinfo:pageinfo.find(function(subpageinfo){
 	if (dataPage=='styrelsenpers')
-		return subpageinfo.ord.replace(/ /g,"-").replace("å","a").replace("ä","a").replace('ö','o').toLowerCase() == subpage
-	return subpageinfo.title.replace(/ /g,"-").replace("å","a").replace("ä","a").replace('ö','o').toLowerCase() == subpage
+		return subpageinfo.ord.replace(/ /g,"-").toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') == subpage
+	return subpageinfo.title.replace(/ /g,"-").toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') == subpage
 })
