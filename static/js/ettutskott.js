@@ -1,5 +1,10 @@
 var utskott = subpageinfo
 
+var namespace = utskott.title.toLowerCase()
+	.replace(/å|ä/g, 'a')
+	.replace(/ö/g, 'o')
+	.replace(/[^a-z1-9_-]/g, '-')
+
 _(".utskottheader").style.backgroundColor = utskott.color
 
 _('.phonelinks').style.backgroundColor = blendColors(utskott.color, "#000000", 0.2)
@@ -43,7 +48,7 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 }
 
 bild.style.backgroundColor = utskott.color
-bild.style.webkitMaskBoxImage = "url('/images/" + utskott.title.replace("å","a").replace("ä","a").replace('ö','o') + ".png')"
+bild.style.webkitMaskBoxImage = "url('/images/" + namespace + ".png')"
 
 _('.loggacenter').appendChild(bild)
 
