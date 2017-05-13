@@ -67,7 +67,7 @@ var pageinfos = {
 	enkommitte: [
 		{title:'Harry Potter',color:'#A21D20',
 		ord:'Erik Södergren & Julia Ivarsson',
-		desc:'9¾ är VRG Odenplans alldeles egna Harry Potter kommitté. Vi planerar att arrangera filmmaratons, gemensamma omläsningar av serien, bak av godsaker som skulle platsa på en festmåltid på Hogwarts, tävlingar mellan elevhemmen och mycket mer! Framförallt kommer 9¾ alltid vara en plats att träffa, umgås och mysa med andra som också gillar Harry Potter. Här kan du diskutera allt från favoritships och favoritkaraktärer, till headcanons, teorier och frågor som "Var Snape verkligen en god människa eller inte?"... Välkomna! Draco dormiens nunquam titillandus.',
+		desc:'9¾ är VRG Odenplans alldeles egna Harry Potter kommitté. Vi planerar att arrangera filmmaratons, gemensamma omläsningar av serien, bak av godsaker som skulle platsa på en festmåltid på Hogwarts, tävlingar mellan elevhemmen och mycket mer! Framförallt kommer 9¾ alltid vara en plats att träffa, umgås och mysa med andra som också gillar Harry Potter. Här kan du diskutera allt från favoritchips och favoritkaraktärer, till headcanons, teorier och frågor som "Var Snape verkligen en god människa eller inte?"... Välkomna! Draco dormiens nunquam titillandus.',
 		link:'https://www.facebook.com/groups/506981442801441/?ref=browser'},
 
 		{title:'Acapella',color:'#78A942',
@@ -77,12 +77,12 @@ var pageinfos = {
 
 		{title:'Amnesty',color:'#deb117',
 		ord:'Julia Berndtsson',
-		desc:'Vi i Amnestykommittén arbetar för att stärka situationen för de mänskliga rättigheterna runt om i världen genom att bland annat genomföra aktioner för att uppmärksamma och samla in namnunderskrifter. Vi jobbar både på och utanför skolan. Då vi är kopplade till internationella Amnesty finns möjligheter till utbildningar med mera att delta på. Alla är varmt välkomna!',
+		desc:'Vi i Amnestykommittén arbetar för att stärka situationen för de mänskliga rättigheterna runt om i världen genom att bland annat genomföra aktioner för att uppmärksamma och samla in namnunderskrifter. Vi jobbar både på och utanför skolan. Då vi är kopplade till internationella Amnesty finns det möjligheter till utbildningar med mera att delta på. Alla är varmt välkomna!',
 		link:'https://www.facebook.com/groups/amnestyvrgopl/?ref=browser'},
 
-		{title:'Bajenfans',color:'#007A43',
+		{title:'VRs grönvita',color:'#007A43',
 		ord:'Hugo Rosell & Sebastian Lian',
-		desc:'En kommitté med syfte att skapa en gemenskap med alla Hammarbyare på VRG. Målet är att någon gång i framtiden kunna gå på Hammarby-match tillsammans. :)',
+		desc:'Viktor Rydbergs grönvita har i syfte att skapa en gemenskap med alla Hammarbyare på VRG. Målet är att någon gång i framtiden kunna gå på Hammarby-match tillsammans.',
 		link:''},
 
 		{title:'Debate Society',color:'#0F7EFF',
@@ -95,9 +95,9 @@ var pageinfos = {
 		desc:'Själva syftet med kommittén lär vara att ha öppna möten för alla som går på vrg någon gång i månaden, men fler spontana möten kan självklart uppkomma. Målet är att få Ernst Kirchsteiger hit till vrg Odenplan för en föreläsning.',
 		link:'https://www.instagram.com/ernstkommitten/'},
 
-		{title:'HBTQ+',color:'#AB47CB',
+		{title:'HBTQ plus',color:'#AB47CB',
 		ord:'Sam Widén & Emma Wallin',
-		desc:'HBTQ+-kommittén är till för HBTQ+ -personer och ska verka som en safe-zone för folk. Kommittén ska vara en plats för trygghet för folk, där de kan komma som de är och vara som de vill. Vi vill uppmärksamma HBTQ+-personer, våran situation på skolan, och föra upp en diskussion om cis-heteronormen. HBTQ+ -kommittén är till för att lära känna andra HBTQ+ -personer, knyta kontaker, och bara umgås utan att vara rädd för vad folk ska tycka.',
+		desc:'HBTQ+kommittén är till för HBTQ+ -personer och ska verka som en safe-zone för folk. Kommittén ska vara en plats för trygghet för folk, där de kan komma som de är och vara som de vill. Vi vill uppmärksamma HBTQ+-personer, våran situation på skolan, och föra upp en diskussion om cis-heteronormen. HBTQ+ -kommittén är till för att lära känna andra HBTQ+ -personer, knyta kontaker, och bara umgås utan att vara rädd för vad folk ska tycka.',
 		link:'https://www.facebook.com/groups/794754800651251/?ref=browser'},
 
 		{title:'Kaffe', color:'#562D2A',
@@ -112,7 +112,7 @@ var pageinfos = {
 
 		{title:'Östasiatisk kultur',color:'#C42C00',
 		ord:'Alex Will Hambén & Johanna Li',
-		desc:'Syftet är att bringa samman människor, östasiater som icke-östasiater, som är intresserade av och/eller uppskattar den östasiatiska kulturen och traditionerna. På mötena kan vi tänka oss ha traditionellt fika så som grönt te och frön, titta på och skratta åt dåligt producerade östasiatiska filmer eller tv-serier, sushi, nudlar, maskerad/utklädnad, bak, anime-maraton etc. etc.',
+		desc:'Syftet är att föra samman människor, östasiater som icke-östasiater, som är intresserade av och/eller uppskattar den östasiatiska kulturen och de östasiatiska traditionerna. På mötena kan vi tänka oss att ha traditionellt fika så som grönt te och frön, titta på och skratta åt dåligt producerade östasiatiska filmer eller tv-serier, äta sushi eller nudlar, ha maskerad/utklädnad, baka, ha anime-maraton och så vidare',
 		link:'https://www.facebook.com/groups/1676078619272950/?fref=ts'},
 
 		{title:'Retorik',color:'#DD9400',
@@ -122,12 +122,12 @@ var pageinfos = {
 
 		{title:'Smått och Gott',color:'#ED588D',
 		ord:'Filippa Vasilis & Sofia Gerhardsson',
-		desc:'Vi vill sprida glädje genom att sprida godsaker på skolan till alla sötsugna! Med hjälp av oss kommer alla klara skolans tuffa plugg ännu lite bättre. Vi vill bjuda in alla som gillar att baka, äta och hänga till vår komitté. Vi kommer baka för dagar som Kanelbullens dag, Fettisdagen, fixa äggjakt, Hela VRG Bakar och mycket mer.  Välkommen och smaklig måltid!',
+		desc:'Vi vill sprida glädje genom att sprida godsaker på skolan till alla sötsugna! Med hjälp av oss kommer alla klara skolans tuffa plugg lite bättre. Vi bjuder in alla som gillar att baka, äta och hänga till vår komitté. Vi kommer baka för dagar som Kanelbullens dag, Fettisdagen, fixa äggjakt, Hela VRG Bakar och mycket mer. Välkommen och smaklig måltid!',
 		link:'https://www.facebook.com/groups/673554036115232/?fref=ts'},
 
 		{title:'Aktiesparare',color:'#8447cb',
 		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
-		desc:'Unga Aktiesparare VRG Opl delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
+		desc:'Unga Aktiesparare VRG Odenplan delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
 		link:''}
 	],
 	ettutskott: [
@@ -159,6 +159,11 @@ var pageinfos = {
 		{title:'Påverkan',color:'#DD9400',
 		ord:'Angel GB',
 		desc:"Påverkansutskottet jobbar med påverkansfrågor. Allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. Detta utskott är ansvarigt för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan i rätt riktning. <br><br>Kontakta Angel Bahrami på goln.bahr-2018@vrg.se",
+		},
+
+		{title:'Student',color:'#919191',
+		ord:'',
+		desc:"Studentutskottet verkar för att förgylla det sista året på gymnasiet för alla blivande studenter. I utskottet sitter det bara 3or och ordförande väljs inom utskottet när det är tillsatt. De arrangerar exempelvis evenemang så som 100-dagarskryssning, studentbal och slutskiva - allt för att alla medlemmar ska få ett riktigt bra slut på sin gymnasietid.",
 		},
 	],
 	styrelsenpers:[
