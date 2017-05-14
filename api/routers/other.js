@@ -26,8 +26,10 @@ const routeMain = router=> {
 
     // Use cached data if available
     const msInDay = 1000*60*60*24
+    const today = new Date()
     if (food.lastSaved !== undefined
-    	&& (new Date() - food.lastSaved) < msInDay){
+    	&& (today - food.lastSaved) < msInDay
+      && (today.getDay() === 0 || food.lastSaved.getDay() !== 0)){
       callback(food.saved, true)
       return
     }
