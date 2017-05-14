@@ -56,6 +56,31 @@ const route = router=> {
 		});		 
 	})
 
+
+	// uppdatera grupp
+	router.put('/:id', (req, res)=> {
+		if (res.requiredPermissions("EDIT")) return;
+
+		const id = req.params.id;
+		req.models.Post.findOne({_id:id}, function(err, post) {
+			if (res.abortIf(err, 'Could not find user for handling update')) { return }
+
+			post.title = req.body.title
+			post.text = req.body.text
+			post.author = req.user
+			post.group = group
+			post.prioritized = req.body.prioritized
+			post.imgUrl = req.body.imgUrl
+			post.url = req.body.url
+			
+			post.save(function(err, post) {
+				if (res.abortIf(err, 'Couldn\'t save the post')) return;
+				res.apiOK(post)
+			});
+		})
+
+	})
+
 	router.delete('/:id', function(req, res) {
 		if (res.requiredPermissions("POST EDIT".split(' '))) return;
 
