@@ -3,11 +3,11 @@
 		.image(:style='{backgroundImage:"url(" + post.imgUrl + ")"}')
 		.info
 			.text-content
-				.title(:contenteditable="editable") {{post.title}}
-				.text(:contenteditable="editable", v-html='post.text')
+				.title(ref='title', :contenteditable="editable", v-on:keyup='displayChange') {{post.title}}
+				.text(ref='text', :contenteditable="editable", v-html='post.text', v-on:keyup='displayChange')
 				
 				.choice.remove(v-if='editable', @click='deleteItem') Remove Post
-				.choice.edit(v-if='editable', @click='editItem') Edit Post
+				.choice.edit(v-if='editable', ref='changeButton', @click='save') Edit Post
 
 	.close(@click='closePanel')
 		.cross +
