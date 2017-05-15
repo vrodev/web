@@ -27,7 +27,7 @@ var APIModel = function(name, opt) {
 
 	Model.prototype.save = function(callback) {
 		var self = this
-		api.post(Model._name+(self._id?'/'+self._id:''), {jsonData:self.toJSON(),method:(!self._id? 'POST': 'PATCH')},
+		api.post(Model._name+(self._id?'/'+self._id:''), {jsonData:self.toJSON(),method:(!self._id? 'POST': 'PUT')},
 			function(err, data, all) {
 			if (err) return options.save.bind(self)(err, data, callback, all)
 			options.save.bind(self)(null, data, callback, all)
