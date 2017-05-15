@@ -54,7 +54,8 @@ html
 
 				if user
 					.logged-in(onclick="User.logout()")
-						.title= user.name
+						.title.name= user.name
+						.title.logout Logga ut
 						.image(style="background-image: url(#{user.picture})")
 				else
 					#login-button.log
