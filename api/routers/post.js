@@ -61,6 +61,12 @@ const route = router=> {
 	router.put('/:id', (req, res)=> {
 		if (res.requiredPermissions("EDIT")) return;
 
+		const group = req.body.group
+		// if (req.user.groups.indexOf('Group') == -1) {
+		// 	return api.status(403).json({error:'Unauthorized.'})
+		// }
+		// VALIDERA!
+
 		const id = req.params.id;
 		req.models.Post.findOne({_id:id}, function(err, post) {
 			if (res.abortIf(err, 'Could not find user for handling update')) { return }
