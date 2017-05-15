@@ -35,21 +35,7 @@ Vue.component('post-card', {
 			// cardCopy.classList.remove(className)
 			// cardCopy.removeAttribute("style")
 			overlayApp.post = this.post
-		},
-		displayChange(){
-			this.$refs.changeButton.style.display = 'inline-block'
-		},
-		save() {
-			this.post.title = this.$refs.title.innerText
-			this.post.text = this.$refs.text.innerHTML
-			this.post.save(function(err){
-				if(err) {
-					console.error(err)
-					alert('Could not save')
-					return
-				}
-			})
-			this.$refs.changeButton.style.display = 'none'
+
 		},
 		closePanel() {
 			overlayApp.closePanel()
