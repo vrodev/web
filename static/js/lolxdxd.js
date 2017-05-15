@@ -42,11 +42,19 @@ var overlayApp = new Vue({
 	watch: {
 		post (newVal) {
 			document.body.classList.toggle('lightbox-visible', !!newVal)
+			if(newVal){
+				_('.topheader').classList.remove('whiteheader')
+				_('.topheader').classList.add('darkheader')
+			}			
 		},
 	},
 	methods: {
 		closePanel() {
 			this.post = null
+			if(document.body.scrollTop<=5){
+				_('.topheader').classList.add('whiteheader')
+				_('.topheader').classList.remove('darkheader')
+			}
 		},
 		postWasDeleted (item) {
 			app.posts.splice(app.posts.indexOf(item.post),1)
@@ -144,12 +152,10 @@ api.food(function(err, weeks) {
 
 
 function closeAddCard() {
+	document.body.classList.remove('lightbox-visible')
+	var lightbox = _('body > .overlay .lightbox')
 
-		document.body.classList.remove('lightbox-visible')
-		var lightbox = _('body > .overlay .lightbox')
-
-		lightbox.querySelector('.add-card').remove()
-
+	lightbox.querySelector('.add-card').remove()
 }
 
 if(editAccess){

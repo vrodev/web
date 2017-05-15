@@ -21,21 +21,21 @@ var linkWasClicked = function(e) {
 
 
 // Make app respond to events by attatching functions 
-var addEventListeners = function() {
+var addEventListeners = function () {
 	document.body.addEventListener("click", function(e) {
 		if (e.target && e.target.nodeName == "A") linkWasClicked(e)
 	});
 	window.addEventListener('scroll',function() {
 		var scroll = document.body.scrollTop
 		if (_('.topheader'))
-			_('.topheader').classList.toggle('darkheader', scroll>=10)
+			_('.topheader').classList.toggle('darkheader', scroll>=5)
 
 	})
 	if(_('.whiteheader')){
 		window.addEventListener('scroll',function() {
 			var scroll = document.body.scrollTop
 			if (_('.topheader'))
-				_('.topheader').classList.toggle('whiteheader', scroll<=10)
+				_('.topheader').classList.toggle('whiteheader', scroll<=5)
 
 		})
 	}
@@ -148,7 +148,7 @@ var pageinfos = {
 
 		{title:'Finansiella',color:'#AB47CB',
 		ord:'Isac Diamant',
-		desc:'Finansiella utskottet jobbar för att främja samarbeten mellan kåren och olika företag för att kunna förse medlemmar med service och förmåner. Detta sker exempelvis genom att de fixar sponsring till kåren och dess medlemmar, men också genom att de ger medlemmarna möjlighet till rabatt hos närliggande företag. <br><br>Isac är ordförande för finansiella utskottet och därmed också en del av utskottsgruppen. Isac är ordförande för Finansiella utskottet. Han är delaktig i många av de stora förhandlingar som pågår för att ge er medlemmar ett så förmånligt medlemskap som möjligt. Han leder sitt utskott där alla delegater jobbar arbetar mot samma mål. <br><br>Kontakta Isac Diamant på isac.nede-2019@vrg.se',
+		desc:'Finansiella utskottet jobbar för att främja samarbeten mellan kåren och olika företag för att kunna förse medlemmar med service och förmåner. Detta sker exempelvis genom att de fixar sponsring till kåren och dess medlemmar, men också genom att de ger medlemmarna möjlighet till rabatt hos närliggande företag. <br><br>Isac är ordförande för finansiella utskottet och därmed också en del av utskottsgruppen. Han är delaktig i många av de stora förhandlingar som pågår för att ge er medlemmar ett så förmånligt medlemskap som möjligt. Han leder sitt utskott där alla delegater jobbar arbetar mot samma mål. <br><br>Kontakta Isac Diamant på isac.nede-2019@vrg.se',
 		},
 
 		{title:'Miljö',color:'#78A942',
