@@ -45,8 +45,6 @@ app.use(function(req, res, next) {
 
   // if (res.requiredPermissions("EDIT")) return;
   res.requiredPermissions = (permissions, group)=> {
-    return false
-
     const perms = (typeof permissions == 'string'?[permissions]:permissions)
     const gname = group || "redigera"
     let ok = true
