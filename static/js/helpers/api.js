@@ -46,7 +46,7 @@ var API = function(domain) {
 
 		// Set headers
 		headers = headers || {}
-		Object.keys(headers).forEach(key=> {
+		Object.keys(headers).forEach(function(key){
 			httpRequest.setRequestHeader(key, headers[key]);
 		})
 		

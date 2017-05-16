@@ -10,7 +10,7 @@
 # 	<script src="/js/directory/sub-directory/file-b.js"></script>
 # Empty lines and lines starting with a hash (#) are excluded
 
-helpers: helpers, api, api-model, vue
+helpers: polyfills, helpers, api, api-model, vue
 api: group, user, post, main
 components: post-card
 : general, catcher

@@ -115,7 +115,7 @@ function loadData(graph, catches) {
   var links = [];
   graph.forEach(function(n, i) {
     if (!n.catcher) return;
-    let target = graph.findIndex(o=>n.catcher.target==o._id)
+    var target = graph.findIndex(function(o){return n.catcher.target==o._id})
     if (target==-1) return;
     links.push({
         source: i,
@@ -123,9 +123,9 @@ function loadData(graph, catches) {
     });
   });
   catches.forEach(function(n) {
-    let source = graph.findIndex(o=>n.user==o._id)
+    var source = graph.findIndex(function(o){return n.user==o._id})
     if (source==-1) return;
-    let target = graph.findIndex(o=>n.target==o._id)
+    var target = graph.findIndex(function(o){return n.target==o._id})
     if (target==-1) return;
     links.push({
         source: source,
@@ -143,8 +143,8 @@ function loadData(graph, catches) {
   link = link.data(links)
     .enter().append("line")
       .attr("class", "link")
-      .attr("stroke", d=>d.catch?"#f00":"#ccc")
-      .attr("distance", d=>d.catch?100:10)
+      .attr("stroke", function(o){return o.catch?"#f00":"#ccc"})
+      .attr("distance", function(o){return o.catch?100:10})
       
 
   circle = node.data(graph)
@@ -153,7 +153,7 @@ function loadData(graph, catches) {
 
    circled = circle.append("circle")
       .attr("r", 3)
-      .attr("fill", d=> !d.catcher ? "#faa" : (d.catcher.target?"#ddd": (d.catcher.isNoobed?"#fe7":"#faa") ))
+      .attr("fill", function(o){return !d.catcher ? "#faa" : (d.catcher.target?"#ddd": (d.catcher.isNoobed?"#fe7":"#faa") )})
 
   node = circle
     .on("dblclick", dblclick)
