@@ -90,11 +90,6 @@ var pageinfos = {
 		desc:'In the Viktor Rydberg Odenplan Debate Society we discuss, analyze and practice World Schools Style debating. We learn together, help one another and debate each other. Besides competing within the society regularly, we continually aspire to and work towards competing against other schools and teams internationally in famous competitions! Everyone is always welcome to participate! Join in!',
 		link:''},
 
-		{title:'Ernst',color:'#e0590d',
-		ord:'Alma Nording',
-		desc:'Själva syftet med kommittén lär vara att ha öppna möten för alla som går på vrg någon gång i månaden, men fler spontana möten kan självklart uppkomma. Målet är att få Ernst Kirchsteiger hit till vrg Odenplan för en föreläsning.',
-		link:'https://www.instagram.com/ernstkommitten/'},
-
 		{title:'HBTQ plus',color:'#AB47CB',
 		ord:'Sam Widén & Emma Wallin',
 		desc:'HBTQ+kommittén är till för HBTQ+ -personer och ska verka som en safe-zone för folk. Kommittén ska vara en plats för trygghet för folk, där de kan komma som de är och vara som de vill. Vi vill uppmärksamma HBTQ+-personer, våran situation på skolan, och föra upp en diskussion om cis-heteronormen. HBTQ+ -kommittén är till för att lära känna andra HBTQ+ -personer, knyta kontaker, och bara umgås utan att vara rädd för vad folk ska tycka.',
@@ -128,10 +123,15 @@ var pageinfos = {
 		{title:'Aktiesparare',color:'#8447cb',
 		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
 		desc:'Unga Aktiesparare VRG Odenplan delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
-		link:''}
+		link:''},
+
+		{title:'Coldplay',color:'#11B8D9',
+		ord:'Ludvig Dillén',
+		desc:'Coldplaykommittén kommer att vara öppen för alla som har något typ av intresse för bandet och deras musik, oavsätt i vilket utsträckning intresset är. Vi kommer att lyssna och diskutera deras musik. Kanske spara in pengar till en konsert, deras musik eller något annat tips som du har att komma med. Vi välkomnar varmt nya medlemmar, så ta chansen och gå med så kan du vara med att forma vår kommitté.',
+		link:''},
 	],
 	ettutskott: [
-		{title:'Tradition',color:'#C42C00',
+        {title:'Tradition',color:'#C42C00',
 		ord:'Andrea Wach',
 		desc:'Traditionsutskottet jobbar främst med att uppmärksamma olika traditioner genom både större och mindre firanden. Ibland firas traditioner varje dag i december och under påsken arrangeras en äggjakt.. De firar och uppmärksammar helt enkelt de traditioner som efterfrågas av kårens medlemmar! <br><br>Andrea är ordförande för traditionsutskottet och därmed också en del av utskottsgruppen. Hon är huvudansvarig för kårens traditionsfiranden och ska leda sitt utskott där de arbetar för att fira många och roliga traditioner. <br><br>Kontakta Andrea Wachtmeister på andr.wach-2018@vrg.se',
 		},
@@ -165,6 +165,7 @@ var pageinfos = {
 		ord:'',
 		desc:"Studentutskottet verkar för att förgylla det sista året på gymnasiet för alla blivande studenter. I utskottet sitter det bara 3or och ordförande väljs inom utskottet när det är tillsatt. De arrangerar exempelvis evenemang så som 100-dagarskryssning, studentbal och slutskiva - allt för att alla medlemmar ska få ett riktigt bra slut på sin gymnasietid.",
 		},
+
 	],
 	styrelsenpers:[
 		{title:'Ordförande',ord:'Richard Wahlström', image:'images/styrelsen/richard.jpg',color:'#323241',
