@@ -40,7 +40,7 @@ var overlayApp = new Vue({
 		post: null,
 	},
 	watch: {
-		post (newVal) {
+		post: function (newVal) {
 			document.body.classList.toggle('lightbox-visible', !!newVal)
 			if(newVal){
 				_('.topheader').classList.remove('whiteheader')
@@ -49,14 +49,14 @@ var overlayApp = new Vue({
 		},
 	},
 	methods: {
-		closePanel() {
+		closePanel: function () {
 			this.post = null
 			if(document.body.scrollTop<=5){
 				_('.topheader').classList.add('whiteheader')
 				_('.topheader').classList.remove('darkheader')
 			}
 		},
-		postWasDeleted (item) {
+		postWasDeleted: function (item) {
 			app.posts.splice(app.posts.indexOf(item.post),1)
 			this.closePanel()
 		},
@@ -75,7 +75,7 @@ app = new Vue({
 		selectedTab: 'Prioriterade poster',
 	},
 	computed: {
-		filteredPosts(){
+		filteredPosts: function () {
 			var self = this
 			return this.posts.filter(function(item){
 				return self.selectedTab == 'Alla poster' || item.prioritized
@@ -83,11 +83,11 @@ app = new Vue({
 		},
 	},
 	methods: {
-		change(){
+		change: function () {
 			this.message = 'hej'
 		},
 	},
-	mounted(){
+	mounted: function () {
 		var self = this
 		Post.list(function(err, posts) {
 			if (err) return alert('Kunde inte ladda posterna')

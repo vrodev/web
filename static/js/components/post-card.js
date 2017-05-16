@@ -4,28 +4,28 @@ Vue.component('post-card', {
 		post: { type: Object, required: true },
 		expanded: { type: Boolean, default: false },
 	},
-	data () {
+	data: function () {
 		return {
 			message: 'Hello Vue!',
 		}
 	},
 	computed: {
-		editable(){
+		editable: function () {
 			return editAccess
 		}
 	},
 	methods: {
-		change(){
+		change: function () {
 			this.message = 'hej'
 		},
-		deleteItem () {
+		deleteItem: function () {
 			var self = this
 			this.post.delete(function(err){
 				if(err) return console.log(err)
 				self.$emit('deleted', self)
 			})
 		},
-		expand(){
+		expand: function () {
 			if (this.expanded) return false
 			// var item = this.$el
 			// var className = 'card'
@@ -36,10 +36,10 @@ Vue.component('post-card', {
 			// cardCopy.removeAttribute("style")
 			overlayApp.post = this.post
 		},
-		displayChange(){
+		displayChange: function () {
 			this.$refs.changeButton.style.display = 'inline-block'
 		},
-		save() {
+		save: function () {
 			this.post.title = this.$refs.title.innerText
 			this.post.text = this.$refs.text.innerHTML
 			this.post.save(function(err){
@@ -51,7 +51,7 @@ Vue.component('post-card', {
 			})
 			this.$refs.changeButton.style.display = 'none'
 		},
-		closePanel() {
+		closePanel: function () {
 			overlayApp.closePanel()
 		},
 	},
