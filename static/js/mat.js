@@ -45,11 +45,13 @@ api.food(function(err, weeks) {
 			temp.appendChild(textDate)
 			textDate.innerHTML = day.date.getDate()
 
-			textreg = document.createElement('p')
-			textreg.className = "meny huvudratt"
-			textreg.innerText = day.courses.main
-			temp.appendChild(textreg)
-
+			if(day.courses.main !== day.courses.veg){
+				textreg = document.createElement('p')
+				textreg.className = "meny huvudratt"
+				textreg.innerText = day.courses.main
+				temp.appendChild(textreg)
+			}
+			
 			/*symbVeg = document.createElement('div')
 			symbVeg.className = "veg-symbol"
 			temp.appendChild(symbVeg)		*/			
@@ -59,8 +61,14 @@ api.food(function(err, weeks) {
 			textveg.innerText = '✿ ' + day.courses.veg
 			temp.appendChild(textveg)
 
+			if(day.courses.main !== day.courses.veg){
+				var todayTargets = [temp,text,textreg,textveg,textDate]
+			}else{
+				var todayTargets = [temp,text,textveg,textDate]
+			}
+
 			if (isCurrentDay && isCurrentWeek) {
-				[temp,text,textreg,textveg,textDate].forEach(function(el) {
+				todayTargets.forEach(function(el) {
 					el.className += " today" })
 				_('.day.today').style.backgroundColor = blendColors(pageinfos.mat.color, '#ffffff', .75)
 			}

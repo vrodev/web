@@ -143,10 +143,12 @@ api.food(function(err, weeks) {
 		return foodLoadingError('Current day wasn\'t found')
 	}
 
-	_('.weekday').innerText = day.name
 	var date = new Date(day.date)
-	_('.monthday').innerText = date.getDate()
-	_('.reg').innerText = day.courses.main
+	if(day.courses.main == day.courses.veg){
+		_('.reg').style.padding = '2%'
+	}else{
+		_('.reg').innerText = day.courses.main
+	}
 	_('.veg').innerText = day.courses.veg
 })
 

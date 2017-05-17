@@ -32,8 +32,12 @@ div.nextWeek
 	
 	@media (max-width:500px){
 		padding 5px 0px 5px 0px
-		border-bottom: solid 1px rgba(0,0,0,.05)
+		border-bottom: solid 1px rgba(0,0,0,.1)
 	}
+	
+	&.today
+		@media (max-width:500px)
+			border-bottom solid 1px rgba(0,0,0,0.05)
 	
 	.veckodag
 		display inline-block
@@ -60,9 +64,6 @@ div.nextWeek
 		
 		@media (max-width:500px)
 			border-bottom 1px solid rgba(0, 0, 0, 0.03)
-		
-	.vegratt
-		display inline-block
 		
 	.vegratt::first-letter
 		color rgba(112, 195, 0, 0.61)	
