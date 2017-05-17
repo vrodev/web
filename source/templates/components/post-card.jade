@@ -4,6 +4,7 @@
 		.info
 			.text-content
 				.title(ref='title', :contenteditable="editable", v-on:keyup='displayChange') {{post.title}}
+				.subtitle(ref='subtitle', :contenteditable="editable", v-on:keyup='displayChange') {{post.subtitle}}
 				.text(ref='text', :contenteditable="editable", v-html='post.text', v-on:keyup='displayChange')
 				
 				div.checkboxdiv.choice.add-choice(v-if='editable')

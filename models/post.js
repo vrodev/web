@@ -8,6 +8,7 @@ const dbRef = require('../helpers/helpers').mongooseRef
 // Create schema
 const Schema = new mongoose.Schema({
 	title: String,
+	subtitle: String,
 	text: String,
 	author: dbRef('User'),
 	group: dbRef('Group'),

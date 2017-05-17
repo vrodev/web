@@ -42,6 +42,7 @@ Vue.component('post-card', {
 		},
 		save: function () {
 			this.post.title = this.$refs.title.innerText
+			this.post.subtitle = this.$refs.subtitle.innerText
 			this.post.text = this.$refs.text.innerHTML
 			this.post.prioritized = this.$refs.prioritized.checked
 			this.post.save(function(err){

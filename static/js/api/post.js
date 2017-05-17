@@ -8,4 +8,4 @@
 var Post = APIModel('post')
 
 Post.prototype.toJSON = function() {
-	return {_id:this._id, title:this.title, text:this.text, author:this.author, group:this.group, url:this.url, imgUrl:this.imgUrl, prioritized:this.prioritized}}
+	return {_id:this._id, title:this.title, subtitle:this.subtitle, text:this.text, author:this.author, group:this.group, url:this.url, imgUrl:this.imgUrl, prioritized:this.prioritized}}

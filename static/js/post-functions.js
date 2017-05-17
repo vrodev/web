@@ -24,7 +24,8 @@ function addObject(card) {
 
 	var uploadPost = function(imgUrl) {
 		var post = new Post()
-		post.title = card.querySelector('.title').innerHTML
+		post.title = card.querySelector('.title').innerText
+		post.subtitle = card.querySelector('.subtitle').innerText
 		post.text = card.querySelector('.text').innerHTML
 		post.prioritized = _('#prioritizedCheckbox').checked
 		post.imgUrl = imgUrl

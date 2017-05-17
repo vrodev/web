@@ -44,6 +44,7 @@ const route = router=> {
 		// VALIDERA!
 		const post = new req.models.Post();
 		post.title = req.body.title
+		post.subtitle = req.body.subtitle
 		post.text = req.body.text
 		post.author = req.user
 		post.group = group
@@ -72,6 +73,7 @@ const route = router=> {
 			if (res.abortIf(err, 'Could not find user for handling update')) { return }
 
 			post.title = req.body.title
+			post.subtitle = req.body.subtitle
 			post.text = req.body.text
 			post.author = req.user
 			post.group = group
