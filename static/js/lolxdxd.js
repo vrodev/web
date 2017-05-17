@@ -29,9 +29,10 @@ if(editAccess) _('.add-card-hidden').style.display = 'block'
 
 document.body.classList.add('mainPage')
 var links = document.querySelectorAll('.link')
-links.forEach(function(element){
-	element.classList.add('subtle-link')
-})
+
+for (var i = 0, len = links.length; i < len; i++) {
+	links[i].classList.add('subtle-link')
+}
 
 var app;
 var overlayApp = new Vue({

@@ -258,8 +258,8 @@ function changeFromColor(color){
 	}
 
 	if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
-		_(".menubutton").style.filter = "invert(100%)"
-		_(".logga").style.filter = "invert(100%)"
+		_(".menubutton").style.backgroundImage = "url(/images/menu-vit.png)"
+		_(".logga").style.backgroundImage = "url(/images/logga-vit.png)"
 
 		_(".center-header").style.backgroundColor = color
 
