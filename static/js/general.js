@@ -73,7 +73,7 @@ var pageinfos = {
 		{title:'Acapella',color:'#78A942',
 		ord:'Nikol Kanavakis & Nora Nattorp',
 		desc:'Acapella kommittén är till för de som älskar att sjunga och skapa musik med sina röster som instrument. Självklart inspireras vi av Pitch Perfect och Pentatonix men vi skapar vårat eget sound av det lilla arbete vi utför och den stora mängd skratt vi tillför.',
-		link:''},
+		link:'https://www.facebook.com/groups/787919001317007/?fref=ts'},
 
 		{title:'Amnesty',color:'#deb117',
 		ord:'Julia Berndtsson',
@@ -88,7 +88,7 @@ var pageinfos = {
 		{title:'Debate Society',color:'#0F7EFF',
 		ord:'Willam Karlsson & Simon Norman',
 		desc:'In the Viktor Rydberg Odenplan Debate Society we discuss, analyze and practice World Schools Style debating. We learn together, help one another and debate each other. Besides competing within the society regularly, we continually aspire to and work towards competing against other schools and teams internationally in famous competitions! Everyone is always welcome to participate! Join in!',
-		link:''},
+		link:'https://www.facebook.com/groups/135425913521798/?fref=ts'},
 
 		{title:'HBTQ plus',color:'#AB47CB',
 		ord:'Sam Widén & Emma Wallin',
@@ -98,7 +98,7 @@ var pageinfos = {
 		{title:'Kaffe', color:'#562D2A',
 		ord:'Martin Babazadeh, Meilin Pei Purroy & Sofia Sollbe',
 		desc:'Vi skapade en kaffekommitté för att vi ville ha ett mer ekonomiskt och hållbart sätt för oss elever att kunna unna sig gott kaffe i skolan. Vårt koncept är att få ett skåp där det kommer finnas en Nespressomaskin, mjölkskummare samt andra kaffetillbehör tillgängliga för medlemmar. Medlemmarna får alltså själv ansvara för sina egna kaffekapslar. För att ha råd med har vi ha en medlemsavgift på 100 kr där en kaffetermos ingår, detta är även ett sätt att hålla reda på vilka som är medlemmar så att inte andra utnyttjar skåpet.',
-		link:''},
+		link:'https://www.facebook.com/groups/658358877655679/?fref=ts'},
 
 		{title:'Memeteam', color:'#AD00FF',
 		ord:'Elsa Berlin, Gustav & Agnes',
@@ -113,7 +113,7 @@ var pageinfos = {
 		{title:'Retorik',color:'#DD9400',
 		ord:'Willam Karlsson & Victor Lagrelius',
 		desc:'Vi lär oss tala. För att kunna övertyga i politik, affärer, kärlek och närhelst det enda du har är din röst och nervöst darrande händer. Vi debatterar, har teoriföreläsningar, analyserar bra och dåliga retoriker, anordnar partidebatter och mycket mer.',
-		link:''},
+		link:'https://www.facebook.com/groups/vrgretorik/?fref=ts'},
 
 		{title:'Smått och Gott',color:'#ED588D',
 		ord:'Filippa Vasilis & Sofia Gerhardsson',
@@ -123,12 +123,12 @@ var pageinfos = {
 		{title:'Aktiesparare',color:'#8447cb',
 		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
 		desc:'Unga Aktiesparare VRG Odenplan delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
-		link:''},
+		link:'https://www.facebook.com/groups/1050277478325806/?fref=ts'},
 
 		{title:'Coldplay',color:'#11B8D9',
 		ord:'Ludvig Dillén',
 		desc:'Coldplaykommittén kommer att vara öppen för alla som har något typ av intresse för bandet och deras musik, oavsätt i vilket utsträckning intresset är. Vi kommer att lyssna och diskutera deras musik. Kanske spara in pengar till en konsert, deras musik eller något annat tips som du har att komma med. Vi välkomnar varmt nya medlemmar, så ta chansen och gå med så kan du vara med att forma vår kommitté.',
-		link:''},
+		link:'https://www.facebook.com/groups/1057939687644536/?fref=ts'},
 	],
 	ettutskott: [
         {title:'Tradition',color:'#C42C00',

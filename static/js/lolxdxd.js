@@ -117,7 +117,7 @@ function foodLoadingError(err) {
 	console.error({api:'food', err:err})
 }
 
-var foodColor = /*'#00b3ab' */ pageinfos.mat.color
+var foodColor = '#e0912e' //pageinfos.mat.color
 
 _('.card.menu').style.backgroundColor = blendColors(foodColor, '#ffffff', 0.1)
 _('.vegstamp>.text').style.color = foodColor

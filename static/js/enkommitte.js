@@ -34,13 +34,8 @@ if(kommitte.link !== ''){
 	linktx.style.backgroundColor = kommitte.color
 	link.appendChild(linktx)
 
-	if(kommitte.link.indexOf("facebook") !== -1){
-		linktx.innerText = "Kommitténs Facebook"
-	}else if(kommitte.link.indexOf("instagram") !== -1){
-		linktx.innerText = "Kommitténs Instagram"
-	}else{
-		linktx.innerText = "Kommitténs sociala nätverk"
-	}
+	linktx.innerText = "Gå med"
+
 
 	shine = document.createElement('div')
 	shine.className = "shine"

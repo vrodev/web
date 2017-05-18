@@ -1,56 +1,41 @@
 .sort-options
 	text-align center
-	padding-top 10px
-	padding-bottom 3px
+	padding 0
+	background-color white
 	
 	.option
 		display inline-block
-		color rgba($vrocolor, .6)
-		padding 2px 8px
+		width calc(50% - 5px * 2)
+		padding 10px 5px
+		background-color rgba($vrocolor,.4)
 		cursor pointer
-		border-right solid 1px $vrocolor
-		
-		&:hover
-			background-color rgba($vrocolor,0.1)
-			color rgba($vrocolor, .8)
-		&:last-of-type
-			border 0
-		
+		border 0
+		color rgba($vrocolor,.7)
+	
 	.selected
-		background-color rgba($vrocolor,0.25) !important
-		color $vrocolor !important
-		
-	@media (max-width:500px)
-		padding 0
-		background-color white
-		
-		.option
-			width calc(50% - 5px * 2)
-			padding 10px 5px
-			background-color #257959
-			border 0
-			color rgba(91, 204, 160, 0.61)
-		
-		.selected
-			background-color #237153 !important
-			color rgba(114, 202, 167, 0.88) !important
+		background-color rgba($vrocolor,.2)
+		color rgba($vrocolor,.8)
 			
 		
 			
 .card-container
-	margin .5%
 	position relative
 	text-align left
+	width 99.8% !important
+	margin .1%
+	
 	@media (max-width:500px)
-		margin 0
-		padding-top .5%
+		width 99.4% !important
+		margin .3%
+	
+	@media (max-width:1040px)
+		width 99.6% !important
+		margin .2%
 
 .card:not(.item)
-	width calc(25% - 4%/16)
+	width 24.8%
 	padding-top 20%
 	height 0
-
-	margin calc(4%/32)
 	background-color white
 	border-radius 0px
 	display inline-block
@@ -59,30 +44,30 @@
 	box-sizing border-box
 	vertical-align bottom
 	overflow hidden
-	border-radius $default-radius
 	box-shadow 0px 0px 30px rgba(0,0,0,0.1)
 	cursor pointer
+	margin .1%
 	
 	&:hover
 		@media (min-width:500px){
-			box-shadow 0px 7px 36px rgba(0,0,0,0.2)
+			box-shadow 0px 0px 40px rgba(0,0,0,0.3)
 			z-index 10
-			transform translateY(-3px)
+			transform scale(1.02)
 			border-color transparent
 		}
 	
 	@media (max-width:1040px){
-		width 32%
-		padding-top calc(20% + 10vw)
-		margin calc(4% / 6)
+		width calc(100% / 3 - .4%)
+		padding-top calc(25%)
+		margin .2%
 	}
 
 	@media (max-width:500px){
-		width 49%
-		padding-top 49%
+		width 49.4%
+		padding-top 49.4%
+		margin .3%
 		box-shadow 0 0 0 rgba(0,0,0,0)
 		background-color rgba($vrocolor, .1)
-		margin calc(4% / 8)
 	}
 	
 	&.template
@@ -103,7 +88,7 @@
 			background-repeat no-repeat
 			background-position center center
 			transition all .4s
-			filter: brightness(.7)
+			filter: brightness(.9)
 			
 			@media (max-width:500px){
 				width 100%
@@ -176,14 +161,6 @@ $menu-header-height = 40px
 	@media (max-width:500px){
 		transform scale(1)
 	}
-	
-	&:hover
-		@media (min-width:500px){
-			box-shadow 0px 7px 36px rgba(0,0,0,0.2);
-			z-index 10
-			transform translateY(-3px)
-			border-color transparent
-		}
 		
 	a
 		position absolute
@@ -211,7 +188,7 @@ $menu-header-height = 40px
 					font-size 180%
 					
 					@media (max-width:500px){
-						font-size 8vw
+						font-size 7vw
 					}
 				
 				.weekday
