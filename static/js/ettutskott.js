@@ -42,9 +42,6 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 	link.style.backgroundColor = utskott.color
 	link.style.minHeight = "20px"
 	_('.center').appendChild(link)
-
-	_(".menubutton").style.filter = "invert(100%)"
-	_(".logga").style.filter = "invert(100%)"
 }
 
 bild.style.backgroundColor = utskott.color
