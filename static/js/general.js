@@ -68,102 +68,124 @@ var pageinfos = {
 		{title:'Harry Potter',color:'#A21D20',
 		ord:'Erik Södergren & Julia Ivarsson',
 		desc:'9¾ är VRG Odenplans alldeles egna Harry Potter kommitté. Vi planerar att arrangera filmmaratons, gemensamma omläsningar av serien, bak av godsaker som skulle platsa på en festmåltid på Hogwarts, tävlingar mellan elevhemmen och mycket mer! Framförallt kommer 9¾ alltid vara en plats att träffa, umgås och mysa med andra som också gillar Harry Potter. Här kan du diskutera allt från favoritchips och favoritkaraktärer, till headcanons, teorier och frågor som "Var Snape verkligen en god människa eller inte?"... Välkomna! Draco dormiens nunquam titillandus.',
-		link:'https://www.facebook.com/groups/506981442801441/?ref=browser'},
+		link:'https://www.facebook.com/groups/506981442801441/?ref=browser',
+		image:'kommittebilder/harrypotter.jpg'},
 
 		{title:'Acapella',color:'#78A942',
 		ord:'Nikol Kanavakis & Nora Nattorp',
 		desc:'Acapella kommittén är till för de som älskar att sjunga och skapa musik med sina röster som instrument. Självklart inspireras vi av Pitch Perfect och Pentatonix men vi skapar vårat eget sound av det lilla arbete vi utför och den stora mängd skratt vi tillför.',
-		link:'https://www.facebook.com/groups/787919001317007/?fref=ts'},
+		link:'https://www.facebook.com/groups/787919001317007/?fref=ts',
+		image:'kommittebilder/acapella.jpg'
+		},
 
 		{title:'Amnesty',color:'#deb117',
 		ord:'Julia Berndtsson',
 		desc:'Vi i Amnestykommittén arbetar för att stärka situationen för de mänskliga rättigheterna runt om i världen genom att bland annat genomföra aktioner för att uppmärksamma och samla in namnunderskrifter. Vi jobbar både på och utanför skolan. Då vi är kopplade till internationella Amnesty finns det möjligheter till utbildningar med mera att delta på. Alla är varmt välkomna!',
-		link:'https://www.facebook.com/groups/amnestyvrgopl/?ref=browser'},
+		link:'https://www.facebook.com/groups/amnestyvrgopl/?ref=browser',
+		image:'kommittebilder/amnesty.jpg'
+		},
 
 		{title:'VRs grönvita',color:'#007A43',
 		ord:'Hugo Rosell & Sebastian Lian',
 		desc:'Viktor Rydbergs grönvita har i syfte att skapa en gemenskap med alla Hammarbyare på VRG. Målet är att någon gång i framtiden kunna gå på Hammarby-match tillsammans.',
-		link:''},
+		link:'',
+		image:'kommittebilder/bajenfans.jpeg'},
 
 		{title:'Debate Society',color:'#0F7EFF',
 		ord:'Willam Karlsson & Simon Norman',
 		desc:'In the Viktor Rydberg Odenplan Debate Society we discuss, analyze and practice World Schools Style debating. We learn together, help one another and debate each other. Besides competing within the society regularly, we continually aspire to and work towards competing against other schools and teams internationally in famous competitions! Everyone is always welcome to participate! Join in!',
-		link:'https://www.facebook.com/groups/135425913521798/?fref=ts'},
+		link:'https://www.facebook.com/groups/135425913521798/?fref=ts',
+		image:'kommittebilder/debate.jpg'},
 
 		{title:'HBTQ plus',color:'#AB47CB',
 		ord:'Sam Widén & Emma Wallin',
 		desc:'HBTQ+kommittén är till för HBTQ+ -personer och ska verka som en safe-zone för folk. Kommittén ska vara en plats för trygghet för folk, där de kan komma som de är och vara som de vill. Vi vill uppmärksamma HBTQ+-personer, våran situation på skolan, och föra upp en diskussion om cis-heteronormen. HBTQ+ -kommittén är till för att lära känna andra HBTQ+ -personer, knyta kontaker, och bara umgås utan att vara rädd för vad folk ska tycka.',
-		link:'https://www.facebook.com/groups/794754800651251/?ref=browser'},
+		link:'https://www.facebook.com/groups/794754800651251/?ref=browser',
+		image:'kommittebilder/hbtq+.jpg'},
 
 		{title:'Kaffe', color:'#562D2A',
 		ord:'Martin Babazadeh, Meilin Pei Purroy & Sofia Sollbe',
 		desc:'Vi skapade en kaffekommitté för att vi ville ha ett mer ekonomiskt och hållbart sätt för oss elever att kunna unna sig gott kaffe i skolan. Vårt koncept är att få ett skåp där det kommer finnas en Nespressomaskin, mjölkskummare samt andra kaffetillbehör tillgängliga för medlemmar. Medlemmarna får alltså själv ansvara för sina egna kaffekapslar. För att ha råd med har vi ha en medlemsavgift på 100 kr där en kaffetermos ingår, detta är även ett sätt att hålla reda på vilka som är medlemmar så att inte andra utnyttjar skåpet.',
-		link:'https://www.facebook.com/groups/658358877655679/?fref=ts'},
+		link:'https://www.facebook.com/groups/658358877655679/?fref=ts',
+		image:'kommittebilder/kaffe.jpeg'},
 
 		{title:'Memeteam', color:'#AD00FF',
 		ord:'Elsa Berlin, Gustav & Agnes',
 		desc:'Vårt syfte är att ha kul, uppmärksamma memesen som kulturarv och tillsammans skapa dank memes.',
-		link:''},
+		link:'',
+		image:'kommittebilder/memeteam.jpeg'},
 
 		{title:'Östasiatisk kultur',color:'#C42C00',
 		ord:'Alex Will Hambén & Johanna Li',
 		desc:'Syftet är att föra samman människor, östasiater som icke-östasiater, som är intresserade av och/eller uppskattar den östasiatiska kulturen och de östasiatiska traditionerna. På mötena kan vi tänka oss att ha traditionellt fika så som grönt te och frön, titta på och skratta åt dåligt producerade östasiatiska filmer eller tv-serier, äta sushi eller nudlar, ha maskerad/utklädnad, baka, ha anime-maraton och så vidare',
-		link:'https://www.facebook.com/groups/1676078619272950/?fref=ts'},
+		link:'https://www.facebook.com/groups/1676078619272950/?fref=ts',
+		image:'kommittebilder/östasiatiskkultur.jpg'},
 
 		{title:'Retorik',color:'#DD9400',
 		ord:'Willam Karlsson & Victor Lagrelius',
 		desc:'Vi lär oss tala. För att kunna övertyga i politik, affärer, kärlek och närhelst det enda du har är din röst och nervöst darrande händer. Vi debatterar, har teoriföreläsningar, analyserar bra och dåliga retoriker, anordnar partidebatter och mycket mer.',
-		link:'https://www.facebook.com/groups/vrgretorik/?fref=ts'},
+		link:'https://www.facebook.com/groups/vrgretorik/?fref=ts',
+		image:'kommittebilder/retorik.jpg'},
 
 		{title:'Smått och Gott',color:'#ED588D',
 		ord:'Filippa Vasilis & Sofia Gerhardsson',
 		desc:'Vi vill sprida glädje genom att sprida godsaker på skolan till alla sötsugna! Med hjälp av oss kommer alla klara skolans tuffa plugg lite bättre. Vi bjuder in alla som gillar att baka, äta och hänga till vår komitté. Vi kommer baka för dagar som Kanelbullens dag, Fettisdagen, fixa äggjakt, Hela VRG Bakar och mycket mer. Välkommen och smaklig måltid!',
-		link:'https://www.facebook.com/groups/673554036115232/?fref=ts'},
+		link:'https://www.facebook.com/groups/673554036115232/?fref=ts',
+		image:'kommittebilder/småttochgott.jpg'},
 
 		{title:'Aktiesparare',color:'#8447cb',
 		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
 		desc:'Unga Aktiesparare VRG Odenplan delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
-		link:'https://www.facebook.com/groups/1050277478325806/?fref=ts'},
+		link:'https://www.facebook.com/groups/1050277478325806/?fref=ts',
+		image:'kommittebilder/aktier.jpeg'},
 
 		{title:'Coldplay',color:'#11B8D9',
 		ord:'Ludvig Dillén',
 		desc:'Coldplaykommittén kommer att vara öppen för alla som har något typ av intresse för bandet och deras musik, oavsätt i vilket utsträckning intresset är. Vi kommer att lyssna och diskutera deras musik. Kanske spara in pengar till en konsert, deras musik eller något annat tips som du har att komma med. Vi välkomnar varmt nya medlemmar, så ta chansen och gå med så kan du vara med att forma vår kommitté.',
-		link:'https://www.facebook.com/groups/1057939687644536/?fref=ts'},
+		link:'https://www.facebook.com/groups/1057939687644536/?fref=ts',
+		image:'kommittebilder/coldplay.jpg'},
 	],
 	ettutskott: [
         {title:'Tradition',color:'#C42C00',
 		ord:'Andrea Wach',
 		desc:'Traditionsutskottet jobbar främst med att uppmärksamma olika traditioner genom både större och mindre firanden. Ibland firas traditioner varje dag i december och under påsken arrangeras en äggjakt.. De firar och uppmärksammar helt enkelt de traditioner som efterfrågas av kårens medlemmar! <br><br>Andrea är ordförande för traditionsutskottet och därmed också en del av utskottsgruppen. Hon är huvudansvarig för kårens traditionsfiranden och ska leda sitt utskott där de arbetar för att fira många och roliga traditioner. <br><br>Kontakta Andrea Wachtmeister på <a style="text-decoration:underline", href="mailto:andr.wach-2018@vrg.se">andr.wach-2018@vrg.se</a>',
+		image:'utskottsbilder/tradition.jpg'
 		},
 
 		{title:'Sociala',color:'#ED588D',
 		ord:'Hannes Hellmér',
 		desc:'Sociala utskottet jobbar med att främja den sociala aktiviteten på skolan genom att arbeta för en god sammanhållning mellan skolans elever. Detta sker genom att anordna spännande och roliga aktiviteter, evenemang och tävlingar. De jobbar också en del med VRG-kampen. Tävlingen där alla tre VRG-skolor möts i en trekamp.<br><br>Hannes är ordförande för det sociala utskottet och är en del av utskottsgruppen. Han är huvudansvarig för skolans sociala aktiviteter såsom klasspokalen, insparken och olika temadagar. <br><br>Kontakta Hannes Hellmér på <a style="text-decoration:underline", href="mailto:hann.hell-2018@vrg.se">hann.hell-2018@vrg.se</a>',
+		image:'utskottsbilder/sociala.jpeg'
 		},
 
 		{title:'Kommunikation',color:'#0A7BFF',
 		ord:'David Sundström',
 		desc:'Kommunikationsutskottet är ansvarigt för kårens marknadsföring och hantering av sociala medier. Detta innebär att de skapar alla affischer som sitter i skolan och är ansvariga för mycket av det som läggs ut på kårens sociala medier: instagram, youtube och facebook. Det är även kommunikationsutskottet som har utvecklat vår fantastiska app och hemsida. Det är också detta utskott som ofta är ute och fotar och filmar kårens verksamhet. Om ni har några invändningar på appen eller hemsidan, tveka inte att höra av er till oss.<br><br>David är ordförande för kommunikationsutskottet, vilket innebär att han ska leda utskottet i dess verksamhet samt vara är en del av utskottsgruppen. Han är även huvudansvarig för marknadsföringen via elevkåren och elevkårens sociala plattformar.<br><br>Kontakta David Sundström på <a style="text-decoration:underline", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a>'
+		image:'utskottsbilder/kommunikation.jpeg'
 		},
 
 		{title:'Finansiella',color:'#AB47CB',
 		ord:'Isac Diamant',
 		desc:'Finansiella utskottet jobbar för att främja samarbeten mellan kåren och olika företag för att kunna förse medlemmar med service och förmåner. Detta sker exempelvis genom att de fixar sponsring till kåren och dess medlemmar, men också genom att de ger medlemmarna möjlighet till rabatt hos närliggande företag. <br><br>Isac är ordförande för finansiella utskottet och därmed också en del av utskottsgruppen. Han är delaktig i många av de stora förhandlingar som pågår för att ge er medlemmar ett så förmånligt medlemskap som möjligt. Han leder sitt utskott där alla delegater jobbar arbetar mot samma mål. <br><br>Kontakta Isac Diamant på <a style="text-decoration:underline", href="mailto:isac.nede-2019@vrg.se">isac.nede-2019@vrg.se</a>',
+		image:'utskottsbilder/finansiella.jpeg'
 		},
 
 		{title:'Miljö',color:'#78A942',
 		ord:'Sebastian Lian',
 		desc:'Miljöutskottet jobbar för att främja skolans miljötänk men också att informera och utbilda kårens medlemmar i miljöfrågor. Detta leder då förhoppningsvis till ett grönare tänk både hos skolan och hos kårens medlemmar. <br><br>Sebastian är ordförande för miljöutskottet och medlem i utskottsgruppen. Han är huvudansvarig för att driva medlemmarnas och kårens miljöfrågor för att skolan ska bli ännu mer miljömedveten. <br><br>Kontakta Sebastian Lian på <a style="text-decoration:underline", href="mailto:seba.lian-2018@vrg.se">seba.lian-2018@vrg.se</a>',
+		image:'utskottsbilder/miljö.jpeg'
 		},
 
 		{title:'Påverkan',color:'#DD9400',
 		ord:'Angel GB',
 		desc:'Påverkansutskottet jobbar med påverkansfrågor. Allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. Detta utskott är ansvarigt för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan i rätt riktning. <br><br>Kontakta Angel Bahrami på <a style="text-decoration:underline", href="mailto:goln.bahr-2018@vrg.se">goln.bahr-2018@vrg.se</a>',
+		image:'utskottsbilder/påverkan.jpeg'
 		},
 
 		{title:'Student',color:'#919191',
 		ord:'',
 		desc:"Studentutskottet verkar för att förgylla det sista året på gymnasiet för alla blivande studenter. I utskottet sitter det bara 3or och ordförande väljs inom utskottet när det är tillsatt. De arrangerar exempelvis evenemang så som 100-dagarskryssning, studentbal och slutskiva - allt för att alla medlemmar ska få ett riktigt bra slut på sin gymnasietid.",
+		image:'utskottsbilder/student.jpg'
 		},
 
 	],
