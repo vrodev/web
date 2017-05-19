@@ -160,7 +160,7 @@ var pageinfos = {
 
 		{title:'Kommunikation',color:'#0A7BFF',
 		ord:'David Sundström',
-		desc:'Kommunikationsutskottet är ansvarigt för kårens marknadsföring och hantering av sociala medier. Detta innebär att de skapar alla affischer som sitter i skolan och är ansvariga för mycket av det som läggs ut på kårens sociala medier: instagram, youtube och facebook. Det är även kommunikationsutskottet som har utvecklat vår fantastiska app och hemsida. Det är också detta utskott som ofta är ute och fotar och filmar kårens verksamhet. Om ni har några invändningar på appen eller hemsidan, tveka inte att höra av er till oss.<br><br>David är ordförande för kommunikationsutskottet, vilket innebär att han ska leda utskottet i dess verksamhet samt vara är en del av utskottsgruppen. Han är även huvudansvarig för marknadsföringen via elevkåren och elevkårens sociala plattformar.<br><br>Kontakta David Sundström på <a style="text-decoration:underline", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a>'
+		desc:'Kommunikationsutskottet är ansvarigt för kårens marknadsföring och hantering av sociala medier. Detta innebär att de skapar alla affischer som sitter i skolan och är ansvariga för mycket av det som läggs ut på kårens sociala medier: instagram, youtube och facebook. Det är även kommunikationsutskottet som har utvecklat vår fantastiska app och hemsida. Det är också detta utskott som ofta är ute och fotar och filmar kårens verksamhet. Om ni har några invändningar på appen eller hemsidan, tveka inte att höra av er till oss.<br><br>David är ordförande för kommunikationsutskottet, vilket innebär att han ska leda utskottet i dess verksamhet samt vara är en del av utskottsgruppen. Han är även huvudansvarig för marknadsföringen via elevkåren och elevkårens sociala plattformar.<br><br>Kontakta David Sundström på <a style="text-decoration:underline", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a>',
 		image:'utskottsbilder/kommunikation.jpeg'
 		},
 
@@ -287,11 +287,11 @@ function changeFromColor(color){
 
 		if (api.currentUser){
 			var object = _('.logged-in')
-			object.querySelector('.title').style.color = blendColors(color, "#ffffff", 0.9)
+			object.querySelector('.title').classList.add('trans-login')
 		}else{
 			var object = _('.log')
 		}
-		object.style.backgroundColor = blendColors(color, "#ffffff", 0.1)
+		object.classList.add('trans-login')
 	}
 }
 
