@@ -11,12 +11,21 @@ api.food(function(err, weeks) {
 	
 	var currentWeekNr = (new Date()).getWeek()
 	var currentDayOfWeek = (new Date()).getDay()
-	weeks.forEach(function(week) {
-		if (week.nr<currentWeekNr) return;
-		if (week.nr>currentWeekNr+1) return;
-		var isCurrentWeek = currentWeekNr == week.nr
+	var isWeekend = currentDayOfWeek==0 || currentDayOfWeek==6
 
-		if (!isCurrentWeek) {
+	weeks.forEach(function(week) {
+		if (week.nr<currentWeekNr) return
+		if (week.nr>currentWeekNr+1 && !isWeekend) return
+		if (week.nr>currentWeekNr+2 && isWeekend) return
+		if (week.nr == currentWeekNr && isWeekend) return
+
+		if(isWeekend) {
+			var isCurrentWeek = currentWeekNr+1 == week.nr
+		}else{
+			var isCurrentWeek = currentWeekNr == week.nr
+		}
+
+		if (!isCurrentWeek || (isCurrentWeek && isWeekend) ) {
 			temp = document.createElement('div')
 			temp.className ="day nextWeek"
 			_(".matdagar").appendChild(temp)
@@ -24,8 +33,8 @@ api.food(function(err, weeks) {
 			text = document.createElement('p')
 			text.className = "veckodag nextWeek"
 			temp.appendChild(text)
-			text.innerHTML = week.nr==currentWeekNr+1? "Veckan efter": "Vecka "+week.nr
-		}1
+			text.innerHTML = week.nr==currentWeekNr+1? "Nästa vecka": "Vecka "+week.nr			
+		}
 
 		week.days.forEach(function(day) {
 			day.date = new Date(day.date)

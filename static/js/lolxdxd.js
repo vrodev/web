@@ -7,6 +7,27 @@ http.send(console.log);*/
 
 /*document.body.style.backgroundColor = '#e6e6e6'
 */
+
+if(/Android/i.test(navigator.userAgent) && !window.matchMedia('(display-mode: standalone)').matches){
+	notis = document.createElement('div')
+	notis.classList.add("app-reminder")
+	notis.innerHTML = '<b>Installera appen</b>, i Chrome, klicka på <b style="font-size:110%">⁝</b> och alternativet <b>Add to homescreen</b>'
+	document.body.appendChild(notis)
+
+	function closeBanner(){
+		_('.app-reminder').parentNode.removeChild(_('.app-reminder'))
+	}
+
+	close = document.createElement('div')
+	close.classList.add("close")
+	close.innerText = '+'
+	notis.appendChild(close)
+
+	document.body.setAttribute("onclick", "closeBanner()")
+
+	setTimeout(function () {notis.style.opacity = '1'}, 1500)
+}
+
 _('.main-content').classList.add('home-content')
 if(window.matchMedia("(max-width: 500px)").matches) _('.showoff').querySelector('.name').innerHTML = 'Vro Elevkår'
 
@@ -130,11 +151,7 @@ api.food(function(err, weeks) {
 
 	// Select day, monday next week if weekend
 	var currentDayOfWeek = (new Date()).getDay()
-	var isWeekend = currentDayOfWeek==0 || currentDayOfWeek==6
-	if (isWeekend) {
-		currentDayOfWeek = 1
-		weekIndex++
-		if (weekIndex>=weeks.length) return foodLoadingError('Next week wasn\'t found') }
+
 	var week = weeks[weekIndex]
 
 	var day = week.days.find(function(day) {return day.nr==currentDayOfWeek})

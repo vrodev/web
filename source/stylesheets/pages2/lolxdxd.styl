@@ -10,6 +10,38 @@
 			top 80px
 		.topheader
 			height 80px
+			
+.app-reminder			
+	position fixed
+	top 10px
+	padding 15px
+	color black
+	background white
+	z-index 110
+	margin 10px
+	border-radius 4px
+	box-shadow 0 0 4px rgba(0,0,0,.5)
+	
+	opacity 0
+	transition all .5s
+
+	&:after
+		top -11px
+		right 1px
+		border-width 0 12px 12px
+		border-color white transparent
+		content ""
+		position absolute
+		border-style solid
+	
+	.close
+		position absolute
+		bottom -2px
+		right 7px
+		color rgba(black,.4)
+		font-size 220%
+		transform rotate(45deg)
+		display block
 	
 .noUser
 	.main-content
