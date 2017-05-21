@@ -1,7 +1,7 @@
-Vue.component('post-card', {
-	template: componentTemplates['post-card'],
+Vue.component('utskott-card', {
+	template: componentTemplates['item-card'],
 	props: {
-		item: { type: Object, required: true },
+		data: { type: Object, required: true },
 	},
 	data: function () {
 		return {
@@ -17,34 +17,34 @@ Vue.component('post-card', {
 		change: function () {
 			this.message = 'hej'
 		},
-		deleteItem: function () {
+		deletedata: function () {
 			var self = this
-			this.post.delete(function(err){
+			this.data.delete(function(err){
 				if(err) return console.log(err)
 				self.$emit('deleted', self)
 			})
 		},
 		expand: function () {
 			if (this.expanded) return false
-			// var item = this.$el
+			// var data = this.$el
 			// var className = 'card'
 
-			// var cardCopy = item.cloneNode(true)
-			// cardCopy.classList.add('item')
+			// var cardCopy = data.cloneNode(true)
+			// cardCopy.classList.add('data')
 			// cardCopy.classList.remove(className)
 			// cardCopy.removeAttribute("style")
-			overlayApp.post = this.post
-			this.$refs.prioritized.checked = this.post.prioritized
+			overlayApp.data = this.data
+			this.$refs.prioritized.checked = this.data.prioritized
 		},
 		displayChange: function () {
 			this.$refs.changeButton.style.display = 'inline-block'
 		},
 		save: function () {
-			this.post.title = this.$refs.title.innerText
-			this.post.subtitle = this.$refs.subtitle.innerText
-			this.post.text = this.$refs.text.innerHTML
-			this.post.prioritized = this.$refs.prioritized.checked
-			this.post.save(function(err){
+			this.data.title = this.$refs.title.innerText
+			this.data.subtitle = this.$refs.subtitle.innerText
+			this.data.text = this.$refs.text.innerHTML
+			this.data.prioritized = this.$refs.prioritized.checked
+			this.data.save(function(err){
 				if(err) {
 					console.error(err)
 					alert('Could not save')
@@ -59,6 +59,6 @@ Vue.component('post-card', {
 	},
 })
 
-//	card.dataset.id = post._id
-// if(post.title.length == 0){
+//	card.dataset.id = data._id
+// if(data.title.length == 0){
 // 		card.querySelector('.info').style.margin = 0
