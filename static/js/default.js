@@ -37,8 +37,9 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 	_('.credits').innerHTML = _('.credits').innerHTML.replace(/ - /g,"<br>").replace(/n, /g,"n<br>")
 }
 if(pageinfo){
-	changeFromColor(!subpage?pageinfo.color:
-		(subpageinfo?subpageinfo.color:'#222222'))
+	changeFromColor((!subpage?pageinfo.color:
+		(subpageinfo?subpageinfo.color:'#222222')), (!subpage?pageinfo.image:
+		(subpageinfo?subpageinfo.image:''))
 }
 window.onload = function() {
 	if(document.querySelectorAll('.header').length){

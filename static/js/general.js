@@ -230,35 +230,54 @@ var pageinfos = {
 		color:'#ffffff'
 	},
 	lolxdxd:{
-		color:'#28825f'
+		color:'#28825f',
+		image:'images/matsalen.jpg'
 	}
 }
 
-function changeFromColor(color){
+function changeFromColor(color,image){
 
 	var metaThemeColor = document.querySelector("meta[name=theme-color]")
 	var appleThemeColor = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]")
 	metaThemeColor.setAttribute("content", color)
 	appleThemeColor.setAttribute("content", color)
 
-	if(document.querySelectorAll('.header').length){
-		_(".header").style.backgroundColor = color
-		_(".extendHeader").style.backgroundColor = color
-		if(color == '#ffffff'){
-			document.querySelectorAll('.shineheader')[0].style.background = 'none'
-			document.querySelectorAll('.shineheader')[1].style.background = 'none'
-			_('.headertext').style.color = 'black'
-			_('.headertext').style.backgroundColor = color
+	if (api.currentUser){
+		var object = _('.logged-in')
+		object.querySelector('.title').classList.add('trans-login')
+	}else{
+		var object = _('.log')
+	}
+
+	if(color == '#ffffff'){
+		_('.name').style.color = 'black'
+		object.classList.add('trans-login-black')
+	}else{
+		_('.topheader').classList.add('whiteheader')
+		object.classList.add('trans-login')
+	}
+
+	if(image !== ''){
+
+		_('.background').style.backgroundImage = 'url(' + image + ')'
+
+		if(color !== ''){
+			_(".gradient").style.background = 'linear-gradient(rgba(' + color + ',.9), rgba(' + color + ',.8))'
+			metaThemeColor.setAttribute("content", color)
+			appleThemeColor.setAttribute("content", color)
 		}else{
-			_('.headertext').style.color = 'white'
-		}
+			_(".gradient").style.background = 'linear-gradient(rgba(' + color + ',.5), rgba(' + color + ',.4))'
+			metaThemeColor.setAttribute("content", '#333333')
+			appleThemeColor.setAttribute("content", '#333333')
+		}	
+	}else{
+		metaThemeColor.setAttribute("content", color)
+		appleThemeColor.setAttribute("content", color)
+		_(".gradient").style.backgroundColor = color
 	}
-	_('.phonelinks').style.backgroundColor = blendColors(color, "#000000", 0.2)
-	if(color == '#000000'){
-		_('.phonelinks').style.backgroundColor = blendColors(color, "#ffffff", 0.2)
-	}
-	if(color !== "#ffffff"){
-		_(".phonelinks").className += " whitelinks"
+
+	if(document.querySelectorAll('.showoff').length){
+		_(".gradient").style.backgroundColor = 'linear-gradient(rgba(' + color + ',1), rgba(' + color + ',.9))'
 	}
 
 	if(window.matchMedia("(max-width: 500px)").matches){
@@ -277,21 +296,6 @@ function changeFromColor(color){
 			link.style.backgroundColor = 'rgba(0, 0, 0, 0.2)'
 			link.style.color = 'rgba(0,0,0,0.5)'
 		}
-	}
-
-	if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
-		_(".menubutton").style.backgroundImage = "url(/images/menu-vit.png)"
-		_(".logga").style.backgroundImage = "url(/images/logga-vit.png)"
-
-		_(".center-header").style.backgroundColor = color
-
-		if (api.currentUser){
-			var object = _('.logged-in')
-			object.querySelector('.title').classList.add('trans-login')
-		}else{
-			var object = _('.log')
-		}
-		object.classList.add('trans-login')
 	}
 }
 
