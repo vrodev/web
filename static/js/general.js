@@ -160,7 +160,7 @@ var pageinfos = {
 		ord:'Filippa Vasilis & Sofia Gerhardsson',
 		desc:'Vi vill sprida glädje genom att sprida godsaker på skolan till alla sötsugna! Med hjälp av oss kommer alla klara skolans tuffa plugg lite bättre. Vi bjuder in alla som gillar att baka, äta och hänga till vår komitté. Vi kommer baka för dagar som Kanelbullens dag, Fettisdagen, fixa äggjakt, Hela VRG Bakar och mycket mer. Välkommen och smaklig måltid!',
 		link:'https://www.facebook.com/groups/673554036115232/?fref=ts',
-		image:'kommittebilder/småttochgott.jpg'},
+		image:'kommittebilder/småttochgott.jpeg'},
 
 		{title:'Aktiesparare',color:'#8447cb',
 		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
@@ -238,7 +238,7 @@ var pageinfos = {
 		content:'styrelsenpers',
 	},
 	mat:{
-		color:"#e39c43"
+		color:"#e39c43",
 	},
 	kommitte:{
 		color:'#ffffff',
