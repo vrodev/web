@@ -43,9 +43,7 @@ body
 				
 
 .main-content
-	max-width 1040px
-	top $headerheight
-	margin-top 0px
+	margin-top $headerheight
 	border-radius 0px
 	padding 0px
 	//box-shadow 0px 0px 40px -16px rgba(0,0,0,0.8)
@@ -54,17 +52,12 @@ body
 	z-index 1
 	background white
 	
-	@media (max-width:500px){
-		box-shadow none
-		min-height calc(100vh - 50px)
-		top $headerheight - 1
-		padding-bottom 25px		
-	}
-	
-/*.home-content
 	@media (max-width:500px)
-		background-color #355f4e*/
-
+		min-height calc(100vh - 50px)
+		padding-bottom 25px
+		
+	@media (min-width:500px)
+		margin-top $largeheaderheight
 @require "pages2/header"
 	
 @require "pages2/lolxdxd"

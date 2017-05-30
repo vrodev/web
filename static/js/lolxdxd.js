@@ -29,19 +29,12 @@ if(/Android/i.test(navigator.userAgent) && !window.matchMedia('(display-mode: st
 }
 
 _('.main-content').classList.add('home-content')
-if(window.matchMedia("(max-width: 500px)").matches) _('.showoff').querySelector('.name').innerHTML = 'Vro Elevkår'
 
 var editAccess = false
 if (api.currentUser && api.currentUser.memberships)
 	editAccess = api.currentUser.memberships.some(function(membership) {
 		return membership.group.name == "redigera" && membership.permissions.indexOf("POST")>=0
-	})
-
-
-document.body.classList.add('noUser')
-_('.topheader').classList.add('whiteheader')
-_('.main-content').style.maxWidth = '100%'
-_('.main-content').style.textAlign = 'center'
+})
 
 
 _('.extendHeader').classList.add('extendHeader-main')

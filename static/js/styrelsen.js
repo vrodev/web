@@ -19,7 +19,7 @@ for (i = 0; i < parts.length; i++) {
 
 	image = document.createElement('div')
 	image.className ="utskottbild"
-	image.style.backgroundImage = "url(" + parts[i].image + ")" 
+	image.style.backgroundImage = "url(/images/" + parts[i].image + ")" 
 	upper.appendChild(image)
 
 	header = document.createElement('h2')

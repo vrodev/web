@@ -39,7 +39,8 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 if(pageinfo){
 	changeFromColor((!subpage?pageinfo.color:
 		(subpageinfo?subpageinfo.color:'#222222')), (!subpage?pageinfo.image:
-		(subpageinfo?subpageinfo.image:''))
+		(subpageinfo?subpageinfo.image:'')
+	))
 }
 window.onload = function() {
 	if(document.querySelectorAll('.header').length){

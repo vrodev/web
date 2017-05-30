@@ -6,10 +6,32 @@
 		background-color #f1f1f1
 	
 	@media (min-width:1040px)
-		.main-content
-			top 80px
 		.topheader
 			height 80px
+			
+	.main-content
+		.header
+			.headertext					
+				.long
+					display block
+				.short
+					display none
+				
+				@media (max-width:500px)
+					.long
+						display none
+					.short
+						display block
+			
+				.logo
+					bg-image logga-vit
+					height 150px
+					
+			@media (max-width:500px)
+				.headertext
+					.logo
+						display none
+		
 			
 .app-reminder			
 	position fixed
@@ -45,68 +67,3 @@
 		transform rotate(45deg)
 		display block
 	
-.noUser
-	.main-content
-		.showoff
-			position relative
-			width 100%
-			.background
-				position absolute
-				width 100%
-				height 100%
-				top 0
-				bg-image matsalen "jpg"
-				background-size cover
-				background-position center
-				z-index 1
-			.gradient
-				position absolute
-				width 100%
-				height 100%
-				top 0
-				background linear-gradient(rgba($vrocolor,.9), rgba( $vrocolor ,.8))
-				z-index 5
-			.content
-				padding-top 80px
-				padding-bottom 30px
-				box-sizing border-box
-				z-index 5
-				position relative
-				.name
-					font-family BebasNeue
-					font-size 400%
-					color white
-				
-				.logo
-					bg-image logga-vit
-					height 150px
-					
-			@media (max-width:500px)
-				.gradient
-					background linear-gradient(rgba($vrocolor), rgba( $vrocolor))
-					
-				.content
-					padding-top 10px
-					padding-bottom 10px
-					.name
-						font-size 17vw
-					.logo
-						display none
-			
-		.card-container
-			display inline-block
-			width calc(100% - 1%)
-				
-		max-width 100%
-		text-align center
-		
-		@media (min-width:500px)
-			top 0
-		
-	@media (min-width:500px)
-		.topheader
-			background-color transparent
-			
-			.center-header
-				background-color transparent !important
-		

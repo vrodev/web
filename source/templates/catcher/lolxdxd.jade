@@ -1,12 +1,13 @@
 extend ../default2
 block mainContent
 
-	.showoff
-		.gradient
-		.background
-		.content
+	.header.utskottheader
+		.headerbackground
+		.shineheader.extrashine
+		h1.headertext
 			.logo
-			.name viktor rydberg odenplans <br> elevkår
+			.name.long viktor rydberg odenplans <br> elevkår
+			.name.short VRO Elevkår
 
 	.sort-options
 		.option(v-for='tab in tabs', :key='tab',:class='{selected:selectedTab == tab}', @click='selectedTab = tab') {{tab}}

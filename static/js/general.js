@@ -31,14 +31,6 @@ var addEventListeners = function () {
 			_('.topheader').classList.toggle('darkheader', scroll>=5)
 
 	})
-	if(_('.whiteheader')){
-		window.addEventListener('scroll',function() {
-			var scroll = document.body.scrollTop
-			if (_('.topheader'))
-				_('.topheader').classList.toggle('whiteheader', scroll<=5)
-
-		})
-	}
 }
 
 // Called when DOM (the html document)
@@ -61,7 +53,44 @@ function blendColors(c0, c1, p) {
 	return "#"+(0x1000000+(Math.round((R2-R1)*p)+R1)*0x10000+(Math.round((G2-G1)*p)+G1)*0x100+(Math.round((B2-B1)*p)+B1)).toString(16).slice(1);
 }
 
+function hexToRgb(hex){
+	var c
+	if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+		c = hex.substring(1).split('');
+		if(c.length== 3){
+			c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+		}
+		c = '0x'+c.join('')
+		return [(c>>16)&255, (c>>8)&255, c&255]
+	}
+	throw new Error('Bad Hex');
+}
+
 function nonSwe(){replace("å","a").replace("ä","a").replace('ö','o')}
+
+function getCssValuePrefix(){
+	var rtrnVal = '';//default to standard syntax
+	var prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
+
+	// Create a temporary DOM object for testing
+	var dom = document.createElement('div');
+
+	for (var i = 0; i < prefixes.length; i++){
+		// Attempt to set the style
+		dom.style.background = prefixes[i] + 'linear-gradient(#000000, #ffffff)';
+
+		// Detect if the style was successfully set
+		if (dom.style.background)
+		{
+			rtrnVal = prefixes[i];
+		}
+	}
+
+	dom = null;
+	delete dom;
+
+	return rtrnVal;
+}
 
 var pageinfos = {
 	enkommitte: [
@@ -89,7 +118,7 @@ var pageinfos = {
 		ord:'Hugo Rosell & Sebastian Lian',
 		desc:'Viktor Rydbergs grönvita har i syfte att skapa en gemenskap med alla Hammarbyare på VRG. Målet är att någon gång i framtiden kunna gå på Hammarby-match tillsammans.',
 		link:'',
-		image:'kommittebilder/bajenfans.jpeg'},
+		image:'kommittebilder/bajenfans.jpg'},
 
 		{title:'Debate Society',color:'#0F7EFF',
 		ord:'Willam Karlsson & Simon Norman',
@@ -110,7 +139,7 @@ var pageinfos = {
 		image:'kommittebilder/kaffe.jpeg'},
 
 		{title:'Memeteam', color:'#AD00FF',
-		ord:'Elsa Berlin, Gustav & Agnes',
+		ord:'Gustav Håkansson och Martin Fogeman',
 		desc:'Vårt syfte är att ha kul, uppmärksamma memesen som kulturarv och tillsammans skapa dank memes.',
 		link:'',
 		image:'kommittebilder/memeteam.jpeg'},
@@ -146,7 +175,7 @@ var pageinfos = {
 		image:'kommittebilder/coldplay.jpg'},
 	],
 	ettutskott: [
-        {title:'Tradition',color:'#C42C00',
+		{title:'Tradition',color:'#C42C00',
 		ord:'Andrea Wach',
 		desc:'Traditionsutskottet jobbar främst med att uppmärksamma olika traditioner genom både större och mindre firanden. Ibland firas traditioner varje dag i december och under påsken arrangeras en äggjakt.. De firar och uppmärksammar helt enkelt de traditioner som efterfrågas av kårens medlemmar! <br><br>Andrea är ordförande för traditionsutskottet och därmed också en del av utskottsgruppen. Hon är huvudansvarig för kårens traditionsfiranden och ska leda sitt utskott där de arbetar för att fira många och roliga traditioner. <br><br>Kontakta Andrea Wachtmeister på <a style="text-decoration:underline", href="mailto:andr.wach-2018@vrg.se">andr.wach-2018@vrg.se</a>',
 		image:'utskottsbilder/tradition.jpg'
@@ -190,34 +219,32 @@ var pageinfos = {
 
 	],
 	styrelsenpers:[
-		{title:'Ordförande',ord:'Richard Wahlström', image:'images/styrelsen/richard.jpg',color:'#323241',
+		{title:'Ordförande',ord:'Richard Wahlström', image:'styrelsen/richard.jpg',color:'#323241',
 		desc:'Richard är ordförande och är elevkårens visionerande ledare. Hans uppgift är bland annat att kalla till och leda styrelsemöten samt att samordna hela kåren som organisation. Richard är också huvudansvarig för att kårens stadgar och styrdokument efterföljs samt representationen av kåren utåt vid större event. <br><br>Kontakta Richard Wahlström på rich.wahl-2018@vrg.se'},
-		{title:'Vice Ordförande',ord:'Sandra Pernkrans',image:'images/styrelsen/sandra.jpg',color:'#323241',
+		{title:'Vice Ordförande',ord:'Sandra Pernkrans',image:'styrelsen/sandra.jpg',color:'#323241',
 		desc:'Sandra är kårens vice ordförande och är ställföreträdare för ordförande. Hon är också en hjälpande hand och ett extra bollplank för alla förtroendevalda samt ansvarig för bland annat kårpoolen och månadens medlem. <br><br>Kontakta Sandra Pernkrans på sand.pern-2018@vrg.se'},
-		{title:'Utskottsansvarig',ord:'Pelle Melin',image:'images/styrelsen/pelle.jpg',color:'#323241',
+		{title:'Utskottsansvarig',ord:'Pelle Melin',image:'styrelsen/pelle.jpg',color:'#323241',
 		desc:'Pelle är utskottsansvarig och ordförande för utskottsgruppen. Hans viktigaste uppdrag är att koordinera alla kårens utskott. Han är också den viktiga länken mellan styrelsen och utskottsgruppen vilket är krävs för att hela kårens verksamhet ska fungera. <br><br>Kontakta Pelle Melin på per.meli-2018@vrg.se'},
-		{title:'Administratör',ord:'Malin Öster',image:'images/styrelsen/malin.jpg',color:'#323241',
+		{title:'Administratör',ord:'Malin Öster',image:'styrelsen/malin.jpg',color:'#323241',
 		desc:'Malin är kårens administratör vilket innebär att hon är sekreterare på kårens styrelsemöten men är också ansvarig för medlemsregistret. Hon är också ansvarig för kommittéverksamheten så det är henne du ska hör av dig till om du har någon bra idé för en kommitté! <br><br>Kontakta Malin Öster på mali.oste-2018@vrg.se'},
-		{title:'Skattmästare',ord:'August Eklund',image:'images/styrelsen/august.jpg',color:'#323241',
+		{title:'Skattmästare',ord:'August Eklund',image:'styrelsen/august.jpg',color:'#323241',
 		desc:'August är kårens skattmästare och är därför den som har mest koll på kårens ekonomi. Han sköter viktiga saker såsom bokföring och kassaredovisning men han är också med och förhandlar vid stora och viktiga avtal. Allt för att ni medlemmar ska få ett så fördelaktigt medlemskap som möjligt! <br><br> Kontakta August Eklund på augu.eklu-2018@vrg.se'},
-		{title:'Suppleant',ord:'Julia Ivarsson',image:'images/styrelsen/julia.jpg',color:'#323241',
+		{title:'Suppleant',ord:'Julia Ivarsson',image:'styrelsen/julia.jpg',color:'#323241',
 		desc:'Julia är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Hon bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer. <br><br>Kontakta Julia Ivarsson på juli.ivar-2018@vrg.se'},
-		{title:'Suppleant',ord:'Martin Babazadeh',image:'images/styrelsen/martin.jpg',color:'#323241',
+		{title:'Suppleant',ord:'Martin Babazadeh',image:'styrelsen/martin.jpg',color:'#323241',
 		desc:'Martin är suppleant i kåren vilket innebär att han är ställföreträdare för styrelsen. Han bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer. <br><br>Kontakta Martin Babazadeh på mart.baba-2019@vrg.se'},		
 	],
 	styrelsen: {
-		color:'#ffffff',
 		content:'styrelsenpers',
 	},
 	mat:{
-		color:"#ff9b20"
+		color:"#e39c43"
 	},
 	kommitte:{
 		color:'#ffffff',
 		content:'enkommitte',
 	},
 	utskott:{
-		color:'#ffffff',
 		content:'ettutskott',
 	},
 	loginvro:{
@@ -231,16 +258,26 @@ var pageinfos = {
 	},
 	lolxdxd:{
 		color:'#28825f',
-		image:'images/matsalen.jpg'
+		image:'matsalen.jpg'
 	}
 }
 
 function changeFromColor(color,image){
 
+	if(color == undefined)color = '#ffffff'
+
 	var metaThemeColor = document.querySelector("meta[name=theme-color]")
 	var appleThemeColor = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]")
 	metaThemeColor.setAttribute("content", color)
 	appleThemeColor.setAttribute("content", color)
+
+	_(".topheader").style.backgroundColor = color
+	_('.phonelinks').style.backgroundColor = blendColors(color, "#000000", 0.2)
+	if(color !== "#ffffff"){
+		_(".phonelinks").className += " whitelinks"
+	}
+
+	var shine = _('.header').querySelector(".shineheader")
 
 	if (api.currentUser){
 		var object = _('.logged-in')
@@ -250,34 +287,37 @@ function changeFromColor(color,image){
 	}
 
 	if(color == '#ffffff'){
-		_('.name').style.color = 'black'
+		_('.headertext').style.color = 'black'
 		object.classList.add('trans-login-black')
 	}else{
 		_('.topheader').classList.add('whiteheader')
 		object.classList.add('trans-login')
 	}
 
-	if(image !== ''){
+	if(image){
+		_('.headerbackground').style.backgroundImage = 'url(/images/' + image + ')'
 
-		_('.background').style.backgroundImage = 'url(' + image + ')'
-
-		if(color !== ''){
-			_(".gradient").style.background = 'linear-gradient(rgba(' + color + ',.9), rgba(' + color + ',.8))'
+		if(color){
+			shine.style.background = 'linear-gradient(rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ',1), rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ",.75))"
+			_('.headerbackground').style.filter = 'grayscale(100%'
 			metaThemeColor.setAttribute("content", color)
 			appleThemeColor.setAttribute("content", color)
 		}else{
-			_(".gradient").style.background = 'linear-gradient(rgba(' + color + ',.5), rgba(' + color + ',.4))'
-			metaThemeColor.setAttribute("content", '#333333')
-			appleThemeColor.setAttribute("content", '#333333')
+			shine.style.background = 'linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5))'
+			metaThemeColor.setAttribute("content", '#ffffff')
+			appleThemeColor.setAttribute("content", '#ffffff')
 		}	
 	}else{
-		metaThemeColor.setAttribute("content", color)
-		appleThemeColor.setAttribute("content", color)
-		_(".gradient").style.backgroundColor = color
-	}
-
-	if(document.querySelectorAll('.showoff').length){
-		_(".gradient").style.backgroundColor = 'linear-gradient(rgba(' + color + ',1), rgba(' + color + ',.9))'
+		if(color){
+			_('.header').style.background = color
+			shine.style.background = 'linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.2))'
+			metaThemeColor.setAttribute("content", color)
+			appleThemeColor.setAttribute("content", color)
+		}else{
+			shine.style.background = 'none'
+			metaThemeColor.setAttribute("content", '#ffffff')
+			appleThemeColor.setAttribute("content", '#ffffff')
+		}	
 	}
 
 	if(window.matchMedia("(max-width: 500px)").matches){

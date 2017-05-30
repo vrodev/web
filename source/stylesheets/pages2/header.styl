@@ -9,22 +9,17 @@ body > .topheader
 	box-shadow 0px 0px 5px rgba(0,0,0,0.2)
 	
 	transition all 0.2s
+	box-shadow none
 	
-	@media (max-width:500px){
-		box-shadow none
-	}
+	@media (min-width:500px)
+		height $largeheaderheight
 	
 .darkheader
-	box-shadow 0px 0px 5px rgba(0,0,0,0.2) !important
 	height $headerheight !important
+	box-shadow 0px 0px 5px alpha(#000, 30%) !important
 	
-	@media (min-width:500px){
-		background-color white !important
-	}
-	
-	@media (max-width:500px){
-		box-shadow 0px 0px 5px alpha(#000, 30%) !important
-	}
+	@media (min-width:500px)
+		height $largeheaderheight !important
 	
 .mainheader
 	@media (max-width:500px){
@@ -45,27 +40,24 @@ body > .topheader
 		padding 0 5px 0 5px
 	}
 	
-	@media (min-width:500px){
-		background-color white !important
-	}
-	
 	@media (max-width:500px){
 		height 100%
 	}
-	
-
 
 .header
 	background-size cover !important
+	background-position center
 	position relative
 	
 .headertext
 	text-decoration none
+	position relative
 	color white
 	text-align center
 	width 100%
 	font-size 500%
 	cursor default
+	font-weight 400
 	
 	padding-top 50px
 	padding-bottom 50px
@@ -73,10 +65,16 @@ body > .topheader
 	@media (max-width:500px){
 		padding-top 10px
 		padding-bottom 10px
-		line-height: 100%
+		line-height 100%
 		font-size 17vw
-		font-weight 600
 	}
+
+.headerbackground
+	width 100%
+	height 100%
+	position absolute
+	background-size cover
+	background-position center
 	
 .shineheader
 	width 100%
@@ -85,10 +83,6 @@ body > .topheader
 	position absolute
 	top 0px
 	left 0px
-	
-	@media (max-width:500px){
-		display none
-	}
 
 	
 .logga
@@ -138,9 +132,6 @@ body > .topheader
 	transition all .2s
 	border-radius $default-radius
 	cursor pointer
-	
-	&:hover
-		box-shadow 0px 0px 5px 0px rgba(0,0,0,0.5)
 		
 	@media (max-width:1040px){
 		right 5px
@@ -236,7 +227,10 @@ body > .topheader
 
 .trans-login-black
 	background-color rgba(black,.1)
-	color black
+	.title
+		color black
+	.logtxt
+		color black
 	
 .menubutton
 	@media (max-width:500px){
@@ -333,6 +327,8 @@ div.link
 .whiteheader
 	.logga
 		bg-image logga-vit
+	.menubutton
+		bg-image menu-vit
 	.vrotxt
 		color white
 	.link
