@@ -58,8 +58,9 @@ var overlayApp = new Vue({
 		post: function (newVal) {
 			document.body.classList.toggle('lightbox-visible', !!newVal)
 			if(newVal){
-				_('.topheader').classList.remove('whiteheader')
-				_('.topheader').classList.add('darkheader')
+				var headerShadow = document.createElement('div') 
+				headerShadow.classList.add('headershadow')
+				_('.topheader').appendChild(headerShadow)
 			}			
 		},
 	},
@@ -67,8 +68,7 @@ var overlayApp = new Vue({
 		closePanel: function () {
 			this.post = null
 			if(document.body.scrollTop<=5){
-				_('.topheader').classList.add('whiteheader')
-				_('.topheader').classList.remove('darkheader')
+				_('.topheader').removeChild(_('.topheader').querySelector('.headershadow'))
 			}
 		},
 		postWasDeleted: function (item) {
