@@ -1,0 +1,57 @@
+.holder
+	height calc(100vh - 80px)
+	position relative
+	.karkort
+		position absolute
+		top 45%
+		left 50%
+		transform translate(-50%,-50%)
+		
+		width 95%
+		background-color black
+		overflow hidden
+		border-radius 2vw
+		box-shadow 0 0 10px rgba(0, 0, 0,.1)
+		
+		.relative
+			position relative
+			width 100%
+			padding-top 60%
+			height 0
+		
+			.image
+				bg-image logo-white
+				position absolute
+				padding-top 100%
+				width 72%
+				bottom -50%
+				left -12%
+			.person
+				position absolute
+				bottom calc(100% - 11vw)
+				right 4vw
+				
+				.profile-image
+					height 8vw
+					width 8vw
+					display inline-block
+					background-size contain
+					border-radius 50%
+					vertical-align middle
+				.name
+					font-family "Century Gothic", CenturyGothic, AppleGothic, sans-serif
+					display inline-block
+					color white
+					font-size 5vw
+					vertical-align middle
+					margin-left 1.5vw
+			.text
+				position absolute
+				font-family bebasNeue
+				font-weight bold
+				color white
+				right 4vw
+				bottom 3vw
+				font-size 9vw
+				text-align right
+				line-height 100%

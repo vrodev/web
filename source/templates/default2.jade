@@ -67,7 +67,10 @@ html
 		//- .phonemenu(data-index=1)
 		//- 	.phonelinks
 		//- Main content
-		- var links = [[{name:'Matsedel', link:'/mat'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'kåren', link:'/om'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'}]]
+		if user
+			- var links = [[{name:'Förmåner'}, {name:'Kårkort', link:'/karkort'}, {name:'Logga ut', action:'User.logout()'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'Matsedel', link:'/mat'}, {name:'kåren', link:'/om'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'}]]
+		else
+			- var links = [[{name:'Matsedel', link:'/mat'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'kåren', link:'/om'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'}]]
 		script.
 			var links = JSON.parse('!{JSON.stringify(links)}')
 
@@ -97,16 +100,22 @@ html
 					phoneArroq.classList.add('linkArrow')
 
 					for (e = 1; e < links[i].length; e++) {
+						var subAction
+						if(links[i][e].action){subAction = function(){ User.logout(); //eval(links[i][e].action)
+						}}
+
 						sub = document.createElement('a')
 						sub.className = "sublink"
 						sub.innerText = links[i][e].name
-						sub.href = links[i][e].link
+						if(links[i][e].link) sub.href = links[i][e].link
+						if(links[i][e].action) sub.onclick = subAction
 						normalLink.appendChild(sub)
 
 						sub2 = document.createElement('a')
 						sub2.className = "sublink p-sublink"
 						sub2.innerText = links[i][e].name
-						sub2.href = links[i][e].link
+						if(links[i][e].link) sub2.href = links[i][e].link
+						if(links[i][e].action) sub2.onclick = subAction
 						phoneLink.appendChild(sub2)
 					}
 				}
@@ -120,9 +129,6 @@ html
 				_(".links").appendChild(normalLink)
 				_(".phonelinks").appendChild(phoneLink)
 			}
-
-		.extendHeader
-			.shineheader
 
 		.overlay#overlay-app(@click.self='closePanel')
 			.lightbox

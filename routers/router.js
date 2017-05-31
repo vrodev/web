@@ -119,6 +119,7 @@ module.exports = (function() {
     {page:'faq'},
     {page:'loginvro'},
     {page:'mat'},
+    {page:'karkort'},
     {page:'am'},
     {page:'om'},
     {page:'karen'},

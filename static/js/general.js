@@ -259,6 +259,9 @@ var pageinfos = {
 	lolxdxd:{
 		color:'#28825f',
 		image:'matsalen.jpg'
+	},
+	karkort:{
+		color:'#28825F'
 	}
 }
 
@@ -277,7 +280,7 @@ function changeFromColor(color,image){
 		_(".phonelinks").className += " whitelinks"
 	}
 
-	var shine = _('.header').querySelector(".shineheader")
+	if(_('.header')) if(_('.header').querySelector(".shineheader")) var shine = _('.header').querySelector(".shineheader")
 
 	if (api.currentUser){
 		var object = _('.logged-in')
@@ -287,7 +290,7 @@ function changeFromColor(color,image){
 	}
 
 	if(color == '#ffffff'){
-		_('.headertext').style.color = 'black'
+		if(_('.headertext')) _('.headertext').style.color = 'black'
 		object.classList.add('trans-login-black')
 	}else{
 		_('.topheader').classList.add('whiteheader')
@@ -295,33 +298,33 @@ function changeFromColor(color,image){
 	}
 
 	if(image){
-		_('.headerbackground').style.backgroundImage = 'url(/images/' + image + ')'
+		if(_('.headerbackground')) _('.headerbackground').style.backgroundImage = 'url(/images/' + image + ')'
 
 		if(color){
-			shine.style.background = 'linear-gradient(rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ',1), rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ",.75))"
-			_('.headerbackground').style.filter = 'grayscale(100%'
+			if(shine) shine.style.background = 'linear-gradient(rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ',1), rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ",.75))"
+			if(_('.headerbackground')) _('.headerbackground').style.filter = 'grayscale(100%'
 			metaThemeColor.setAttribute("content", color)
 			appleThemeColor.setAttribute("content", color)
 		}else{
-			shine.style.background = 'linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5))'
+			if(shine) shine.style.background = 'linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5))'
 			metaThemeColor.setAttribute("content", '#ffffff')
 			appleThemeColor.setAttribute("content", '#ffffff')
 		}	
 	}else{
 		if(color){
-			_('.header').style.background = color
-			shine.style.background = 'linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.2))'
+			if(_('.header')) _('.header').style.background = color
+			if(shine) shine.style.background = 'linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.2))'
 			metaThemeColor.setAttribute("content", color)
 			appleThemeColor.setAttribute("content", color)
 		}else{
-			shine.style.background = 'none'
+			if(shine) shine.style.background = 'none'
 			metaThemeColor.setAttribute("content", '#ffffff')
 			appleThemeColor.setAttribute("content", '#ffffff')
 		}	
 	}
 
 	if(window.matchMedia("(max-width: 500px)").matches){
-		document.body.style.background = color
+		if(document.body.style.background == '') document.body.style.background = color
 		link = document.createElement('div')
 		link.className ="kommittelink"
 		link.style.backgroundColor = color

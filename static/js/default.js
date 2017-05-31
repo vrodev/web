@@ -42,8 +42,3 @@ if(pageinfo){
 		(subpageinfo?subpageinfo.image:'')
 	))
 }
-window.onload = function() {
-	if(document.querySelectorAll('.header').length){
-		_(".extendHeader").style.height = _(".header").offsetHeight + 'px'
-	}
-}

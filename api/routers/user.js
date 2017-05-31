@@ -39,6 +39,7 @@ const route = router=> {
 
 		const user = new req.models.User()
 		user.name = req.query.name
+		user.fullName = req.query.fullInitialName
 		user.email = req.query.email
 		user.loginCode = generateSimpleCode(5)
 		user.line = req.query.line

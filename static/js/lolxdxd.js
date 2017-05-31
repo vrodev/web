@@ -36,9 +36,6 @@ if (api.currentUser && api.currentUser.memberships)
 		return membership.group.name == "redigera" && membership.permissions.indexOf("POST")>=0
 })
 
-
-_('.extendHeader').classList.add('extendHeader-main')
-
 if(editAccess) _('.add-card-hidden').style.display = 'block'
 
 document.body.classList.add('mainPage')

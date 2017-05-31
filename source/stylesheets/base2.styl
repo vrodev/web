@@ -46,11 +46,12 @@ body
 	margin-top $headerheight
 	border-radius 0px
 	padding 0px
+	background-color white
 	//box-shadow 0px 0px 40px -16px rgba(0,0,0,0.8)
 	box-shadow none 
 	border none
 	z-index 1
-	background white
+	min-height calc(100vh - 80px)
 	
 	@media (max-width:500px)
 		min-height calc(100vh - 50px)
@@ -178,3 +179,6 @@ body
 
 .display-none
 	display none !important
+	
+//kårkort
+@require "pages2/karkort"

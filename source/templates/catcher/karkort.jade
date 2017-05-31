@@ -1,0 +1,18 @@
+extend ../default2
+block mainContent
+	if user
+		.holder
+			.karkort
+				.relative
+					.image
+					.person
+						.profile-image(style="background-image: url(#{user.picture})")
+						.name= user.fullName
+					.text
+
+		script.
+			document.body.style.background = 'linear-gradient(rgba(40, 130, 95,.9), rgba(40, 130, 95,.8))'
+			_('.main-content').style.background = 'linear-gradient(rgba(40, 130, 95,1), rgba(40, 130, 95,.0))'
+			var date = new Date()
+			var currentYear = date.getFullYear()
+			_('.karkort').querySelector('.text').innerHTML = 'Kårkort<br>' + currentYear
