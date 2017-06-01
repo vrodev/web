@@ -160,7 +160,7 @@ var pageinfos = {
 		ord:'Alex Will Hambén & Johanna Li',
 		desc:'Syftet är att föra samman människor, östasiater som icke-östasiater, som är intresserade av och/eller uppskattar den östasiatiska kulturen och de östasiatiska traditionerna. På mötena kan vi tänka oss att ha traditionellt fika så som grönt te och frön, titta på och skratta åt dåligt producerade östasiatiska filmer eller tv-serier, äta sushi eller nudlar, ha maskerad/utklädnad, baka, ha anime-maraton och så vidare',
 		link:'https://www.facebook.com/groups/1676078619272950/?fref=ts',
-		image:'kommittebilder/östasiatiskkultur.jpg'},
+		image:'kommittebilder/ostasiatiskkultur.jpg'},
 
 		{title:'Retorik',color:'#DD9400',
 		ord:'Willam Karlsson & Victor Lagrelius',
@@ -172,7 +172,7 @@ var pageinfos = {
 		ord:'Filippa Vasilis & Sofia Gerhardsson',
 		desc:'Vi vill sprida glädje genom att sprida godsaker på skolan till alla sötsugna! Med hjälp av oss kommer alla klara skolans tuffa plugg lite bättre. Vi bjuder in alla som gillar att baka, äta och hänga till vår komitté. Vi kommer baka för dagar som Kanelbullens dag, Fettisdagen, fixa äggjakt, Hela VRG Bakar och mycket mer. Välkommen och smaklig måltid!',
 		link:'https://www.facebook.com/groups/673554036115232/?fref=ts',
-		image:'kommittebilder/småttochgott.jpeg'},
+		image:'kommittebilder/smattochgott.jpeg'},
 
 		{title:'Aktiesparare',color:'#8447cb',
 		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
@@ -214,13 +214,13 @@ var pageinfos = {
 		{title:'Miljö',color:'#78A942',
 		ord:'Sebastian Lian',
 		desc:'Miljöutskottet jobbar för att främja skolans miljötänk men också att informera och utbilda kårens medlemmar i miljöfrågor. Detta leder då förhoppningsvis till ett grönare tänk både hos skolan och hos kårens medlemmar. <br><br>Sebastian är ordförande för miljöutskottet och medlem i utskottsgruppen. Han är huvudansvarig för att driva medlemmarnas och kårens miljöfrågor för att skolan ska bli ännu mer miljömedveten. <br><br>Kontakta Sebastian Lian på <a style="color:#000099", href="mailto:seba.lian-2018@vrg.se">seba.lian-2018@vrg.se</a>',
-		image:'utskottsbilder/miljö.jpeg'
+		image:'utskottsbilder/miljo.jpeg'
 		},
 
 		{title:'Påverkan',color:'#DD9400',
 		ord:'Angel GB',
 		desc:'Påverkansutskottet jobbar med påverkansfrågor. Allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. Detta utskott är ansvarigt för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan i rätt riktning. <br><br>Kontakta Angel Bahrami på <a style="color:#000099", href="mailto:goln.bahr-2018@vrg.se">goln.bahr-2018@vrg.se</a>',
-		image:'utskottsbilder/påverkan.jpeg'
+		image:'utskottsbilder/paverkan.jpeg'
 		},
 
 		{title:'Student',color:'#919191',
