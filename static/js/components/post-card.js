@@ -37,7 +37,7 @@ Vue.component('post-card', {
 			this.$refs.changeButton.style.display = 'inline-block'
 		},
 		save: function () {
-			this.post.title = this.$refs.title.innerText
+			this.post.title = this.$refs.base.$refs.title.innerText
 			this.post.subtitle = this.$refs.subtitle.innerText
 			this.post.text = this.$refs.text.innerHTML
 			this.post.prioritized = this.$refs.prioritized.checked
