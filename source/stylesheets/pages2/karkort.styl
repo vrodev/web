@@ -1,12 +1,15 @@
 .holder
 	height calc(100vh - 80px)
+	width 100%
 	position relative
+	display inline-block
 	
-	@media (min-width:500px)
-		transform scale(0.5)
+	@media(min-width:600px)
+		transform: scale(.5)
+
 	.karkort
 		position absolute
-		top 45%
+		top 50%
 		left 50%
 		transform translate(-50%,-50%)
 		
@@ -58,3 +61,24 @@
 				font-size 9vw
 				text-align right
 				line-height 100%
+				
+.wide-holder
+	width: calc((100vh - 80px)*(100/60))
+		
+	.karkort
+		border-radius 2vh * 1.5
+		.relative
+			.person
+				bottom calc(100% - 11vh * 1.5)
+				right 4vh * 1.5				
+				.profile-image
+					height 8vh * 1.5
+					width 8vh * 1.5
+				.name
+					font-size 5vh * 1.5
+					margin-left 1.5vh * 1.5
+			.text
+				right 4vh * 1.5
+				bottom 3vh * 1.5
+				font-size 9vh * 1.5
+	
