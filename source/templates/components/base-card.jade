@@ -1,0 +1,9 @@
+.card(@click="$emit('expand')")
+	.content
+		.image(:style='{backgroundImage:overlayGradient+", url(" + post.imgUrl + ")"}')
+		.info
+			.text-content
+				.title(ref='title', :contenteditable="editable", v-on:keyup="$emit('wasChanged')") {{post.title}}
+				slot
+
+	slot(name="after-content")

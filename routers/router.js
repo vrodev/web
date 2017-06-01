@@ -33,15 +33,40 @@ function randomWrongCodeMessage() {
   return messages[Math.floor(Math.random()*messages.length)]
 }
 
-const jsFilesToLoad = (()=>{
+const {jsFilesToLoad, jsCombinedFiles} = (()=>{
   const txt = fs.readFileSync(path.resolve(__dirname + '/../source/jsFilesToLoad.txt'),'utf8')
   const lines = txt.split(config.usingCRLF? '\r\n': '\n')
-  return lines.filter(line=>line.length&&line.substr(0,1)!="#").map(line=>{
+  
+  const jsCombinedFiles = {}
+  const jsFilesToLoad = lines.filter(line=>line.length&&!line.match(/^#/)).map(line=>{
     const components = line.split(': ')
-    const prefix = (path=>path.length?path+'/':'')(components[0])
+    const isCombined = components[0].match(/^\*/)
+    const entrypoint = isCombined? components[0].substr(1) : components[0]
+    const prefix = entrypoint.length?entrypoint+'/':''
+
+    if (isCombined) {
+      const anchor = components[0].substr(1)+'_'+components[1].replace(/, /g, '_').replace(/[^A-z0-9-+_]+/ig, '')
+
+      jsCombinedFiles[anchor] = components[1].split(', ').map(path=>prefix+path)
+
+      return [anchor]
+    }
+
     return components[1].split(', ').map(path=>prefix+path)
   }).reduce((all,paths)=>all.concat(paths))
+
+  return {jsFilesToLoad, jsCombinedFiles}
 })();
+
+const jsCombinedFilesApplyToRouter = router=> {
+  Object.keys(jsCombinedFiles).map(entry=> router.get('/js/'+entry+'.js', (req, res)=> {
+    const txt = jsCombinedFiles[entry].map(filename=> {
+      const txt = fs.readFileSync(path.resolve(__dirname + '/../static/js/'+filename+'.js'),'utf8')
+      return txt
+    }).join('\n\n\/\/ ************************************************************\n\n')
+    res.send(txt)
+  }))
+}
 
 
 module.exports = (function() {
@@ -119,6 +144,7 @@ module.exports = (function() {
     {page:'faq'},
     {page:'loginvro'},
     {page:'mat'},
+    {page:'testing'},
     {page:'karkort'},
     {page:'am'},
     {page:'om'},
@@ -162,6 +188,8 @@ module.exports = (function() {
       res.render('catcher/'+route.page, route.data)
     })()}})(route) )
   }
+
+  jsCombinedFilesApplyToRouter(router)
 
   // -----------
   return router;    

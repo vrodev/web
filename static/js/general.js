@@ -92,6 +92,18 @@ function getCssValuePrefix(){
 	return rtrnVal;
 }
 
+function headerLinearGradientFromHex(color, a1, a2) {
+	if (a1==undefined) a1 = 1
+	if (a2==undefined) a2 = .75
+	function rgbStr(color) {
+		return hexToRgb(color).join(',')
+	}
+	return 'linear-gradient('
+		+'rgba('+rgbStr(color)+','+a1+')'
+		+',rgba('+rgbStr(color)+','+a2+'))'
+}
+
+
 var pageinfos = {
 	enkommitte: [
 		{title:'Harry Potter',color:'#A21D20',
@@ -301,7 +313,7 @@ function changeFromColor(color,image){
 		if(_('.headerbackground')) _('.headerbackground').style.backgroundImage = 'url(/images/' + image + ')'
 
 		if(color){
-			if(shine) shine.style.background = 'linear-gradient(rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ',1), rgba(' + hexToRgb(color)[0] + "," + hexToRgb(color)[1] + "," + hexToRgb(color)[2] + ",.75))"
+			if(shine) shine.style.background = headerLinearGradientFromHex(color)
 			if(_('.headerbackground')) _('.headerbackground').style.filter = 'grayscale(100%'
 			metaThemeColor.setAttribute("content", color)
 			appleThemeColor.setAttribute("content", color)

@@ -6,18 +6,14 @@ Vue.component('post-card', {
 	},
 	data: function () {
 		return {
-			message: 'Hello Vue!',
 		}
 	},
 	computed: {
 		editable: function () {
-			return editAccess
+			return editAccess && this.expanded
 		}
 	},
 	methods: {
-		change: function () {
-			this.message = 'hej'
-		},
 		deleteItem: function () {
 			var self = this
 			this.post.delete(function(err){
