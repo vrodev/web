@@ -12,7 +12,7 @@ Vue.component('base-card', {
 	computed: {
 		overlayGradient: function () {
 			return this.post.color
-				? headerLinearGradientFromHex(this.post.color)
+				? headerLinearGradientFromHex(this.post.color,.9,.6)
 				: 'linear-gradient(transparent, transparent)'
 		},
 	},

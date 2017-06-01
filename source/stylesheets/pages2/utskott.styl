@@ -1,9 +1,28 @@
-.utskottfield
+.groupfield
 	text-align center
+	margin .4%
 	
 	@media (max-width:500px){
 		line-height 90%
 	}
+	
+	.card
+		margin .4%
+		width 24.2%
+		padding-top 16%
+		border-radius 3px
+		
+		@media (max-width:1024px)
+			width calc(100%/3 - 2*.4%)
+			padding-top 20%
+		
+		@media (max-width:500px)
+			width calc(50% - 2*.4%)
+			padding-top 32%
+		
+		.content
+			.image
+				filter: brightness(1)
 	
 .utskottruta
 	width 220px

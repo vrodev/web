@@ -33,7 +33,7 @@ function randomWrongCodeMessage() {
   return messages[Math.floor(Math.random()*messages.length)]
 }
 
-const {jsFilesToLoad, jsCombinedFiles} = (()=>{
+const jsFilesInfo = (()=>{
   const txt = fs.readFileSync(path.resolve(__dirname + '/../source/jsFilesToLoad.txt'),'utf8')
   const lines = txt.split(config.usingCRLF? '\r\n': '\n')
   
@@ -57,6 +57,9 @@ const {jsFilesToLoad, jsCombinedFiles} = (()=>{
 
   return {jsFilesToLoad, jsCombinedFiles}
 })();
+
+const jsFilesToLoad = jsFilesInfo.jsFilesToLoad
+const jsCombinedFiles = jsFilesInfo.jsCombinedFiles
 
 const jsCombinedFilesApplyToRouter = router=> {
   Object.keys(jsCombinedFiles).map(entry=> router.get('/js/'+entry+'.js', (req, res)=> {
