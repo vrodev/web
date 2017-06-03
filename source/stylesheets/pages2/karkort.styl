@@ -1,12 +1,15 @@
 .holder
-	height calc(100vh - 80px)
+	height "calc(100vh - %s)" % $headerheight
 	width 100%
 	position relative
 	display inline-block
 	
-	@media(min-width:600px)
+	@media(min-width:800px)
 		transform: scale(.5)
-
+	
+	@media(min-width:1040px)
+		height "calc(100vh - %s)" % $largeheaderheight
+		
 	.karkort
 		position absolute
 		top 50%
@@ -78,6 +81,9 @@
 	.karkort
 		border-radius 2vh * 1.5
 		.relative
+			.corner
+				height 6vh * 1.5
+				width 6vh * 1.5
 			.person
 				bottom calc(100% - 11vh * 1.5)
 				right 4vh * 1.5				

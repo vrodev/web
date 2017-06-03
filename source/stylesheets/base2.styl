@@ -43,7 +43,7 @@ body
 				
 
 .main-content
-	margin-top $headerheight
+	margin-top $largeheaderheight
 	border-radius 0px
 	padding 0px
 	background-color white
@@ -53,12 +53,13 @@ body
 	z-index 1
 	min-height calc(100vh - 80px)
 	
-	@media (max-width:500px)
+	@media (max-width:1040px)
 		min-height calc(100vh - 50px)
 		padding-bottom 25px
+		margin-top $headerheight
 		
-	@media (min-width:500px)
-		margin-top $largeheaderheight
+	@media (min-width:1040px)
+		margin-top 
 @require "pages2/header"
 
 //box

@@ -23,9 +23,7 @@ block mainContent
 			var onResize = function(){
 				var headerHeight = _('.topheader').offsetHeight
 				var ratio = (document.body.clientHeight - headerHeight) / document.body.clientWidth
-				console.log(ratio)
 				_('.holder').classList.toggle('wide-holder', ratio < 0.6)
-
 				_('.main-content').style.textAlign = (ratio < .6)?'center':''
 			}
 			window.addEventListener('resize', onResize)
