@@ -335,22 +335,12 @@ function changeFromColor(color,image){
 		}	
 	}
 
+	_('.creddiv').style.backgroundColor = color
+	if(color == '#ffffff'){_('.creddiv').style.backgroundColor = 'rgba(0, 0, 0, 0.1)';_('.creddiv').style.color = 'rgba(0, 0, 0, 0.5)'}
+
 	if(window.matchMedia("(max-width: 500px)").matches){
-		if(document.body.style.background == '') document.body.style.background = color
-		link = document.createElement('div')
-		link.className ="kommittelink"
-		link.style.backgroundColor = color
-		link.style.minHeight = "20px"
-		link.innerText = "By Kommmunikationsutskottet"
-		link.onclick = function(){hidemenu()}
-
-		var el = _('center') || _('.main-content')
-		el.appendChild(link)
-
-		if(color == '#ffffff'){
-			link.style.backgroundColor = 'rgba(0, 0, 0, 0.2)'
-			link.style.color = 'rgba(0,0,0,0.5)'
-		}
+		_('.creddiv').onclick = function(){hidemenu()}
+		
 	}
 }
 
