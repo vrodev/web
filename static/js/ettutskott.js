@@ -26,12 +26,6 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 		var object = _('.log')
 	}
 	object.style.backgroundColor = blendColors(utskott.color, "#ffffff", 0.1)
-
-	link = document.createElement('div')
-	link.className ="kommittelink"
-	link.style.backgroundColor = utskott.color
-	link.style.minHeight = "20px"
-	_('.center').appendChild(link)
 }
 
 _('.utskottheadtext').innerText = utskott.title
