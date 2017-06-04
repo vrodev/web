@@ -64,9 +64,7 @@ var overlayApp = new Vue({
 	methods: {
 		closePanel: function () {
 			this.post = null
-			if(document.body.scrollTop<=5){
-				_('.topheader').removeChild(_('.topheader').querySelector('.headershadow'))
-			}
+			_('.topheader').removeChild(_('.topheader').querySelector('.headershadow')
 		},
 		postWasDeleted: function (item) {
 			app.posts.splice(app.posts.indexOf(item.post),1)
