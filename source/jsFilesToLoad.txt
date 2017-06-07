@@ -11,6 +11,7 @@
 # Empty lines and lines starting with a hash (#) are excluded
 
 helpers: polyfills, helpers, api, api-model, vue
+helpers: moment, moment-sv
 api: group, user, post, main
 *components: base-card, post-card, group-card
 : general, catcher

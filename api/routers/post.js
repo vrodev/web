@@ -18,7 +18,7 @@ const route = router=> {
 	router.get('/', function(req, res) {
 		let limit = req.query.limit ? parseInt(limit) : 1000
 
-		req.models.Post.find().limit(limit).sort({updatedAt: -1}).exec(function(err, result) {
+		req.models.Post.find().limit(limit).sort({createdAt: -1}).exec(function(err, result) {
 			if(res.abortIf(err, 'Couldn\'t fetch posts')) return;
 			res.apiOK(result)
 		});
