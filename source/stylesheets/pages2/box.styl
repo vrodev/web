@@ -165,6 +165,7 @@ $menu-header-height = 40px
 	position relative
 	vertical-align top
 	box-shadow: 0px 0px 0px rgba(0,0,0,0.4)
+	display none
 	
 	@media (max-width:500px){
 		transform scale(1)
@@ -449,15 +450,14 @@ $menu-header-height = 40px
 						display none
 			
 		.close
-			color black
 			position absolute
-			top -17px
-			right 12px
-			transform rotate(45deg)
-			font-size 450%
-			font-weight 100
-			font-family BebasNeue
+			top 0
+			right 0
+			bg-image cross
 			cursor pointer
+			width 25px
+			height 25px
+			margin 12px
 
 /*[contenteditable=true]:empty:before {
 	content attr(placeholder)
