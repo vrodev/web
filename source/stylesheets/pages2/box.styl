@@ -81,6 +81,21 @@
 		display flex
 		flex-direction column
 		overflow hidden
+		
+		.uploadDate
+			position absolute
+			color white
+			bottom 0
+			right 0
+			margin 5px
+			font-size 80%
+			opacity .6
+			
+			@media (max-width:500px)
+				font-size: 2.7vw;
+			
+			&.inside
+				display none
 	
 		.image
 			flex-grow 1
@@ -323,6 +338,24 @@ $menu-header-height = 40px
 				max-height calc(100vh - 50px - 115px)
 				overflow scroll
 			}
+			
+			.uploadDate
+				display none
+				&.inside
+					font-weight bold
+					text-align left
+					font-size 1.7vw
+					display block
+					opacity .5
+					margin-top 5px
+					
+					@media (min-width:1024px){
+						font-size 100%
+					}
+					
+					@media(max-width: 500px){
+						font-size 4vw
+					}
 		
 			.image
 				width 40vw

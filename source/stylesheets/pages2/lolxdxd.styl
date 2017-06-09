@@ -11,12 +11,19 @@
 			
 	.main-content
 		.header
-			.headertext					
+			.headertext
+				@media (max-width:1040px)
+					padding-top 3vw
+					padding-bottom 3vw	
 				.long
 					display block
 				.short
 					display none
-				
+					
+				@media (max-width:1040px)
+					.long
+						font-size 9vw
+
 				@media (max-width:500px)
 					.long
 						display none
@@ -27,13 +34,16 @@
 					bg-image logga-vit
 					height 150px
 					
+					@media (max-width:1040px)
+						height 15vw
+					
 			@media (max-width:500px)
 				.headertext
 					.logo
 						display none
 		
 			
-.app-reminder			
+.app-reminder
 	position fixed
 	top 10px
 	right 0

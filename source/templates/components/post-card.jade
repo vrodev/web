@@ -7,6 +7,7 @@ base-card(
 	@wasChanged="displayChange")
 	.subtitle(ref='subtitle', :contenteditable="editable", v-on:keyup='displayChange') {{post.subtitle}}
 	.text(ref='text', :contenteditable="editable", v-html='post.text', v-on:keyup='displayChange')
+	.uploadDate.inside(v-html='uploadDate')
 	
 	
 	div.checkboxdiv.choice.add-choice(v-if='editable')
@@ -18,4 +19,4 @@ base-card(
 	.close(slot="after-content", @click='closePanel')
 		.cross +
 
-	.uploadDate(ref='subtitle', v-html='uploadDate', slot='lol')
+	.uploadDate(v-html='uploadDate', slot='lol')
