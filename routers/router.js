@@ -35,7 +35,7 @@ function randomWrongCodeMessage() {
 
 const jsFilesInfo = (()=>{
   const txt = fs.readFileSync(path.resolve(__dirname + '/../source/jsFilesToLoad.txt'),'utf8')
-  const lines = txt.replace(/\r/g, '').split(config.usingCRLF? '\r\n': '\n')
+  const lines = txt.replace(/\r/g, '').split('\n')
   
   const jsCombinedFiles = {}
   const jsFilesToLoad = lines.filter(line=>line.length&&!line.match(/^#/)).map(line=>{
