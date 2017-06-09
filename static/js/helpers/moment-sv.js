@@ -5,9 +5,9 @@
 moment.defineLocale('sv', {
 	months : 'januari_februari_mars_april_maj_juni_juli_augusti_september_oktober_november_december'.split('_'),
 	monthsShort : 'jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec'.split('_'),
-	weekdays : 'söndag_måndag_tisdag_onsdag_torsdag_fredag_lördag'.split('_'),
-	weekdaysShort : 'sön_mån_tis_ons_tor_fre_lör'.split('_'),
-	weekdaysMin : 'sö_må_ti_on_to_fr_lö'.split('_'),
+	weekdays : 'sÃ¶ndag_mÃ¥ndag_tisdag_onsdag_torsdag_fredag_lÃ¶rdag'.split('_'),
+	weekdaysShort : 'sÃ¶n_mÃ¥n_tis_ons_tor_fre_lÃ¶r'.split('_'),
+	weekdaysMin : 'sÃ¶_mÃ¥_ti_on_to_fr_lÃ¶'.split('_'),
 	longDateFormat : {
 		LT : 'HH:mm',
 		LTS : 'HH:mm:ss',
@@ -21,25 +21,25 @@ moment.defineLocale('sv', {
 	calendar : {
 		sameDay: '[Idag] LT',
 		nextDay: '[Imorgon] LT',
-		lastDay: '[Igår] LT',
-		nextWeek: '[På] dddd LT',
+		lastDay: '[IgÃ¥r] LT',
+		nextWeek: '[PÃ¥] dddd LT',
 		lastWeek: '[I] dddd[s] LT',
 		sameElse: 'L'
 	},
 	relativeTime : {
 		future : 'om %s',
-		past : 'för %s sedan',
-		s : 'några sekunder',
+		past : '%s sedan',
+		s : 'nÃ¥gra sekunder',
 		m : 'en minut',
 		mm : '%d minuter',
 		h : 'en timme',
 		hh : '%d timmar',
 		d : 'en dag',
 		dd : '%d dagar',
-		M : 'en månad',
-		MM : '%d månader',
-		y : 'ett år',
-		yy : '%d år'
+		M : 'en mÃ¥nad',
+		MM : '%d mÃ¥nader',
+		y : 'ett Ã¥r',
+		yy : '%d Ã¥r'
 	},
 	dayOfMonthOrdinalParse: /\d{1,2}(e|a)/,
 	ordinal : function (number) {

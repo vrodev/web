@@ -11,6 +11,11 @@ Vue.component('post-card', {
 	computed: {
 		editable: function () {
 			return editAccess && this.expanded
+		},
+		uploadDate: function(){
+			var dateInfo = new Date(this.post.createdAt)
+			var monthNames = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun","Jul", "Aug", "Sep", "Okt", "Nov", "Dec"]
+			return moment(dateInfo).fromNow()
 		}
 	},
 	methods: {
