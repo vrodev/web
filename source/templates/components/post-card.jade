@@ -15,5 +15,4 @@ base-card(
 	.choice.edit(v-if='editable', ref='changeButton', @click='save') Edit Post
 	.choice.remove(v-if='editable', @click='deleteItem') Remove Post
 
-	.close(slot="after-content", @click='closePanel')
-		.cross +
+	.close(slot="corner", @click='closePanel') +

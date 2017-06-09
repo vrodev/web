@@ -72,6 +72,9 @@
 	
 	&.template
 		display none
+	
+	.close
+		display none
 
 	.content
 		position absolute
@@ -279,9 +282,6 @@ $menu-header-height = 40px
 .overlay
 	display none
 	
-.close
-	display none
-	
 .lightbox-visible
 	overflow hidden
 			
@@ -298,32 +298,33 @@ $menu-header-height = 40px
 		}
 		
 	.lightbox > .item
-		width 100%
+		width 90%
 		max-width 1030px
 		text-align center
 		position fixed
+		box-sizing border-box
 		background-color white
 		z-index 10
 		top 50%
 		left 50%
 		transform translate(-50%,-50%)
-		padding 50px
+		padding 45px
 		display inline-block
 				
 		@media (max-width:500px){
 			top $headerheight
 			transform translate(-50%,0)
-			padding 20px 0px 20px 0px
+			padding 50px 0px 20px 0px
 			width 96%
 			margin-top 2%
-			max-height calc(100vh - 50px - 115px - 2%)
+			height calc(100vh - 50px - 2%)
 			border-radius 2px
 		}
 		
 		& > .content
 			
 			@media (max-width:500px){
-				max-height calc(100vh - 50px - 115px)
+				height calc(100vh - 50px - 80px)
 				overflow scroll
 			}
 			
@@ -344,10 +345,8 @@ $menu-header-height = 40px
 				}
 		
 			.image
-				width 40vw
-				height 40vw
-				max-width 500px
-				max-height 500px
+				width calc(50% - 10px)
+				padding-top calc(50% - 10px)
 				background-size cover
 				display inline-block
 				margin 0
@@ -356,22 +355,17 @@ $menu-header-height = 40px
 				
 				@media(max-width: 500px){
 					width 90%
-					height 0
 					padding-top 90%
 					margin 0% 5% 0% 5%
 				}
 			
 			.info
 				box-sizing border-box
+				width calc(50% - 10px)
+				padding-top calc(50% - 10px)
+				margin-left 20px
 				display inline-block
-				width 50vw
-				height 40vw
-				max-width 500px
-				max-height 500px
-				margin-left 25px
-				padding-top 0px
-				height 100%
-				display inline-block
+				position relative
 				
 				@media(max-width: 500px)
 					width 90%
@@ -383,7 +377,9 @@ $menu-header-height = 40px
 					overflow-x hidden
 					
 				.text-content
-					position relative !important
+					position absolute
+					top 0
+					width 100%					
 					
 					.add-choice
 						margin 0 auto
@@ -453,37 +449,15 @@ $menu-header-height = 40px
 						display none
 			
 		.close
-			display block
+			color black
 			position absolute
-			bottom -80px
-			text-align center
-			background-color rgba(255,255,255,.2) 
-			left 50%
-			transform translate(-50%,0%) rotate(45deg)
-			width 50px
-			height 50px
-			border-radius 50%
-			transition all .2s
-			
-			@media(max-width: 500px){
-				bottom -65px
-			}
-			
-			&:hover
-				background-color rgba(255,255,255,.3)
-				box-shadow 0px 0px 1px 0px rgba(white,.75)
-				cursor default
-				
-				.cross
-					font-size 301%
-			
-			.cross
-				color white
-				position absolute
-				top 50%
-				left 50%
-				transform translate(-50%,-50%)
-				font-size 300%
+			top -17px
+			right 12px
+			transform rotate(45deg)
+			font-size 450%
+			font-weight 100
+			font-family BebasNeue
+			cursor pointer
 
 /*[contenteditable=true]:empty:before {
 	content attr(placeholder)
