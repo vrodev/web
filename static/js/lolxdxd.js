@@ -145,6 +145,8 @@ api.food(function(err, weeks) {
 	var day = week.days.find(function(day) {return day.nr==currentDayOfWeek})
 	if (day){
 		_('.menu').classList.add('display-inline-block')
+	}else{
+		return
 	}
 
 	var date = new Date(day.date)
