@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('BebasNeue.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'CenturyGothic';
+  src: url('CenturyGothic.ttf') format('truetype');
+}
+
+body {
+  background:#fdfdfd;
+  width: 320px;
+  font-family:"CenturyGothic",helvetica;
+}
+
+h1 {
+  text-align: center;
+  margin-top:20px;
+  border-bottom:2px solid black;
+  margin-bottom:10px;
+  font-family:"BebasNeue";
+}
+
+*:focus {
+  outline:none;
+}
+
+.box {
+  width: 100%;
+  height: 320px;
+  background: gray;
+  position: relative;
+  margin-bottom:10px;
+  background-size:cover;
+  background-position:center;
+}
+
+.box .bottom {
+  position:absolute;
+  bottom:0px;
+  right:0px;
+  left:0px;
+  height:128px;
+  background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 70%,rgba(0,0,0,0) 100%);
+}
+
+.bottom .text {
+  width:100%;
+  position:absolute;
+  bottom:0px;
+  height:50%;
+  text-align:center;
+  color:white;
+  font-size:39px;
+  line-height:60px;
+  font-family:"BebasNeue";
+}
+
+.bottom .text.t2 {
+  width:100%;
+  position:absolute;
+  top:0px;
+  height:50%;
+  text-align:center;
+  color:white;
+  font-size:22px;
+  font-family:"CenturyGothic";
+  line-height:105px;
+}
+
+
+
+.box .logo {
+  position:absolute;
+  left:7px;
+  bottom:8px;
+  height:0px;
+  width:0px;
+  background-image:url(http://vrgkillergame.se/logo-white.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+
+
+button {
+  width:calc(50% - 3px);
+  height:30px;
+}
+
+.row {
+  position:relative;
+  height:30px;
+  padding-left:10px;
+}
+
+input[type="range"] {
+  margin-left:10px;
+  top:7px;
+  position:absolute;
+  right:10px;
+  width:230px;
+  
+}
+
+span.loadProfiles {
+  margin-top:8px;
+  margin-bottom:7px;
+  margin-left:10px;
+  display: inline-block;
+}
+
+/* Slider */
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: goldenrod;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
