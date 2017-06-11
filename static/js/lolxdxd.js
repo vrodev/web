@@ -53,18 +53,12 @@ var overlayApp = new Vue({
 	},
 	watch: {
 		post: function (newVal) {
-			document.body.classList.toggle('lightbox-visible', !!newVal)
-			if(newVal){
-				var headerShadow = document.createElement('div') 
-				headerShadow.classList.add('headershadow')
-				_('.topheader').appendChild(headerShadow)
-			}			
+			document.body.classList.toggle('lightbox-visible', !!newVal)		
 		},
 	},
 	methods: {
 		closePanel: function () {
 			this.post = null
-			_('.topheader').removeChild(_('.topheader').querySelector('.headershadow'))
 		},
 		postWasDeleted: function (item) {
 			app.posts.splice(app.posts.indexOf(item.post),1)
