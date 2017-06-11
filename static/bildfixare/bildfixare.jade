@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    | <!-- Created by Leonard Pauli 2015 -->
+    meta(charset="utf-8")
+    title VRO Bildfixare
+    link(rel="stylesheet", href="/bildfixare.css")
+    meta(name="viewport",content="width=device-width,initial-scale=1,maximum-scale=1")
+  body
+    h1 VRO Bildfixare
+    .box
+      .bottom
+        .text.t2(contenteditable="true") Hanna Matsson
+        .text.t1(contenteditable="true") Månadens Medlem
+        .logo
+    button.upload Upload
+    button.download Download
+    br
+    br
+    .settings
+      .row
+        | Höjd:
+        input(type="range")(value=100).height
+      .row
+        | Text 2:
+        input(type="range").t2
+      .row
+        | Text 1:
+        input(type="range")(ontouchdown="").t1
+      .row
+        | Logga:
+        input(type="range")(value=0).logo
+      .row
+        | Text 2h:
+        input(type="range").t2h
+      .row
+        | Text 1h:
+        input(type="range")(ontouchdown="").t1h
+
+    span.loadProfiles Ladda profiler:
+    br
+    button.loadVDA Viste du att..?
+    button.loadMM Månadens Medlem
+    button.loadIG Instagram bild
+    br
+    br
+    button.fetch Hämta profil
+    button.loadCustomProfile Ladda profil
+    br
+    br
+    button.back Tillbaka
+    
+    input.file(type="file")(style="visibility:hidden;")
+    script(src="/bildfixare.js")
