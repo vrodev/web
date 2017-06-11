@@ -36,7 +36,7 @@ Vue.component('post-card', {
 			// cardCopy.classList.remove(className)
 			// cardCopy.removeAttribute("style")
 			overlayApp.post = this.post
-			this.$refs.prioritized.checked = this.post.prioritized
+			/*this.$refs.prioritized.checked = this.post.prioritized*/
 		},
 		displayChange: function () {
 			this.$refs.changeButton.style.display = 'inline-block'
