@@ -149,13 +149,12 @@ html
 							.title.text-input(data-placeholder='Rubrik' contentEditable="true")
 							.subtitle.text-input(data-placeholder='Underrubrik' contentEditable="true")
 							.text.text-input(data-placeholder='Text' contentEditable="true")
-					.options
-						div.checkboxdiv.choice.add-choice
-							input.checkbox(type='checkbox' id='prioritizedCheckbox')
-							label.label2(for='prioritizedCheckbox') Prioriterad
-						div.choice.publish.add-choice Publicera
+							div.checkboxdiv.choice.add-choice
+								input.checkbox(type='checkbox' id='prioritizedCheckbox')
+								label.label2(for='prioritizedCheckbox') Prioriterad
+							div.choice.publish.add-choice Publicera
+						
 			.close(onclick='closeAddCard()')
-				.cross +
 
 		.main-content
 			//- include footer-made

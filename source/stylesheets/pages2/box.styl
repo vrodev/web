@@ -357,7 +357,7 @@ $menu-header-height = 40px
 				background-position center
 				
 				@media(max-width: 500px){
-					width 90%
+					width 90% !important
 					padding-top 90%
 					margin 0% 5% 0% 5%
 				}
@@ -488,6 +488,7 @@ $menu-header-height = 40px
 		bg-image plus
 		background-size 80%
 		bottom 0px
+		width calc(50% - 11px) !important
 	.image-view
 		display none !important
 	.info
@@ -510,32 +511,6 @@ $menu-header-height = 40px
 					margin-bottom 10px
 				.subtitle
 					height auto !important
-		.options
-			//absolute bottom 0px right 0px
-			margin-top 20px
-			width 100%
-			div.checkboxdiv
-				padding-left 22px
-				.checkbox
-					display inline-block
-					height 30px
-					width 30px
-					relative top 10px left -10px
-					
-				label.label2
-					display inline-block
-					flex-grow 1
-					line-height 50px
-			.choice
-				width 45% !important
-				padding 0 !important
-				margin 2.5% !important
-				line-height 44px
-				
-			.publish
-				box-sizing border-box
-				margin 0px
-				margin-left 10px
 				
 .add-card-hidden
 	position fixed
