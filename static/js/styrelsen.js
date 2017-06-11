@@ -9,12 +9,10 @@ for (i = 0; i < parts.length; i++) {
 	ruta = document.createElement('div')
 	ruta.className ="utskottruta styrelsenruta"
 	ruta.setAttribute("onclick", "window.location.href = '/styrelsen/" + namespace + "'")
-	ruta.style.backgroundColor = parts[i].color
 	_('.styrelsencenter').appendChild(ruta)
 
 	upper = document.createElement('div')
 	upper.className ="utskotttop"
-	upper.style.backgroundColor = parts[i].color
 	ruta.appendChild(upper)
 
 	image = document.createElement('div')
@@ -30,7 +28,6 @@ for (i = 0; i < parts.length; i++) {
 	text = document.createElement('div')
 	text.className ="utskottinfo styrelseninfo"
 	text.innerText = parts[i].ord
-	text.style.backgroundColor = blendColors(parts[i].color, '#000000', 0.1)
 	ruta.appendChild(text)
 
 	shine = document.createElement('div')
