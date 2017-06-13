@@ -9,11 +9,12 @@ const dbRef = require('../helpers/helpers').mongooseRef(null, {typeKey:'$type'})
 const Schema = new mongoose.Schema({
 	name: String,
 	about: String,
+	color: String,
+	imgUrl: String,
 	open: Boolean, // Bestämmer om medlemmar kan joina utan godkännande från behörig användare i gruppen
 
 	type: {
 		$type: String,
-		enum: ['UTSKOTT','KOMMITTE','GROUP'],
 		default: 'GROUP'
 	}
 

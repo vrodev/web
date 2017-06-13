@@ -63,6 +63,8 @@ const route = router=> {
 		const item = new req.models.Group()
 		item.name = req.body.name
 		item.about = req.body.about
+		item.color = req.body.color
+		item.imgUrl = req.body.imgUrl
 		item.open = req.body.open || false; // Ändra senare, när godkännandefunktion implementeras
 		item.type = req.body.type
 
@@ -79,11 +81,15 @@ const route = router=> {
 			if (res.abortIf(err, 'Could not find user for handling update')) { return }
 			const iname = item.name
 			const iabout = item.about
+			const icolor = item.color
+			const iimgUrl = item.imgUrl
 			const iopen = item.open
 			const itype = item.type
 
 			item.name = req.body.name || iname
 			item.about = req.body.about || iabout
+			item.color = req.body.color || icolor
+			item.imgUrl = req.body.imgUrl || iimgUrl
 			item.open = req.body.open || iopen
 			item.type = req.body.type || itype
 
