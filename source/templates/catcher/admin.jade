@@ -3,13 +3,27 @@ block mainContent
 
 	.header.utskottheader
 		.shineheader
-		h1.headertext.utskottheadtext Admin
+		h1.headertext.utskottheadtext Ny grupp
 
-	input(id='name' placeholder='name')
-	input(id='about' placeholder='about')
-	input(id='type' placeholder='type')
-	input(id='open' placeholder='open(nothing for false)')
-	button(onclick='addgroup()')
+	.center
+		.new-group
+			.text-input(data-placeholder='Namn' id='name' contentEditable="true")
+			.text-input(data-placeholder='Om' id='about' contentEditable="true")
+			.text-input(data-placeholder='grupp-typ' id='type' contentEditable="true")
+			.info.type-info
+			.text-input(data-placeholder='Färg (ex. #ffff00)' id='color' contentEditable="true")
+			a.info.color-info(href="https://www.google.se/search?q=html+color+picker&oq=html+color+picker&aqs=chrome..69i57j0l5.3146j0j7&sourceid=chrome&ie=UTF-8#safe=active&q=html+color+picker") Klicka här för färgväljare
+			.text-input(data-placeholder='Länk (ex. Facebook)' id='link' contentEditable="true")
+
+			input.imageinput(type="file" id='bild' accept="image/*")
+			label.image.add-image(for='bild')
+				.imagetext Lägg till en bild
+
+			label.checkboxdiv.open(for='openCheckbox')
+				input.checkbox(type='checkbox' id='openCheckbox')
+				label.check-label(for='openCheckbox') Alla får gå med
+
+			.upload(onclick='addgroup()') Ladda upp
 
 	script(src='/js/admin.js')
 

@@ -65,6 +65,7 @@ const route = router=> {
 		item.about = req.body.about
 		item.color = req.body.color
 		item.imgUrl = req.body.imgUrl
+		item.link = req.body.link
 		item.open = req.body.open || false; // Ändra senare, när godkännandefunktion implementeras
 		item.type = req.body.type
 
@@ -83,6 +84,7 @@ const route = router=> {
 			const iabout = item.about
 			const icolor = item.color
 			const iimgUrl = item.imgUrl
+			const ilink = item.link
 			const iopen = item.open
 			const itype = item.type
 
@@ -90,6 +92,7 @@ const route = router=> {
 			item.about = req.body.about || iabout
 			item.color = req.body.color || icolor
 			item.imgUrl = req.body.imgUrl || iimgUrl
+			item.link = req.body.link || ilink
 			item.open = req.body.open || iopen
 			item.type = req.body.type || itype
 

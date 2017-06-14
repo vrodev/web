@@ -11,7 +11,8 @@ const Schema = new mongoose.Schema({
 	about: String,
 	color: String,
 	imgUrl: String,
-	open: Boolean, // Bestämmer om medlemmar kan joina utan godkännande från behörig användare i gruppen
+	link: String,
+	open: Boolean,
 
 	type: {
 		$type: String,

@@ -1,0 +1,69 @@
+.new-group
+	display inline-block
+	width calc(100% - 10px)
+	max-width 600px
+	text-align left
+	margin 0 5px 0 5px
+	.text-input
+		background-color rgba(0,0,0,.05)
+		width 100%
+		padding 5px
+		outline none
+		font-size 150%
+		box-sizing border-box
+		margin-top 10px
+		border-radius 2px
+		
+	.text-input:empty:before
+		content attr(data-placeholder)
+		color gray
+	
+	label.add-image
+		display block
+		background-color rgba(0,0,0,.05)
+		position relative
+		cursor pointer
+		width calc(100% - 20px) !important
+		padding-top 60%
+		margin 10px
+		
+		.imagetext
+			position absolute
+			top calc(50% + 40px)
+			left 50%
+			transform translateX(-50%)
+			color grey
+
+	.image
+		bg-image plus
+		background-size 80%
+		bottom 0px
+		width calc(50% - 11px) !important
+		
+	.checkboxdiv
+		text-align center
+		padding 20px
+		background-color rgba(0,0,0,.05)
+		border-radius 2px
+		display block
+		margin 5px
+		cursor pointer
+		.checkbox
+			display inline-block
+			margin-right 5px
+			
+		.check-label
+			height 100%
+	
+	.info
+		margin-left 5px
+		color rgba(black,.5)
+	
+	.upload
+		text-align center
+		padding 20px
+		background-color $vrocolor
+		color white
+		margin 5px
+		border-radius 2px
+		cursor pointer
