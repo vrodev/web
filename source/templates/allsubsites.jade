@@ -18,10 +18,7 @@ script.
 		if ((window.matchMedia("(max-width: 500px)").matches) && (color !== "#ffffff")){
 
 			_(".center-header").style.backgroundColor = color
-
-			if(dataPage !== 'styrelsen'){
-				_(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
-			}
+			_(".log").style.backgroundColor = blendColors(color, "#000000", 0.3)
 
 			link = document.createElement('div')
 			link.className ="kommittelink"
@@ -37,7 +34,7 @@ script.
 
 	var pageinfo = pageinfos[dataPage]
 	var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
-		return subpageinfo.name.replace(/_/g," ").toLowerCase() == subpage
+		return (subpageinfo.name.replace(/_/g," ").toLowerCase() == subpage)
 	})
 	if(pageinfo){
 		todo(!subpage?pageinfo.color:

@@ -231,23 +231,31 @@ var pageinfos = {
 
 	],
 	styrelsenpers:[
-		{title:'Ordförande',ord:'Richard Wahlström', image:'styrelsen/richard.jpg',color:'#323241',
+		{title:'Richard Wahlström',ord:'Ordförande', image:'styrelsen/richard.jpg',color:'#323241',
 		desc:'Richard är ordförande och är elevkårens visionerande ledare. Hans uppgift är bland annat att kalla till och leda styrelsemöten samt att samordna hela kåren som organisation. Richard är också huvudansvarig för att kårens stadgar och styrdokument efterföljs samt representationen av kåren utåt vid större event. <br><br>Kontakta Richard Wahlström på rich.wahl-2018@vrg.se'},
-		{title:'Vice Ordförande',ord:'Sandra Pernkrans',image:'styrelsen/sandra.jpg',color:'#323241',
+		{title:'Sandra Pernkrans',ord:'Vice Ordförande',image:'styrelsen/sandra.jpg',color:'#323241',
 		desc:'Sandra är kårens vice ordförande och är ställföreträdare för ordförande. Hon är också en hjälpande hand och ett extra bollplank för alla förtroendevalda samt ansvarig för bland annat kårpoolen och månadens medlem. <br><br>Kontakta Sandra Pernkrans på sand.pern-2018@vrg.se'},
-		{title:'Utskottsansvarig',ord:'Pelle Melin',image:'styrelsen/pelle.jpg',color:'#323241',
+		{title:'Pelle Melin',ord:'Utskottsansvarig',image:'styrelsen/pelle.jpg',color:'#323241',
 		desc:'Pelle är utskottsansvarig och ordförande för utskottsgruppen. Hans viktigaste uppdrag är att koordinera alla kårens utskott. Han är också den viktiga länken mellan styrelsen och utskottsgruppen vilket är krävs för att hela kårens verksamhet ska fungera. <br><br>Kontakta Pelle Melin på per.meli-2018@vrg.se'},
-		{title:'Administratör',ord:'Malin Öster',image:'styrelsen/malin.jpg',color:'#323241',
+		{title:'Malin Öster',ord:'Administratör',image:'styrelsen/malin.jpg',color:'#323241',
 		desc:'Malin är kårens administratör vilket innebär att hon är sekreterare på kårens styrelsemöten men är också ansvarig för medlemsregistret. Hon är också ansvarig för kommittéverksamheten så det är henne du ska hör av dig till om du har någon bra idé för en kommitté! <br><br>Kontakta Malin Öster på mali.oste-2018@vrg.se'},
-		{title:'Skattmästare',ord:'August Eklund',image:'styrelsen/august.jpg',color:'#323241',
+		{title:'August Eklund',ord:'Skattmästare',image:'styrelsen/august.jpg',color:'#323241',
 		desc:'August är kårens skattmästare och är därför den som har mest koll på kårens ekonomi. Han sköter viktiga saker såsom bokföring och kassaredovisning men han är också med och förhandlar vid stora och viktiga avtal. Allt för att ni medlemmar ska få ett så fördelaktigt medlemskap som möjligt! <br><br> Kontakta August Eklund på augu.eklu-2018@vrg.se'},
-		{title:'Suppleant',ord:'Julia Ivarsson',image:'styrelsen/julia.jpg',color:'#323241',
+		{title:'Julia Ivarsson',ord:'Suppleant',image:'styrelsen/julia.jpg',color:'#323241',
 		desc:'Julia är suppleant i kåren vilket innebär att hon är ställföreträdare för styrelsen. Hon bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer. <br><br>Kontakta Julia Ivarsson på juli.ivar-2018@vrg.se'},
-		{title:'Suppleant',ord:'Martin Babazadeh',image:'styrelsen/martin.jpg',color:'#323241',
+		{title:'Martin Babazadeh',ord:'Suppleant',image:'styrelsen/martin.jpg',color:'#323241',
 		desc:'Martin är suppleant i kåren vilket innebär att han är ställföreträdare för styrelsen. Han bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer. <br><br>Kontakta Martin Babazadeh på mart.baba-2019@vrg.se'},		
+	],
+	utvecklarepers:[
+		{title:'Erik Enger Karlson', ord:'Webbutvecklare', image:'styrelsen/richard.jpg',color:'#323241', desc:'Erik Enger Karlson har främst utvecklat hemsidan med en primär roll i dess design, funktionalitet och användning. <br> Kan nås på <a style="color:#000099", href="mailto:erik.engerkarlson@gmail.com">erik.engerkarlson@gmail.com</a>'},
+		{title:'Leonard Pauli',ord:'Systemutvecklare', image:'styrelsen/richard.jpg',color:'#323241', desc:'Leonard Pauli har främst utvecklat grunden till hemsidan. <br>Kan nås på <a style="color:#000099", href="mailto:leonard.pauli97@gmail.com">leonard.pauli97@gmail.com</a> '},
+		{title:'Jacob Tilly',ord:'Backend-utvecklare', image:'styrelsen/richard.jpg',color:'#323241', desc:'Jacob Tilly har främst utvecklat backend kopmponenter.'},
 	],
 	styrelsen: {
 		content:'styrelsenpers',
+	},
+	utvecklare: {
+		content:'utvecklarepers',
 	},
 	mat:{
 		color:"#e39c43",
@@ -348,7 +356,5 @@ var subpage = window.location.pathname.replace(/\/$/,'').split('/');
 subpage = subpage[subpage.length-1]
 var pageinfo = typeof dataPage!=='undefined'? pageinfos[dataPage]: null
 var subpageinfo = !pageinfo||!subpage||!(pageinfo instanceof Array)?pageinfo:pageinfo.find(function(subpageinfo){
-	if (dataPage=='styrelsenpers')
-		return subpageinfo.ord.replace(/ /g,"-").toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') == subpage
 	return subpageinfo.title.replace(/ /g,"-").toLowerCase().replace("å","a").replace("ä","a").replace('ö','o') == subpage
 })

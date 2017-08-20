@@ -1,4 +1,4 @@
-var parts = pageinfos.styrelsenpers
+var parts = pageinfos.utvecklarepers
 
 for (i = 0; i < parts.length; i++) {
 	var namespace = parts[i].title.toLowerCase()
@@ -8,7 +8,7 @@ for (i = 0; i < parts.length; i++) {
 
 	ruta = document.createElement('div')
 	ruta.className ="utskottruta styrelsenruta"
-	ruta.setAttribute("onclick", "window.location.href = '/styrelsen/" + namespace + "'")
+	ruta.setAttribute("onclick", "window.location.href = '/utvecklare/" + namespace + "'")
 	_('.styrelsencenter').appendChild(ruta)
 
 	upper = document.createElement('div')

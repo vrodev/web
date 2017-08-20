@@ -156,6 +156,10 @@ module.exports = (function() {
     {path:'styrelsen/:info',page:'styrelsenpers', dataGen: req=>{
       return {styrelsen:req.params.info}
     }},
+    {page:'utvecklare'},
+    {path:'utvecklare/:info',page:'styrelsenpers', dataGen: req=>{
+      return {utvecklare:req.params.info}
+    }},
     {page:'kommitte'},
     {page:'admin'},
     {page:'added'},
