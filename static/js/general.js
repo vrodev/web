@@ -224,7 +224,7 @@ var pageinfos = {
 
 		{title:'Påverkan',color:'#DD9400',
 		ord:'Angel GB',
-		desc:'Påverkansutskottet jobbar med påverkansfrågor. Allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. Detta utskott är ansvarigt för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan i rätt riktning. <br><br>Kontakta Angel Bahrami på <a style="color:#000099", href="mailto:goln.bahr-2018@vrg.se">goln.bahr-2018@vrg.se</a>',
+		desc:'Påverkansutskottet jobbar med elevkårens påverkansfrågor. Allt ifrån att det behövs ståbord i klassrummen till att stökigt i matsalen. Utskottet anordnar även politiska event som exempelvis debatter och skolval, samt är ansvarig för klassråden. Påverkansutskottet kan du kontakta genom visselpipan, påverkanslappen och genom att maila dess ordförande.<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan i rätt riktning. <br><br>Kontakta Angel Bahrami på <a style="color:#000099", href="mailto:goln.bahr-2018@vrg.se">goln.bahr-2018@vrg.se</a>',
 		image:'utskottsbilder/paverkan.jpeg',
 		link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=P%C3%A5verkan&entry.2145308741&entry.392620747',
 		},
