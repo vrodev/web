@@ -32,6 +32,9 @@ script.
 		}
 	}
 
+	debugger
+	alert('hej')
+		
 	var pageinfo = pageinfos[dataPage]
 	var subpageinfo = !pageinfo||!subpage?undefined:pageinfo.find(function(subpageinfo){
 		return (subpageinfo.name.replace(/_/g," ").toLowerCase() == subpage)

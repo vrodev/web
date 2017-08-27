@@ -75,14 +75,14 @@ app = new Vue({
 	data: {
 		message: 'Hello Vue!',
 		posts: [],
-		tabs: ['Prioriterade poster', 'Alla poster'],
-		selectedTab: 'Prioriterade poster',
+		tabs: ['Nya poster', 'Alla poster'],
+		selectedTab: 'Nya poster',
 	},
 	computed: {
 		filteredPosts: function () {
 			var self = this
-			return this.posts.filter(function(item){
-				return self.selectedTab == 'Alla poster' || item.prioritized
+			return this.posts.filter(function(item, index){
+				return self.selectedTab == 'Alla poster' || index < 8
 			})
 		},
 	},

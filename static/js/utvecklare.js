@@ -19,6 +19,7 @@ for (i = 0; i < parts.length; i++) {
 	image.className ="utskottbild"
 	image.style.backgroundImage = "url(/images/" + parts[i].image + ")" 
 	upper.appendChild(image)
+	image.style.backgroundSize = '100%'
 
 	header = document.createElement('h2')
 	header.className ="utskottrubrik styrelsenrubrik"

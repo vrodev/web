@@ -153,12 +153,12 @@ module.exports = (function() {
     {page:'om'},
     {page:'karen'},
     {page:'styrelsen'},
-    {path:'styrelsen/:info',page:'styrelsenpers', dataGen: req=>{
-      return {styrelsen:req.params.info}
+    {path:'styrelsen/:name',page:'styrelsenpers', dataGen: req=>{
+      return {styrelsen:req.params.name}
     }},
     {page:'utvecklare'},
-    {path:'utvecklare/:info',page:'styrelsenpers', dataGen: req=>{
-      return {utvecklare:req.params.info}
+    {path:'utvecklare/:name',page:'utvecklarepers', dataGen: req=>{
+      return {utvecklare:req.params.name}
     }},
     {page:'kommitte'},
     {page:'admin'},

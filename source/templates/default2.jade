@@ -32,6 +32,9 @@ html
 			var dataPage = '#{dataPage}'
 			var subpage = dataPage == 'ettutskott'? "#{utskott}":
 				dataPage == 'enkommitte'? "#{kommitte}":
+				dataPage == 'styrelsepers'? "#{styrelsen}":
+				dataPage == 'utvecklarepers'? "#{utvecklare}":
+
 				undefined
 			if (subpage) subpage = subpage.toLowerCase()
 
@@ -68,9 +71,9 @@ html
 		//- 	.phonelinks
 		//- Main content
 		if user
-			- var links = [[{name:'Förmåner'}, {name:'Kårkort', link:'/karkort'}, {name:'Logga ut', action:'User.logout()'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'om oss', link:'/om'}, {name:'Matsedel', link:'/mat'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'}]]
+			- var links = [[{name:'Förmåner'}, {name:'Kårkort', link:'/karkort'}, {name:'Logga ut', action:'User.logout()'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'om oss', link:'/om'}, {name:'Matsedel', link:'/mat'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'},{name:'Utvecklare', link:'/utvecklare'}]]
 		else
-			- var links = [[{name:'Matsedel', link:'/mat'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'Om oss', link:'/om'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'}]]
+			- var links = [[{name:'Matsedel', link:'/mat'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'Om oss', link:'/om'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'},{name:'Utvecklare', link:'/utvecklare'}]]
 		script.
 			var links = JSON.parse('!{JSON.stringify(links)}')
 
@@ -162,11 +165,11 @@ html
 			//- if mainContent
 			//- 	| !{mainContent}
 
-		.creddiv
+		a.creddiv(href='/utvecklare')
 			p.credits By Kommunikationsutskottet
 			p.credits.extra , made primarily by Erik Enger Karlson, Jacob Tilly and Leonard Pauli
 
-		.credits-banner(id='credbanner')
+		a.credits-banner(id='credbanner', href='/utvecklare')
 			p.credits By Kommunikationsutskottet,<br>Made primarily by Erik Enger Karlson,<br>Jacob Tilly and Leonard Pauli
 
 		- var links = [[{name:'Matsedel', link:'mat'}],[{name:'Kåren'}, {name:'utskott', link:'utskott'}, {name:'Styrelsen', link:'styrelsen'}, {name:'Kommittéer', link:'kommitte'}],[{name:'Om', link:'om'}]]

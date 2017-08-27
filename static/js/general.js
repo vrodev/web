@@ -188,45 +188,52 @@ var pageinfos = {
 	],
 	ettutskott: [
 		{title:'Tradition',color:'#C42C00',
-		ord:'Andrea Wach',
+		ord:'Andrea Wachtmeister',
 		desc:'Traditionsutskottet jobbar främst med att uppmärksamma olika traditioner genom både större och mindre firanden. Ibland firas traditioner varje dag i december och under påsken arrangeras en äggjakt.. De firar och uppmärksammar helt enkelt de traditioner som efterfrågas av kårens medlemmar! <br><br>Andrea är ordförande för traditionsutskottet och därmed också en del av utskottsgruppen. Hon är huvudansvarig för kårens traditionsfiranden och ska leda sitt utskott där de arbetar för att fira många och roliga traditioner. <br><br>Kontakta Andrea Wachtmeister på <a style="color:#000099", href="mailto:andr.wach-2018@vrg.se">andr.wach-2018@vrg.se</a>',
-		image:'utskottsbilder/tradition.jpg'
+		image:'utskottsbilder/tradition.jpg',
+		link:'https://facebook.com/l.php?u=https%3A%2F%2Fgoo.gl%2Fforms%2FRAjc3mi8sZ6f7mHi2&h=ATN9lm_adhRjXP_MVM1zcUtc8WcAKOxjSBj0673Cb953DSco3aRO8hI9Vy2IAmZjLgFMwETATJsJAMwrG81z5d3BfuRjAEyFVXiluXPYzA9hVmpSDyR2du62H1yLP7KcPQPqlXNNlbwU&s=1&enc=AZMfiZxbGpxrbjSw-fKIxNq6_kHkYEYrm-5wgEfJJtqTf1jd5qiCxnUqSRAmbrA9gs5LLCuysp3tg2DRIIy1Q0pijcUMeS4z05MuPxjqX9yRdg',
 		},
 
 		{title:'Sociala',color:'#ED588D',
 		ord:'Hannes Hellmér',
 		desc:'Sociala utskottet jobbar med att främja den sociala aktiviteten på skolan genom att arbeta för en god sammanhållning mellan skolans elever. Detta sker genom att anordna spännande och roliga aktiviteter, evenemang och tävlingar. De jobbar också en del med VRG-kampen. Tävlingen där alla tre VRG-skolor möts i en trekamp.<br><br>Hannes är ordförande för det sociala utskottet och är en del av utskottsgruppen. Han är huvudansvarig för skolans sociala aktiviteter såsom klasspokalen, insparken och olika temadagar. <br><br>Kontakta Hannes Hellmér på <a style="color:#000099", href="mailto:hann.hell-2018@vrg.se">hann.hell-2018@vrg.se</a>',
-		image:'utskottsbilder/sociala.jpeg'
+		image:'utskottsbilder/sociala.jpeg',
+		link:'https://facebook.com/l.php?u=https%3A%2F%2Fgoo.gl%2Fforms%2FRAjc3mi8sZ6f7mHi2&h=ATN9lm_adhRjXP_MVM1zcUtc8WcAKOxjSBj0673Cb953DSco3aRO8hI9Vy2IAmZjLgFMwETATJsJAMwrG81z5d3BfuRjAEyFVXiluXPYzA9hVmpSDyR2du62H1yLP7KcPQPqlXNNlbwU&s=1&enc=AZMfiZxbGpxrbjSw-fKIxNq6_kHkYEYrm-5wgEfJJtqTf1jd5qiCxnUqSRAmbrA9gs5LLCuysp3tg2DRIIy1Q0pijcUMeS4z05MuPxjqX9yRdg',
 		},
 
 		{title:'Kommunikation',color:'#0A7BFF',
 		ord:'David Sundström',
 		desc:'Kommunikationsutskottet är ansvarigt för kårens marknadsföring och hantering av sociala medier. Detta innebär att de skapar alla affischer som sitter i skolan och är ansvariga för mycket av det som läggs ut på kårens sociala medier: instagram, youtube och facebook. Det är även kommunikationsutskottet som har utvecklat vår fantastiska app och hemsida. Det är också detta utskott som ofta är ute och fotar och filmar kårens verksamhet. Om ni har några invändningar på appen eller hemsidan, tveka inte att höra av er till oss.<br><br>David är ordförande för kommunikationsutskottet, vilket innebär att han ska leda utskottet i dess verksamhet samt vara är en del av utskottsgruppen. Han är även huvudansvarig för marknadsföringen via elevkåren och elevkårens sociala plattformar.<br><br>Kontakta David Sundström på <a style="color:#000099", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a>',
-		image:'utskottsbilder/kommunikation.jpeg'
+		image:'utskottsbilder/kommunikation.jpeg',
+		link:'https://facebook.com/l.php?u=https%3A%2F%2Fgoo.gl%2Fforms%2FRAjc3mi8sZ6f7mHi2&h=ATN9lm_adhRjXP_MVM1zcUtc8WcAKOxjSBj0673Cb953DSco3aRO8hI9Vy2IAmZjLgFMwETATJsJAMwrG81z5d3BfuRjAEyFVXiluXPYzA9hVmpSDyR2du62H1yLP7KcPQPqlXNNlbwU&s=1&enc=AZMfiZxbGpxrbjSw-fKIxNq6_kHkYEYrm-5wgEfJJtqTf1jd5qiCxnUqSRAmbrA9gs5LLCuysp3tg2DRIIy1Q0pijcUMeS4z05MuPxjqX9yRdg',
 		},
 
 		{title:'Finansiella',color:'#AB47CB',
 		ord:'Isac Diamant',
 		desc:'Finansiella utskottet jobbar för att främja samarbeten mellan kåren och olika företag för att kunna förse medlemmar med service och förmåner. Detta sker exempelvis genom att de fixar sponsring till kåren och dess medlemmar, men också genom att de ger medlemmarna möjlighet till rabatt hos närliggande företag. <br><br>Isac är ordförande för finansiella utskottet och därmed också en del av utskottsgruppen. Han är delaktig i många av de stora förhandlingar som pågår för att ge er medlemmar ett så förmånligt medlemskap som möjligt. Han leder sitt utskott där alla delegater jobbar arbetar mot samma mål. <br><br>Kontakta Isac Diamant på <a style="color:#000099", href="mailto:isac.nede-2019@vrg.se">isac.nede-2019@vrg.se</a>',
-		image:'utskottsbilder/finansiella.jpeg'
+		image:'utskottsbilder/finansiella.jpeg',
+		link:'https://facebook.com/l.php?u=https%3A%2F%2Fgoo.gl%2Fforms%2FRAjc3mi8sZ6f7mHi2&h=ATN9lm_adhRjXP_MVM1zcUtc8WcAKOxjSBj0673Cb953DSco3aRO8hI9Vy2IAmZjLgFMwETATJsJAMwrG81z5d3BfuRjAEyFVXiluXPYzA9hVmpSDyR2du62H1yLP7KcPQPqlXNNlbwU&s=1&enc=AZMfiZxbGpxrbjSw-fKIxNq6_kHkYEYrm-5wgEfJJtqTf1jd5qiCxnUqSRAmbrA9gs5LLCuysp3tg2DRIIy1Q0pijcUMeS4z05MuPxjqX9yRdg',
 		},
 
 		{title:'Miljö',color:'#78A942',
 		ord:'Sebastian Lian',
 		desc:'Miljöutskottet jobbar för att främja skolans miljötänk men också att informera och utbilda kårens medlemmar i miljöfrågor. Detta leder då förhoppningsvis till ett grönare tänk både hos skolan och hos kårens medlemmar. <br><br>Sebastian är ordförande för miljöutskottet och medlem i utskottsgruppen. Han är huvudansvarig för att driva medlemmarnas och kårens miljöfrågor för att skolan ska bli ännu mer miljömedveten. <br><br>Kontakta Sebastian Lian på <a style="color:#000099", href="mailto:seba.lian-2018@vrg.se">seba.lian-2018@vrg.se</a>',
-		image:'utskottsbilder/miljo.jpeg'
+		image:'utskottsbilder/miljo.jpeg',
+		link:'https://facebook.com/l.php?u=https%3A%2F%2Fgoo.gl%2Fforms%2FRAjc3mi8sZ6f7mHi2&h=ATN9lm_adhRjXP_MVM1zcUtc8WcAKOxjSBj0673Cb953DSco3aRO8hI9Vy2IAmZjLgFMwETATJsJAMwrG81z5d3BfuRjAEyFVXiluXPYzA9hVmpSDyR2du62H1yLP7KcPQPqlXNNlbwU&s=1&enc=AZMfiZxbGpxrbjSw-fKIxNq6_kHkYEYrm-5wgEfJJtqTf1jd5qiCxnUqSRAmbrA9gs5LLCuysp3tg2DRIIy1Q0pijcUMeS4z05MuPxjqX9yRdg',
 		},
 
 		{title:'Påverkan',color:'#DD9400',
 		ord:'Angel GB',
 		desc:'Påverkansutskottet jobbar med påverkansfrågor. Allt ifrån att det behövs fler ståbord till att det är stökigt i matsalen. Detta utskott är ansvarigt för klassråden och det är också detta utskott du kommer till om du väljer att kontakta kåren med hjälp av visselpipan!<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan i rätt riktning. <br><br>Kontakta Angel Bahrami på <a style="color:#000099", href="mailto:goln.bahr-2018@vrg.se">goln.bahr-2018@vrg.se</a>',
-		image:'utskottsbilder/paverkan.jpeg'
+		image:'utskottsbilder/paverkan.jpeg',
+		link:'https://facebook.com/l.php?u=https%3A%2F%2Fgoo.gl%2Fforms%2FRAjc3mi8sZ6f7mHi2&h=ATN9lm_adhRjXP_MVM1zcUtc8WcAKOxjSBj0673Cb953DSco3aRO8hI9Vy2IAmZjLgFMwETATJsJAMwrG81z5d3BfuRjAEyFVXiluXPYzA9hVmpSDyR2du62H1yLP7KcPQPqlXNNlbwU&s=1&enc=AZMfiZxbGpxrbjSw-fKIxNq6_kHkYEYrm-5wgEfJJtqTf1jd5qiCxnUqSRAmbrA9gs5LLCuysp3tg2DRIIy1Q0pijcUMeS4z05MuPxjqX9yRdg',
 		},
 
 		{title:'Student',color:'#919191',
 		ord:'',
 		desc:"Studentutskottet verkar för att förgylla det sista året på gymnasiet för alla blivande studenter. I utskottet sitter det bara 3or och ordförande väljs inom utskottet när det är tillsatt. De arrangerar exempelvis evenemang så som 100-dagarskryssning, studentbal och slutskiva - allt för att alla medlemmar ska få ett riktigt bra slut på sin gymnasietid.",
-		image:'utskottsbilder/student.jpg'
+		image:'utskottsbilder/student.jpg',
+		link:'https://facebook.com/l.php?u=https%3A%2F%2Fgoo.gl%2Fforms%2FRAjc3mi8sZ6f7mHi2&h=ATN9lm_adhRjXP_MVM1zcUtc8WcAKOxjSBj0673Cb953DSco3aRO8hI9Vy2IAmZjLgFMwETATJsJAMwrG81z5d3BfuRjAEyFVXiluXPYzA9hVmpSDyR2du62H1yLP7KcPQPqlXNNlbwU&s=1&enc=AZMfiZxbGpxrbjSw-fKIxNq6_kHkYEYrm-5wgEfJJtqTf1jd5qiCxnUqSRAmbrA9gs5LLCuysp3tg2DRIIy1Q0pijcUMeS4z05MuPxjqX9yRdg',
 		},
 
 	],
@@ -247,9 +254,10 @@ var pageinfos = {
 		desc:'Martin är suppleant i kåren vilket innebär att han är ställföreträdare för styrelsen. Han bistår också i kårens arbete genom att vara en del av de förtroendevalda för verksamhetsåret samt jobbar aktivt i exempelvis projektgrupper och kommittéer. <br><br>Kontakta Martin Babazadeh på mart.baba-2019@vrg.se'},		
 	],
 	utvecklarepers:[
-		{title:'Erik Enger Karlson', ord:'Webbutvecklare', image:'styrelsen/richard.jpg',color:'#323241', desc:'Erik Enger Karlson har främst utvecklat hemsidan med en primär roll i dess design, funktionalitet och användning. <br> Kan nås på <a style="color:#000099", href="mailto:erik.engerkarlson@gmail.com">erik.engerkarlson@gmail.com</a>'},
-		{title:'Leonard Pauli',ord:'Systemutvecklare', image:'styrelsen/richard.jpg',color:'#323241', desc:'Leonard Pauli har främst utvecklat grunden till hemsidan. <br>Kan nås på <a style="color:#000099", href="mailto:leonard.pauli97@gmail.com">leonard.pauli97@gmail.com</a> '},
-		{title:'Jacob Tilly',ord:'Backend-utvecklare', image:'styrelsen/richard.jpg',color:'#323241', desc:'Jacob Tilly har främst utvecklat backend kopmponenter.'},
+		{title:'Erik Enger Karlson', ord:'Webbutvecklare', image:'utvecklare/erik.jpg',color:'#323241', desc:'Erik Enger Karlson har främst utvecklat frontend delen av hemsidan med en primär roll i dess design, funktionalitet och användning. <br><br> Kan nås på <a style="color:#000099", href="mailto:erik.engerkarlson@gmail.com">erik.engerkarlson@gmail.com</a>'},
+		{title:'Leonard Pauli',ord:'Systemutvecklare', image:'utvecklare/leo.jpg',color:'#323241', desc:'Leonard Pauli har främst utvecklat grunden till hemsidan. <br><br>Kan nås på <a style="color:#000099", href="mailto:leonard.pauli97@gmail.com">leonard.pauli97@gmail.com</a> '},
+		{title:'Jacob Tilly',ord:'Backend-utvecklare', image:'utvecklare/david.jpg',color:'#323241', desc:'Jacob Tilly har främst utvecklat backend kopmponenter till hemsidan.<br><br>Kan nås på <a style="color:#000099", href="mailto:jaco.till-2019@vrg.se">jaco.till-2019@vrg.se</a> '},
+		{title:'David Sundström',ord:'iOS-utvecklare', image:'utvecklare/david.jpg',color:'#323241', desc:'David Sundström har utvecklat iOS-appen som är kopplad till hemsidan<br><br>Kan nås på <a style="color:#000099", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a> '},
 	],
 	styrelsen: {
 		content:'styrelsenpers',
@@ -345,11 +353,6 @@ function changeFromColor(color,image){
 
 	_('.creddiv').style.backgroundColor = color
 	if(color == '#ffffff'){_('.creddiv').style.backgroundColor = 'rgba(0, 0, 0, 0.1)';_('.creddiv').style.color = 'rgba(0, 0, 0, 0.5)'}
-
-	if(window.matchMedia("(max-width: 500px)").matches){
-		_('.creddiv').onclick = function(){hidemenu()}
-		
-	}
 }
 
 var subpage = window.location.pathname.replace(/\/$/,'').split('/');
