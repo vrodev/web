@@ -255,9 +255,9 @@ var pageinfos = {
 	],
 	utvecklarepers:[
 		{title:'Erik Enger Karlson', ord:'Webbutvecklare', image:'utvecklare/erik.jpg',color:'#323241', desc:'Erik Enger Karlson har främst utvecklat frontend delen av hemsidan med en primär roll i dess design, funktionalitet och användning. <br><br> Kan nås på <a style="color:#000099", href="mailto:erik.engerkarlson@gmail.com">erik.engerkarlson@gmail.com</a>'},
-		{title:'Leonard Pauli',ord:'Systemutvecklare', image:'utvecklare/leo.jpg',color:'#323241', desc:'Leonard Pauli har främst utvecklat grunden till hemsidan. <br><br>Kan nås på <a style="color:#000099", href="mailto:leonard.pauli97@gmail.com">leonard.pauli97@gmail.com</a> '},
-		{title:'Jacob Tilly',ord:'Backend-utvecklare', image:'utvecklare/david.jpg',color:'#323241', desc:'Jacob Tilly har främst utvecklat backend kopmponenter till hemsidan.<br><br>Kan nås på <a style="color:#000099", href="mailto:jaco.till-2019@vrg.se">jaco.till-2019@vrg.se</a> '},
-		{title:'David Sundström',ord:'iOS-utvecklare', image:'utvecklare/david.jpg',color:'#323241', desc:'David Sundström har utvecklat iOS-appen som är kopplad till hemsidan<br><br>Kan nås på <a style="color:#000099", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a> '},
+		{title:'Leonard Pauli', ord:'Systemutvecklare', image:'utvecklare/leo.jpg',color:'#323241', desc:'Leonard Pauli har främst utvecklat grunden till hemsidan. <br><br>Kan ibland nås på Messenger <a style="color:#000099", href="https://www.messenger.com/t/leonard.pauli">Leonard Pauli</a> '},
+		{title:'Jacob Tilly', ord:'Backend-utvecklare', image:'utvecklare/david.jpg',color:'#323241', desc:'Jacob Tilly har främst utvecklat backend kopmponenter till hemsidan.<br><br>Kan nås på <a style="color:#000099", href="mailto:jaco.till-2019@vrg.se">jaco.till-2019@vrg.se</a> '},
+		{title:'David Sundström', ord:'iOS-utvecklare', image:'utvecklare/david.jpg',color:'#323241', desc:'David Sundström har utvecklat iOS-appen som är kopplad till hemsidan<br><br>Kan nås på <a style="color:#000099", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a> '},
 	],
 	styrelsen: {
 		content:'styrelsenpers',
