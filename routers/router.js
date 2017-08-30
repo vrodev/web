@@ -170,6 +170,10 @@ module.exports = (function() {
     {path:'utskott/:utskottnamn',page:'ettutskott', dataGen: req=>{
       return {utskott:req.params.utskottnamn}
     }},
+    {page:'shop'},
+    {path:'shop/:produktnamn',page:'produkt', dataGen: req=>{
+      return {shop:req.params.produktnamn}
+    }},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL})},
     {page:'admin'},
