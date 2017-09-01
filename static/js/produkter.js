@@ -10,7 +10,8 @@ _(".utskottinfo").innerHTML = utskott.desc
 if(utskott.ord !== ''){
 	text = document.createElement('h2')
 	text.className ="utskottrubrik ordfarande"
-	text.innerText = utskott.ord + ' är ordförande'
+	text.innerText = utskott.price
+	text.style.fontWeight = 'bold'
 	_('.center').appendChild(text)
 
 	text.style.color = utskott.color
@@ -56,3 +57,7 @@ if(utskott.link !== ''){
 }else{
 	link.style.position = "absolute"
 }
+
+_('.produktbild').style.backgroundImage = 'url(/images/' + utskott.image + ')'
+
+_('.headerbackground').style.height = '0'

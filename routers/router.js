@@ -171,7 +171,7 @@ module.exports = (function() {
       return {utskott:req.params.utskottnamn}
     }},
     {page:'shop'},
-    {path:'shop/:produktnamn',page:'produkt', dataGen: req=>{
+    {path:'shop/:produktnamn',page:'produkter', dataGen: req=>{
       return {shop:req.params.produktnamn}
     }},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
