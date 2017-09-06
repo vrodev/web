@@ -36,7 +36,7 @@ link.style.minHeight = "20px"
 link.style.zIndex = '20'
 _('.center').appendChild(link)
 
-if(utskott.link !== ''){
+if(utskott.link){
 	
 	link.setAttribute("onclick", "window.location.href = '" + utskott.link + "'")
 

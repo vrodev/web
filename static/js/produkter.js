@@ -37,7 +37,7 @@ link.style.minHeight = "20px"
 link.style.zIndex = '20'
 _('.center').appendChild(link)
 
-if(utskott.link !== ''){
+if(utskott.link){
 	
 	link.setAttribute("onclick", "window.location.href = '" + utskott.link + "'")
 
@@ -46,7 +46,7 @@ if(utskott.link !== ''){
 	linktx.style.backgroundColor = utskott.color
 	link.appendChild(linktx)
 
-	linktx.innerText = "Ansök"
+	linktx.innerText = "Länk"
 
 
 	shine = document.createElement('div')
