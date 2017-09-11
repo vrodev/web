@@ -1,7 +1,7 @@
 // general.js
 // VRO Web
 // Initially created by Leonard Pauli, sep 2016
-var _ =function(selector){return document.body.querySelector(selector)}
+var _ = function(selector){return document.body.querySelector(selector)}
 
 
 // Dynamic pageload
@@ -179,6 +179,12 @@ var pageinfos = {
 		desc:'Unga Aktiesparare VRG Odenplan delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
 		link:'https://www.facebook.com/groups/1050277478325806/?fref=ts',
 		image:'kommittebilder/aktier.jpeg'},
+
+		{title:'Cosmos',color:'#cb2480',
+		ord:'Rebecka Mähring, Sofia Danielson Damne, Tilde Nordlander, och Louise Leopoldsson',
+		desc:"COSMOS (Committee Of Space for Mesmerized Odenplan Students) är kommittén för dig som vill lära dig mer om rymden, nörda ner dig i fascinerande -- och empiriska -- fakta, eller bara ha kul med andra som blivit lite 'mesmerized' av att titta på stjärnhimlen. Med kommittén får du göra mycket kul: gå på  teleskopvisnignar och öppna föreläsningar, ha filmvisningar, besöka museum och Astronomins Dag, samt föreslå naturvetare du vill ha som gästföreläsare på skolan. Mer information om oss och våra aktiviteter hittar du på vår Facebook-sida.<br><br>Clear skies!",
+		link:'https://www.facebook.com/groups/1057939687644536/?fref=ts',
+		image:'kommittebilder/cosmos.jpg'},
 
 		{title:'Coldplay',color:'#11B8D9',
 		ord:'Ludvig Dillén',
