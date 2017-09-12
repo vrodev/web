@@ -230,7 +230,7 @@ var pageinfos = {
 
 		{title:'Student',color:'#919191',
 		ord:'',
-		desc:"Studentutskottet verkar för att förgylla det sista året på gymnasiet för alla blivande studenter. I utskottet sitter det bara 3or och ordförande väljs inom utskottet när det är tillsatt. De arrangerar exempelvis evenemang så som 100-dagarskryssning, studentbal och slutskiva - allt för att alla medlemmar ska få ett riktigt bra slut på sin gymnasietid.",
+		desc:"Studentutskottet verkar för att förgylla det sista året på gymnasiet för alla blivande studenter och i utskottet sitter det bara treor. De arrangerar exempelvis evenemang så som 100-dagarskryssning, studentbal och slutskiva - allt för att alla medlemmar ska få ett riktigt bra slut på sin gymnasietid.",
 		image:'utskottsbilder/student.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=Student+(endast+treor)&entry.2145308741&entry.392620747',
 		},
