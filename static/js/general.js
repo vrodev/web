@@ -174,12 +174,6 @@ var pageinfos = {
 		link:'https://www.facebook.com/groups/1057939687644536/?fref=ts',
 		image:'kommittebilder/cosmos.jpg'},
 
-		{title:'Coldplay',color:'#11B8D9',
-		ord:'Ludvig Dillén',
-		desc:'Coldplaykommittén kommer att vara öppen för alla som har något typ av intresse för bandet och deras musik, oavsätt i vilket utsträckning intresset är. Vi kommer att lyssna och diskutera deras musik. Kanske spara in pengar till en konsert, deras musik eller något annat tips som du har att komma med. Vi välkomnar varmt nya medlemmar, så ta chansen och gå med så kan du vara med att forma vår kommitté.',
-		link:'https://www.facebook.com/groups/1057939687644536/?fref=ts',
-		image:'kommittebilder/coldplay.jpg'},
-
 		{title:'Diskutera Mera',color:'#0748ff',
 		ord:'Alma Andersson Nording',
 		desc:'Har du visioner och åsikter, vill höra andras tankar och kan konsten att övertyga med ord? <br><br>Diskutera Mera är diskussionsforumet där vi bland annat samtalar, anordnar debatter mellan medlemmarna eller inbjudna gäster och utbyter tankar om allt som berör eller upprör medlemmarna. <br><br>Kommittén är partipolitiskt obunden, och syftar till att uppmuntra till ett välkomnande debattklimat där alla känner trygghet i att våga uttrycka sig. Sedan gammalt är det att kommittémöten kräver fika.',
