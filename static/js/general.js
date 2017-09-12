@@ -113,7 +113,7 @@ var pageinfos = {
 		image:'kommittebilder/harrypotter.jpg'},
 
 		{title:'Acapella',color:'#78A942',
-		ord:'Nikol Kanavakis & Nora Nattorp',
+		ord:'Alice Alam och Caroline',
 		desc:'Acapella kommittén är till för de som älskar att sjunga och skapa musik med sina röster som instrument. Självklart inspireras vi av Pitch Perfect och Pentatonix men vi skapar vårat eget sound av det lilla arbete vi utför och den stora mängd skratt vi tillför.',
 		link:'https://www.facebook.com/groups/787919001317007/?fref=ts',
 		image:'kommittebilder/acapella.jpg'
@@ -132,14 +132,8 @@ var pageinfos = {
 		link:'',
 		image:'kommittebilder/bajenfans.jpg'},
 
-		{title:'Debate Society',color:'#0F7EFF',
-		ord:'Willam Karlsson & Simon Norman',
-		desc:'In the Viktor Rydberg Odenplan Debate Society we discuss, analyze and practice World Schools Style debating. We learn together, help one another and debate each other. Besides competing within the society regularly, we continually aspire to and work towards competing against other schools and teams internationally in famous competitions! Everyone is always welcome to participate! Join in!',
-		link:'https://www.facebook.com/groups/135425913521798/?fref=ts',
-		image:'kommittebilder/debate.jpg'},
-
 		{title:'HBTQ plus',color:'#AB47CB',
-		ord:'Sam Widén & Emma Wallin',
+		ord:'Alice Alam och Caroline',
 		desc:'HBTQ+kommittén är till för HBTQ+ -personer och ska verka som en safe-zone för folk. Kommittén ska vara en plats för trygghet för folk, där de kan komma som de är och vara som de vill. Vi vill uppmärksamma HBTQ+-personer, våran situation på skolan, och föra upp en diskussion om cis-heteronormen. HBTQ+ -kommittén är till för att lära känna andra HBTQ+ -personer, knyta kontaker, och bara umgås utan att vara rädd för vad folk ska tycka.',
 		link:'https://www.facebook.com/groups/794754800651251/?ref=browser',
 		image:'kommittebilder/hbtq+.jpg'},
@@ -157,16 +151,10 @@ var pageinfos = {
 		image:'kommittebilder/memeteam.jpeg'},
 
 		{title:'Östasiatisk kultur',color:'#C42C00',
-		ord:'Alex Will Hambén & Johanna Li',
+		ord:'Alex Will Hambén',
 		desc:'Syftet är att föra samman människor, östasiater som icke-östasiater, som är intresserade av och/eller uppskattar den östasiatiska kulturen och de östasiatiska traditionerna. På mötena kan vi tänka oss att ha traditionellt fika så som grönt te och frön, titta på och skratta åt dåligt producerade östasiatiska filmer eller tv-serier, äta sushi eller nudlar, ha maskerad/utklädnad, baka, ha anime-maraton och så vidare',
 		link:'https://www.facebook.com/groups/1676078619272950/?fref=ts',
 		image:'kommittebilder/ostasiatiskkultur.jpg'},
-
-		{title:'Retorik',color:'#DD9400',
-		ord:'Willam Karlsson & Victor Lagrelius',
-		desc:'Vi lär oss tala. För att kunna övertyga i politik, affärer, kärlek och närhelst det enda du har är din röst och nervöst darrande händer. Vi debatterar, har teoriföreläsningar, analyserar bra och dåliga retoriker, anordnar partidebatter och mycket mer.',
-		link:'https://www.facebook.com/groups/vrgretorik/?fref=ts',
-		image:'kommittebilder/retorik.jpg'},
 
 		{title:'Smått och Gott',color:'#ED588D',
 		ord:'Filippa Vasilis & Sofia Gerhardsson',
@@ -175,7 +163,7 @@ var pageinfos = {
 		image:'kommittebilder/smattochgott.jpeg'},
 
 		{title:'Aktiesparare',color:'#8447cb',
-		ord:'Felicia Fischer Berg , August Eklund, Malcolm Åsberg & Martin Hammarskiöld',
+		ord:'August Eklund & Malcolm Åsberg & Martin Hammarskiöld',
 		desc:'Unga Aktiesparare VRG Odenplan delar med sig av kunskap inom aktiehandel och sparande genom att erbjuda en naturlig mötesplats för att diskutera samt utbilda blivande och redan intresserade ungdomar.',
 		link:'https://www.facebook.com/groups/1050277478325806/?fref=ts',
 		image:'kommittebilder/aktier.jpeg'},
@@ -191,6 +179,11 @@ var pageinfos = {
 		desc:'Coldplaykommittén kommer att vara öppen för alla som har något typ av intresse för bandet och deras musik, oavsätt i vilket utsträckning intresset är. Vi kommer att lyssna och diskutera deras musik. Kanske spara in pengar till en konsert, deras musik eller något annat tips som du har att komma med. Vi välkomnar varmt nya medlemmar, så ta chansen och gå med så kan du vara med att forma vår kommitté.',
 		link:'https://www.facebook.com/groups/1057939687644536/?fref=ts',
 		image:'kommittebilder/coldplay.jpg'},
+
+		{title:'Diskutera Mera',color:'#0748ff',
+		ord:'Alma Andersson Nording',
+		desc:'Har du visioner och åsikter, vill höra andras tankar och kan konsten att övertyga med ord? <br><br>Diskutera Mera är diskussionsforumet där vi bland annat samtalar, anordnar debatter mellan medlemmarna eller inbjudna gäster och utbyter tankar om allt som berör eller upprör medlemmarna. <br><br>Kommittén är partipolitiskt obunden, och syftar till att uppmuntra till ett välkomnande debattklimat där alla känner trygghet i att våga uttrycka sig. Sedan gammalt är det att kommittémöten kräver fika.',
+		image:'kommittebilder/debate.jpg'},
 	],
 	ettutskott: [
 		{title:'Tradition',color:'#C42C00',
