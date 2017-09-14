@@ -120,7 +120,7 @@ var pageinfos = {
 		},
 
 		{title:'Amnesty',color:'#deb117',
-		ord:'Julia Berndtsson',
+		ord:'Elina Ankler',
 		desc:'Vi i Amnestykommittén arbetar för att stärka situationen för de mänskliga rättigheterna runt om i världen genom att bland annat genomföra aktioner för att uppmärksamma och samla in namnunderskrifter. Vi jobbar både på och utanför skolan. Då vi är kopplade till internationella Amnesty finns det möjligheter till utbildningar med mera att delta på. Alla är varmt välkomna!',
 		link:'https://www.facebook.com/groups/amnestyvrgopl/?ref=browser',
 		image:'kommittebilder/amnesty.jpg'
