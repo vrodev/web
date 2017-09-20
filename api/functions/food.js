@@ -26,15 +26,15 @@ Date.prototype.getWeek = function() {
 // -----------------------------------------
 
 
-// http://mpi.mashie.se/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE
+// https://mpi.mashie.com/public/menu/KK%20VRVasastan/4465fa56?ical=True
 function fetchRawFoodData(callback){
 	var content = ""
 	var options = {
-  	host: 'mpi.mashie.se',
-  	port: 80,
-  	path: '/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE'}
+	host: 'mpi.mashie.com',
+	port: 80,
+	path: '/public/menu/KK%20VRVasastan/4465fa56?ical=True'}
 
-  var requestCallback = function(res) {
+	var requestCallback = function(res) {
 		res.setEncoding("utf8")
 		res.on("data", function (chunk) {
 			content += chunk
