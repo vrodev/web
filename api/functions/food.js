@@ -32,7 +32,7 @@ function fetchRawFoodData(callback){
 	var options = {
 	host: 'mpi.mashie.com',
 	port: 80,
-	path: '/public/menu/KK%20VRVasastan/4465fa56?ical=True'}
+	path: '/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE'}
 
 	var requestCallback = function(res) {
 		res.setEncoding("utf8")
