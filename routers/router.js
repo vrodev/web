@@ -174,6 +174,10 @@ module.exports = (function() {
     {path:'shop/:produktnamn',page:'produkter', dataGen: req=>{
       return {shop:req.params.produktnamn}
     }},
+    {page:'rabatter'},
+    {path:'rabatter/:rabatt',page:'enrabatt', dataGen: req=>{
+      return {rabatter:req.params.rabatt}
+    }},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL})},
     {page:'admin'},

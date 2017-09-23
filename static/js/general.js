@@ -258,6 +258,19 @@ var pageinfos = {
 		{title:'Whitelines prickiga A5', price:'30kr', image:'produkter/whitelinesa5dot.jpg',desc:'Special edition!'},
 		{title:'Whitelines randiga A4', price:'30kr', image:'produkter/whitelinesa4lined.jpg',desc:'A5 randiga/A4 mix and match, 3 stycken för 70kr.'},
 	],
+	enrabatt:[
+		{title:'7/11', image:'rabatter/711.jpg',desc:'Rabatter på kaffe och muffins'},
+		{title:'Estanbul', image:'rabatter/estanbul.jpg',desc:'10%'},
+		{title:'Bröd och salt', image:'rabatter/brod&salt.jpg',desc:'10%'},
+		{title:'Organic Green', image:'rabatter/organicgreen.jpg',desc:'10 kr billigare vid köp av grytor, soppor eller måltider'},
+		{title:'Kafe Orion', image:'rabatter/kafeorion.jpg',desc:'10% på sortiment samt frukostpaket (bryggkaffe + smörgås 50:- (ord. 65:-))'},
+		{title:'Cafe Blåbär', image:'rabatter/cafeblabar.jpg',desc:'10% på mat + 20% på fika (varma/kalla drycker + bakelse). Gäller efter kl 12.30'},
+		{title:'Coffehouse by George', image:'rabatter/coffehousebygeorge.jpg',desc:'10% på allt. Te/kaffe + bakelse = 49:- (ord.58:-)'},
+		{title:'My Driving Academy', image:'rabatter/mydrivingacademy.jpg',desc:'10% på allt. '},
+	],
+	rabatter:{
+		content:'enrabatt'
+	},
 	shop: {
 		content:'produkter',
 	},
@@ -330,18 +343,18 @@ function changeFromColor(color,image){
 	if(image){
 		if(_('.headerbackground')) _('.headerbackground').style.backgroundImage = 'url(/images/' + image + ')'
 
-		if(color){
+		if(color !== '#ffffff'){
 			if(shine) shine.style.background = headerLinearGradientFromHex(color)
-			if(_('.headerbackground')) _('.headerbackground').style.filter = 'grayscale(100%'
+			if(_('.headerbackground')) _('.headerbackground').style.filter = 'grayscale(100%)'
 			metaThemeColor.setAttribute("content", color)
 			appleThemeColor.setAttribute("content", color)
 		}else{
-			if(shine) shine.style.background = 'linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.5))'
+			if(shine) shine.style.background = 'linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.5))'
 			metaThemeColor.setAttribute("content", '#ffffff')
 			appleThemeColor.setAttribute("content", '#ffffff')
 		}	
 	}else{
-		if(color){
+		if(color !== '#ffffff'){
 			if(_('.header')) _('.header').style.background = color
 			if(shine) shine.style.background = 'linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.2))'
 			metaThemeColor.setAttribute("content", color)
