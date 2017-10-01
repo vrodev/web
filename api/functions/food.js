@@ -4,7 +4,7 @@
 // 
 // Initially created by Leonard and Erik, 2016-2017
 
-var http = require('http')
+var http = require('https')
 
 // Date helpers
 Date.prototype.weekdayString = function() {
@@ -31,7 +31,6 @@ function fetchRawFoodData(callback){
 	var content = ""
 	var options = {
 	host: 'mpi.mashie.com',
-	port: 80,
 	path: '/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE'}
 
 	var requestCallback = function(res) {
@@ -53,6 +52,7 @@ function fetchRawFoodData(callback){
 // parseFoodData
 function parseFoodData(rawFoodData){
 	const weeks = []
+	
 	rawFoodData.replace(/DATE:(\d{4})(\d{2})(\d{2})/g,
 		function(wholeMatch, year, month, day, index, wholeString) {
 		const obj = {}
