@@ -24,7 +24,7 @@ const routeMain = router=> {
       res.apiOK(foodData)
     }
 
-    Use cached data if available
+    // Use cached data if available
     const msInDay = 1000*60*60*24
     const today = new Date()
     if (food.lastSaved !== undefined
