@@ -24,15 +24,15 @@ const routeMain = router=> {
       res.apiOK(foodData)
     }
 
-    // Use cached data if available
-    // const msInDay = 1000*60*60*24
-    // const today = new Date()
-    // if (food.lastSaved !== undefined
-    // 	&& (today - food.lastSaved) < msInDay
-    //   && (today.getDay() === 0 || food.lastSaved.getDay() !== 0)){
-    //   callback(food.saved, true)
-    //   return
-    // }
+    Use cached data if available
+    const msInDay = 1000*60*60*24
+    const today = new Date()
+    if (food.lastSaved !== undefined
+    	&& (today - food.lastSaved) < msInDay
+      && (today.getDay() === 0 || food.lastSaved.getDay() !== 0)){
+      callback(food.saved, true)
+      return
+    }
 
     // Fetch raw food data
     food.fetchRawFoodData((err, data)=> {
