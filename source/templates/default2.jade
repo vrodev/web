@@ -60,9 +60,8 @@ html
 						.title.name= user.name
 						.title.logout Logga ut
 						.image(style="background-image: url(#{user.picture})")
-				else
-					#login-button.log
-						h2.logtxt Logga in
+				#login-button.log(style="#{!user?'':'display:none;'}")
+					h2.logtxt Logga in
 
 		.phonelinks(data-index = 0)
 		.mainhide(onclick="hidemenu()")
@@ -188,35 +187,36 @@ html
 		script.
 			var googleSigninClientId = '#{config.googleSigninClientId}'
 
-		if !user
-			script.
-				var googleUser = {};
+		script.
+			var serverLoggedIn = #{user?'true':'false'}
+		script.
+			var googleUser = {};
 
-				function attachSignin(element) {
-					auth2.attachClickHandler(element, {},
-						function(_googleUser) {
-							googleUser = _googleUser
-							// alert("Signed in: " + googleUser.getBasicProfile().getName() + googleUser.getAuthResponse().id_token)
-
+			function attachSignin(element) {
+				auth2.attachClickHandler(element, {},
+					function(_googleUser) {
+						googleUser = _googleUser
+						// alert("Signed in: " + googleUser.getBasicProfile().getName() + googleUser.getAuthResponse().id_token)
+						if (!serverLoggedIn){
 							User.authenticate({googleUserToken: googleUser.getAuthResponse().id_token}, function(err) {
 								//console.log(err, api.currentUser)
 								window.location.reload()
-							})
-						}, function(error) {
-							alert(JSON.stringify(error, undefined, 2));
-						});
-				}
-
-				gapi.load('auth2', function(){
-					// Retrieve the singleton for the GoogleAuth library and set up the client.
-					auth2 = gapi.auth2.init({
-						client_id: googleSigninClientId,
-						cookiepolicy: 'single_host_origin',
-						// Request scopes in addition to 'profile' and 'email'
-						//scope: 'additional_scope'
+							})}
+					}, function(error) {
+						alert(JSON.stringify(error, undefined, 2));
 					});
-					attachSignin(_('#login-button'));
+			}
+
+			gapi.load('auth2', function(){
+				// Retrieve the singleton for the GoogleAuth library and set up the client.
+				auth2 = gapi.auth2.init({
+					client_id: googleSigninClientId,
+					cookiepolicy: 'single_host_origin',
+					// Request scopes in addition to 'profile' and 'email'
+					//scope: 'additional_scope'
 				});
+				attachSignin(_('#login-button'));
+			});
 
 
 		script(src='/js/default.js')
