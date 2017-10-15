@@ -175,6 +175,7 @@ var pageinfos = {
 		{title:'Spel',color:'#8c00ff',
 		ord:'Zeo Löwenhielm',
 		desc:'​Vi är en kommitté för spelintresserade. Vi ordnar olika turneringar, tävlingar, kahoots och spelhäng och kommer att spela allt ifrån brädspel till dator- och tv-spel. Gå med i  kommittén genom gruppen "VRO Spelkommitté" på facebook, eller maila mig om du är intresserad.',
+		link:'https://www.facebook.com/groups/145367242747272/',
 		image:'kommittebilder/spel.jpg'},
 
 		{title:'Dysse',color:'#20b4ea',
