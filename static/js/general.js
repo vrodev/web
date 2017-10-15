@@ -172,6 +172,11 @@ var pageinfos = {
 		link:'https://www.facebook.com/groups/1888605934721970/',
 		image:'kommittebilder/film.JPG'},
 
+		{title:'Spel',color:'#8c00ff',
+		ord:'Zeo Löwenhielm',
+		desc:'​Vi är en kommitté för spelintresserade. Vi ordnar olika turneringar, tävlingar, kahoots och spelhäng och kommer att spela allt ifrån brädspel till dator- och tv-spel. Gå med i  kommittén genom gruppen "VRO Spelkommitté" på facebook, eller maila mig om du är intresserad.',
+		image:'kommittebilder/spel.jpg'},
+
 		{title:'Dysse',color:'#20b4ea',
 		ord:'Julia Telin',
 		desc:'Dyssekommitteen är en kommitte för de som främst har dyslexi men är självklart öppen för alla. Kommitten ska ena alla dyssebarn som går VRG Odenplan. Det är lätt att känna sig dum i en skola fullproppad med genier men nu kan vi iallafall känna oss dumma tillsammans. Under kommitten mötena kommer vi att försöka hjälpa varandra och diskutera saker som vi tycker borde ändras. Det kan även bli en del fika! <br><br>Varmt välkomna!',
@@ -323,20 +328,7 @@ function changeFromColor(color,image){
 
 	if(_('.header')) if(_('.header').querySelector(".shineheader")) var shine = _('.header').querySelector(".shineheader")
 
-	if (api.currentUser){
-		var object = _('.logged-in')
-		object.querySelector('.title').classList.add('trans-login')
-	}else{
-		var object = _('.log')
-	}
-
-	if(color == '#ffffff'){
-		if(_('.headertext')) _('.headertext').style.color = 'black'
-		object.classList.add('trans-login-black')
-	}else{
-		_('.topheader').classList.add('whiteheader')
-		object.classList.add('trans-login')
-	}
+	
 
 	if(image){
 		if(_('.headerbackground')) _('.headerbackground').style.backgroundImage = 'url(/images/' + image + ')'
@@ -366,6 +358,21 @@ function changeFromColor(color,image){
 
 	_('.creddiv').style.backgroundColor = color
 	if(color == '#ffffff'){_('.creddiv').style.backgroundColor = 'rgba(0, 0, 0, 0.1)';_('.creddiv').style.color = 'rgba(0, 0, 0, 0.5)'}
+
+	if (api.currentUser){
+		var object = _('.logged-in')
+		object.querySelector('.title').classList.add('trans-login')
+	}else{
+		var object = _('.log')
+	}
+
+	if(color == '#ffffff'){
+		if(_('.headertext')) _('.headertext').style.color = 'black'
+		object.classList.add('trans-login-black')
+	}else{
+		_('.topheader').classList.add('whiteheader')
+		object.classList.add('trans-login')
+	}
 }
 
 var subpage = window.location.pathname.replace(/\/$/,'').split('/');
