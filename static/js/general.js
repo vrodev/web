@@ -166,7 +166,7 @@ var pageinfos = {
 		link:'https://www.facebook.com/groups/feministkommitten/',
 		image:'kommittebilder/feminist.jpg'},
 
-		{title:'Film',color:'#ea1f2d',
+		{title:'Film',color:'#4632f1',
 		ord:'Noah Lederman Greis och Gustav Wärn ',
 		desc:'Från kommande Marvel & DC filmer till regissörer av mästerverk som Hitchcock eller Kubrick… Filmkommittén är platsen för dig som älskar film i alla sina former! På mötena träffas vi för att diskutera och analysera film, men vi planerar också speciella visningar av klassiker på TeaterStudio Lederman på Gästrikegatan och visningar av nya filmer på biografer. Vi kommer också organisera frågesporter och mycket annat. Om du vill komma och hänga med folk som älskar film lika mycket som du ska du absolut vara med i filmkommittén!',
 		link:'https://www.facebook.com/groups/1888605934721970/',
@@ -182,6 +182,11 @@ var pageinfos = {
 		ord:'Julia Telin',
 		desc:'Dyssekommitteen är en kommitte för de som främst har dyslexi men är självklart öppen för alla. Kommitten ska ena alla dyssebarn som går VRG Odenplan. Det är lätt att känna sig dum i en skola fullproppad med genier men nu kan vi iallafall känna oss dumma tillsammans. Under kommitten mötena kommer vi att försöka hjälpa varandra och diskutera saker som vi tycker borde ändras. Det kan även bli en del fika! <br><br>Varmt välkomna!',
 		image:'kommittebilder/dyslexi.jpg'},
+
+		{title:'Jul',color:'#ea1f2d',
+		ord:'Henriette Bergendahl, Klara Strömbeck, Vera Liljedahl Rolfsson och Oscar Agholm',
+		desc:'Vi är Odenplans tomtar och tillsammans med oss kan du göra allt som hör julen till. Låter det inte härligt att diskutera vem tomten egentligen är över en julfika med lite last christmas i bakgrunden? Tillsammans kommer vi ha rimstuga, slå in paket, dansa jingel bells och avnjuta julen på bästa sätt. Vi vet att det som står högst upp på allas önskelista är en IPhone X men det här är nästan lika bra. Så hoppa in i släden, släng på tomteluvan och gå med!',
+		image:'kommittebilder/jul.jpg'},
 	],
 	ettutskott: [
 		{title:'Tradition',color:'#C42C00',
