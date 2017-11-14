@@ -186,6 +186,7 @@ var pageinfos = {
 		{title:'Jul',color:'#ea1f2d',
 		ord:'Henriette Bergendahl, Klara Strömbeck, Vera Liljedahl Rolfsson och Oscar Agholm',
 		desc:'Vi är Odenplans tomtar och tillsammans med oss kan du göra allt som hör julen till. Låter det inte härligt att diskutera vem tomten egentligen är över en julfika med lite last christmas i bakgrunden? Tillsammans kommer vi ha rimstuga, slå in paket, dansa jingel bells och avnjuta julen på bästa sätt. Vi vet att det som står högst upp på allas önskelista är en IPhone X men det här är nästan lika bra. Så hoppa in i släden, släng på tomteluvan och gå med!',
+		link:'https://www.facebook.com/groups/2043511335893792/',
 		image:'kommittebilder/jul.jpg'},
 	],
 	ettutskott: [
