@@ -56,3 +56,5 @@ if(utskott.link){
 }else{
 	link.style.position = "absolute"
 }
+
+_('.extra-bild').style.backgroundImage = 'url(/images/' + utskott.image2 + ')'

@@ -194,6 +194,7 @@ var pageinfos = {
 		ord:'Andrea Wachtmeister',
 		desc:'Traditionsutskottet jobbar främst med att uppmärksamma olika traditioner genom både större och mindre firanden. Ibland firas traditioner varje dag i december och under påsken arrangeras en äggjakt.. De firar och uppmärksammar helt enkelt de traditioner som efterfrågas av kårens medlemmar! <br><br>Andrea är ordförande för traditionsutskottet och därmed också en del av utskottsgruppen. Hon är huvudansvarig för kårens traditionsfiranden och ska leda sitt utskott där de arbetar för att fira många och roliga traditioner. <br><br>Kontakta Andrea Wachtmeister på <a style="color:#000099", href="mailto:andr.wach-2018@vrg.se">andr.wach-2018@vrg.se</a>',
 		image:'utskottsbilder/tradition.jpg',
+		image2:'utskottsbilder/medlemmar/tradition.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=Tradition&entry.2145308741&entry.392620747',
 		},
 
@@ -201,6 +202,7 @@ var pageinfos = {
 		ord:'Hannes Hellmér',
 		desc:'Sociala utskottet jobbar med att främja den sociala aktiviteten på skolan genom att arbeta för en god sammanhållning mellan skolans elever. Detta sker genom att anordna spännande och roliga aktiviteter, evenemang och tävlingar. De jobbar också en del med VRG-kampen. Tävlingen där alla tre VRG-skolor möts i en trekamp.<br><br>Hannes är ordförande för det sociala utskottet och är en del av utskottsgruppen. Han är huvudansvarig för skolans sociala aktiviteter såsom klasspokalen, insparken och olika temadagar. <br><br>Kontakta Hannes Hellmér på <a style="color:#000099", href="mailto:hann.hell-2018@vrg.se">hann.hell-2018@vrg.se</a>',
 		image:'utskottsbilder/sociala.jpeg',
+		image2:'utskottsbilder/medlemmar/sociala.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=Sociala&entry.2145308741&entry.392620747',
 		},
 
@@ -208,6 +210,7 @@ var pageinfos = {
 		ord:'David Sundström',
 		desc:'Kommunikationsutskottet är ansvarigt för kårens marknadsföring och hantering av sociala medier. Detta innebär att de skapar alla affischer som sitter i skolan och är ansvariga för mycket av det som läggs ut på kårens sociala medier: instagram, youtube och facebook. Det är även kommunikationsutskottet som har utvecklat vår fantastiska app och hemsida. Det är också detta utskott som ofta är ute och fotar och filmar kårens verksamhet. Om ni har några invändningar på appen eller hemsidan, tveka inte att höra av er till oss.<br><br>David är ordförande för kommunikationsutskottet, vilket innebär att han ska leda utskottet i dess verksamhet samt vara är en del av utskottsgruppen. Han är även huvudansvarig för marknadsföringen via elevkåren och elevkårens sociala plattformar.<br><br>Kontakta David Sundström på <a style="color:#000099", href="mailto:davi.sund-2018@vrg.se">davi.sund-2018@vrg.se</a>',
 		image:'utskottsbilder/kommunikation.jpeg',
+		image2:'utskottsbilder/medlemmar/kommunikation.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=Kommunikation&entry.2145308741&entry.392620747',
 		},
 
@@ -215,6 +218,7 @@ var pageinfos = {
 		ord:'Isac Diamant',
 		desc:'Finansiella utskottet jobbar för att främja samarbeten mellan kåren och olika företag för att kunna förse medlemmar med service och förmåner. Detta sker exempelvis genom att de fixar sponsring till kåren och dess medlemmar, men också genom att de ger medlemmarna möjlighet till rabatt hos närliggande företag. <br><br>Isac är ordförande för finansiella utskottet och därmed också en del av utskottsgruppen. Han är delaktig i många av de stora förhandlingar som pågår för att ge er medlemmar ett så förmånligt medlemskap som möjligt. Han leder sitt utskott där alla delegater jobbar arbetar mot samma mål. <br><br>Kontakta Isac Diamant på <a style="color:#000099", href="mailto:isac.nede-2019@vrg.se">isac.nede-2019@vrg.se</a>',
 		image:'utskottsbilder/finansiella.jpeg',
+		image2:'utskottsbilder/medlemmar/finansiella.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=Finans&entry.2145308741&entry.392620747',
 		},
 
@@ -222,6 +226,7 @@ var pageinfos = {
 		ord:'Sebastian Lian',
 		desc:'Miljöutskottet jobbar för att främja skolans miljötänk men också att informera och utbilda kårens medlemmar i miljöfrågor. Detta leder då förhoppningsvis till ett grönare tänk både hos skolan och hos kårens medlemmar. <br><br>Sebastian är ordförande för miljöutskottet och medlem i utskottsgruppen. Han är huvudansvarig för att driva medlemmarnas och kårens miljöfrågor för att skolan ska bli ännu mer miljömedveten. <br><br>Kontakta Sebastian Lian på <a style="color:#000099", href="mailto:seba.lian-2018@vrg.se">seba.lian-2018@vrg.se</a>',
 		image:'utskottsbilder/miljo.jpeg',
+		image2:'utskottsbilder/medlemmar/miljo.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=Milj%C3%B6&entry.2145308741&entry.392620747',
 		},
 
@@ -229,6 +234,7 @@ var pageinfos = {
 		ord:'Angel GB',
 		desc:'Påverkansutskottet jobbar med elevkårens påverkansfrågor. Allt ifrån att det behövs ståbord i klassrummen till att stökigt i matsalen. Utskottet anordnar även politiska event som exempelvis debatter och skolval, samt är ansvarig för klassråden. Påverkansutskottet kan du kontakta genom visselpipan, påverkanslappen och genom att maila dess ordförande.<br><br>Angel är ordförande för påverkansutskottet. Detta innebär att hon ska leda sitt utskott, vara en del av utskottsgruppen samt delta på rektorsmöten. Hon är huvudansvarig för att driva medlemmarnas frågor och intressen och på så sätt påverka skolan i rätt riktning. <br><br>Kontakta Angel Bahrami på <a style="color:#000099", href="mailto:goln.bahr-2018@vrg.se">goln.bahr-2018@vrg.se</a>',
 		image:'utskottsbilder/paverkan.jpeg',
+		image2:'utskottsbilder/medlemmar/paverkan.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=P%C3%A5verkan&entry.2145308741&entry.392620747',
 		},
 
@@ -236,6 +242,7 @@ var pageinfos = {
 		ord:'',
 		desc:"Studentutskottet verkar för att förgylla det sista året på gymnasiet för alla blivande studenter och i utskottet sitter det bara treor. De arrangerar exempelvis evenemang så som 100-dagarskryssning, studentbal och slutskiva - allt för att alla medlemmar ska få ett riktigt bra slut på sin gymnasietid.",
 		image:'utskottsbilder/student.jpg',
+		image2:'utskottsbilder/medlemmar/student.jpg',
 		//link:'https://docs.google.com/forms/d/e/1FAIpQLScbKEQGmq6V4RG-Hwg1SXdh0TCPbcHLwdLHY2W21e1GaGT-gg/viewform?usp=pp_url&entry.1496600318&entry.1002321995&entry.1062932875=Student+(endast+treor)&entry.2145308741&entry.392620747',
 		},
 
