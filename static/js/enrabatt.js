@@ -27,7 +27,6 @@ if(kommitte.link !== ''){
 	shine.className = "shine"
 	link.appendChild(shine)
 
-	_('.ordfarande').style.color = kommitte.color
 }else{
 	link.style.position = "absolute"
 }

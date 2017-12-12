@@ -277,13 +277,11 @@ var pageinfos = {
 	],
 	enrabatt:[
 		{title:'7/11', image:'rabatter/711.jpg',desc:'Rabatter på kaffe och muffins.'},
-		{title:'Estanbul', image:'rabatter/estanbul.jpg',desc:'10% på allt.'},
-		{title:'Bröd och salt', image:'rabatter/brod&salt.jpg',desc:'10% på allt.'},
-		{title:'Organic Green', image:'rabatter/organicgreen.jpg',desc:'10 kr billigare vid köp av grytor, soppor eller måltider.'},
-		{title:'Kafe Orion', image:'rabatter/kafeorion.jpg',desc:'10% på sortiment samt frukostpaket (bryggkaffe + smörgås 50:- (ord. 65:-)).'},
-		{title:'Cafe Blåbär', image:'rabatter/cafeblabar.jpg',desc:'10% på mat + 20% på fika (varma/kalla drycker + bakelse). Gäller efter kl 12:30.'},
-		{title:'Coffehouse by George', image:'rabatter/coffehousebygeorge.jpg',desc:'10% på allt. Te/kaffe + bakelse = 49:- (ord.58:-).'},
-		{title:'My Driving Academy', image:'rabatter/mydrivingacademy.jpg',desc:'10% på allt.'},
+		{title:'Bröd och salt', image:'rabatter/brod&salt.jpg',desc:'Bröd & Salt är ett bakeri vilket ligger på Norrtullsgatan 19, alldeles på vägen från Odenplans tunnelbanestation till skolan. Här finns alla sorters läckerheter i form av bröd: Dansk råg, Durumlevain, Mandelbulle, och croissant är bara några utav alternativen!<br><br>Samtliga köp rabatteras med 10% vid uppvisande av Kårkort.'},
+		{title:'Organic Green', image:'rabatter/organicgreen.jpg',desc:'Organic Green är en trevlig restaurang som ligger på Rehnsgatan 24, i närheten av Rådmansgatans tunnelbanestation. Detta trevliga matställe har i fokus att servera vegetarisk, ekologisk och framförallt god mat till sina kunder. <br><br>Som elev på Viktor Rydberg Odenplans Gymnasium så får du grytor, soppor och måltider 10 kronor billigare vid uppvisande av Kårkort.'},
+		{title:'Kafe Orion', image:'rabatter/kafeorion.jpg',desc:'Kafé Orion är en av de trevligaste fiken som finns till och denna ligger på Norrtullsgatan 10 vid närheten av Odenplans tunnelbanestation. Här kan du vara redo på smakliga drycker samt lätt och god mat för ett resonligt pris. Dessutom är personalen av det mest belevade slaget. <br><br>Som elev på VRG-O får du 10% rabatt på deras sortiment samt bryggkaffe + smörgås för 50:- (ordinarie pris 65:-) då du visar ditt Kårkort.'},
+		{title:'Cafe Blåbär', image:'rabatter/cafeblabar.jpg',desc:'Café Blåbär är det perfekta stället att gå till om man vill ha en trevlig lunch med sina vänner. Fiket, som ligger i närheten av skolan på Upplandsgatan 54, har en stor buffé med färskt och egenkomponerat utbud av sallader och övrig mat. <br><br>Elever från Viktor Rydberg Odenplans gymnasium får 10% rabatt på mat samt 20% rabatt på fika (varm/kall dryck + bakelse) när de uppvisar Kårkortet. OBS! Dessa gäller endast fr.o.m klockan 12.30.'},
+		{title:'My Driving Academy', image:'rabatter/mydrivingacademy.jpg',desc:'My Driving Academy är en modern trafikskola som vår elevkår har ett kontrakt med. De erbjuder både paket för att ta körkort (med körlektioner, teoriprov, mm) och separata erbjudanden för körlektioner. Som deras kund kan du välja att ta körkort för personbil, MC eller moped och detta i din egna takt. <br><br>Dessutom får du som medlem i Viktor Rydberg Odenplans Elevkår 10% rabatt på alla erbjudanden och elevkåren får även 2% avkastning på köpen du gör!. Allt du behöver göra är att uppge att du kommer från Viktor Rydberg Odenplan Gymnasiums Elevkår när du genomför köpet. <br><br>Mer info hittar du på deras hemsida: <a href="https://www.mydrivingacademy.com/" style="color:blue">www.mydrivingacademy.com</a> '},
 	],
 	rabatter:{
 		content:'enrabatt'
