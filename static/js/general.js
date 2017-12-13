@@ -188,6 +188,11 @@ var pageinfos = {
 		desc:'Vi är Odenplans tomtar och tillsammans med oss kan du göra allt som hör julen till. Låter det inte härligt att diskutera vem tomten egentligen är över en julfika med lite last christmas i bakgrunden? Tillsammans kommer vi ha rimstuga, slå in paket, dansa jingel bells och avnjuta julen på bästa sätt. Vi vet att det som står högst upp på allas önskelista är en IPhone X men det här är nästan lika bra. Så hoppa in i släden, släng på tomteluvan och gå med!',
 		link:'https://www.facebook.com/groups/2043511335893792/',
 		image:'kommittebilder/jul.jpg'},
+
+		{title:'Gym',color:'#FFC300',
+		ord:'Anton Adelöw, Simon Åström och Erik Bergrahm',
+		desc:'Gymkommitén är en kommité för alla tränings och fitness intresserade. Kommitten letar tider då så många som möjligt av medlemmarna kan gymma tillsammans och strävar efter att leva bättre. Vem som helst kan gå med i gymkommitén oavsett nivå men det som krävs är motivationen att vilja förbättras.',
+		image:'kommittebilder/gym.jpg'},
 	],
 	ettutskott: [
 		{title:'Tradition',color:'#C42C00',
