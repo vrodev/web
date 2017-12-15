@@ -281,7 +281,7 @@ var pageinfos = {
 		{title:'Whitelines randiga A4', price:'30kr', image:'produkter/whitelinesa4lined.jpg',desc:'A5 randiga/A4 mix and match, 3 stycken för 70kr.'},
 	],
 	enrabatt:[
-		{title:'7/11', image:'rabatter/711.jpg',desc:'Rabatter på kaffe och muffins.'},
+		//{title:'7/11', image:'rabatter/711.jpg',desc:'Rabatter på kaffe och muffins.'},
 		{title:'Bröd och salt', image:'rabatter/brod&salt.jpg',desc:'Bröd & Salt är ett bakeri vilket ligger på Norrtullsgatan 19, alldeles på vägen från Odenplans tunnelbanestation till skolan. Här finns alla sorters läckerheter i form av bröd: Dansk råg, Durumlevain, Mandelbulle, och croissant är bara några utav alternativen!<br><br>Samtliga köp rabatteras med 10% vid uppvisande av Kårkort.'},
 		{title:'Organic Green', image:'rabatter/organicgreen.jpg',desc:'Organic Green är en trevlig restaurang som ligger på Rehnsgatan 24, i närheten av Rådmansgatans tunnelbanestation. Detta trevliga matställe har i fokus att servera vegetarisk, ekologisk och framförallt god mat till sina kunder. <br><br>Som elev på Viktor Rydberg Odenplans Gymnasium så får du grytor, soppor och måltider 10 kronor billigare vid uppvisande av Kårkort.'},
 		{title:'Kafe Orion', image:'rabatter/kafeorion.jpg',desc:'Kafé Orion är en av de trevligaste fiken som finns till och denna ligger på Norrtullsgatan 10 vid närheten av Odenplans tunnelbanestation. Här kan du vara redo på smakliga drycker samt lätt och god mat för ett resonligt pris. Dessutom är personalen av det mest belevade slaget. <br><br>Som elev på VRG-O får du 10% rabatt på deras sortiment samt bryggkaffe + smörgås för 50:- (ordinarie pris 65:-) då du visar ditt Kårkort.'},
