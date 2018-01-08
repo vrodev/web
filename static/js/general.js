@@ -103,7 +103,6 @@ function headerLinearGradientFromHex(color, a1, a2) {
 		+',rgba('+rgbStr(color)+','+a2+'))'
 }
 
-
 var pageinfos = {
 	enkommitte: [
 		{title:'Harry Potter',color:'#A21D20',
