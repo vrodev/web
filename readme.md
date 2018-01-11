@@ -36,3 +36,4 @@ The web page for Viktor Rydberg Odenplans Elevkår, implemented using jade, styl
 ## Git
 
 Collaboration is made using git, tracks code changes.
+.
