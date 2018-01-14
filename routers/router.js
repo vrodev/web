@@ -170,6 +170,14 @@ module.exports = (function() {
     {path:'utskott/:utskottnamn',page:'ettutskott', dataGen: req=>{
       return {utskott:req.params.utskottnamn}
     }},
+    {page:'shop'},
+    {path:'shop/:produktnamn',page:'produkter', dataGen: req=>{
+      return {shop:req.params.produktnamn}
+    }},
+    {page:'rabatter'},
+    {path:'rabatter/:rabatt',page:'enrabatt', dataGen: req=>{
+      return {rabatter:req.params.rabatt}
+    }},
     {path:'emails/catcher-welcome', page:'../emails/catcher-welcome',dataGen: req=>({
       loginCode:'LOGINCODE',name:'NAME',url:config.webURL})},
     {page:'admin'},

@@ -60,9 +60,8 @@ html
 						.title.name= user.name
 						.title.logout Logga ut
 						.image(style="background-image: url(#{user.picture})")
-				else
-					#login-button.log
-						h2.logtxt Logga in
+				#login-button.log(style="#{!user?'':'display:none;'}")
+					h2.logtxt Logga in
 
 		.phonelinks(data-index = 0)
 		.mainhide(onclick="hidemenu()")
@@ -71,9 +70,9 @@ html
 		//- 	.phonelinks
 		//- Main content
 		if user
-			- var links = [[{name:'Förmåner'}, {name:'Kårkort', link:'/karkort'}, {name:'Logga ut', action:'User.logout()'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'om oss', link:'/om'}, {name:'Matsedel', link:'/mat'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'},{name:'Utvecklare', link:'/utvecklare'}]]
+			- var links = [[{name:'Förmåner'}, {name:'Shop', link:'/shop'}, {name:'Kårkort', link:'/karkort'}, {name:'Logga ut', action:'User.logout()'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'om oss', link:'/om'}, {name:'Matsedel', link:'/mat'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'},{name:'Utvecklare', link:'/utvecklare'}, {name:'Rabatter', link:'/rabatter'},{name:'Visselpipan', link:'https://docs.google.com/a/vrg.se/forms/d/e/1FAIpQLScHoIuuWFZGGfiKb5Nc_dB26O0kqYLayM6H_2J4WKb__YB0mA/viewform'}]]
 		else
-			- var links = [[{name:'Matsedel', link:'/mat'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'Om oss', link:'/om'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'},{name:'Utvecklare', link:'/utvecklare'}]]
+			- var links = [[{name:'Matsedel', link:'/mat'}],[{name:'Kåren'}, {name:'utskott', link:'/utskott'}, {name:'Styrelsen', link:'/styrelsen'}, {name:'Kommittéer', link:'/kommitte'}],[{name:'info'}, {name:'Om oss', link:'/om'}, {name:'kårbrev', link:'https://drive.google.com/drive/u/1/folders/0B3_bZvfZoku-X2U3bjBqbFd1NFk'}, {name:'Protokoll', link:'https://drive.google.com/drive/folders/0B-UL6CSzT9I0bXUzUXVCRFNVZVk'},{name:'Utvecklare', link:'/utvecklare'}, {name:'Shop', link:'/shop'}, {name:'Rabatter', link:'/rabatter'}, {name:'Visselpipan', link:'https://docs.google.com/a/vrg.se/forms/d/e/1FAIpQLScHoIuuWFZGGfiKb5Nc_dB26O0kqYLayM6H_2J4WKb__YB0mA/viewform'}]]
 		script.
 			var links = JSON.parse('!{JSON.stringify(links)}')
 
@@ -188,35 +187,36 @@ html
 		script.
 			var googleSigninClientId = '#{config.googleSigninClientId}'
 
-		if !user
-			script.
-				var googleUser = {};
+		script.
+			var serverLoggedIn = #{user?'true':'false'}
+		script.
+			var googleUser = {};
 
-				function attachSignin(element) {
-					auth2.attachClickHandler(element, {},
-						function(_googleUser) {
-							googleUser = _googleUser
-							// alert("Signed in: " + googleUser.getBasicProfile().getName() + googleUser.getAuthResponse().id_token)
-
+			function attachSignin(element) {
+				auth2.attachClickHandler(element, {},
+					function(_googleUser) {
+						googleUser = _googleUser
+						// alert("Signed in: " + googleUser.getBasicProfile().getName() + googleUser.getAuthResponse().id_token)
+						if (!serverLoggedIn){
 							User.authenticate({googleUserToken: googleUser.getAuthResponse().id_token}, function(err) {
 								//console.log(err, api.currentUser)
 								window.location.reload()
-							})
-						}, function(error) {
-							alert(JSON.stringify(error, undefined, 2));
-						});
-				}
-
-				gapi.load('auth2', function(){
-					// Retrieve the singleton for the GoogleAuth library and set up the client.
-					auth2 = gapi.auth2.init({
-						client_id: googleSigninClientId,
-						cookiepolicy: 'single_host_origin',
-						// Request scopes in addition to 'profile' and 'email'
-						//scope: 'additional_scope'
+							})}
+					}, function(error) {
+						alert(JSON.stringify(error, undefined, 2));
 					});
-					attachSignin(_('#login-button'));
+			}
+
+			gapi.load('auth2', function(){
+				// Retrieve the singleton for the GoogleAuth library and set up the client.
+				auth2 = gapi.auth2.init({
+					client_id: googleSigninClientId,
+					cookiepolicy: 'single_host_origin',
+					// Request scopes in addition to 'profile' and 'email'
+					//scope: 'additional_scope'
 				});
+				attachSignin(_('#login-button'));
+			});
 
 
 		script(src='/js/default.js')

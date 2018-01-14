@@ -1,0 +1,15 @@
+extend ../default2
+block mainContent
+
+	.header.utskottheader
+		.shineheader
+		h1.headertext.utskottheadtext Shop
+
+	.contentfield
+		group-card(v-if='items', v-for='item in items', :key='item.id', :post='item')
+	//- .utskottruta
+	//- 	.utskotttop
+	//- 		.utskottbild
+	//- 	p.utskotttext Sociala
+
+	script(src="/js/shop.js")

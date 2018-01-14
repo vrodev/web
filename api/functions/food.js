@@ -4,7 +4,7 @@
 // 
 // Initially created by Leonard and Erik, 2016-2017
 
-var http = require('http')
+var http = require('https')
 
 // Date helpers
 Date.prototype.weekdayString = function() {
@@ -26,15 +26,14 @@ Date.prototype.getWeek = function() {
 // -----------------------------------------
 
 
-// http://mpi.mashie.se/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE
+// https://mpi.mashie.com/public/menu/KK%20VRVasastan/4465fa56?ical=True
 function fetchRawFoodData(callback){
 	var content = ""
 	var options = {
-  	host: 'mpi.mashie.se',
-  	port: 80,
-  	path: '/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE'}
+	host: 'mpi.mashie.com',
+	path: '/public/icalendar/KK%20VRVasastan/4465fa56.ics?language=sv-SE'}
 
-  var requestCallback = function(res) {
+	var requestCallback = function(res) {
 		res.setEncoding("utf8")
 		res.on("data", function (chunk) {
 			content += chunk
@@ -53,6 +52,7 @@ function fetchRawFoodData(callback){
 // parseFoodData
 function parseFoodData(rawFoodData){
 	const weeks = []
+	
 	rawFoodData.replace(/DATE:(\d{4})(\d{2})(\d{2})/g,
 		function(wholeMatch, year, month, day, index, wholeString) {
 		const obj = {}
