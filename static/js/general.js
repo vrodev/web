@@ -194,7 +194,7 @@ var pageinfos = {
 		image:'kommittebilder/gym.jpg'},
 
 		{title:'Kazoo',color:'#ff6e00',
-		ord:'Jakob Tilly',
+		ord:'Jacob Tilly',
 		desc:'Kazoo-kommittén är Viktor Rydberg Odenplans kommitté för alla som har en enorm (hat)kärlek för det underbara instrumentet Kazoo. På våra möten övar vi flerstämmiga Kazoo-arrangemang, skapar allmäna (o)ljud och fikar. Välkommen att gå med!',
 		link:'https://www.facebook.com/groups/212797292602494/',
 		image:'kommittebilder/kazoo.jpg'},
