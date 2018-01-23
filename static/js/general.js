@@ -192,6 +192,12 @@ var pageinfos = {
 		ord:'Anton Adelöw, Simon Åström och Erik Bergrahm',
 		desc:'Gymkommitén är en kommité för alla tränings och fitness intresserade. Kommitten letar tider då så många som möjligt av medlemmarna kan gymma tillsammans och strävar efter att leva bättre. Vem som helst kan gå med i gymkommitén oavsett nivå men det som krävs är motivationen att vilja förbättras.',
 		image:'kommittebilder/gym.jpg'},
+
+		{title:'Kazoo',color:'#ff6e00',
+		ord:'Jakob Tilly',
+		desc:'Kazoo-kommittén är Viktor Rydberg Odenplans kommitté för alla som har en enorm (hat)kärlek för det underbara instrumentet Kazoo. På våra möten övar vi flerstämmiga Kazoo-arrangemang, skapar allmäna (o)ljud och fikar. Välkommen att gå med!',
+		link:'https://www.facebook.com/groups/212797292602494/',
+		image:'kommittebilder/kazoo.jpg'},
 	],
 	ettutskott: [
 		{title:'Tradition',color:'#C42C00',
