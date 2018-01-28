@@ -191,6 +191,7 @@ var pageinfos = {
 		{title:'Gym',color:'#FFC300',
 		ord:'Anton Adelöw, Simon Åström och Erik Bergrahm',
 		desc:'Gymkommitén är en kommité för alla tränings och fitness intresserade. Kommitten letar tider då så många som möjligt av medlemmarna kan gymma tillsammans och strävar efter att leva bättre. Vem som helst kan gå med i gymkommitén oavsett nivå men det som krävs är motivationen att vilja förbättras.',
+		link:'https://www.facebook.com/groups/130169831126787',
 		image:'kommittebilder/gym.jpg'},
 
 		{title:'Kazoo',color:'#ff6e00',
