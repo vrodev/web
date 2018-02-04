@@ -191,7 +191,7 @@ var pageinfos = {
 		{title:'Gym',color:'#FFC300',
 		ord:'Anton Adelöw, Simon Åström och Erik Bergrahm',
 		desc:'Gymkommitén är en kommité för alla tränings och fitness intresserade. Kommitten letar tider då så många som möjligt av medlemmarna kan gymma tillsammans och strävar efter att leva bättre. Vem som helst kan gå med i gymkommitén oavsett nivå men det som krävs är motivationen att vilja förbättras.',
-		link:'https://www.facebook.com/groups/130169831126787',
+		link:'https://www.facebook.com/groups/130169831126787/',
 		image:'kommittebilder/gym.jpg'},
 
 		{title:'Kazoo',color:'#ff6e00',
@@ -199,6 +199,12 @@ var pageinfos = {
 		desc:'Kazoo-kommittén är Viktor Rydberg Odenplans kommitté för alla som har en enorm (hat)kärlek för det underbara instrumentet Kazoo. På våra möten övar vi flerstämmiga Kazoo-arrangemang, skapar allmäna (o)ljud och fikar. Välkommen att gå med!',
 		link:'https://www.facebook.com/groups/212797292602494/',
 		image:'kommittebilder/kazoo.jpg'},
+
+		{title:'Rasifierade',color:'#600de5',
+		ord:'Nian Salih',
+		desc:'VRGs Rasifierade är en icke-separatistisk kommitté. Kommittén har förståelse för att olika typer av diskriminering oftast hör ihop, och utgår därför ifrån ett intersektionellt feministiskt perspektiv. VRGs Rasifierade skapar trygga plattformar för personer att diskutera rasism på, ser till att genom olika metoder sprida kunskap om rasism på skolan och samhället, och ger elever de rätta verktygen för att bekämpa rasism och ojämlikhet. <br><br>Kommittén finns även på Jarlaplan och mycket härligt samarbete kommer ske mellan kommittéerna!',
+		link:'https://www.facebook.com/VRGsRasifierade/',
+		image:'kommittebilder/rasifierade.jpg'},
 	],
 	ettutskott: [
 		{title:'Tradition',color:'#C42C00',
