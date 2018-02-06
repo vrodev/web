@@ -128,7 +128,7 @@ var pageinfos = {
 		{title:'Bajen Fans VRO',color:'#007A43',
 		ord:'Hugo Rosell & Sebastian Lian',
 		desc:'Viktor Rydbergs grönvita har i syfte att skapa en gemenskap med alla Hammarbyare på VRG. Målet är att någon gång i framtiden kunna gå på Hammarby-match tillsammans.',
-		link:'',
+		link:'https://www.facebook.com/groups/589462097892583/',
 		image:'kommittebilder/bajenfans.jpg'},
 
 		{title:'HBTQ plus',color:'#AB47CB',
