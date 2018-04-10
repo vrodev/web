@@ -1,0 +1,42 @@
+extend ../default2
+block mainContent
+
+	.stat-title KLASSPOÄNG
+		.subtitle Senast uppdaterad 4 April 2018
+
+	.stat-container
+	.rules-container 
+		.title REGLEMENTE FÖR KLASSPOKALEN
+		.text 1. Det är tillåtet att ta bild, filma och photoshoppa, men en originalbild måste finnas med i inlägget/bildserien eftersom att det är originalbilden som ger poängen. (publiceras via instagram)<br><br>2. Det ska framgå tydligt hur många som är utklädda. T.ex. “ 20 utklädda tomtar”. <br><br>3. Ni ska hashtagga #elevkår och persontagga vroelevkar i bilden för att få poäng.<br><br>4. Bilderna ska vara tagna och läggas upp under temadagen, annars gills det inte och kommer att resultera i att klassen får noll poäng för den temadagen. Detta gäller så länge inget annat är angivet.<br><br>5. Sociala utskottet bestämmer om klassen får poäng eller inte utifrån beskrivning som angetts på elevkårens sociala medier. Beslutet kan inte överklagas.<br><br>6. Man får inte ta bort bilden som är upplagd förrän klasspokalen är avslutad vid läsårets slut. Då riskerar man att bli av med alla poäng på den bilden vid eventuell omräkning av poäng.<br><br>7. På skolavslutningen presenteras totalvinnaren och treornas placering i klasspokalen. Totalsegraren får pokalen*. Treornas placering avgör prioriteringsordningen: Den klass som kommer först får välja först vilken ordning de vill springa ut. Klassens val ska meddelas till sociala utskottets ordförande under avslutningsdagen, och om det inte sker är det upp till sociala utskottet och ytterst ordförande för sociala utskottet att besluta ordningen på utspringet. <br><br>8. Om inget annat framgår får klassen lägga ut max två bilder gällandes samma temadag. OBS! Då ett utklippt objekt (till exempel en eller flera personer) klistrats in i en större bild räknas det objektet som en egen bild. Om fler än två bilder läggs ut kommer endast de två med flest utklädda att inkluderas i poängräkningen. <br><br>9. Klassen får utöver en poäng per utklädd person tio poäng per bild (max tio poäng per temadag, oavsett hur många bilder som läggs upp).<br><br><br><l>* pokalen skall återlämnas till elevkåren innan september månad samma år för att återanvändas.</l>
+
+
+	script.
+		var classList = [{name:'NA18D', points:1076},{name:'NA18C', points:964},{name:'NA18B', points:870},{name:'NA20D', points:801},{name:'NA20B', points:785},{name:'NA20C', points:763},{name:'NA19C', points:729},{name:'NA18A', points:712},{name:'SB18', points:652},{name:'SB20', points:621},{name:'EK18', points:471},{name:'NA20A', points:464},{name:'NA19B', points:452},{name:'NA19A', points:401},{name:'EK20', points:353},{name:'NA19D', points:190},{name:'EK19A', points:146},{name:'SB19', points:95},{name:'EK19B', points:83},{name:'SPRINT', points:0}]
+
+
+		classList.sort(function(a, b) { 
+		    return b.points - a.points;
+		})
+
+		classList.forEach(function(c, i){
+			var classDiv = document.createElement("div")
+			classDiv.classList.add('class-div')
+			document.querySelector('.stat-container').appendChild(classDiv)
+
+			//classDiv.style.background = blendColors('#28825F','#929292',(i/classList.length))
+
+			var place = document.createElement("div")
+			place.classList.add('info', 'place')
+			classDiv.appendChild(place)
+			place.innerText = i + 1
+
+			var name = document.createElement("div")
+			name.classList.add('info', 'name')
+			classDiv.appendChild(name)
+			name.innerText = c.name
+
+			var points = document.createElement("div")
+			points.classList.add('info', 'points')
+			classDiv.appendChild(points)
+			points.innerText = c.points + ' poäng'
+		})

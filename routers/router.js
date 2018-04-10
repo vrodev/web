@@ -149,6 +149,7 @@ module.exports = (function() {
     {page:'mat'},
     {page:'testing'},
     {page:'karkort'},
+    {page:'class-points'},
     {page:'am'},
     {page:'om'},
     {page:'karen'},
